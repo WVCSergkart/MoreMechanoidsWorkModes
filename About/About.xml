@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<ModMetaData>
+	<name>More Mechanoids Work Modes</name>
+	<author>Sergkart</author>
+	<url>https://steamcommunity.com/profiles/76561198019114858/myworkshopfiles/?appid=294100</url>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<packageId>wvc.sergkart.biotech.MoreMechanoidsWorkModes</packageId>
+	<description>Adds 8 new work mods for mechanoids:
+
+Find and destroy - Mechanoids, regardless of their type, will look for enemies and try to destroy them.
+
+Work and recharge - Work autonomously according to mechanoid type. If the mechanoid cannot work or it has done all the work it shutdown.
+
+Escort and recharge - The mechanoid, regardless of its type, will accompany the overseer and, if necessary, go to charge.
+
+Work, recharge and escort - The mechanoid will accompany the overseer if it does not have a job, and will also be charged if necessary.
+
+Wait enemy - The mechanoid will shutdown and wait for the enemy, and when it appears, it will wake up and head towards the target.
+
+Work and wait - Mechanoids, depending on the type, will work, and when an enemy appears, they will drop everything and go to destroy him. If they don't have a job, they'll just shutdown.
+
+Ambush - The mechanoid shutdown and waits for the enemy to approach it, then attacks.
+
+Defend yourself - Mechanoid, regardless of type, will attack enemies that get too close.</description>
+	<modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Biotech</packageId>
+			<displayName>Biotech</displayName>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+	</loadAfter>
+	<loadBefore>
+		<li>krkr.rocketman</li>
+	</loadBefore>
+</ModMetaData>

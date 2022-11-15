@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationAdd">
+	  <xpath>/Defs/ThinkTreeDef[defName="Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath> 
+	  <value>
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_FindAndDestroy</workMode>
+			<subNodes>
+			  <li Class="JobGiver_SeekAllowedArea" />
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>65</targetAcquireRadius>
+				<targetKeepRadius>72</targetKeepRadius>
+			  </li>
+			  <li Class="JobGiver_AIGotoNearestHostile" />
+			  <li Class="JobGiver_WanderColony">
+				<maxDanger>Deadly</maxDanger>
+				<reportStringOverride>Patrolling.</reportStringOverride>
+			  </li>
+			</subNodes>
+		  </li>
+		  <!-- = -->
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_WaitEnemy</workMode>
+			<subNodes>
+			  <li Class="JobGiver_SeekAllowedArea" />
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>65</targetAcquireRadius>
+				<targetKeepRadius>72</targetKeepRadius>
+			  </li>
+			  <li Class="JobGiver_AIGotoNearestHostile" />
+			  <li Class="JobGiver_GetEnergy_SelfShutdown">
+				<forced>true</forced>
+			  </li>
+			</subNodes>
+		  </li>
+		  <!-- = -->
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_WorkAndWaitEnemy</workMode>
+			<subNodes>
+			  <li Class="JobGiver_SeekAllowedArea" />
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>65</targetAcquireRadius>
+				<targetKeepRadius>72</targetKeepRadius>
+			  </li>
+			  <li Class="JobGiver_AIGotoNearestHostile" />
+			  <li Class="JobGiver_Work">
+				<emergency>true</emergency>
+			  </li>
+			  <li Class="JobGiver_Work" />
+			  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+				<forced>true</forced>
+			  </li>
+			</subNodes>
+		  </li>
+		  <!-- = -->
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_Ambush</workMode>
+			<subNodes>
+			  <li Class="JobGiver_SeekAllowedArea" />
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>65</targetAcquireRadius>
+				<targetKeepRadius>72</targetKeepRadius>
+			  </li>
+			  <li Class="JobGiver_GetEnergy_SelfShutdown">
+				<forced>true</forced>
+			  </li>
+			</subNodes>
+		  </li>
+		  <!-- = -->
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_DefendYourself</workMode>
+			<subNodes>
+			  <li Class="JobGiver_SeekAllowedArea" />
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>15</targetAcquireRadius>
+				<targetKeepRadius>22</targetKeepRadius>
+			  </li>
+			  <li Class="JobGiver_WanderColony">
+				<maxDanger>Deadly</maxDanger>
+				<reportStringOverride>Protects itself.</reportStringOverride>
+			  </li>
+			</subNodes>
+		  </li>
+		  <!-- = -->
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_WorkAndRecharge</workMode>
+			<subNodes>
+			  <li Class="JobGiver_SeekAllowedArea" />
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="JobGiver_Work">
+				<emergency>true</emergency>
+			  </li>
+			  <li Class="JobGiver_Work" />
+			  <li Class="ThinkNode_ConditionalWorkMech">
+				<invert>true</invert>
+				<subNodes>
+				  <li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>65</targetAcquireRadius>
+					<targetKeepRadius>72</targetKeepRadius>
+				  </li>
+				</subNodes>
+			  </li>
+			  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+				<forced>true</forced>
+			  </li>
+			</subNodes>
+		  </li>
+		  <!-- = -->
+		  <!-- <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech"> -->
+			<!-- <workMode>WVC_WanderAndRescue</workMode> -->
+			<!-- <subNodes> -->
+			  <!-- <li Class="JobGiver_SeekAllowedArea" /> -->
+			  <!-- <li Class="JobGiver_RescueNearby" /> -->
+			  <!-- <li Class="JobGiver_WanderColony"> -->
+				<!-- <maxDanger>Deadly</maxDanger> -->
+				<!-- <reportStringOverride>Looking for the downed.</reportStringOverride> -->
+			  <!-- </li> -->
+			<!-- </subNodes> -->
+		  <!-- </li> -->
+		  <!-- = -->
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_EscaortAndRecharge</workMode>
+			<subNodes>
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="JobGiver_ExitMapFollowOverseer" />
+			  <li Class="JobGiver_AIDefendOverseer" />
+			  <li Class="JobGiver_AIFollowOverseer"/>
+			  <li Class="JobGiver_AIWaitWithOverseer" />
+			  <li Class="JobGiver_WanderOverseer" />
+			</subNodes>
+		  </li>
+		  <!-- = -->
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_WorkRechargeEscort</workMode>
+			<subNodes>
+			  <!-- <li Class="JobGiver_SeekAllowedArea" /> -->
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="JobGiver_Work">
+				<emergency>true</emergency>
+			  </li>
+			  <li Class="JobGiver_Work" />
+			  <li Class="JobGiver_ExitMapFollowOverseer" />
+			  <li Class="JobGiver_AIDefendOverseer" />
+			  <li Class="JobGiver_AIFollowOverseer"/>
+			  <li Class="JobGiver_AIWaitWithOverseer" />
+			  <li Class="JobGiver_WanderOverseer" />
+			</subNodes>
+		  </li>
+	  </value>
+	</Operation>
+
+</Patch>
