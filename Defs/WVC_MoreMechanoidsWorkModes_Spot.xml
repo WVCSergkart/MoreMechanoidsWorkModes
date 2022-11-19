@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+	<defName>WVC_IdleOptimization_MechanoidShutdownSpot</defName>
+	<label>mechanoid shutdown spot</label>
+	<description>Mechanoids will return here before shutting down.</description>
+	<graphicData>
+	  <texPath>WVC/UI/MechWork/MechanoidShutdownSpot</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+    <!-- <tickerType>Normal</tickerType> -->
+    <!-- <altitudeLayer>Building</altitudeLayer> -->
+	<altitudeLayer>FloorEmplacement</altitudeLayer>
+	<statBases>
+	  <WorkToBuild>0</WorkToBuild>
+	</statBases>
+	<rotatable>false</rotatable>
+	<scatterableOnMapGen>false</scatterableOnMapGen>
+	<useHitPoints>False</useHitPoints>
+	<uiOrder>2000</uiOrder>
+	<passability>Standable</passability>
+	<!-- <hasInteractionCell>true</hasInteractionCell> -->
+	<!-- <interactionCellOffset>(0,0,0)</interactionCellOffset> -->
+	<drawGUIOverlay>false</drawGUIOverlay>
+	<designationCategory>Biotech</designationCategory>
+	<specialDisplayRadius>8.9</specialDisplayRadius>
+	<building>
+	  <sowTag>SupportPlantsOnly</sowTag>
+	  <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+	  <ai_chillDestination>false</ai_chillDestination>
+	  <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+	  <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+	</building>
+  </ThingDef>
+
+</Defs>

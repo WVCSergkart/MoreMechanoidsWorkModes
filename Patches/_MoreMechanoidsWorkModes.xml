@@ -32,6 +32,9 @@
 				<targetKeepRadius>72</targetKeepRadius>
 			  </li>
 			  <li Class="JobGiver_AIGotoNearestHostile" />
+			  <!-- Go to spot -->
+			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot" />
+			  <!-- Shutdown -->
 			  <li Class="JobGiver_GetEnergy_SelfShutdown">
 				<forced>true</forced>
 			  </li>
@@ -52,6 +55,9 @@
 				<emergency>true</emergency>
 			  </li>
 			  <li Class="JobGiver_Work" />
+			  <!-- Go to spot -->
+			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot" />
+			  <!-- Shutdown long -->
 			  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
 				<forced>true</forced>
 			  </li>
@@ -67,6 +73,9 @@
 				<targetAcquireRadius>65</targetAcquireRadius>
 				<targetKeepRadius>72</targetKeepRadius>
 			  </li>
+			  <!-- Go to spot -->
+			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot" />
+			  <!-- Shutdown -->
 			  <li Class="JobGiver_GetEnergy_SelfShutdown">
 				<forced>true</forced>
 			  </li>
@@ -107,6 +116,9 @@
 				  </li>
 				</subNodes>
 			  </li>
+			  <!-- Go to spot -->
+			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot" />
+			  <!-- Shutdown long -->
 			  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
 				<forced>true</forced>
 			  </li>
