@@ -40,4 +40,7 @@ Defend yourself - Mechanoid, regardless of type, will attack enemies that get to
 	<loadBefore>
 		<li>krkr.rocketman</li>
 	</loadBefore>
+	<incompatibleWith>
+		<li>wvc.sergkart.biotech.mechanoididleoptimization</li>
+	</incompatibleWith>
 </ModMetaData>

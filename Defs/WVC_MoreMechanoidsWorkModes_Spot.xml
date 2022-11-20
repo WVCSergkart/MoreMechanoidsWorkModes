@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="BuildingBase">
+  <DesignatorDropdownGroupDef>
+	<defName>WVC_IOMSS_Spots</defName>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef ParentName="BuildingBase" Name="WVC_IdleOptimization_MechanoidShutdownSpot">
 	<defName>WVC_IdleOptimization_MechanoidShutdownSpot</defName>
 	<label>mechanoid shutdown spot</label>
-	<description>Mechanoids will return here before shutting down.</description>
+	<description>Mechanoids will return here before shutting down.\n\n&lt;color=#f5ffa2&gt;Note:&lt;/color&gt; Mechanoids will return here if there are no other spots. Except ambush.</description>
 	<graphicData>
 	  <texPath>WVC/UI/MechWork/MechanoidShutdownSpot</texPath>
 	  <graphicClass>Graphic_Single</graphicClass>
@@ -25,6 +29,7 @@
 	<drawGUIOverlay>false</drawGUIOverlay>
 	<designationCategory>Biotech</designationCategory>
 	<specialDisplayRadius>8.9</specialDisplayRadius>
+	<designatorDropdown>WVC_IOMSS_Spots</designatorDropdown>
 	<building>
 	  <sowTag>SupportPlantsOnly</sowTag>
 	  <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
@@ -32,6 +37,43 @@
 	  <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
 	  <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
 	</building>
+  </ThingDef>
+
+  <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
+	<defName>WVC_IOMSS_WorkAndRecharge</defName>
+	<label>worker spot</label>
+	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Work and recharge"&lt;/color&gt; mod will return here.</description>
+	<descriptionHyperlinks>
+	  <MechWorkModeDef>WVC_WorkAndRecharge</MechWorkModeDef>
+	</descriptionHyperlinks>
+	<graphicData>
+	  <texPath>WVC/UI/MechWork/WorkerMechanoidShutdownSpot</texPath>
+	</graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
+	<defName>WVC_IOMSS_Ambush</defName>
+	<label>ambush spot</label>
+	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Ambush"&lt;/color&gt; mod will return here.</description>
+	<descriptionHyperlinks>
+	  <MechWorkModeDef>WVC_Ambush</MechWorkModeDef>
+	</descriptionHyperlinks>
+	<graphicData>
+	  <texPath>WVC/UI/MechWork/AmbushMechanoidShutdownSpot</texPath>
+	</graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
+	<defName>WVC_IOMSS_WaitEnemy</defName>
+	<label>waiting spot</label>
+	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Wait enemy"&lt;/color&gt; or &lt;color=#f5ffa2&gt;"Work and wait"&lt;/color&gt; mod will return here.</description>
+	<descriptionHyperlinks>
+	  <MechWorkModeDef>WVC_WaitEnemy</MechWorkModeDef>
+	  <MechWorkModeDef>WVC_WorkAndWaitEnemy</MechWorkModeDef>
+	</descriptionHyperlinks>
+	<graphicData>
+	  <texPath>WVC/UI/MechWork/WaitMechanoidShutdownSpot</texPath>
+	</graphicData>
   </ThingDef>
 
 </Defs>

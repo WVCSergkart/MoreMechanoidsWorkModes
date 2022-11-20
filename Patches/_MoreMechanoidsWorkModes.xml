@@ -33,7 +33,13 @@
 			  </li>
 			  <li Class="JobGiver_AIGotoNearestHostile" />
 			  <!-- Go to spot -->
-			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot" />
+			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
+				<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+				<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+			  </li>
+			  <!-- <li Class="WVC.JobGiver_GoToClosetShutdownSpot"> -->
+				<!-- <spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName> -->
+			  <!-- </li> -->
 			  <!-- Shutdown -->
 			  <li Class="JobGiver_GetEnergy_SelfShutdown">
 				<forced>true</forced>
@@ -56,7 +62,13 @@
 			  </li>
 			  <li Class="JobGiver_Work" />
 			  <!-- Go to spot -->
-			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot" />
+			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
+				<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+				<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+			  </li>
+			  <!-- <li Class="WVC.JobGiver_GoToClosetShutdownSpot"> -->
+				<!-- <spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName> -->
+			  <!-- </li> -->
 			  <!-- Shutdown long -->
 			  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
 				<forced>true</forced>
@@ -74,7 +86,17 @@
 				<targetKeepRadius>72</targetKeepRadius>
 			  </li>
 			  <!-- Go to spot -->
-			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot" />
+			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
+				<!-- Any ThingDef that can be stepped on -->
+				<spotDefName>WVC_IOMSS_Ambush</spotDefName>
+				<!-- backup spot not used for ambush -->
+				<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+				<!-- Distance from mechanoid to target -->
+				<!-- Default 9 -->
+				<!-- <minDistanceForSpot>9</minDistanceForSpot> -->
+				<!-- Default 9999 -->
+				<!-- <maxDistanceForSpot>9999</maxDistanceForSpot> -->
+			  </li>
 			  <!-- Shutdown -->
 			  <li Class="JobGiver_GetEnergy_SelfShutdown">
 				<forced>true</forced>
@@ -117,7 +139,19 @@
 				</subNodes>
 			  </li>
 			  <!-- Go to spot -->
-			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot" />
+			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
+				<!-- Any ThingDef that can be stepped on -->
+				<spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
+				<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+				<!-- Distance from mechanoid to target -->
+				<!-- Default 9 -->
+				<!-- <minDistanceForSpot>9</minDistanceForSpot> -->
+				<!-- Default 9999 -->
+				<!-- <maxDistanceForSpot>9999</maxDistanceForSpot> -->
+			  </li>
+			  <!-- <li Class="WVC.JobGiver_GoToClosetShutdownSpot"> -->
+				<!-- <spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName> -->
+			  <!-- </li> -->
 			  <!-- Shutdown long -->
 			  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
 				<forced>true</forced>
