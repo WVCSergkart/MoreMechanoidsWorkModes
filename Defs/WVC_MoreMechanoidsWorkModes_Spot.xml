@@ -10,7 +10,7 @@
 	<label>mechanoid shutdown spot</label>
 	<description>Mechanoids will return here before shutting down.\n\n&lt;color=#f5ffa2&gt;Note:&lt;/color&gt; Mechanoids will return here if there are no other spots. Except ambush.</description>
 	<graphicData>
-	  <texPath>WVC/UI/MechWork/MechanoidShutdownSpot</texPath>
+	  <texPath>WVC/Spots/MechanoidShutdownSpot</texPath>
 	  <graphicClass>Graphic_Single</graphicClass>
 	</graphicData>
     <!-- <tickerType>Normal</tickerType> -->
@@ -47,7 +47,7 @@
 	  <MechWorkModeDef>WVC_WorkAndRecharge</MechWorkModeDef>
 	</descriptionHyperlinks>
 	<graphicData>
-	  <texPath>WVC/UI/MechWork/WorkerMechanoidShutdownSpot</texPath>
+	  <texPath>WVC/Spots/WorkerMechanoidShutdownSpot</texPath>
 	</graphicData>
   </ThingDef>
 
@@ -59,7 +59,7 @@
 	  <MechWorkModeDef>WVC_Ambush</MechWorkModeDef>
 	</descriptionHyperlinks>
 	<graphicData>
-	  <texPath>WVC/UI/MechWork/AmbushMechanoidShutdownSpot</texPath>
+	  <texPath>WVC/Spots/AmbushMechanoidShutdownSpot</texPath>
 	</graphicData>
   </ThingDef>
 
@@ -72,7 +72,7 @@
 	  <MechWorkModeDef>WVC_WorkAndWaitEnemy</MechWorkModeDef>
 	</descriptionHyperlinks>
 	<graphicData>
-	  <texPath>WVC/UI/MechWork/WaitMechanoidShutdownSpot</texPath>
+	  <texPath>WVC/Spots/WaitMechanoidShutdownSpot</texPath>
 	</graphicData>
   </ThingDef>
 

@@ -113,6 +113,9 @@
 				<targetAcquireRadius>15</targetAcquireRadius>
 				<targetKeepRadius>22</targetKeepRadius>
 			  </li>
+			  <!-- <li Class="WVC.JobGiver_GoToClosetShutdownSpot"> -->
+				<!-- <spotDefName>WVC_IOMSS_DefendYourself</spotDefName> -->
+			  <!-- </li> -->
 			  <li Class="JobGiver_WanderColony">
 				<maxDanger>Deadly</maxDanger>
 				<reportStringOverride>Protects itself.</reportStringOverride>
@@ -154,6 +157,8 @@
 			  <!-- </li> -->
 			  <!-- Shutdown long -->
 			  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+				<!-- Default 3000 -->
+				<!-- <tickInterval>3000</tickInterval> -->
 				<forced>true</forced>
 			  </li>
 			</subNodes>
