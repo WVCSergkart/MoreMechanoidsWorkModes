@@ -8,13 +8,15 @@
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_FindAndDestroy</workMode>
 			<subNodes>
-			  <li Class="JobGiver_SeekAllowedArea" />
-			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <!-- = -->
 			  <li Class="JobGiver_AIFightEnemies">
 				<targetAcquireRadius>65</targetAcquireRadius>
 				<targetKeepRadius>72</targetKeepRadius>
 			  </li>
 			  <li Class="JobGiver_AIGotoNearestHostile" />
+			  <!-- = -->
+			  <li Class="JobGiver_SeekAllowedArea" />
+			  <li Class="JobGiver_GetEnergy_Charger" />
 			  <li Class="JobGiver_WanderColony">
 				<maxDanger>Deadly</maxDanger>
 				<reportStringOverride>Patrolling.</reportStringOverride>
@@ -25,13 +27,15 @@
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_WaitEnemy</workMode>
 			<subNodes>
-			  <li Class="JobGiver_SeekAllowedArea" />
-			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <!-- = -->
 			  <li Class="JobGiver_AIFightEnemies">
 				<targetAcquireRadius>65</targetAcquireRadius>
 				<targetKeepRadius>72</targetKeepRadius>
 			  </li>
 			  <li Class="JobGiver_AIGotoNearestHostile" />
+			  <!-- = -->
+			  <li Class="JobGiver_SeekAllowedArea" />
+			  <li Class="JobGiver_GetEnergy_Charger" />
 			  <!-- Go to spot -->
 			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
 				<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
@@ -50,13 +54,15 @@
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_WorkAndWaitEnemy</workMode>
 			<subNodes>
-			  <li Class="JobGiver_SeekAllowedArea" />
-			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <!-- = -->
 			  <li Class="JobGiver_AIFightEnemies">
 				<targetAcquireRadius>65</targetAcquireRadius>
 				<targetKeepRadius>72</targetKeepRadius>
 			  </li>
 			  <li Class="JobGiver_AIGotoNearestHostile" />
+			  <!-- = -->
+			  <li Class="JobGiver_SeekAllowedArea" />
+			  <li Class="JobGiver_GetEnergy_Charger" />
 			  <li Class="JobGiver_Work">
 				<emergency>true</emergency>
 			  </li>
@@ -110,8 +116,8 @@
 			  <li Class="JobGiver_SeekAllowedArea" />
 			  <li Class="JobGiver_GetEnergy_Charger" />
 			  <li Class="JobGiver_AIFightEnemies">
-				<targetAcquireRadius>15</targetAcquireRadius>
-				<targetKeepRadius>22</targetKeepRadius>
+				<targetAcquireRadius>12</targetAcquireRadius>
+				<targetKeepRadius>15</targetKeepRadius>
 			  </li>
 			  <!-- <li Class="WVC.JobGiver_GoToClosetShutdownSpot"> -->
 				<!-- <spotDefName>WVC_IOMSS_DefendYourself</spotDefName> -->
