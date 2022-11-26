@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+	<Operation Class="PatchOperationSequence">
+	  <success>Always</success>
+	  <operations>
+		<li Class="PatchOperationReplace">
+		  <xpath>/Defs/MechWorkModeDef[defName="Work"]/uiOrder</xpath>
+		  <success>Invert</success>
+		  <value>
+			<uiOrder>100</uiOrder>
+		  </value>
+		</li>
+		<li Class="PatchOperationAdd">
+		  <xpath>/Defs/MechWorkModeDef[defName="Work"]</xpath>
+		  <success>Always</success>
+		  <value>
+			<uiOrder>100</uiOrder>
+		  </value>
+		</li>
+	  </operations>
+	</Operation>
 
 	<Operation Class="PatchOperationAdd">
 	  <xpath>/Defs/ThinkTreeDef[defName="Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath> 
