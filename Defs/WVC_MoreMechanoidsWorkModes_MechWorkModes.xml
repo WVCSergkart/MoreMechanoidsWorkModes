@@ -29,12 +29,26 @@
 	<iconPath>WVC/UI/MechWork/WorkAndRecharge</iconPath>
   </MechWorkModeDef>
 
+  <MechWorkModeDef>
+	<defName>WVC_SafeWorkAndRecharge</defName>
+	<label>work if safe</label>
+	<description>Mechanoids will work, but only as long as there are no enemies on the map. In case of danger, they will try to get to the &lt;color=#f5ffa2&gt;safe spot&lt;/color&gt;.</description>
+	<iconPath>WVC/UI/MechWork/SafeWorkAndRecharge</iconPath>
+  </MechWorkModeDef>
+
   <!-- <MechWorkModeDef> -->
 	<!-- <defName>WVC_WanderAndRescue</defName> -->
 	<!-- <label>wander and rescue</label> -->
 	<!-- <description>The mechanoid, regardless of its type, will search for the downed and haul them to the bed.</description> -->
 	<!-- <iconPath>UI/Icons/WorkMode/Work</iconPath> -->
   <!-- </MechWorkModeDef> -->
+
+  <MechWorkModeDef>
+	<defName>WVC_EscortIfEnemyOnMap</defName>
+	<label>escort if enemy</label>
+	<description>Mechanoids, regardless of type, will accompany the overseer, but only if there is an enemy on the map. When there is no enemy, mechanoids shutdown.</description>
+	<iconPath>WVC/UI/MechWork/EscortIfEnemyOnMap</iconPath>
+  </MechWorkModeDef>
 
   <MechWorkModeDef>
 	<defName>WVC_EscaortAndRecharge</defName>

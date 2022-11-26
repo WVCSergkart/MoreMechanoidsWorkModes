@@ -45,9 +45,22 @@
 	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Work and recharge"&lt;/color&gt; mod will return here.</description>
 	<descriptionHyperlinks>
 	  <MechWorkModeDef>WVC_WorkAndRecharge</MechWorkModeDef>
+	  <MechWorkModeDef>WVC_SafeWorkAndRecharge</MechWorkModeDef>
 	</descriptionHyperlinks>
 	<graphicData>
 	  <texPath>WVC/Spots/WorkerMechanoidShutdownSpot</texPath>
+	</graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
+	<defName>WVC_IOMSS_TotallySafeSpot</defName>
+	<label>safe spot</label>
+	<description>Mechanoids with a &lt;color=#f5ffa2&gt;"Safe"&lt;/color&gt; job will return here in case of danger.</description>
+	<descriptionHyperlinks>
+	  <MechWorkModeDef>WVC_SafeWorkAndRecharge</MechWorkModeDef>
+	</descriptionHyperlinks>
+	<graphicData>
+	  <texPath>WVC/Spots/EscapeMechanoidShutdownSpot</texPath>
 	</graphicData>
   </ThingDef>
 
@@ -66,10 +79,11 @@
   <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
 	<defName>WVC_IOMSS_WaitEnemy</defName>
 	<label>waiting spot</label>
-	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Wait enemy"&lt;/color&gt; or &lt;color=#f5ffa2&gt;"Work and wait"&lt;/color&gt; mod will return here.</description>
+	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Wait enemy"&lt;/color&gt; or &lt;color=#f5ffa2&gt;"Work and wait"&lt;/color&gt; or &lt;color=#f5ffa2&gt;"Escort if enemy"&lt;/color&gt; mod will return here.</description>
 	<descriptionHyperlinks>
 	  <MechWorkModeDef>WVC_WaitEnemy</MechWorkModeDef>
 	  <MechWorkModeDef>WVC_WorkAndWaitEnemy</MechWorkModeDef>
+	  <MechWorkModeDef>WVC_EscortIfEnemyOnMap</MechWorkModeDef>
 	</descriptionHyperlinks>
 	<graphicData>
 	  <texPath>WVC/Spots/WaitMechanoidShutdownSpot</texPath>

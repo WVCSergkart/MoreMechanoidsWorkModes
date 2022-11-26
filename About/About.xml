@@ -8,7 +8,7 @@
 		<li>1.4</li>
 	</supportedVersions>
 	<packageId>wvc.sergkart.biotech.MoreMechanoidsWorkModes</packageId>
-	<description>Adds 8 new work mods for mechanoids:
+	<description>Adds 10 new work mods for mechanoids:
 
 Find and destroy - Mechanoids, regardless of their type, will look for enemies and try to destroy them.
 
@@ -24,7 +24,11 @@ Work and wait - Mechanoids, depending on the type, will work, and when an enemy 
 
 Ambush - The mechanoid shutdown and waits for the enemy to approach it, then attacks.
 
-Defend yourself - Mechanoid, regardless of type, will attack enemies that get too close.</description>
+Defend yourself - Mechanoid, regardless of type, will attack enemies that get too close.
+
+Escort if enemy - Mechanoids, regardless of type, will accompany the overseer, but only if there is an enemy on the map. When there is no enemy, mechanoids shutdown.
+
+Work if safe - Mechanoids will work, but only as long as there are no enemies on the map. In case of danger, they will try to get to the safe spot.</description>
 	<modDependencies>
 		<li>
 			<packageId>Ludeon.RimWorld.Biotech</packageId>
