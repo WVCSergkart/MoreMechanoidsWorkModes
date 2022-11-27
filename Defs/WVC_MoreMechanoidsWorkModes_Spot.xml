@@ -9,6 +9,9 @@
 	<defName>WVC_IdleOptimization_MechanoidShutdownSpot</defName>
 	<label>mechanoid shutdown spot</label>
 	<description>Mechanoids will return here before shutting down.\n\n&lt;color=#f5ffa2&gt;Note:&lt;/color&gt; Mechanoids will return here if there are no other spots. Except ambush.</description>
+	<descriptionHyperlinks>
+	  <ConceptDef>WVC_MMWM_BehaviorsGuide</ConceptDef>
+	</descriptionHyperlinks>
 	<graphicData>
 	  <texPath>WVC/Spots/MechanoidShutdownSpot</texPath>
 	  <graphicClass>Graphic_Single</graphicClass>

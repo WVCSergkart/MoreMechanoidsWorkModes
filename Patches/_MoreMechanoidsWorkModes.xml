@@ -33,18 +33,20 @@
 			<workMode>WVC_FindAndDestroy</workMode>
 			<subNodes>
 			  <!-- = -->
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>65</targetAcquireRadius>
+				<targetKeepRadius>72</targetKeepRadius>
+			  </li>
 			  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
 				<subNodes>
-				  <li Class="JobGiver_AIFightEnemies">
-					<targetAcquireRadius>65</targetAcquireRadius>
-					<targetKeepRadius>72</targetKeepRadius>
-				  </li>
 				  <li Class="JobGiver_AIGotoNearestHostile" />
 				</subNodes>
 			  </li>
 			  <!-- = -->
 			  <li Class="JobGiver_SeekAllowedArea" />
-			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				<tickInterval>625</tickInterval>
+			  </li>
 			  <li Class="JobGiver_WanderColony">
 				<maxDanger>Deadly</maxDanger>
 				<reportStringOverride>Patrolling.</reportStringOverride>
@@ -58,18 +60,20 @@
 			<workMode>WVC_WaitEnemy</workMode>
 			<subNodes>
 			  <!-- = -->
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>65</targetAcquireRadius>
+				<targetKeepRadius>72</targetKeepRadius>
+			  </li>
 			  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
 				<subNodes>
-				  <li Class="JobGiver_AIFightEnemies">
-					<targetAcquireRadius>65</targetAcquireRadius>
-					<targetKeepRadius>72</targetKeepRadius>
-				  </li>
 				  <li Class="JobGiver_AIGotoNearestHostile" />
 				</subNodes>
 			  </li>
 			  <!-- = -->
 			  <li Class="JobGiver_SeekAllowedArea" />
-			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				<tickInterval>625</tickInterval>
+			  </li>
 			  <!-- Go to spot -->
 			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
 				<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
@@ -91,22 +95,28 @@
 			<workMode>WVC_WorkAndWaitEnemy</workMode>
 			<subNodes>
 			  <!-- = -->
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>65</targetAcquireRadius>
+				<targetKeepRadius>72</targetKeepRadius>
+			  </li>
 			  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
 				<subNodes>
-				  <li Class="JobGiver_AIFightEnemies">
-					<targetAcquireRadius>65</targetAcquireRadius>
-					<targetKeepRadius>72</targetKeepRadius>
-				  </li>
 				  <li Class="JobGiver_AIGotoNearestHostile" />
 				</subNodes>
 			  </li>
 			  <!-- = -->
+			  <!-- Charge -->
 			  <li Class="JobGiver_SeekAllowedArea" />
 			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <!-- END Charge -->
 			  <li Class="JobGiver_Work">
 				<emergency>true</emergency>
 			  </li>
 			  <li Class="JobGiver_Work" />
+			  <!-- Go to smart charge -->
+			  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				<tickInterval>625</tickInterval>
+			  </li>
 			  <!-- Go to spot -->
 			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
 				<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
@@ -193,6 +203,10 @@
 				  </li>
 				</subNodes>
 			  </li>
+			  <!-- Go to smart charge -->
+			  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				<tickInterval>625</tickInterval>
+			  </li>
 			  <!-- Go to spot -->
 			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
 				<!-- Any ThingDef that can be stepped on -->
@@ -247,6 +261,10 @@
 					<targetKeepRadius>72</targetKeepRadius>
 				  </li>
 				</subNodes>
+			  </li>
+			  <!-- Go to smart charge -->
+			  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				<tickInterval>625</tickInterval>
 			  </li>
 			  <!-- Go to spot -->
 			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
@@ -306,7 +324,10 @@
 				  <li Class="JobGiver_WanderOverseer" />
 				</subNodes>
 			  </li>
-			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <!-- Go to smart charge -->
+			  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				<tickInterval>625</tickInterval>
+			  </li>
 			  <!-- Go to spot -->
 			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
 				<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ConceptDef>
+	<defName>WVC_MMWM_BehaviorsGuide</defName>
+	<label>More Mechanoids Work Modes - Behaviors</label>
+	<priority>1000</priority>
+	<needsOpportunity>false</needsOpportunity>
+	<description>The mod adds some unique behaviors worth knowing about.
+
+-
+Checking for enemies on the map - if the enemy is reachable and is not in the zone in which the mechanoid operates, then False is returned and the mechanoid will continue to work normally.
+
+What does it mean:
+If you enable the "Work if safe" mode and limit the working area, the mechanoid will ignore the intrusion until the enemy is in the mechanoid's working area.
+
+If you have enabled the "Find and destroy" mode and locked the mechanoids in a small but open area, then the mechanoid will not pursue enemies, but will try to fight with the enemy that is in the field of view of the mechanoid. This can lead to too smart AI kiting your mechs.
+
+-
+Smart charging - in some modes, mechanoids will automatically charge up to 95%, ignoring the charging rules. However, unlike vanilla charging, mechanoids will be interrupted if necessary.
+
+-
+Shutdown mode - some work modes disable mechanoids for optimization when they are not doing anything. In work modes, the cooldown is much longer than in combat.
+
+-
+Finding a Spot - Mechanoids that have finished all their business and are going to sleep will go to the nearest such spot if it is in the zone accessible to them. The description of the spot contains the supported modes and an approximate search condition.</description>
+	<helpText>The mod adds some unique behaviors worth knowing about.
+
+-
+Checking for enemies on the map - if the enemy is reachable and is not in the zone in which the mechanoid operates, then False is returned and the mechanoid will continue to work normally.
+
+What does it mean:
+If you enable the "Work if safe" mode and limit the working area, the mechanoid will ignore the intrusion until the enemy is in the mechanoid's working area.
+
+If you have enabled the "Find and destroy" mode and locked the mechanoids in a small but open area, then the mechanoid will not pursue enemies, but will try to fight with the enemy that is in the field of view of the mechanoid. This can lead to too smart AI kiting your mechs.
+
+-
+Smart charging - in some modes, mechanoids will automatically charge up to 95%, ignoring the charging rules. However, unlike vanilla charging, mechanoids will be interrupted if necessary.
+
+-
+Shutdown mode - some work modes disable mechanoids for optimization when they are not doing anything. In work modes, the cooldown is much longer than in combat.
+
+-
+Finding a Spot - Mechanoids that have finished all their business and are going to sleep will go to the nearest such spot if it is in the zone accessible to them. The description of the spot contains the supported modes and an approximate search condition.</helpText>
+  </ConceptDef>
+
+
+</Defs>

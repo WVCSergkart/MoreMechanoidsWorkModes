@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <MechWorkModeDef>
+  <MechWorkModeDef Name="WVC_MMVM_MechWorkMode_Base" Abstract="True">
+	<label>TEST</label>
+	<description>TEST</description>
+	<descriptionHyperlinks>
+	  <ConceptDef>WVC_MMWM_BehaviorsGuide</ConceptDef>
+	</descriptionHyperlinks>
+	<uiOrder>1</uiOrder>
+	<iconPath>WVC/UI/MechWork/DefendYourself</iconPath>
+  </MechWorkModeDef>
+
+  <!-- =========================================== -->
+
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_DefendYourself</defName>
 	<label>defend yourself</label>
 	<description>Mechanoid, regardless of type, will attack enemies that get too close.</description>
@@ -11,7 +23,7 @@
 
   <!-- =========================================== -->
 
-  <MechWorkModeDef>
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_FindAndDestroy</defName>
 	<label>find and destroy</label>
 	<description>Mechanoids, regardless of their type, will look for enemies and try to destroy them.</description>
@@ -19,7 +31,7 @@
 	<iconPath>WVC/UI/MechWork/FindAndDestroy</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef>
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_WaitEnemy</defName>
 	<label>wait enemy</label>
 	<description>The mechanoid will shutdown and wait for the enemy, and when it appears, it will wake up and head towards the target.</description>
@@ -27,7 +39,7 @@
 	<iconPath>WVC/UI/MechWork/WaitEnemy</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef>
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_WorkAndWaitEnemy</defName>
 	<label>work and wait</label>
 	<description>Mechanoids, depending on the type, will work, and when an enemy appears, they will drop everything and go to destroy him. If they don't have a job, they'll just shutdown.</description>
@@ -35,7 +47,7 @@
 	<iconPath>WVC/UI/MechWork/WorkAndWaitEnemy</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef>
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_Ambush</defName>
 	<label>ambush</label>
 	<description>The mechanoid shutdown and waits for the enemy to approach it, then attacks.</description>
@@ -45,7 +57,7 @@
 
   <!-- =========================================== -->
 
-  <MechWorkModeDef>
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_WorkAndRecharge</defName>
 	<label>work and recharge</label>
 	<description>Work autonomously according to mechanoid type. If the mechanoid cannot work or it has done all the work it shutdown.</description>
@@ -53,7 +65,7 @@
 	<iconPath>WVC/UI/MechWork/WorkAndRecharge</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef>
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_SafeWorkAndRecharge</defName>
 	<label>work if safe</label>
 	<description>Mechanoids will work, but only as long as there are no enemies on the map. In case of danger, they will try to get to the &lt;color=#f5ffa2&gt;safe spot&lt;/color&gt;.</description>
@@ -63,7 +75,7 @@
 
   <!-- =========================================== -->
 
-  <MechWorkModeDef>
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_WorkRechargeEscort</defName>
 	<label>work, recharge and escort</label>
 	<description>The mechanoid will accompany the overseer if it does not have a job, and will also be charged if necessary.</description>
@@ -71,7 +83,7 @@
 	<iconPath>WVC/UI/MechWork/WorkAndEscort</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef>
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_EscortIfEnemyOnMap</defName>
 	<label>escort if enemy</label>
 	<description>Mechanoids, regardless of type, will accompany the overseer, but only if there is an enemy on the map. When there is no enemy, mechanoids shutdown.</description>
@@ -79,7 +91,7 @@
 	<iconPath>WVC/UI/MechWork/EscortIfEnemyOnMap</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef>
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_EscaortAndRecharge</defName>
 	<label>escort and recharge</label>
 	<description>The mechanoid, regardless of its type, will accompany the overseer and, if necessary, go to charge.</description>
