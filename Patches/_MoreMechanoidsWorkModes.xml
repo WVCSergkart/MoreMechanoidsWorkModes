@@ -21,18 +21,27 @@
 	  </operations>
 	</Operation>
 
+	<!-- =========================================================== -->
+
 	<Operation Class="PatchOperationAdd">
 	  <xpath>/Defs/ThinkTreeDef[defName="Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath> 
 	  <value>
+
+		  <!-- =========================================================== -->
+
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_FindAndDestroy</workMode>
 			<subNodes>
 			  <!-- = -->
-			  <li Class="JobGiver_AIFightEnemies">
-				<targetAcquireRadius>65</targetAcquireRadius>
-				<targetKeepRadius>72</targetKeepRadius>
+			  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
+				<subNodes>
+				  <li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>65</targetAcquireRadius>
+					<targetKeepRadius>72</targetKeepRadius>
+				  </li>
+				  <li Class="JobGiver_AIGotoNearestHostile" />
+				</subNodes>
 			  </li>
-			  <li Class="JobGiver_AIGotoNearestHostile" />
 			  <!-- = -->
 			  <li Class="JobGiver_SeekAllowedArea" />
 			  <li Class="JobGiver_GetEnergy_Charger" />
@@ -42,16 +51,22 @@
 			  </li>
 			</subNodes>
 		  </li>
-		  <!-- = -->
+
+		  <!-- =========================================================== -->
+
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_WaitEnemy</workMode>
 			<subNodes>
 			  <!-- = -->
-			  <li Class="JobGiver_AIFightEnemies">
-				<targetAcquireRadius>65</targetAcquireRadius>
-				<targetKeepRadius>72</targetKeepRadius>
+			  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
+				<subNodes>
+				  <li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>65</targetAcquireRadius>
+					<targetKeepRadius>72</targetKeepRadius>
+				  </li>
+				  <li Class="JobGiver_AIGotoNearestHostile" />
+				</subNodes>
 			  </li>
-			  <li Class="JobGiver_AIGotoNearestHostile" />
 			  <!-- = -->
 			  <li Class="JobGiver_SeekAllowedArea" />
 			  <li Class="JobGiver_GetEnergy_Charger" />
@@ -69,16 +84,22 @@
 			  </li>
 			</subNodes>
 		  </li>
-		  <!-- = -->
+
+		  <!-- =========================================================== -->
+
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_WorkAndWaitEnemy</workMode>
 			<subNodes>
 			  <!-- = -->
-			  <li Class="JobGiver_AIFightEnemies">
-				<targetAcquireRadius>65</targetAcquireRadius>
-				<targetKeepRadius>72</targetKeepRadius>
+			  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
+				<subNodes>
+				  <li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>65</targetAcquireRadius>
+					<targetKeepRadius>72</targetKeepRadius>
+				  </li>
+				  <li Class="JobGiver_AIGotoNearestHostile" />
+				</subNodes>
 			  </li>
-			  <li Class="JobGiver_AIGotoNearestHostile" />
 			  <!-- = -->
 			  <li Class="JobGiver_SeekAllowedArea" />
 			  <li Class="JobGiver_GetEnergy_Charger" />
@@ -100,7 +121,9 @@
 			  </li>
 			</subNodes>
 		  </li>
-		  <!-- = -->
+
+		  <!-- =========================================================== -->
+
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_Ambush</workMode>
 			<subNodes>
@@ -128,7 +151,9 @@
 			  </li>
 			</subNodes>
 		  </li>
-		  <!-- = -->
+
+		  <!-- =========================================================== -->
+
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_DefendYourself</workMode>
 			<subNodes>
@@ -147,7 +172,9 @@
 			  </li>
 			</subNodes>
 		  </li>
-		  <!-- = -->
+
+		  <!-- =========================================================== -->
+
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_WorkAndRecharge</workMode>
 			<subNodes>
@@ -177,9 +204,6 @@
 				<!-- Default 9999 -->
 				<!-- <maxDistanceForSpot>9999</maxDistanceForSpot> -->
 			  </li>
-			  <!-- <li Class="WVC.JobGiver_GoToClosetShutdownSpot"> -->
-				<!-- <spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName> -->
-			  <!-- </li> -->
 			  <!-- Shutdown long -->
 			  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
 				<!-- Default 3000 -->
@@ -188,7 +212,9 @@
 			  </li>
 			</subNodes>
 		  </li>
-		  <!-- = -->
+
+		  <!-- =========================================================== -->
+
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_SafeWorkAndRecharge</workMode>
 			<subNodes>
@@ -232,19 +258,9 @@
 			  </li>
 			</subNodes>
 		  </li>
-		  <!-- = -->
-		  <!-- <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech"> -->
-			<!-- <workMode>WVC_WanderAndRescue</workMode> -->
-			<!-- <subNodes> -->
-			  <!-- <li Class="JobGiver_SeekAllowedArea" /> -->
-			  <!-- <li Class="JobGiver_RescueNearby" /> -->
-			  <!-- <li Class="JobGiver_WanderColony"> -->
-				<!-- <maxDanger>Deadly</maxDanger> -->
-				<!-- <reportStringOverride>Looking for the downed.</reportStringOverride> -->
-			  <!-- </li> -->
-			<!-- </subNodes> -->
-		  <!-- </li> -->
-		  <!-- = -->
+
+		  <!-- =========================================================== -->
+
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_EscaortAndRecharge</workMode>
 			<subNodes>
@@ -256,7 +272,9 @@
 			  <li Class="JobGiver_WanderOverseer" />
 			</subNodes>
 		  </li>
-		  <!-- = -->
+
+		  <!-- =========================================================== -->
+
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_WorkRechargeEscort</workMode>
 			<subNodes>
@@ -273,7 +291,9 @@
 			  <li Class="JobGiver_WanderOverseer" />
 			</subNodes>
 		  </li>
-		  <!-- = -->
+
+		  <!-- =========================================================== -->
+
 		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 			<workMode>WVC_EscortIfEnemyOnMap</workMode>
 			<subNodes>
@@ -299,6 +319,9 @@
 			  </li>
 			</subNodes>
 		  </li>
+
+		  <!-- =========================================================== -->
+
 	  </value>
 	</Operation>
 
