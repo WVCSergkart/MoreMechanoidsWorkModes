@@ -4,9 +4,9 @@
   <MechWorkModeDef Name="WVC_MMVM_MechWorkMode_Base" Abstract="True">
 	<label>TEST</label>
 	<description>TEST</description>
-	<descriptionHyperlinks>
-	  <ConceptDef>WVC_MMWM_BehaviorsGuide</ConceptDef>
-	</descriptionHyperlinks>
+	<!-- <descriptionHyperlinks> -->
+	  <!-- <ConceptDef>WVC_MMWM_BehaviorsGuide</ConceptDef> -->
+	<!-- </descriptionHyperlinks> -->
 	<uiOrder>1</uiOrder>
 	<iconPath>WVC/UI/MechWork/DefendYourself</iconPath>
   </MechWorkModeDef>
