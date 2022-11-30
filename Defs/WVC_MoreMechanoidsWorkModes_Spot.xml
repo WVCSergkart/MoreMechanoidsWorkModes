@@ -18,8 +18,8 @@
 	</graphicData>
     <!-- <tickerType>Normal</tickerType> -->
     <!-- <altitudeLayer>Building</altitudeLayer> -->
-	<!-- <altitudeLayer>FloorEmplacement</altitudeLayer> -->
-	<altitudeLayer>FloorCoverings</altitudeLayer>
+	<altitudeLayer>FloorEmplacement</altitudeLayer>
+	<!-- <altitudeLayer>Zone</altitudeLayer> -->
 	<statBases>
 	  <WorkToBuild>0</WorkToBuild>
 	</statBases>
@@ -27,6 +27,7 @@
 	<scatterableOnMapGen>false</scatterableOnMapGen>
 	<useHitPoints>False</useHitPoints>
 	<uiOrder>2000</uiOrder>
+	<preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
 	<passability>Standable</passability>
 	<!-- <hasInteractionCell>true</hasInteractionCell> -->
 	<!-- <interactionCellOffset>(0,0,0)</interactionCellOffset> -->
@@ -35,10 +36,11 @@
 	<specialDisplayRadius>8.9</specialDisplayRadius>
 	<designatorDropdown>WVC_IOMSS_Spots</designatorDropdown>
 	<building>
+	  <spawnedConceptLearnOpportunity>WVC_MMWM_BehaviorsGuide</spawnedConceptLearnOpportunity>
 	  <isEdifice>false</isEdifice>
 	  <!-- <sowTag>SupportPlantsOnly</sowTag> -->
-	  <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
-	  <ai_chillDestination>false</ai_chillDestination>
+	  <!-- <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant> -->
+	  <!-- <ai_chillDestination>false</ai_chillDestination> -->
 	  <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
 	  <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
 	</building>
