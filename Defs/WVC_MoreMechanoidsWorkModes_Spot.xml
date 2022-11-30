@@ -18,7 +18,8 @@
 	</graphicData>
     <!-- <tickerType>Normal</tickerType> -->
     <!-- <altitudeLayer>Building</altitudeLayer> -->
-	<altitudeLayer>FloorEmplacement</altitudeLayer>
+	<!-- <altitudeLayer>FloorEmplacement</altitudeLayer> -->
+	<altitudeLayer>FloorCoverings</altitudeLayer>
 	<statBases>
 	  <WorkToBuild>0</WorkToBuild>
 	</statBases>
@@ -34,7 +35,8 @@
 	<specialDisplayRadius>8.9</specialDisplayRadius>
 	<designatorDropdown>WVC_IOMSS_Spots</designatorDropdown>
 	<building>
-	  <sowTag>SupportPlantsOnly</sowTag>
+	  <isEdifice>false</isEdifice>
+	  <!-- <sowTag>SupportPlantsOnly</sowTag> -->
 	  <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
 	  <ai_chillDestination>false</ai_chillDestination>
 	  <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
