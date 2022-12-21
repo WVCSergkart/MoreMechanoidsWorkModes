@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
-	<WVC_MMWM_Settings>More Mechanoids Work Modes</WVC_MMWM_Settings>
+	<WVC_MMWM_Settings>Work Modes</WVC_MMWM_Settings>
 
 	<WVC_Label_FindAndDestroy>Find and destroy</WVC_Label_FindAndDestroy>
 	<WVC_Label_WaitEnemy>Wait enemy</WVC_Label_WaitEnemy>
