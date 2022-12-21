@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<WVC_MMWM_Settings>More Mechanoids Work Modes</WVC_MMWM_Settings>
+
+	<WVC_Label_FindAndDestroy>Find and destroy</WVC_Label_FindAndDestroy>
+	<WVC_Label_WaitEnemy>Wait enemy</WVC_Label_WaitEnemy>
+	<WVC_Label_WorkAndWaitEnemy>Work and wait</WVC_Label_WorkAndWaitEnemy>
+	<WVC_Label_DefendYourself>Defend yourself</WVC_Label_DefendYourself>
+	<WVC_Label_Ambush>Ambush</WVC_Label_Ambush>
+	<WVC_Label_WorkAndRecharge>Work and recharge</WVC_Label_WorkAndRecharge>
+	<WVC_Label_SafeWorkAndRecharge>Work if safe</WVC_Label_SafeWorkAndRecharge>
+	<WVC_Label_EscaortAndRecharge>Escort and recharge</WVC_Label_EscaortAndRecharge>
+	<WVC_Label_WorkRechargeEscort>Work, recharge and escort</WVC_Label_WorkRechargeEscort>
+	<WVC_Label_EscortIfEnemyOnMap>Escort if enemy</WVC_Label_EscortIfEnemyOnMap>
+	<WVC_ToolTip_Setting>Disable is incompatible with saves. A restart is required to apply the settings.</WVC_ToolTip_Setting>
+
+</LanguageData>
