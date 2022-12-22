@@ -4,7 +4,7 @@
   <ConceptDef>
 	<defName>WVC_MMWM_BehaviorsGuide</defName>
 	<label>More Mechanoids Work Modes - Behaviors</label>
-	<priority>1000</priority>
+	<priority>-1000</priority>
 	<needsOpportunity>false</needsOpportunity>
 	<!-- For hyper link -->
 	<description>The mod adds some unique behaviors worth knowing about.
@@ -30,11 +30,6 @@ Finding a Spot - Mechanoids that have finished all their business and are going 
 
 -
 Checking for enemies on the map - if the enemy is reachable and is not in the zone in which the mechanoid operates, then False is returned and the mechanoid will continue to work normally.
-
-What does it mean:
-If you enable the "Work if safe" mode and limit the working area, the mechanoid will ignore the intrusion until the enemy is in the mechanoid's working area.
-
-If you have enabled the "Find and destroy" mode and locked the mechanoids in a small but open area, then the mechanoid will not pursue enemies, but will try to fight with the enemy that is in the field of view of the mechanoid. This can lead to too smart AI kiting your mechs.
 
 -
 Smart charge - In some modes, mechanoids will try to maintain close to the maximum charge. This is calculated according to the formula (Maximum charge level - 5), that is, if you set the charge to 100%, the mechanoids will be charged up to 95%, and so on. However, unlike vanilla charging, mechanoids will be interrupted if necessary.
