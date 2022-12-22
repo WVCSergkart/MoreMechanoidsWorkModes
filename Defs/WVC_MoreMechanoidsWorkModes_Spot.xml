@@ -26,7 +26,7 @@
 	<rotatable>false</rotatable>
 	<scatterableOnMapGen>false</scatterableOnMapGen>
 	<useHitPoints>False</useHitPoints>
-	<uiOrder>2000</uiOrder>
+	<uiOrder>0</uiOrder>
 	<preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
 	<passability>Standable</passability>
 	<!-- <hasInteractionCell>true</hasInteractionCell> -->
@@ -36,7 +36,7 @@
 	<specialDisplayRadius>8.9</specialDisplayRadius>
 	<designatorDropdown>WVC_IOMSS_Spots</designatorDropdown>
 	<building>
-	  <spawnedConceptLearnOpportunity>WVC_MMWM_BehaviorsGuide</spawnedConceptLearnOpportunity>
+	  <!-- <spawnedConceptLearnOpportunity>WVC_MMWM_BehaviorsGuide</spawnedConceptLearnOpportunity> -->
 	  <isEdifice>false</isEdifice>
 	  <!-- <sowTag>SupportPlantsOnly</sowTag> -->
 	  <!-- <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant> -->
