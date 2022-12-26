@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WVC_MMWM_Settings>工作模式</WVC_MMWM_Settings>
+
+  <WVC_Label_FindAndDestroy>殲滅</WVC_Label_FindAndDestroy>
+  <WVC_Label_WaitEnemy>待命</WVC_Label_WaitEnemy>
+  <WVC_Label_WorkAndWaitEnemy>役兵</WVC_Label_WorkAndWaitEnemy>
+  <WVC_Label_DefendYourself>自衛</WVC_Label_DefendYourself>
+  <WVC_Label_Ambush>伏擊</WVC_Label_Ambush>
+  <WVC_Label_WorkAndRecharge>工人</WVC_Label_WorkAndRecharge>
+  <WVC_Label_SafeWorkAndRecharge>自保</WVC_Label_SafeWorkAndRecharge>
+  <WVC_Label_EscaortAndRecharge>護衛</WVC_Label_EscaortAndRecharge>
+  <WVC_Label_WorkRechargeEscort>侍衛</WVC_Label_WorkRechargeEscort>
+  <WVC_Label_EscortIfEnemyOnMap>守衛</WVC_Label_EscortIfEnemyOnMap>
+  <WVC_ToolTip_Setting>禁用與保存不兼容。需要重新啟動才能應用設置。</WVC_ToolTip_Setting>
+
+</LanguageData>
