@@ -49,7 +49,7 @@
   <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
 	<defName>WVC_IOMSS_WorkAndRecharge</defName>
 	<label>worker spot</label>
-	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Work and recharge"&lt;/color&gt; mod will return here.</description>
+	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Work and recharge"&lt;/color&gt; mode will return here.</description>
 	<descriptionHyperlinks>
 	  <MechWorkModeDef>WVC_WorkAndRecharge</MechWorkModeDef>
 	  <MechWorkModeDef>WVC_SafeWorkAndRecharge</MechWorkModeDef>
@@ -74,7 +74,7 @@
   <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
 	<defName>WVC_IOMSS_Ambush</defName>
 	<label>ambush spot</label>
-	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Ambush"&lt;/color&gt; mod will return here.</description>
+	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Ambush"&lt;/color&gt; mode will return here.</description>
 	<descriptionHyperlinks>
 	  <MechWorkModeDef>WVC_Ambush</MechWorkModeDef>
 	</descriptionHyperlinks>
@@ -86,7 +86,7 @@
   <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
 	<defName>WVC_IOMSS_WaitEnemy</defName>
 	<label>waiting spot</label>
-	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Wait enemy"&lt;/color&gt; or &lt;color=#f5ffa2&gt;"Work and wait"&lt;/color&gt; or &lt;color=#f5ffa2&gt;"Escort if enemy"&lt;/color&gt; mod will return here.</description>
+	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Wait enemy"&lt;/color&gt; or &lt;color=#f5ffa2&gt;"Work and wait"&lt;/color&gt; or &lt;color=#f5ffa2&gt;"Escort if enemy"&lt;/color&gt; mode will return here.</description>
 	<descriptionHyperlinks>
 	  <MechWorkModeDef>WVC_WaitEnemy</MechWorkModeDef>
 	  <MechWorkModeDef>WVC_WorkAndWaitEnemy</MechWorkModeDef>

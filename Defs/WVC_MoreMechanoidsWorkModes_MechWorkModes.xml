@@ -34,7 +34,9 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_WaitEnemy</defName>
 	<label>wait enemy</label>
-	<description>The mechanoid will shutdown and wait for the enemy, and when it appears, it will wake up and head towards the target.</description>
+	<description>The mechanoid will shutdown and wait for the enemy, and when it appears, it will wake up and head towards the target.
+
+&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Waiting spot"</description>
 	<uiOrder>50</uiOrder>
 	<iconPath>WVC/UI/MechWork/WaitEnemy</iconPath>
   </MechWorkModeDef>
@@ -42,7 +44,9 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_WorkAndWaitEnemy</defName>
 	<label>work and wait</label>
-	<description>Mechanoids, depending on the type, will work, and when an enemy appears, they will drop everything and go to destroy him. If they don't have a job, they'll just shutdown.</description>
+	<description>Mechanoids, depending on the type, will work, and when an enemy appears, they will drop everything and go to destroy him. If they don't have a job, they'll just shutdown.
+
+&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Waiting spot"</description>
 	<uiOrder>60</uiOrder>
 	<iconPath>WVC/UI/MechWork/WorkAndWaitEnemy</iconPath>
   </MechWorkModeDef>
@@ -50,7 +54,9 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_Ambush</defName>
 	<label>ambush</label>
-	<description>The mechanoid shutdown and waits for the enemy to approach it, then attacks.</description>
+	<description>The mechanoid shutdown and waits for the enemy to approach it, then attacks.
+
+&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Ambush spot"</description>
 	<uiOrder>70</uiOrder>
 	<iconPath>WVC/UI/MechWork/Ambush</iconPath>
   </MechWorkModeDef>
@@ -60,7 +66,9 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_WorkAndRecharge</defName>
 	<label>work and recharge</label>
-	<description>Work autonomously according to mechanoid type. If the mechanoid cannot work or it has done all the work it shutdown.</description>
+	<description>Work autonomously according to mechanoid type. If the mechanoid cannot work or it has done all the work it shutdown.
+
+&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Worker spot"</description>
 	<uiOrder>110</uiOrder>
 	<iconPath>WVC/UI/MechWork/WorkAndRecharge</iconPath>
   </MechWorkModeDef>
@@ -68,7 +76,9 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_SafeWorkAndRecharge</defName>
 	<label>work if safe</label>
-	<description>Mechanoids will work, but only as long as there are no enemies on the map. In case of danger, they will try to get to the &lt;color=#f5ffa2&gt;safe spot&lt;/color&gt;.</description>
+	<description>Mechanoids will work, but only as long as there are no enemies on the map. In case of danger, they will try to get to the &lt;color=#f5ffa2&gt;safe spot&lt;/color&gt;.
+
+&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Safe spot"</description>
 	<uiOrder>110</uiOrder>
 	<iconPath>WVC/UI/MechWork/SafeWorkAndRecharge</iconPath>
   </MechWorkModeDef>
@@ -86,7 +96,9 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_EscortIfEnemyOnMap</defName>
 	<label>escort if enemy</label>
-	<description>Mechanoids, regardless of type, will accompany the overseer, but only if there is an enemy on the map. When there is no enemy, mechanoids shutdown.</description>
+	<description>Mechanoids, regardless of type, will accompany the overseer, but only if there is an enemy on the map. When there is no enemy, mechanoids shutdown.
+
+&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Waiting spot"</description>
 	<uiOrder>190</uiOrder>
 	<iconPath>WVC/UI/MechWork/EscortIfEnemyOnMap</iconPath>
   </MechWorkModeDef>
