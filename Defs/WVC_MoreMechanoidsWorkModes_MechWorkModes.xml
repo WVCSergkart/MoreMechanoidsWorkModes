@@ -16,7 +16,12 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_DefendYourself</defName>
 	<label>defend yourself</label>
-	<description>Mechanoid, regardless of type, will attack enemies that get too close.</description>
+	<description>Mechanoid, regardless of type, will attack enemies that get too close.
+
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; None
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>10</uiOrder>
 	<iconPath>WVC/UI/MechWork/DefendYourself</iconPath>
   </MechWorkModeDef>
@@ -26,7 +31,12 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_FindAndDestroy</defName>
 	<label>find and destroy</label>
-	<description>Mechanoids, regardless of their type, will look for enemies and try to destroy them.</description>
+	<description>Mechanoids, regardless of their type, will look for enemies and try to destroy them.
+
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; Yes
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 	<uiOrder>50</uiOrder>
 	<iconPath>WVC/UI/MechWork/FindAndDestroy</iconPath>
   </MechWorkModeDef>
@@ -36,7 +46,10 @@
 	<label>wait enemy</label>
 	<description>The mechanoid will shutdown and wait for the enemy, and when it appears, it will wake up and head towards the target.
 
-&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Waiting spot"</description>
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; Yes
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; Waiting spot
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>50</uiOrder>
 	<iconPath>WVC/UI/MechWork/WaitEnemy</iconPath>
   </MechWorkModeDef>
@@ -46,7 +59,10 @@
 	<label>work and wait</label>
 	<description>Mechanoids, depending on the type, will work, and when an enemy appears, they will drop everything and go to destroy him. If they don't have a job, they'll just shutdown.
 
-&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Waiting spot"</description>
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Universal
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; Yes
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; Waiting spot
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 	<uiOrder>60</uiOrder>
 	<iconPath>WVC/UI/MechWork/WorkAndWaitEnemy</iconPath>
   </MechWorkModeDef>
@@ -56,7 +72,10 @@
 	<label>ambush</label>
 	<description>The mechanoid shutdown and waits for the enemy to approach it, then attacks.
 
-&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Ambush spot"</description>
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; Ambush spot
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>70</uiOrder>
 	<iconPath>WVC/UI/MechWork/Ambush</iconPath>
   </MechWorkModeDef>
@@ -68,7 +87,10 @@
 	<label>work and recharge</label>
 	<description>Work autonomously according to mechanoid type. If the mechanoid cannot work or it has done all the work it shutdown.
 
-&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Worker spot"</description>
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Work
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; Worker spot
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 	<uiOrder>110</uiOrder>
 	<iconPath>WVC/UI/MechWork/WorkAndRecharge</iconPath>
   </MechWorkModeDef>
@@ -78,7 +100,10 @@
 	<label>work if safe</label>
 	<description>Mechanoids will work, but only as long as there are no enemies on the map. In case of danger, they will try to get to the &lt;color=#f5ffa2&gt;safe spot&lt;/color&gt;.
 
-&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Safe spot"</description>
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Work
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; Yes
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; Safe spot
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 	<uiOrder>110</uiOrder>
 	<iconPath>WVC/UI/MechWork/SafeWorkAndRecharge</iconPath>
   </MechWorkModeDef>
@@ -88,7 +113,12 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_WorkRechargeEscort</defName>
 	<label>work, recharge and escort</label>
-	<description>The mechanoid will accompany the overseer if it does not have a job, and will also be charged if necessary.</description>
+	<description>The mechanoid will accompany the overseer if it does not have a job, and will also be charged if necessary.
+
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Universal
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>150</uiOrder>
 	<iconPath>WVC/UI/MechWork/WorkAndEscort</iconPath>
   </MechWorkModeDef>
@@ -98,7 +128,10 @@
 	<label>escort if enemy</label>
 	<description>Mechanoids, regardless of type, will accompany the overseer, but only if there is an enemy on the map. When there is no enemy, mechanoids shutdown.
 
-&lt;color=#f5ffa2&gt;Uses:&lt;/color&gt; "Waiting spot"</description>
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; Yes
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; Waiting spot
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 	<uiOrder>190</uiOrder>
 	<iconPath>WVC/UI/MechWork/EscortIfEnemyOnMap</iconPath>
   </MechWorkModeDef>
@@ -106,7 +139,12 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_EscaortAndRecharge</defName>
 	<label>escort and recharge</label>
-	<description>The mechanoid, regardless of its type, will accompany the overseer and, if necessary, go to charge.</description>
+	<description>The mechanoid, regardless of its type, will accompany the overseer and, if necessary, go to charge.
+
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>210</uiOrder>
 	<iconPath>WVC/UI/MechWork/EscortAndRecharge</iconPath>
   </MechWorkModeDef>
