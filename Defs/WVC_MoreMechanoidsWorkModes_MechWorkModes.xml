@@ -121,6 +121,7 @@
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>150</uiOrder>
 	<iconPath>WVC/UI/MechWork/WorkAndEscort</iconPath>
+	<workerClass>WorkModeDrawer_Escort</workerClass>
   </MechWorkModeDef>
 
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
@@ -134,6 +135,7 @@
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 	<uiOrder>190</uiOrder>
 	<iconPath>WVC/UI/MechWork/EscortIfEnemyOnMap</iconPath>
+	<workerClass>WorkModeDrawer_Escort</workerClass>
   </MechWorkModeDef>
 
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
@@ -147,6 +149,7 @@
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>210</uiOrder>
 	<iconPath>WVC/UI/MechWork/EscortAndRecharge</iconPath>
+	<workerClass>WorkModeDrawer_Escort</workerClass>
   </MechWorkModeDef>
 
 </Defs>

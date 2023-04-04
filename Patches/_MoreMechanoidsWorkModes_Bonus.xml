@@ -60,6 +60,7 @@
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 						<uiOrder>170</uiOrder>
 						<iconPath>WVC/UI/MechWork/EscortIfEnemyWorkAndRecharge</iconPath>
+						<workerClass>WorkModeDrawer_Escort</workerClass>
 					  </MechWorkModeDef>
 					</value>
 				</li>
