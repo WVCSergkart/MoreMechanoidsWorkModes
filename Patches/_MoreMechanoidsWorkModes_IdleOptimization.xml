@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- =========================================================== -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_Tagger"]/subNodes</xpath>
+		<!-- <success>Always</success> -->
+		<order>Prepend</order>
+		<value>
+		  <li Class="WVC.ThinkNode_ConditionalSettings">
+			<settingName>enableSmartChargingForAllMechanoids</settingName>
+			<subNodes>
+			  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				<tickInterval>625</tickInterval>
+			  </li>
+			</subNodes>
+		  </li>
+		  <li Class="WVC.ThinkNode_ConditionalSettings">
+			<settingName>enableShutdownForAllMechanoids</settingName>
+			<subNodes>
+			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
+				<spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName>
+				<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+			  </li>
+			  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+				<forced>true</forced>
+			  </li>
+			</subNodes>
+		  </li>
+		</value>
+	</Operation>
+
+	<!-- =========================================================== -->
+
+</Patch>

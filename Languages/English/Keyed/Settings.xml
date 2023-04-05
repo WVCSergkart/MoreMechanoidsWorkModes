@@ -3,8 +3,8 @@
 
 	<WVC_MMWM_Settings>Work Modes</WVC_MMWM_Settings>
 
-	<WVC_Label_MainModeLabelSetting>Main mode</WVC_Label_MainModeLabelSetting>
-	<WVC_Label_BonusModeLabelSetting>Bonus mode</WVC_Label_BonusModeLabelSetting>
+	<WVC_Label_MainModeLabelSetting>Main</WVC_Label_MainModeLabelSetting>
+	<WVC_Label_BonusModeLabelSetting>Bonus</WVC_Label_BonusModeLabelSetting>
 
 	<!-- Main -->
 	<WVC_Label_FindAndDestroy>Find and destroy</WVC_Label_FindAndDestroy>
@@ -18,12 +18,12 @@
 	<WVC_Label_WorkRechargeEscort>Work, recharge and escort</WVC_Label_WorkRechargeEscort>
 	<WVC_Label_EscortIfEnemyOnMap>Escort if enemy</WVC_Label_EscortIfEnemyOnMap>
 
-	<WVC_ToolTip_Setting>Disable is incompatible with saves. A restart is required to apply the setting.</WVC_ToolTip_Setting>
+	<WVC_ToolTip_Setting>Before disabling, switch all mechanoid modes to vanilla. A restart is required to apply the settings.</WVC_ToolTip_Setting>
 
 	<!-- Bonus -->
 	<WVC_Label_EscortIfEnemyWorkAndRecharge>Escort if enemy, work and recharge</WVC_Label_EscortIfEnemyWorkAndRecharge>
 
-	<WVC_ToolTip_BonusSetting>Bonus mode. It is disabled by default. Enabling is compatible with saves, disabling is not. A restart is required to apply the setting.</WVC_ToolTip_BonusSetting>
+	<WVC_ToolTip_BonusSetting>Bonus mode. It is disabled by default. Enabling is compatible with saves.</WVC_ToolTip_BonusSetting>
 
 	<WVC_Label_enableShutdownSearching>Enable shutdown spot searching</WVC_Label_enableShutdownSearching>
 	<WVC_ToolTip_enableShutdownSearching>If enabled, mechanoids will search for a spot before shutdown.</WVC_ToolTip_enableShutdownSearching>
@@ -32,5 +32,13 @@
 	<WVC_ToolTip_enableEnemySearching>If enabled, in safe modes, mechanoids will check the map for enemies.</WVC_ToolTip_enableEnemySearching>
 
 	<WVC_ToolTip_enableSearchingWarning>If you don't understand what this option does, leave it enabled.</WVC_ToolTip_enableSearchingWarning>
+
+	<WVC_Label_enableShutdownForAllMechanoids>Idle optimization for vanilla modes</WVC_Label_enableShutdownForAllMechanoids>
+	<WVC_ToolTip_enableShutdownForAllMechanoids>If enabled, idle optimization will also affect vanilla modes.</WVC_ToolTip_enableShutdownForAllMechanoids>
+
+	<WVC_Label_enableSmartChargingForAllMechanoids>Smart charging for vanilla modes</WVC_Label_enableSmartChargingForAllMechanoids>
+	<WVC_ToolTip_enableSmartChargingForAllMechanoids>If enabled, then the mechanoids will go to charge when they are not busy with anything, and not only when the charge runs out.</WVC_ToolTip_enableSmartChargingForAllMechanoids>
+
+	<WVC_ToolTip_VanillaModeOptimizationWarning>Does not affect combat mechanoids, as their idle has been replaced with a simulated patrol.</WVC_ToolTip_VanillaModeOptimizationWarning>
 
 </LanguageData>

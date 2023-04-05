@@ -66,6 +66,7 @@
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/ThingDef[defName="WVC_IOMSS_WorkAndRecharge"]/descriptionHyperlinks</xpath>
+					<success>Always</success>
 					<value>
 					  <MechWorkModeDef>WVC_EscortIfEnemyWorkAndRecharge</MechWorkModeDef>
 					</value>
