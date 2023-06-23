@@ -15,10 +15,22 @@ namespace WVC
 			Pawn overseer = pawn.GetOverseer();
 			if (overseer != null)
 			{
-				if (overseer.Drafted)
+				if (overseer.Drafted && pawn.CanReach(overseer, PathEndMode.OnCell, Danger.Deadly))
 				{
 					return true;
 				}
+				if (overseer.mindState.lastJobTag == JobTag.Fieldwork && pawn.CanReach(overseer, PathEndMode.OnCell, Danger.Deadly))
+				{
+					return true;
+				}
+				// else
+				// {
+					// Pawn carriedBy = overseer.CarriedBy;
+					// if (carriedBy != null && carriedBy.HostileTo(overseer) && pawn.CanReach(carriedBy, PathEndMode.OnCell, Danger.Deadly))
+					// {
+						// return true;
+					// }
+				// }
 			}
 			return false;
 		}
@@ -32,9 +44,17 @@ namespace WVC
 			Pawn overseer = pawn.GetOverseer();
 			if (overseer != null)
 			{
-				if (overseer.Downed)
+				if (overseer.Downed && pawn.CanReach(overseer, PathEndMode.OnCell, Danger.Deadly))
 				{
 					return true;
+				}
+				else
+				{
+					Pawn carriedBy = overseer.CarriedBy;
+					if (carriedBy != null && carriedBy.HostileTo(overseer) && pawn.CanReach(carriedBy, PathEndMode.OnCell, Danger.Deadly))
+					{
+						return true;
+					}
 				}
 			}
 			return false;
