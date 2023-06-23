@@ -89,4 +89,86 @@
 
 	<!-- =========================================================== -->
 
+	<Operation Class="WVC.PatchOperation_MMWM">
+		<settingName>WVC_EscortIfDraftedOrDowned</settingName>
+		<active Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+					<value>
+					  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+						<workMode>WVC_EscortIfDraftedOrDowned</workMode>
+						<subNodes>
+						  <!-- Drafted == true -->
+						  <li Class="WVC.ThinkNode_ConditionalDrafted">
+							<subNodes>
+							  <li Class="JobGiver_AIDefendOverseer" />
+							  <li Class="JobGiver_AIFollowOverseer"/>
+							  <li Class="JobGiver_AIWaitWithOverseer" />
+							  <li Class="JobGiver_WanderOverseer" />
+							</subNodes>
+						  </li>
+						  <!-- Drafted == false -->
+						  <!-- Downed == true -->
+						  <li Class="WVC.ThinkNode_ConditionalDowned">
+							<subNodes>
+							  <li Class="JobGiver_AIDefendOverseer" />
+							  <li Class="JobGiver_AIFollowOverseer"/>
+							  <li Class="JobGiver_AIFightEnemies">
+								<targetAcquireRadius>65</targetAcquireRadius>
+								<targetKeepRadius>72</targetKeepRadius>
+							  </li>
+							  <!-- <li Class="JobGiver_AIWaitWithOverseer" /> -->
+							  <li Class="JobGiver_WanderOverseer" />
+							</subNodes>
+						  </li>
+						  <!-- Downed == false -->
+						  <li Class="JobGiver_SeekAllowedArea" />
+						  <li Class="JobGiver_GetEnergy_Charger" />
+						  <!-- Go to smart charge -->
+						  <li Class="WVC.JobGiver_GetEnergy_Charger">
+							<tickInterval>625</tickInterval>
+						  </li>
+						  <!-- Go to spot -->
+						  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
+							<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+							<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+						  </li>
+						  <!-- Shutdown long -->
+						  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+							<forced>true</forced>
+						  </li>
+						</subNodes>
+					  </li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+					  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+						<defName>WVC_EscortIfDraftedOrDowned</defName>
+						<label>escort if drafted or downed</label>
+						<description>Mechanoids, regardless of type, will accompany an overseer if it is drafted or downed.
+
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; Wait spot
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
+						<uiOrder>175</uiOrder>
+						<iconPath>WVC/UI/MechWork/EscortIfDraftedOrDowned</iconPath>
+						<workerClass>WorkModeDrawer_Escort</workerClass>
+					  </MechWorkModeDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="WVC_IOMSS_WaitEnemy"]/descriptionHyperlinks</xpath>
+					<success>Always</success>
+					<value>
+					  <MechWorkModeDef>WVC_EscortIfDraftedOrDowned</MechWorkModeDef>
+					</value>
+				</li>
+			</operations>
+		</active>
+	</Operation>
+
 </Patch>

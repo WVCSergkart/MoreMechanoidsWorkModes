@@ -21,6 +21,7 @@ namespace WVC
 		public bool WVC_WorkRechargeEscort = true;
 		public bool WVC_EscortIfEnemyOnMap = true;
 		public bool WVC_EscortIfEnemyWorkAndRecharge = false;
+		public bool WVC_EscortIfDraftedOrDowned = false;
 
 		public bool enableShutdownSearching = true;
 		public bool enableEnemySearching = true;
@@ -56,6 +57,7 @@ namespace WVC
 			Scribe_Values.Look(ref WVC_EscortIfEnemyOnMap, "WVC_EscortIfEnemyOnMap", defaultValue: true, true);
 
 			Scribe_Values.Look(ref WVC_EscortIfEnemyWorkAndRecharge, "WVC_EscortIfEnemyWorkAndRecharge", defaultValue: false, true);
+			Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false, true);
 
 			Scribe_Values.Look(ref enableShutdownSearching, "enableShutdownSearching", defaultValue: true, true);
 			Scribe_Values.Look(ref enableEnemySearching, "enableEnemySearching", defaultValue: true, true);
@@ -120,6 +122,7 @@ namespace WVC
 			listingStandard.Label("");
 			listingStandard.Label("WVC_Label_BonusModeLabelSetting".Translate() + ": ");
 			listingStandard.CheckboxLabeled("WVC_Label_EscortIfEnemyWorkAndRecharge".Translate(), ref settings.WVC_EscortIfEnemyWorkAndRecharge, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
+			listingStandard.CheckboxLabeled("WVC_Label_EscortIfDraftedOrDowned".Translate(), ref settings.WVC_EscortIfDraftedOrDowned, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
 			// CheckboxTemplate(listingStandard, "WVC_Label_EscortIfEnemyWorkAndRecharge", settings.WVC_EscortIfEnemyWorkAndRecharge, false);
 
 			listingStandard.Label("");
