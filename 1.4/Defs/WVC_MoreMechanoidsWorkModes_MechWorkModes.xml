@@ -85,7 +85,7 @@
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_WorkAndRecharge</defName>
 	<label>work and recharge</label>
-	<description>Work autonomously according to mechanoid type. If the mechanoid cannot work or it has done all the work it shutdown.
+	<description>Work autonomously according to mechanoid type. If the mechanoid cannot work or it has done all the work it shuts down.
 
 &lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Work
 &lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No

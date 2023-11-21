@@ -12,7 +12,7 @@
 
 Find and destroy - Mechanoids, regardless of their type, will look for enemies and try to destroy them.
 
-Work and recharge - Work autonomously according to mechanoid type. If the mechanoid cannot work or it has done all the work it shutdown.
+Work and recharge - Work autonomously according to mechanoid type. If the mechanoid cannot work or it has done all the work it shuts down.
 
 Escort and recharge - The mechanoid, regardless of its type, will accompany the overseer and, if necessary, go to charge.
 
