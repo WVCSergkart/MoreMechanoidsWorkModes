@@ -22,7 +22,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-	  <xpath>/Defs/DesignationCategoryDef[defName="Biotech"]/specialDesignatorClasses</xpath>
+	  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses</xpath>
 	  <!-- <success>Always</success> -->
 	  <value>
 		<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>

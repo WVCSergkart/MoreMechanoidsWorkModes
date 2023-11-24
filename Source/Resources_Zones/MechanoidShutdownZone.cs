@@ -51,6 +51,18 @@ namespace WVC_WorkModes
 
 		public override void AddCell(IntVec3 sq)
 		{
+			Map map = zoneManager.map;
+			Room room = sq.GetRoom(map);
+			if (room != null && room.IsPrisonCell)
+			{
+				Messages.Message("WVC_ShutdownZoneInPrisonCell".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
+				return;
+			}
+			if (!sq.Standable(map) || sq.GetFirstBuilding(map) != null)
+			{
+				Messages.Message("WVC_ShutdownZoneNotStandable".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
+				return;
+			}
 			base.AddCell(sq);
 		}
 

@@ -78,22 +78,22 @@ namespace WVC_WorkModes
 					{
 						return false;
 					}
-					// Room room = c.GetRoom(map);
-					// if (room != null && room.IsPrisonCell)
-					// {
-						// return false;
-					// }
-					// for (int i = 0; i < GenAdj.CardinalDirections.Length; i++)
-					// {
-						// List<Thing> thingList = (c + GenAdj.CardinalDirections[i]).GetThingList(map);
-						// for (int j = 0; j < thingList.Count; j++)
-						// {
-							// if (thingList[j].def.hasInteractionCell && thingList[j].InteractionCell == c)
-							// {
-								// return false;
-							// }
-						// }
-					// }
+					Room room = c.GetRoom(map);
+					if (room != null && room.IsPrisonCell)
+					{
+						return false;
+					}
+					for (int i = 0; i < GenAdj.CardinalDirections.Length; i++)
+					{
+						List<Thing> thingList = (c + GenAdj.CardinalDirections[i]).GetThingList(map);
+						for (int j = 0; j < thingList.Count; j++)
+						{
+							if (thingList[j].def.hasInteractionCell && thingList[j].InteractionCell == c)
+							{
+								return false;
+							}
+						}
+					}
 					return true;
 				}
 			}

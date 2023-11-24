@@ -56,4 +56,8 @@
 	<WVC_WorkModes_On>On</WVC_WorkModes_On>
 	<WVC_WorkModes_Off>Off</WVC_WorkModes_Off>
 
+	<WVC_ShutdownZoneInPrisonCell>Shutdown zone cannot be in a prison cell.</WVC_ShutdownZoneInPrisonCell>
+	<!-- <WVC_ShutdownZoneNotStandable>Shutdown zone cannot be located on impassable terrain or located on other objects.</WVC_ShutdownZoneNotStandable> -->
+	<WVC_ShutdownZoneNotStandable>Shutdown zone should be standable.</WVC_ShutdownZoneNotStandable>
+
 </LanguageData>

@@ -19,9 +19,12 @@
 		  <li Class="WVC_WorkModes.ThinkNode_ConditionalSettings">
 			<settingName>enableShutdownForAllMechanoids</settingName>
 			<subNodes>
-			  <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot">
-				<spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName>
-				<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+			  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+				<!-- <spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName> -->
+				<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+			  <!-- </li> -->
+			  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+				<workModeType>Work</workModeType>
 			  </li>
 			  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 				<forced>true</forced>
