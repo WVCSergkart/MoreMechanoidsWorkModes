@@ -3,8 +3,9 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 using System.Collections.Generic;
+using WVC;
 
-namespace WVC
+namespace WVC_WorkModes
 {
 	public class ThinkNode_ConditionalEnemyOnMap : ThinkNode_Conditional
 	{

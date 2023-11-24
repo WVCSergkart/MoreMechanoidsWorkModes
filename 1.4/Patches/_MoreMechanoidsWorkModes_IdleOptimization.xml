@@ -8,22 +8,22 @@
 		<!-- <success>Always</success> -->
 		<order>Prepend</order>
 		<value>
-		  <li Class="WVC.ThinkNode_ConditionalSettings">
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalSettings">
 			<settingName>enableSmartChargingForAllMechanoids</settingName>
 			<subNodes>
-			  <li Class="WVC.JobGiver_GetEnergy_Charger">
+			  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
 				<tickInterval>625</tickInterval>
 			  </li>
 			</subNodes>
 		  </li>
-		  <li Class="WVC.ThinkNode_ConditionalSettings">
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalSettings">
 			<settingName>enableShutdownForAllMechanoids</settingName>
 			<subNodes>
-			  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
+			  <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot">
 				<spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName>
 				<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
 			  </li>
-			  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+			  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 				<forced>true</forced>
 			  </li>
 			</subNodes>

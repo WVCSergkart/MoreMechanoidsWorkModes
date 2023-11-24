@@ -83,6 +83,8 @@ namespace WVC
 
 		// private bool mainMode;
 
+		private static Vector2 scrollPosition = Vector2.zero;
+
 		public WVC_MMWM(ModContentPack content) : base(content)
 		{
 			settings = GetSettings<WVC_MMWM_Settings>();
@@ -90,8 +92,14 @@ namespace WVC
 
 		public override void DoSettingsWindowContents(Rect inRect)
 		{
-			Listing_Standard listingStandard = new Listing_Standard();
-			listingStandard.Begin(inRect);
+			Rect outRect = new(inRect.x, inRect.y, inRect.width, inRect.height);
+			// Rect rect = new(0f, 0f, inRect.width, inRect.height);
+			Rect rect = new(0f, 0f, inRect.width - 30f, inRect.height * 2);
+			// var labelRect = new Rect(rect.x + 5, rect.y, 60, 24);
+			// var resetRect = new Rect(labelRect.x, labelRect.yMax + 5, 265, 24f);
+			Widgets.BeginScrollView(outRect, ref scrollPosition, rect);
+			Listing_Standard listingStandard = new();
+			listingStandard.Begin(rect);
 			// CheckboxTemplate(listingStandard, "WVC_Label_DefendYourself", settings.WVC_DefendYourself);
 			// CheckboxTemplate(listingStandard, "WVC_Label_Ambush", settings.WVC_Ambush);
 			// CheckboxTemplate(listingStandard, "WVC_Label_FindAndDestroy", settings.WVC_FindAndDestroy);
@@ -141,7 +149,8 @@ namespace WVC
 				// listingStandard.CheckboxLabeled("WVC_Label_CustomWorkMode_ShouldShouldShutdown".Translate(), ref settings.customMode_MechanoidShouldShutdown, "WVC_ToolTip_CustomWorkMode_ShouldShouldShutdown".Translate());
 
 			listingStandard.End();
-			base.DoSettingsWindowContents(inRect);
+			Widgets.EndScrollView();
+			// base.DoSettingsWindowContents(inRect);
 		}
 
 		public override string SettingsCategory()
@@ -160,25 +169,5 @@ namespace WVC
 				// listingStandard.CheckboxLabeled("WVC_Label_BonusModeLabelSetting".Translate() + ": " + labelName.Translate(), ref settingName, "WVC_ToolTip_Setting".Translate());
 			// }
 		// }
-	}
-
-	public class PatchOperation_MMWM : PatchOperation
-	{
-		public string settingName;
-		public PatchOperation active;
-		public PatchOperation deActive;
-
-		protected override bool ApplyWorker(XmlDocument xml)
-		{
-			if (WVC_MMWM.settings.GetEnabledSettings.Contains(settingName) && active != null)
-			{
-				return active.Apply(xml);
-			}
-			else if (!WVC_MMWM.settings.GetEnabledSettings.Contains(settingName) && deActive != null)
-			{
-				return deActive.Apply(xml);
-			}
-			return true;
-		}
 	}
 }

@@ -42,4 +42,18 @@
 
 	<WVC_ToolTip_VanillaModeOptimizationWarning>Does not affect combat mechanoids, as their idle has been replaced with a simulated patrol.</WVC_ToolTip_VanillaModeOptimizationWarning>
 
+	<!-- Zones -->
+	<WVC_MechanoidShutdownZone>Mechanoid shutdown zone</WVC_MechanoidShutdownZone>
+	<WVC_MechanoidShutdownZoneDesc>Mechanoids will return here before shutting down.</WVC_MechanoidShutdownZoneDesc>
+
+	<WVC_ShutdownZone_AllowWorkers>Work type</WVC_ShutdownZone_AllowWorkers>
+	<WVC_ShutdownZone_AllowSafe>Safe type</WVC_ShutdownZone_AllowSafe>
+	<WVC_ShutdownZone_AllowCombatants>Combat type</WVC_ShutdownZone_AllowCombatants>
+	<WVC_ShutdownZone_AllowAmbush>Ambush type</WVC_ShutdownZone_AllowAmbush>
+
+	<WVC_ShutdownZone_BasicDesc>Responsible for whether mechanoids with this type of work will be able to shutdown here.</WVC_ShutdownZone_BasicDesc>
+
+	<WVC_WorkModes_On>On</WVC_WorkModes_On>
+	<WVC_WorkModes_Off>Off</WVC_WorkModes_Off>
+
 </LanguageData>

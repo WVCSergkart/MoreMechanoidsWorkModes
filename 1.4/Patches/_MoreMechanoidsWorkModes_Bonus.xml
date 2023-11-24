@@ -14,7 +14,7 @@
 						<workMode>WVC_EscortIfEnemyWorkAndRecharge</workMode>
 						<subNodes>
 						  <!-- Enemy = true -->
-						  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 							<subNodes>
 							  <li Class="JobGiver_AIDefendOverseer" />
 							  <li Class="JobGiver_AIFollowOverseer"/>
@@ -30,16 +30,19 @@
 						  </li>
 						  <li Class="JobGiver_Work" />
 						  <!-- Go to smart charge -->
-						  <li Class="WVC.JobGiver_GetEnergy_Charger">
+						  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
 							<tickInterval>625</tickInterval>
 						  </li>
 						  <!-- Go to spot -->
-						  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
-							<spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
-							<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+						  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+							<!-- <spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName> -->
+							<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+						  <!-- </li> -->
+						  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+							<workModeType>Work</workModeType>
 						  </li>
 						  <!-- Shutdown long -->
-						  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+						  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 							<forced>true</forced>
 						  </li>
 						</subNodes>
@@ -54,9 +57,9 @@
 						<label>escort if enemy, work and recharge</label>
 						<description>Mechanoids, regardless of their type, will accompany the overseer when an enemy is in their zone of operation. Otherwise, they will work.
 
-&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Universal
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
 &lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; Yes
-&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; Worker spot
+&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; Yes
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 						<uiOrder>170</uiOrder>
 						<iconPath>WVC/UI/MechWork/EscortIfEnemyWorkAndRecharge</iconPath>
@@ -100,7 +103,7 @@
 						<workMode>WVC_EscortIfDraftedOrDowned</workMode>
 						<subNodes>
 						  <!-- Drafted == true -->
-						  <li Class="WVC.ThinkNode_ConditionalDrafted">
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalDrafted">
 							<subNodes>
 							  <li Class="JobGiver_AIDefendOverseer" />
 							  <li Class="JobGiver_AIFollowOverseer"/>
@@ -110,7 +113,7 @@
 						  </li>
 						  <!-- Drafted == false -->
 						  <!-- Downed == true -->
-						  <li Class="WVC.ThinkNode_ConditionalDowned">
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalDowned">
 							<subNodes>
 							  <li Class="JobGiver_AIDefendOverseer" />
 							  <li Class="JobGiver_AIFollowOverseer"/>
@@ -126,16 +129,19 @@
 						  <li Class="JobGiver_SeekAllowedArea" />
 						  <li Class="JobGiver_GetEnergy_Charger" />
 						  <!-- Go to smart charge -->
-						  <li Class="WVC.JobGiver_GetEnergy_Charger">
+						  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
 							<tickInterval>625</tickInterval>
 						  </li>
 						  <!-- Go to spot -->
-						  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
-							<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
-							<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+						  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+							<!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
+							<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+						  <!-- </li> -->
+						  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+							<workModeType>Combat</workModeType>
 						  </li>
 						  <!-- Shutdown long -->
-						  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+						  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 							<forced>true</forced>
 						  </li>
 						</subNodes>
@@ -152,7 +158,7 @@
 
 &lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
 &lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
-&lt;color=#f5ffa2&gt;Shutdown spot:&lt;/color&gt; Wait spot
+&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; Yes
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 						<uiOrder>175</uiOrder>
 						<iconPath>WVC/UI/MechWork/EscortIfDraftedOrDowned</iconPath>

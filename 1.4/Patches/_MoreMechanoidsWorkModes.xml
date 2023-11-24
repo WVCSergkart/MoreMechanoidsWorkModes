@@ -21,6 +21,14 @@
 	  </operations>
 	</Operation>
 
+	<Operation Class="PatchOperationAdd">
+	  <xpath>/Defs/DesignationCategoryDef[defName="Biotech"]/specialDesignatorClasses</xpath>
+	  <!-- <success>Always</success> -->
+	  <value>
+		<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>
+	  </value>
+	</Operation>
+
 	<!-- =========================================================== -->
 
 	<Operation Class="WVC.PatchOperation_MMWM">
@@ -36,14 +44,14 @@
 					<targetAcquireRadius>65</targetAcquireRadius>
 					<targetKeepRadius>72</targetKeepRadius>
 				  </li>
-				  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
+				  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 					<subNodes>
 					  <li Class="JobGiver_AIGotoNearestHostile" />
 					</subNodes>
 				  </li>
 				  <!-- = -->
 				  <li Class="JobGiver_SeekAllowedArea" />
-				  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
 					<tickInterval>625</tickInterval>
 				  </li>
 				  <li Class="JobGiver_WanderColony">
@@ -83,22 +91,25 @@
 					<targetAcquireRadius>65</targetAcquireRadius>
 					<targetKeepRadius>72</targetKeepRadius>
 				  </li>
-				  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
+				  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 					<subNodes>
 					  <li Class="JobGiver_AIGotoNearestHostile" />
 					</subNodes>
 				  </li>
 				  <!-- = -->
 				  <li Class="JobGiver_SeekAllowedArea" />
-				  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
 					<tickInterval>625</tickInterval>
 				  </li>
 				  <!-- Go to spot -->
-				  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
-					<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
-					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+					<!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
+					<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+				  <!-- </li> -->
+				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+					<workModeType>Combat</workModeType>
 				  </li>
-				  <!-- <li Class="WVC.JobGiver_GoToClosetShutdownSpot"> -->
+				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
 					<!-- <spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName> -->
 				  <!-- </li> -->
 				  <!-- Shutdown -->
@@ -138,7 +149,7 @@
 					<targetAcquireRadius>65</targetAcquireRadius>
 					<targetKeepRadius>72</targetKeepRadius>
 				  </li>
-				  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
+				  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 					<subNodes>
 					  <li Class="JobGiver_AIGotoNearestHostile" />
 					</subNodes>
@@ -153,19 +164,22 @@
 				  </li>
 				  <li Class="JobGiver_Work" />
 				  <!-- Go to smart charge -->
-				  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
 					<tickInterval>625</tickInterval>
 				  </li>
 				  <!-- Go to spot -->
-				  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
-					<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
-					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+					<!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
+					<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+				  <!-- </li> -->
+				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+					<workModeType>Combat</workModeType>
 				  </li>
-				  <!-- <li Class="WVC.JobGiver_GoToClosetShutdownSpot"> -->
+				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
 					<!-- <spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName> -->
 				  <!-- </li> -->
 				  <!-- Shutdown long -->
-				  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 					<forced>true</forced>
 				  </li>
 				</subNodes>
@@ -203,16 +217,11 @@
 					<targetKeepRadius>72</targetKeepRadius>
 				  </li>
 				  <!-- Go to spot -->
-				  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
-					<!-- Any ThingDef that can be stepped on -->
-					<spotDefName>WVC_IOMSS_Ambush</spotDefName>
-					<!-- backup spot not used for ambush -->
-					<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
-					<!-- Distance from mechanoid to target -->
-					<!-- Default 9 -->
-					<!-- <minDistanceForSpot>9</minDistanceForSpot> -->
-					<!-- Default 9999 -->
-					<!-- <maxDistanceForSpot>9999</maxDistanceForSpot> -->
+				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+					<!-- <spotDefName>WVC_IOMSS_Ambush</spotDefName> -->
+				  <!-- </li> -->
+				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+					<workModeType>Ambush</workModeType>
 				  </li>
 				  <!-- Shutdown -->
 				  <li Class="JobGiver_GetEnergy_SelfShutdown">
@@ -252,7 +261,7 @@
 					<targetAcquireRadius>12</targetAcquireRadius>
 					<targetKeepRadius>15</targetKeepRadius>
 				  </li>
-				  <!-- <li Class="WVC.JobGiver_GoToClosetShutdownSpot"> -->
+				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
 					<!-- <spotDefName>WVC_IOMSS_DefendYourself</spotDefName> -->
 				  <!-- </li> -->
 				  <li Class="JobGiver_WanderColony">
@@ -303,24 +312,19 @@
 					</subNodes>
 				  </li>
 				  <!-- Go to smart charge -->
-				  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
 					<tickInterval>625</tickInterval>
 				  </li>
 				  <!-- Go to spot -->
-				  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
-					<!-- Any ThingDef that can be stepped on -->
-					<spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
-					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
-					<!-- Distance from mechanoid to target -->
-					<!-- Default 9 -->
-					<!-- <minDistanceForSpot>9</minDistanceForSpot> -->
-					<!-- Default 9999 -->
-					<!-- <maxDistanceForSpot>9999</maxDistanceForSpot> -->
+				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+					<!-- <spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName> -->
+					<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+				  <!-- </li> -->
+				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+					<workModeType>Work</workModeType>
 				  </li>
 				  <!-- Shutdown long -->
-				  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
-					<!-- Default 3000 -->
-					<!-- <tickInterval>3000</tickInterval> -->
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 					<forced>true</forced>
 				  </li>
 				</subNodes>
@@ -352,14 +356,17 @@
 				<workMode>WVC_SafeWorkAndRecharge</workMode>
 				<subNodes>
 				  <!-- Find Enemy -->
-				  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
+				  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 					<subNodes>
 					  <!-- If Danger -->
-					  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
-						<spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
-						<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+					  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+						<!-- <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName> -->
+						<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+					  <!-- </li> -->
+					  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+						<workModeType>Safe</workModeType>
 					  </li>
-					  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+					  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 						<tickInterval>1500</tickInterval>
 						<forced>true</forced>
 					  </li>
@@ -382,15 +389,18 @@
 					</subNodes>
 				  </li>
 				  <!-- Go to smart charge -->
-				  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
 					<tickInterval>625</tickInterval>
 				  </li>
 				  <!-- Go to spot -->
-				  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
-					<spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
-					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+					<!-- <spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName> -->
+					<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+				  <!-- </li> -->
+				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+					<workModeType>Work</workModeType>
 				  </li>
-				  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 					<forced>true</forced>
 				  </li>
 				</subNodes>
@@ -495,7 +505,7 @@
 				<workMode>WVC_EscortIfEnemyOnMap</workMode>
 				<subNodes>
 				  <!-- <li Class="JobGiver_ExitMapFollowOverseer" /> -->
-				  <li Class="WVC.ThinkNode_ConditionalEnemyOnMap">
+				  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 					<subNodes>
 					  <li Class="JobGiver_AIDefendOverseer" />
 					  <li Class="JobGiver_AIFollowOverseer"/>
@@ -504,16 +514,19 @@
 					</subNodes>
 				  </li>
 				  <!-- Go to smart charge -->
-				  <li Class="WVC.JobGiver_GetEnergy_Charger">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
 					<tickInterval>625</tickInterval>
 				  </li>
 				  <!-- Go to spot -->
-				  <li Class="WVC.JobGiver_GoToClosetShutdownSpot">
-					<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
-					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+					<!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
+					<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+				  <!-- </li> -->
+				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+					<workModeType>Combat</workModeType>
 				  </li>
 				  <!-- Shutdown short -->
-				  <li Class="WVC.JobGiver_GetEnergy_SelfShutdown">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 					<tickInterval>625</tickInterval>
 					<forced>true</forced>
 				  </li>
