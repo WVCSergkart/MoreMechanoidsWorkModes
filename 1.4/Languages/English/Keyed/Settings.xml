@@ -26,8 +26,8 @@
 
 	<WVC_ToolTip_BonusSetting>Bonus mode. It is disabled by default. Enabling is compatible with saves.</WVC_ToolTip_BonusSetting>
 
-	<WVC_Label_enableShutdownSearching>Enable shutdown spot searching</WVC_Label_enableShutdownSearching>
-	<WVC_ToolTip_enableShutdownSearching>If enabled, mechanoids will search for a spot before shutdown.</WVC_ToolTip_enableShutdownSearching>
+	<WVC_Label_enableShutdownSearching>Enable shutdown zone searching</WVC_Label_enableShutdownSearching>
+	<WVC_ToolTip_enableShutdownSearching>If enabled, mechanoids will search for a mechanoid shutdown zone before shutdown.</WVC_ToolTip_enableShutdownSearching>
 
 	<WVC_Label_enableEnemySearching>Enable enemy searching</WVC_Label_enableEnemySearching>
 	<WVC_ToolTip_enableEnemySearching>If enabled, in safe modes, mechanoids will check the map for enemies.</WVC_ToolTip_enableEnemySearching>
