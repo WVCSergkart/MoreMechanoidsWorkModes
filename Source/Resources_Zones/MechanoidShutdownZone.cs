@@ -170,6 +170,15 @@ namespace WVC_WorkModes
 			yield return DesignatorUtility.FindAllowedDesignator<Designator_MechanoidShutdownZone_Expand>();
 		}
 
+		// public override string GetInspectString()
+		// {
+			// base.GetInspectString();
+			// return string.Format("{0}: {1}", "WVC_ShutdownZone_AllowWorkers".Translate(), OnOrOff(allowWorkers));
+			// return string.Format("{0}: {1}", "WVC_ShutdownZone_AllowSafe".Translate(), OnOrOff(allowSafe));
+			// return string.Format("{0}: {1}", "WVC_ShutdownZone_AllowCombatants".Translate(), OnOrOff(allowCombatants));
+			// return string.Format("{0}: {1}", "WVC_ShutdownZone_AllowAmbush".Translate(), OnOrOff(allowAmbush));
+		// }
+
 	}
 
 	public class Designator_MechanoidShutdownZone_Expand : Designator_MechanoidShutdownZone
