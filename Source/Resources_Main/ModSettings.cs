@@ -25,6 +25,7 @@ namespace WVC
 
 		public bool enableShutdownSearching = true;
 		public bool enableEnemySearching = true;
+		public bool enableSmartEscort = true;
 
 		public bool enableSmartChargingForAllMechanoids = false;
 		public bool enableShutdownForAllMechanoids = false;
@@ -47,26 +48,27 @@ namespace WVC
 
 		public override void ExposeData()
 		{
-			Scribe_Values.Look(ref WVC_FindAndDestroy, "WVC_FindAndDestroy", defaultValue: true, true);
-			Scribe_Values.Look(ref WVC_WaitEnemy, "WVC_WaitEnemy", defaultValue: true, true);
-			Scribe_Values.Look(ref WVC_WorkAndWaitEnemy, "WVC_WorkAndWaitEnemy", defaultValue: true, true);
-			Scribe_Values.Look(ref WVC_DefendYourself, "WVC_DefendYourself", defaultValue: true, true);
-			Scribe_Values.Look(ref WVC_Ambush, "WVC_Ambush", defaultValue: true, true);
+			Scribe_Values.Look(ref WVC_FindAndDestroy, "WVC_FindAndDestroy", defaultValue: true);
+			Scribe_Values.Look(ref WVC_WaitEnemy, "WVC_WaitEnemy", defaultValue: true);
+			Scribe_Values.Look(ref WVC_WorkAndWaitEnemy, "WVC_WorkAndWaitEnemy", defaultValue: true);
+			Scribe_Values.Look(ref WVC_DefendYourself, "WVC_DefendYourself", defaultValue: true);
+			Scribe_Values.Look(ref WVC_Ambush, "WVC_Ambush", defaultValue: true);
 
-			Scribe_Values.Look(ref WVC_WorkAndRecharge, "WVC_WorkAndRecharge", defaultValue: true, true);
-			Scribe_Values.Look(ref WVC_SafeWorkAndRecharge, "WVC_SafeWorkAndRecharge", defaultValue: true, true);
-			Scribe_Values.Look(ref WVC_EscaortAndRecharge, "WVC_EscaortAndRecharge", defaultValue: true, true);
-			Scribe_Values.Look(ref WVC_WorkRechargeEscort, "WVC_WorkRechargeEscort", defaultValue: true, true);
-			Scribe_Values.Look(ref WVC_EscortIfEnemyOnMap, "WVC_EscortIfEnemyOnMap", defaultValue: true, true);
+			Scribe_Values.Look(ref WVC_WorkAndRecharge, "WVC_WorkAndRecharge", defaultValue: true);
+			Scribe_Values.Look(ref WVC_SafeWorkAndRecharge, "WVC_SafeWorkAndRecharge", defaultValue: true);
+			Scribe_Values.Look(ref WVC_EscaortAndRecharge, "WVC_EscaortAndRecharge", defaultValue: true);
+			Scribe_Values.Look(ref WVC_WorkRechargeEscort, "WVC_WorkRechargeEscort", defaultValue: true);
+			Scribe_Values.Look(ref WVC_EscortIfEnemyOnMap, "WVC_EscortIfEnemyOnMap", defaultValue: true);
 
-			Scribe_Values.Look(ref WVC_EscortIfEnemyWorkAndRecharge, "WVC_EscortIfEnemyWorkAndRecharge", defaultValue: false, true);
-			Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false, true);
+			Scribe_Values.Look(ref WVC_EscortIfEnemyWorkAndRecharge, "WVC_EscortIfEnemyWorkAndRecharge", defaultValue: false);
+			Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false);
 
-			Scribe_Values.Look(ref enableShutdownSearching, "enableShutdownSearching", defaultValue: true, true);
-			Scribe_Values.Look(ref enableEnemySearching, "enableEnemySearching", defaultValue: true, true);
+			Scribe_Values.Look(ref enableShutdownSearching, "enableShutdownSearching", defaultValue: true);
+			Scribe_Values.Look(ref enableEnemySearching, "enableEnemySearching", defaultValue: true);
+			Scribe_Values.Look(ref enableSmartEscort, "enableSmartEscort", defaultValue: true);
 
-			Scribe_Values.Look(ref enableSmartChargingForAllMechanoids, "enableSmartChargingForAllMechanoids", defaultValue: false, true);
-			Scribe_Values.Look(ref enableShutdownForAllMechanoids, "enableShutdownForAllMechanoids", defaultValue: false, true);
+			Scribe_Values.Look(ref enableSmartChargingForAllMechanoids, "enableSmartChargingForAllMechanoids", defaultValue: false);
+			Scribe_Values.Look(ref enableShutdownForAllMechanoids, "enableShutdownForAllMechanoids", defaultValue: false);
 
 			Scribe_Values.Look(ref shutdownModeZonesOrSpots, "shutdownModeZonesOrSpots", defaultValue: true);
 
@@ -141,6 +143,7 @@ namespace WVC
 			listingStandard.Gap();
 			listingStandard.CheckboxLabeled("WVC_Label_enableSmartChargingForAllMechanoids".Translate(), ref settings.enableSmartChargingForAllMechanoids, "WVC_ToolTip_enableSmartChargingForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_VanillaModeOptimizationWarning".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_enableShutdownForAllMechanoids".Translate(), ref settings.enableShutdownForAllMechanoids, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_VanillaModeOptimizationWarning".Translate());
+			listingStandard.CheckboxLabeled("WVC_Label_enableSmartEscort".Translate(), ref settings.enableSmartEscort, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_enableSmartEscort".Translate());
 
 			listingStandard.Gap();
 			listingStandard.CheckboxLabeled("WVC_Label_shutdownModeZonesOrSpots".Translate(), ref settings.shutdownModeZonesOrSpots, "WVC_ToolTip_shutdownModeZonesOrSpots".Translate());

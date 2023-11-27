@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Verse;
 using RimWorld;
 using Verse.AI;
+using WVC;
 
 namespace WVC_WorkModes
 {
@@ -16,6 +17,32 @@ namespace WVC_WorkModes
 
 	public static class ShutdownUtility
 	{
+
+		public static Pawn GetAssignedPawnOnMap(Pawn pawn)
+		{
+			if (WVC_MMWM.settings.enableSmartEscort)
+			{
+				if(!pawn.RaceProps.IsMechanoid)
+				{
+					return null;
+				}
+				CompSmartEscort comp = pawn.TryGetComp<CompSmartEscort>();
+				if(comp != null && AssignedPawnAtHome(comp.escortTarget))
+				{
+					return comp.escortTarget;
+				}
+			}
+			return pawn.GetOverseer();
+		}
+
+		public static bool AssignedPawnAtHome(Pawn pawn)
+		{
+			if(pawn != null && pawn.Map != null && pawn.Map.IsPlayerHome)
+			{
+				return true;
+			}
+			return false;
+		}
 
 		public static Building GetClosestShutdownSpot(Pawn mech, ThingDef spotDefName, int maxDistance)
 		{
@@ -43,6 +70,14 @@ namespace WVC_WorkModes
 			{
 				if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType))
 				{
+					// foreach (IntVec3 cell in shutZone.Cells)
+					// {
+						// if (CanSelfShutdown(cell, pawn, map, false))
+						// {
+							// result = cell;
+							// return true;
+						// }
+					// }
 					List<IntVec3> cells = shutZone.Cells;
 					for (int j = 0; j < cells.Count; j++)
 					{

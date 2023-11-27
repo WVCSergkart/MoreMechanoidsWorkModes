@@ -16,10 +16,10 @@
 						  <!-- Enemy = true -->
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 							<subNodes>
-							  <li Class="JobGiver_AIDefendOverseer" />
-							  <li Class="JobGiver_AIFollowOverseer"/>
-							  <li Class="JobGiver_AIWaitWithOverseer" />
-							  <li Class="JobGiver_WanderOverseer" />
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+							  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
 							</subNodes>
 						  </li>
 						  <!-- Enemy = false -->
@@ -107,24 +107,24 @@
 						  <!-- Drafted == true -->
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalDrafted">
 							<subNodes>
-							  <li Class="JobGiver_AIDefendOverseer" />
-							  <li Class="JobGiver_AIFollowOverseer"/>
-							  <li Class="JobGiver_AIWaitWithOverseer" />
-							  <li Class="JobGiver_WanderOverseer" />
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+							  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
 							</subNodes>
 						  </li>
 						  <!-- Drafted == false -->
 						  <!-- Downed == true -->
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalDowned">
 							<subNodes>
-							  <li Class="JobGiver_AIDefendOverseer" />
-							  <li Class="JobGiver_AIFollowOverseer"/>
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
 							  <li Class="JobGiver_AIFightEnemies">
 								<targetAcquireRadius>65</targetAcquireRadius>
 								<targetKeepRadius>72</targetKeepRadius>
 							  </li>
-							  <!-- <li Class="JobGiver_AIWaitWithOverseer" /> -->
-							  <li Class="JobGiver_WanderOverseer" />
+							  <!-- <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" /> -->
+							  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
 							</subNodes>
 						  </li>
 						  <!-- Downed == false -->

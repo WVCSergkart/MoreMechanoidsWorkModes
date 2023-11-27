@@ -40,6 +40,8 @@ namespace WVC_WorkModes
 							return null;
 						}
 						Job job = JobMaker.MakeJob(JobDefOf.Goto, result);
+						// job.checkOverrideOnExpire = true;
+						// job.expiryInterval = 250;
 						return job;
 					}
 				}

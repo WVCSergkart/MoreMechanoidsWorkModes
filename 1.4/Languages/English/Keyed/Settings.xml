@@ -40,6 +40,11 @@
 	<WVC_Label_enableSmartChargingForAllMechanoids>Smart charging for vanilla modes</WVC_Label_enableSmartChargingForAllMechanoids>
 	<WVC_ToolTip_enableSmartChargingForAllMechanoids>If enabled, then the mechanoids will go to charge when they are not busy with anything, and not only when the charge runs out.</WVC_ToolTip_enableSmartChargingForAllMechanoids>
 
+	<WVC_Label_enableSmartEscort>Smart escort</WVC_Label_enableSmartEscort>
+	<WVC_ToolTip_enableSmartEscort>If enabled, it allows you to select an escort target for mechanoids.
+
+Restart required!</WVC_ToolTip_enableSmartEscort>
+
 	<WVC_ToolTip_VanillaModeOptimizationWarning>Does not affect combat mechanoids, as their idle has been replaced with a simulated patrol.</WVC_ToolTip_VanillaModeOptimizationWarning>
 
 	<WVC_Label_shutdownModeZonesOrSpots>Shutdown mode: Zones or Spots</WVC_Label_shutdownModeZonesOrSpots>
@@ -66,5 +71,17 @@ Restart required!</WVC_ToolTip_shutdownModeZonesOrSpots>
 	<WVC_ShutdownZoneInPrisonCell>Shutdown zone cannot be in a prison cell.</WVC_ShutdownZoneInPrisonCell>
 	<!-- <WVC_ShutdownZoneNotStandable>Shutdown zone cannot be located on impassable terrain or located on other objects.</WVC_ShutdownZoneNotStandable> -->
 	<WVC_ShutdownZoneNotStandable>Shutdown zone should be standable.</WVC_ShutdownZoneNotStandable>
+
+	<!-- SmartEscort -->
+	<WVC_WorkModes_AssignToPawnEscortLabel>Assign to escort</WVC_WorkModes_AssignToPawnEscortLabel>
+	<!-- <WVC_WorkModes_AssignedPawnEscortLabel>{0} assigned escort {1}</WVC_WorkModes_AssignedPawnEscortLabel> -->
+	<WVC_WorkModes_AssignToPawnEscortDesc>{0} assigned escort {1}
+
+Allows you to specify to the mechanoid what colony pawn it will escort.
+
+{0} cannot follow anyone other than an overseer in a caravan or on non-home maps.</WVC_WorkModes_AssignToPawnEscortDesc>
+
+	<WVC_WorkModes_AssignToPawnEscortAssigned>{0} assigned to escort {1}.</WVC_WorkModes_AssignToPawnEscortAssigned>
+	<WVC_WorkModes_AssignToPawnEscortNoLongerEscort>{0} no longer escort {1}.</WVC_WorkModes_AssignToPawnEscortNoLongerEscort>
 
 </LanguageData>

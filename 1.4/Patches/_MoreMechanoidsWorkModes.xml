@@ -56,6 +56,22 @@
 		</deActive>
 	</Operation>
 
+	<Operation Class="WVC.PatchOperation_MMWM">
+		<settingName>enableSmartEscort</settingName>
+		<active Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationAdd">
+				  <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath>
+				  <value>
+					  <li Class="WVC_WorkModes.CompProperties_SmartEscort"/>
+				  </value>
+				</li>
+
+			</operations>
+		</active>
+	</Operation>
+
 	<!-- =========================================================== -->
 
 	<Operation Class="WVC.PatchOperation_MMWM">
@@ -464,11 +480,11 @@
 				<workMode>WVC_EscaortAndRecharge</workMode>
 				<subNodes>
 				  <li Class="JobGiver_GetEnergy_Charger" />
-				  <li Class="JobGiver_ExitMapFollowOverseer" />
-				  <li Class="JobGiver_AIDefendOverseer" />
-				  <li Class="JobGiver_AIFollowOverseer"/>
-				  <li Class="JobGiver_AIWaitWithOverseer" />
-				  <li Class="JobGiver_WanderOverseer" />
+				  <!-- <li Class="JobGiver_ExitMapFollowOverseer" /> -->
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+				  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
 				</subNodes>
 			  </li>
 			</value>
@@ -503,11 +519,11 @@
 					<emergency>true</emergency>
 				  </li>
 				  <li Class="JobGiver_Work" />
-				  <li Class="JobGiver_ExitMapFollowOverseer" />
-				  <li Class="JobGiver_AIDefendOverseer" />
-				  <li Class="JobGiver_AIFollowOverseer"/>
-				  <li Class="JobGiver_AIWaitWithOverseer" />
-				  <li Class="JobGiver_WanderOverseer" />
+				  <!-- <li Class="JobGiver_ExitMapFollowOverseer" /> -->
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+				  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
 				</subNodes>
 			  </li>
 			</value>
@@ -539,10 +555,10 @@
 				  <!-- <li Class="JobGiver_ExitMapFollowOverseer" /> -->
 				  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 					<subNodes>
-					  <li Class="JobGiver_AIDefendOverseer" />
-					  <li Class="JobGiver_AIFollowOverseer"/>
-					  <li Class="JobGiver_AIWaitWithOverseer" />
-					  <li Class="JobGiver_WanderOverseer" />
+					  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+					  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+					  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+					  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
 					</subNodes>
 				  </li>
 				  <!-- Go to smart charge -->
