@@ -21,12 +21,39 @@
 	  </operations>
 	</Operation>
 
-	<Operation Class="PatchOperationAdd">
-	  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses</xpath>
-	  <!-- <success>Always</success> -->
-	  <value>
-		<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>
-	  </value>
+	<!-- <Operation Class="PatchOperationAdd"> -->
+	  <!-- <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses</xpath> -->
+	  <!-- <value> -->
+		<!-- <li>WVC_WorkModes.Designator_MechanoidShutdownZone</li> -->
+	  <!-- </value> -->
+	<!-- </Operation> -->
+
+	<Operation Class="WVC.PatchOperation_MMWM">
+		<settingName>shutdownModeZonesOrSpots</settingName>
+		<active Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationAdd">
+				  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses</xpath>
+				  <value>
+					<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>
+				  </value>
+				</li>
+
+			</operations>
+		</active>
+		<deActive Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationReplace">
+				  <xpath>/Defs/ThingDef[defName="WVC_IdleOptimization_MechanoidShutdownSpot"]/designationCategory</xpath>
+				  <value>
+					<designationCategory>Biotech</designationCategory>
+				  </value>
+				</li>
+
+			</operations>
+		</deActive>
 	</Operation>
 
 	<!-- =========================================================== -->
@@ -108,10 +135,9 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Combat</workModeType>
+					<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
 				  </li>
-				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
-					<!-- <spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName> -->
-				  <!-- </li> -->
 				  <!-- Shutdown -->
 				  <li Class="JobGiver_GetEnergy_SelfShutdown">
 					<forced>true</forced>
@@ -174,10 +200,9 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Combat</workModeType>
+					<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
 				  </li>
-				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
-					<!-- <spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName> -->
-				  <!-- </li> -->
 				  <!-- Shutdown long -->
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 					<forced>true</forced>
@@ -222,6 +247,7 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Ambush</workModeType>
+					<spotDefName>WVC_IOMSS_Ambush</spotDefName>
 				  </li>
 				  <!-- Shutdown -->
 				  <li Class="JobGiver_GetEnergy_SelfShutdown">
@@ -322,6 +348,8 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Work</workModeType>
+					<spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
+					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
 				  </li>
 				  <!-- Shutdown long -->
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
@@ -365,6 +393,8 @@
 					  <!-- </li> -->
 					  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 						<workModeType>Safe</workModeType>
+						<spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+						<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
 					  </li>
 					  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 						<tickInterval>1500</tickInterval>
@@ -399,6 +429,8 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Work</workModeType>
+					<spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
+					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
 				  </li>
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 					<forced>true</forced>

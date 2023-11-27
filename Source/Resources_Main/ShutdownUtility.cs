@@ -17,6 +17,14 @@ namespace WVC_WorkModes
 	public static class ShutdownUtility
 	{
 
+		public static Building GetClosestShutdownSpot(Pawn mech, ThingDef spotDefName, int maxDistance)
+		{
+			return (Building)GenClosest.ClosestThingReachable(mech.Position, mech.Map, ThingRequest.ForDef(spotDefName), PathEndMode.OnCell, TraverseParms.For(mech), maxDistance, delegate (Thing t)
+			{
+				return !t.IsForbidden(mech);
+			});
+		}
+
 		public static bool AnyMechanoidZone(List<Zone> zones)
 		{
 			for (int i = 0; i < zones.Count; i++)

@@ -40,6 +40,8 @@
 						  <!-- </li> -->
 						  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 							<workModeType>Work</workModeType>
+							<spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
+							<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
 						  </li>
 						  <!-- Shutdown long -->
 						  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
@@ -139,6 +141,8 @@
 						  <!-- </li> -->
 						  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 							<workModeType>Combat</workModeType>
+							<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+							<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
 						  </li>
 						  <!-- Shutdown long -->
 						  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">

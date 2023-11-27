@@ -42,6 +42,13 @@
 
 	<WVC_ToolTip_VanillaModeOptimizationWarning>Does not affect combat mechanoids, as their idle has been replaced with a simulated patrol.</WVC_ToolTip_VanillaModeOptimizationWarning>
 
+	<WVC_Label_shutdownModeZonesOrSpots>Shutdown mode: Zones or Spots</WVC_Label_shutdownModeZonesOrSpots>
+	<WVC_ToolTip_shutdownModeZonesOrSpots>If enabled, zones will be used. Alternatively, spots. It is recommended to enable it.
+
+This option is for advanced users. If you don't know what spots are, then leave it enabled.
+
+Restart required!</WVC_ToolTip_shutdownModeZonesOrSpots>
+
 	<!-- Zones -->
 	<WVC_MechanoidShutdownZone>Mechanoid shutdown zone</WVC_MechanoidShutdownZone>
 	<WVC_MechanoidShutdownZoneDesc>Mechanoids will return here before shutting down.</WVC_MechanoidShutdownZoneDesc>

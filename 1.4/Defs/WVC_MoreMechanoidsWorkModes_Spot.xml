@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- <DesignatorDropdownGroupDef> -->
-	<!-- <defName>WVC_IOMSS_Spots</defName> -->
-  <!-- </DesignatorDropdownGroupDef> -->
+  <DesignatorDropdownGroupDef>
+	<defName>WVC_IOMSS_Spots</defName>
+  </DesignatorDropdownGroupDef>
 
   <!-- Outdated -->
   <ThingDef ParentName="BuildingBase" Name="WVC_IdleOptimization_MechanoidShutdownSpot">
@@ -34,7 +34,7 @@
 	<!-- <interactionCellOffset>(0,0,0)</interactionCellOffset> -->
 	<drawGUIOverlay>false</drawGUIOverlay>
 	<specialDisplayRadius>8.9</specialDisplayRadius>
-	<!-- <designatorDropdown>WVC_IOMSS_Spots</designatorDropdown> -->
+	<designatorDropdown>WVC_IOMSS_Spots</designatorDropdown>
 	<!-- <designationCategory>Biotech</designationCategory> -->
 	<designationCategory></designationCategory>
 	<building>

@@ -58,7 +58,7 @@ namespace WVC_WorkModes
 				Messages.Message("WVC_ShutdownZoneInPrisonCell".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
 				return;
 			}
-			if (!sq.Standable(map) || sq.GetFirstBuilding(map) != null)
+			if (!sq.Standable(map))
 			{
 				Messages.Message("WVC_ShutdownZoneNotStandable".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
 				return;
