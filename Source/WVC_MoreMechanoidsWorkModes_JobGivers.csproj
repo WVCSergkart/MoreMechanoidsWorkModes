@@ -71,6 +71,7 @@
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalEnemyOnMap.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalSettings.cs" />
     <Compile Include="Resources_Zones\MechanoidShutdownZone.cs" />
+    <Compile Include="Resources_Zones\MechanoidZoneColorUtility.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,7 +10,9 @@ namespace WVC_WorkModes
 	public class CompProperties_SmartEscort : CompProperties
 	{
 
-		public string uiIconPath = "WVC/UI/MechWork/EscortTargetAssign";
+		public string uiIconAssign = "WVC/UI/MechWork/EscortTargetAssign";
+
+		public string uiIconReset = "WVC/UI/MechWork/EscortTargetAssignReset";
 
 		// public float uiIconSize = 1.0f;
 
@@ -58,11 +60,11 @@ namespace WVC_WorkModes
 				Messages.Message("WVC_WorkModes_AssignToPawnEscortNoLongerEscort".Translate(pawn.LabelIndefinite().CapitalizeFirst(), escortTarget.LabelIndefinite().CapitalizeFirst()), escortTarget, MessageTypeDefOf.NeutralEvent, historical: false);
 				escortTarget = overseer;
 			}
-			Command_Action command_Action = new()
+			yield return new Command_Action
 			{
 				defaultLabel = "WVC_WorkModes_AssignToPawnEscortLabel".Translate(),
 				defaultDesc = "WVC_WorkModes_AssignToPawnEscortDesc".Translate(pawn.LabelIndefinite().CapitalizeFirst(), GetEscortee(overseer).LabelIndefinite().CapitalizeFirst()),
-				icon = ContentFinder<Texture2D>.Get(Props.uiIconPath),
+				icon = ContentFinder<Texture2D>.Get(Props.uiIconAssign),
 				shrinkable = true,
 				action = delegate
 				{
@@ -71,18 +73,21 @@ namespace WVC_WorkModes
 					for (int i = 0; i < freeColonists.Count; i++)
 					{
 						Pawn localPawn = freeColonists[i];
-						list.Add(new FloatMenuOption(localPawn.LabelShortCap, delegate
+						if (localPawn != overseer)
 						{
-							foreach (Pawn item2 in Find.Selector.SelectedPawns.Where((Pawn p) => p.RaceProps.IsMechanoid))
+							list.Add(new FloatMenuOption(localPawn.LabelShortCap, delegate
 							{
-								CompSmartEscort comp = item2.TryGetComp<CompSmartEscort>();
-								if (comp != null)
+								foreach (Pawn item2 in Find.Selector.SelectedPawns.Where((Pawn p) => p.RaceProps.IsMechanoid))
 								{
-									comp.escortTarget = localPawn;
-									Messages.Message("WVC_WorkModes_AssignToPawnEscortAssigned".Translate(item2.LabelIndefinite().CapitalizeFirst(), localPawn.LabelIndefinite().CapitalizeFirst()), item2, MessageTypeDefOf.NeutralEvent, historical: false);
+									CompSmartEscort comp = item2.TryGetComp<CompSmartEscort>();
+									if (comp != null)
+									{
+										comp.escortTarget = localPawn;
+										Messages.Message("WVC_WorkModes_AssignToPawnEscortAssigned".Translate(item2.LabelIndefinite().CapitalizeFirst(), localPawn.LabelIndefinite().CapitalizeFirst()), item2, MessageTypeDefOf.NeutralEvent, historical: false);
+									}
 								}
-							}
-						}));
+							}));
+						}
 					}
 					if (list.Any())
 					{
@@ -90,7 +95,25 @@ namespace WVC_WorkModes
 					}
 				}
 			};
-			yield return command_Action;
+			yield return new Command_Action
+			{
+				defaultLabel = "WVC_WorkModes_AssignToPawnEscortLabelReset".Translate(),
+				defaultDesc = "WVC_WorkModes_AssignToPawnEscortDesc".Translate(pawn.LabelIndefinite().CapitalizeFirst(), GetEscortee(overseer).LabelIndefinite().CapitalizeFirst()),
+				icon = ContentFinder<Texture2D>.Get(Props.uiIconReset),
+				shrinkable = true,
+				action = delegate
+				{
+					foreach (Pawn item2 in Find.Selector.SelectedPawns.Where((Pawn p) => p.RaceProps.IsMechanoid))
+					{
+						CompSmartEscort comp = item2.TryGetComp<CompSmartEscort>();
+						if (comp != null)
+						{
+							comp.escortTarget = overseer;
+							Messages.Message("WVC_WorkModes_AssignToPawnEscortAssigned".Translate(item2.LabelIndefinite().CapitalizeFirst(), overseer.LabelIndefinite().CapitalizeFirst()), item2, MessageTypeDefOf.NeutralEvent, historical: false);
+						}
+					}
+				}
+			};
 		}
 
 		public override void PostExposeData()

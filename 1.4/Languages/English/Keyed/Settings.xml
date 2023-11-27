@@ -74,6 +74,7 @@ Restart required!</WVC_ToolTip_shutdownModeZonesOrSpots>
 
 	<!-- SmartEscort -->
 	<WVC_WorkModes_AssignToPawnEscortLabel>Assign to escort</WVC_WorkModes_AssignToPawnEscortLabel>
+	<WVC_WorkModes_AssignToPawnEscortLabelReset>Reset escorted pawn</WVC_WorkModes_AssignToPawnEscortLabelReset>
 	<!-- <WVC_WorkModes_AssignedPawnEscortLabel>{0} assigned escort {1}</WVC_WorkModes_AssignedPawnEscortLabel> -->
 	<WVC_WorkModes_AssignToPawnEscortDesc>{0} assigned escort {1}
 

@@ -29,7 +29,11 @@ namespace WVC_WorkModes
 		public bool allowCombatants = true;
 		public bool allowAmbush = true;
 
-		protected override Color NextZoneColor => ZoneColorUtility.NextStorageZoneColor();
+		// Zone Color
+
+		protected override Color NextZoneColor => MechanoidZoneColorUtility.NextMechanoidZoneColor();
+
+		// Zone Color
 
 		public override void ExposeData()
 		{
@@ -198,7 +202,7 @@ namespace WVC_WorkModes
 			zoneTypeToPlace = typeof(Zone_MechanoidShutdown);
 			defaultLabel = "WVC_MechanoidShutdownZone".Translate();
 			defaultDesc = "WVC_MechanoidShutdownZoneDesc".Translate();
-			icon = ContentFinder<Texture2D>.Get("WVC/Spots/MechanoidShutdownSpot");
+			icon = ContentFinder<Texture2D>.Get("WVC/Spots/MechanoidShutdownZone");
 			// hotKey = KeyBindingDefOf.Misc2;
 			// tutorTag = "ZoneAdd_Growing";
 		}

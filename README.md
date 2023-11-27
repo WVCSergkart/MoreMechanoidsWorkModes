@@ -1,2 +1,2 @@
-# MoreMechanoidsWorkModes v1.05.00
+# MoreMechanoidsWorkModes v1.06.22
  
