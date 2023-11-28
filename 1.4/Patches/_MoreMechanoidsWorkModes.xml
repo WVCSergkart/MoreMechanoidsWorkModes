@@ -35,6 +35,7 @@
 
 				<li Class="PatchOperationAdd">
 				  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses</xpath>
+				  <order>Prepend</order>
 				  <value>
 					<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>
 				  </value>

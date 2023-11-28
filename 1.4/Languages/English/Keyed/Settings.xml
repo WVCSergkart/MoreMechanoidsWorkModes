@@ -84,5 +84,6 @@ Allows you to specify to the mechanoid what colony pawn it will escort.
 
 	<WVC_WorkModes_AssignToPawnEscortAssigned>{0} assigned to escort {1}.</WVC_WorkModes_AssignToPawnEscortAssigned>
 	<WVC_WorkModes_AssignToPawnEscortNoLongerEscort>{0} no longer escort {1}.</WVC_WorkModes_AssignToPawnEscortNoLongerEscort>
+	<WVC_WorkModes_EscortsAssignTargetLabel>Assigned to escorts {0}</WVC_WorkModes_EscortsAssignTargetLabel>
 
 </LanguageData>

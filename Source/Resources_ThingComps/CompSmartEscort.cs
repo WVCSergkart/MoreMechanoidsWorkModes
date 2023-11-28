@@ -47,18 +47,14 @@ namespace WVC_WorkModes
 			base.CompGetGizmosExtra();
 			Pawn pawn = parent as Pawn;
 			overseer = pawn.GetOverseer();
-			if (escortTarget == null)
-			{
-				escortTarget = overseer;
-			}
 			if (overseer == null)
 			{
 				yield break;
 			}
-			if (escortTarget != overseer && !ShutdownUtility.AssignedPawnAtHome(escortTarget))
+			if (escortTarget != null && escortTarget.Map == null)
 			{
 				Messages.Message("WVC_WorkModes_AssignToPawnEscortNoLongerEscort".Translate(pawn.LabelIndefinite().CapitalizeFirst(), escortTarget.LabelIndefinite().CapitalizeFirst()), escortTarget, MessageTypeDefOf.NeutralEvent, historical: false);
-				escortTarget = overseer;
+				escortTarget = null;
 			}
 			yield return new Command_Action
 			{
@@ -73,9 +69,9 @@ namespace WVC_WorkModes
 					for (int i = 0; i < freeColonists.Count; i++)
 					{
 						Pawn localPawn = freeColonists[i];
-						if (localPawn != overseer)
+						if (localPawn != overseer && localPawn != escortTarget)
 						{
-							list.Add(new FloatMenuOption(localPawn.LabelShortCap, delegate
+							list.Add(new FloatMenuOption(localPawn.Name.ToStringFull, delegate
 							{
 								foreach (Pawn item2 in Find.Selector.SelectedPawns.Where((Pawn p) => p.RaceProps.IsMechanoid))
 								{
@@ -108,12 +104,22 @@ namespace WVC_WorkModes
 						CompSmartEscort comp = item2.TryGetComp<CompSmartEscort>();
 						if (comp != null)
 						{
-							comp.escortTarget = overseer;
+							comp.escortTarget = null;
 							Messages.Message("WVC_WorkModes_AssignToPawnEscortAssigned".Translate(item2.LabelIndefinite().CapitalizeFirst(), overseer.LabelIndefinite().CapitalizeFirst()), item2, MessageTypeDefOf.NeutralEvent, historical: false);
 						}
 					}
 				}
 			};
+		}
+
+		public override string CompInspectStringExtra()
+		{
+			base.CompInspectStringExtra();
+			if (escortTarget != null)
+			{
+				return "WVC_WorkModes_EscortsAssignTargetLabel".Translate(escortTarget.LabelIndefinite().CapitalizeFirst()).Colorize(ColorLibrary.Orange);
+			}
+			return null;
 		}
 
 		public override void PostExposeData()
