@@ -24,7 +24,10 @@ Smart charge - In some modes, mechanoids will try to maintain close to the maxim
 Shutdown mode - some work modes disable mechanoids for optimization when they are not doing anything. In work modes, the cooldown is much longer than in combat.
 
 -
-Mechanoid shutdown zone - Mechanoids that have finished all their business and are going to sleep will go to the nearest such zone, if it is in an accessible area for them.</description>
+Mechanoid shutdown zone - Mechanoids that have finished all their business and are going to sleep will go to the nearest such zone, if it is in an accessible area for them.
+
+-
+Smart escort - Mechanoids can be assigned an escort purpose. This way the mechanoids will be able to protect and accompany different pawns. This feature only works for the home map.</description>
 	<!-- For guide mode -->
 	<helpText>The mod adds some unique behaviors worth knowing about.
 
@@ -43,7 +46,10 @@ Smart charge - In some modes, mechanoids will try to maintain close to the maxim
 Shutdown mode - some work modes disable mechanoids for optimization when they are not doing anything. In work modes, the cooldown is much longer than in combat.
 
 -
-Mechanoid shutdown zone - Mechanoids that have finished all their business and are going to sleep will go to a such zone, if it is in an accessible area for them.</helpText>
+Mechanoid shutdown zone - Mechanoids that have finished all their business and are going to sleep will go to a such zone, if it is in an accessible area for them.
+
+-
+Smart escort - Mechanoids can be assigned an escort purpose. This way the mechanoids will be able to protect and accompany different pawns. This feature only works for the home map.</helpText>
   </ConceptDef>
 
 

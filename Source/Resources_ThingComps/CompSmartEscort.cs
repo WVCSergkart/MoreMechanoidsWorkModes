@@ -69,7 +69,7 @@ namespace WVC_WorkModes
 					for (int i = 0; i < freeColonists.Count; i++)
 					{
 						Pawn localPawn = freeColonists[i];
-						if (localPawn != overseer && localPawn != escortTarget)
+						if (localPawn != overseer && (localPawn != escortTarget || Find.Selector.SelectedPawns.Count > 1))
 						{
 							list.Add(new FloatMenuOption(localPawn.Name.ToStringFull, delegate
 							{

@@ -54,6 +54,9 @@ This option is for advanced users. If you don't know what spots are, then leave 
 
 Restart required!</WVC_ToolTip_shutdownModeZonesOrSpots>
 
+	<WVC_Label_useCustomShutdownBehavior>Use custom shutdown behavior</WVC_Label_useCustomShutdownBehavior>
+	<WVC_ToolTip_useCustomShutdownBehavior>Vanilla shutdown is too stupid, but reliable. If you encounter bugs related to mechanoid shutdown, disable this option.</WVC_ToolTip_useCustomShutdownBehavior>
+
 	<!-- Zones -->
 	<WVC_MechanoidShutdownZone>Mechanoid shutdown zone</WVC_MechanoidShutdownZone>
 	<WVC_MechanoidShutdownZoneDesc>Mechanoids will return here before shutting down.</WVC_MechanoidShutdownZoneDesc>

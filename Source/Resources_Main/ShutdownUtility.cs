@@ -102,6 +102,19 @@ namespace WVC_WorkModes
 			return false;
 		}
 
+		public static bool TryFindNearbyMechSelfShutdownSpot(IntVec3 root, Pawn pawn, Map map, out IntVec3 result, bool allowForbidden = false)
+		{
+			foreach (IntVec3 item in GenRadial.RadialCellsAround(root, GenRadial.MaxRadialPatternRadius - 1f, useCenter: true))
+			{
+				if (CanSelfShutdown(item, pawn, map, allowForbidden))
+				{
+					result = item;
+					return true;
+				}
+			}
+			return RCellFinder.TryFindRandomMechSelfShutdownSpot(root, pawn, map, out result, allowForbidden);
+		}
+
 		public static bool CanSelfShutdown(IntVec3 c, Pawn pawn, Map map, bool allowForbidden = false)
 		{
 			if (!c.Standable(map))
@@ -120,9 +133,13 @@ namespace WVC_WorkModes
 			{
 				return false;
 			}
-			if (c.GetFirstBuilding(map) != null)
+			if (!WVC_MMWM.settings.useCustomShutdownBehavior)
 			{
-				return false;
+				// Stupidity Culprit
+				if (c.GetFirstBuilding(map) != null)
+				{
+					return false;
+				}
 			}
 			Room room = c.GetRoom(map);
 			if (room != null && room.IsPrisonCell)

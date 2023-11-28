@@ -32,6 +32,7 @@ namespace WVC
 
 		// Zones by default
 		public bool shutdownModeZonesOrSpots = true;
+		public bool useCustomShutdownBehavior = true;
 
 		// public bool WVC_CustomWorkMode = false;
 			// public bool customMode_ShouldFight = false;
@@ -71,6 +72,7 @@ namespace WVC
 			Scribe_Values.Look(ref enableShutdownForAllMechanoids, "enableShutdownForAllMechanoids", defaultValue: false);
 
 			Scribe_Values.Look(ref shutdownModeZonesOrSpots, "shutdownModeZonesOrSpots", defaultValue: true);
+			Scribe_Values.Look(ref useCustomShutdownBehavior, "useCustomShutdownBehavior", defaultValue: true);
 
 			// Scribe_Values.Look(ref WVC_CustomWorkMode, "WVC_CustomWorkMode", defaultValue: false, true);
 				// Scribe_Values.Look(ref customMode_ShouldFight, "customMode_ShouldFight", defaultValue: false, true);
@@ -147,6 +149,7 @@ namespace WVC
 
 			listingStandard.Gap();
 			listingStandard.CheckboxLabeled("WVC_Label_shutdownModeZonesOrSpots".Translate(), ref settings.shutdownModeZonesOrSpots, "WVC_ToolTip_shutdownModeZonesOrSpots".Translate());
+			listingStandard.CheckboxLabeled("WVC_Label_useCustomShutdownBehavior".Translate(), ref settings.useCustomShutdownBehavior, "WVC_ToolTip_useCustomShutdownBehavior".Translate());
 
 			// listingStandard.Label("");
 			// listingStandard.Label("WVC_Label_CustomModeLabelSetting".Translate() + ": ");

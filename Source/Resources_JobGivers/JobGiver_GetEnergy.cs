@@ -16,12 +16,26 @@ namespace WVC_WorkModes
 			{
 				return null;
 			}
-			if (RCellFinder.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
+			if (WVC_MMWM.settings.useCustomShutdownBehavior)
 			{
-				Job job = JobMaker.MakeJob(JobDefOf.SelfShutdown, result);
-				job.checkOverrideOnExpire = true;
-				job.expiryInterval = tickInterval;
-				return job;
+				if (ShutdownUtility.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
+				{
+					Job job = JobMaker.MakeJob(JobDefOf.SelfShutdown, result);
+					job.checkOverrideOnExpire = true;
+					job.expiryInterval = tickInterval;
+					return job;
+				}
+			}
+			else
+			{
+				// Vanilla
+				if (RCellFinder.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
+				{
+					Job job = JobMaker.MakeJob(JobDefOf.SelfShutdown, result);
+					job.checkOverrideOnExpire = true;
+					job.expiryInterval = tickInterval;
+					return job;
+				}
 			}
 			return null;
 		}
