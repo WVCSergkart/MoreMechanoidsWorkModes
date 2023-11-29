@@ -1,15 +1,13 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
 using RimWorld;
-using Verse;
-using Verse.AI;
 using System.Collections.Generic;
-using WVC;
 using UnityEngine;
+using Verse;
 using Verse.Sound;
 
 namespace WVC_WorkModes
 {
-	[DefOf]
+    [DefOf]
 	public static class ConceptDefOf
 	{
 		[MayRequireBiotech]

@@ -1,20 +1,22 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
 using RimWorld;
+using System.Collections.Generic;
 using Verse;
 using Verse.AI;
-using System.Collections.Generic;
-using System.Linq;
-using WVC;
 
 namespace WVC_WorkModes
 {
 
-	public class ThinkNode_ConditionalResearchProjects : ThinkNode_Conditional
+    public class ThinkNode_ConditionalResearchProjects : ThinkNode_Conditional
 	{
+
+		public MechWorkModeDef workMode;
 
 		public List<ResearchProjectDef> allOfResearchProjects;
 
 		public List<ResearchProjectDef> anyOfResearchProjects;
+
+		public string message = "WVC_WorkModes_ChangeModDefaultMessage";
 
 		// public override ThinkNode DeepCopy(bool resolve = true)
 		// {
@@ -30,6 +32,13 @@ namespace WVC_WorkModes
 			if (AllProjectsFinished(allOfResearchProjects) || AnyProjectFinished(anyOfResearchProjects))
 			{
 				return true;
+			}
+			Pawn overseer = pawn.GetOverseer();
+			if (workMode != null)
+			{
+				MechanitorControlGroup controlGroup = overseer.mechanitor.GetControlGroup(pawn);
+				Messages.Message(message.Translate(controlGroup.WorkMode.label.CapitalizeFirst(), workMode.label.CapitalizeFirst()), null, MessageTypeDefOf.RejectInput, historical: false);
+				controlGroup.SetWorkMode(workMode);
 			}
 			return false;
 		}

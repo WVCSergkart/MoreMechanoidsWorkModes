@@ -2,12 +2,11 @@
 using RimWorld;
 using Verse;
 using Verse.AI;
-using System.Collections.Generic;
 using WVC;
 
 namespace WVC_WorkModes
 {
-	public class JobGiver_GetEnergy_SelfShutdown : JobGiver_GetEnergy
+    public class JobGiver_GetEnergy_SelfShutdown : JobGiver_GetEnergy
 	{
 		public int tickInterval = 3000;
 		protected override Job TryGiveJob(Pawn pawn)

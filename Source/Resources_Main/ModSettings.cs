@@ -1,14 +1,11 @@
-using System.Xml;
-using System.Linq;
-using System.Reflection;
 using System.Collections.Generic;
-using Verse;
+using System.Linq;
 using UnityEngine;
-using WVC;
+using Verse;
 
 namespace WVC
 {
-	public class WVC_MMWM_Settings : ModSettings
+    public class WVC_MMWM_Settings : ModSettings
 	{
 		public bool WVC_FindAndDestroy = true;
 		public bool WVC_WaitEnemy = true;
@@ -139,10 +136,6 @@ namespace WVC
 			listingStandard.CheckboxLabeled("WVC_Label_EscortIfEnemyOnMap".Translate(), ref settings.WVC_EscortIfEnemyOnMap, "WVC_ToolTip_Setting".Translate());
 
 			listingStandard.Gap();
-			listingStandard.CheckboxLabeled("WVC_Label_enableShutdownSearching".Translate(), ref settings.enableShutdownSearching, "WVC_ToolTip_enableShutdownSearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_enableEnemySearching".Translate(), ref settings.enableEnemySearching, "WVC_ToolTip_enableEnemySearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
-
-			listingStandard.Gap();
 			listingStandard.Label("WVC_Label_BonusModeLabelSetting".Translate() + ": ");
 			listingStandard.CheckboxLabeled("WVC_Label_EscortIfEnemyWorkAndRecharge".Translate(), ref settings.WVC_EscortIfEnemyWorkAndRecharge, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_EscortIfDraftedOrDowned".Translate(), ref settings.WVC_EscortIfDraftedOrDowned, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
@@ -155,8 +148,10 @@ namespace WVC
 			listingStandard.CheckboxLabeled("WVC_Label_enableSmartEscort".Translate(), ref settings.enableSmartEscort, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_enableSmartEscort".Translate());
 
 			listingStandard.Gap();
+			listingStandard.CheckboxLabeled("WVC_Label_enableShutdownSearching".Translate(), ref settings.enableShutdownSearching, "WVC_ToolTip_enableShutdownSearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_shutdownModeZonesOrSpots".Translate(), ref settings.shutdownModeZonesOrSpots, "WVC_ToolTip_shutdownModeZonesOrSpots".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_useCustomShutdownBehavior".Translate(), ref settings.useCustomShutdownBehavior, "WVC_ToolTip_useCustomShutdownBehavior".Translate());
+			listingStandard.CheckboxLabeled("WVC_Label_enableEnemySearching".Translate(), ref settings.enableEnemySearching, "WVC_ToolTip_enableEnemySearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
 
 			// listingStandard.Label("");
 			// listingStandard.Label("WVC_Label_CustomModeLabelSetting".Translate() + ": ");

@@ -1,16 +1,13 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
 using RimWorld;
+using RimWorld.Planet;
 using Verse;
 using Verse.AI;
-using System.Collections.Generic;
-using WVC;
-using System.Linq;
-using RimWorld.Planet;
 
 namespace WVC_WorkModes
 {
 
-	public class JobGiver_SmartAIDefendOverseer : JobGiver_AIDefendOverseer
+    public class JobGiver_SmartAIDefendOverseer : JobGiver_AIDefendOverseer
 	{
 
 		protected override Pawn GetDefendee(Pawn pawn)

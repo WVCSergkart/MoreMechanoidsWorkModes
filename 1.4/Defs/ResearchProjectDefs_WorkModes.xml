@@ -7,7 +7,7 @@
 	<requiresMechanitor>true</requiresMechanitor>
 	<tab>WVC_TechTab</tab>
 	<hiddenPrerequisites>
-	  <li>StandardMechtech</li>
+	  <li>BasicMechtech</li>
 	</hiddenPrerequisites>
   </ResearchProjectDef>
 

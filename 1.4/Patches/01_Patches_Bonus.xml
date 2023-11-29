@@ -148,15 +148,16 @@
 						<workMode>WVC_HiveMindResearching</workMode>
 						<subNodes>
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects">
+							<workMode>Work</workMode>
 							<invert>true</invert>
 							<allOfResearchProjects>
 							  <li>WVC_WorkModes_RedirectionOfCapacities</li>
 							</allOfResearchProjects>
-							<subNodes>
-							  <li Class="WVC_WorkModes.JobGiver_ChangeMode">
-								<workMode>Work</workMode>
-							  </li>
-							</subNodes>
+							<!-- <subNodes> -->
+							  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+								<!-- <workMode>Work</workMode> -->
+							  <!-- </li> -->
+							<!-- </subNodes> -->
 						  </li>
 						  <!-- Find Enemy -->
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
