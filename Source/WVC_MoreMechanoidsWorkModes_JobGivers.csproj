@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Resources_JobGivers\JobGiver_DoResearch.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_GetEnergy.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_GoToClosetShutdownZone.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_SmartEscort.cs" />

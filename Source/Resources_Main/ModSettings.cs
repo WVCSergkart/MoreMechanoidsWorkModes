@@ -20,13 +20,18 @@ namespace WVC
 		public bool WVC_EscaortAndRecharge = true;
 		public bool WVC_WorkRechargeEscort = true;
 		public bool WVC_EscortIfEnemyOnMap = true;
+
+		// Bonus
 		public bool WVC_EscortIfEnemyWorkAndRecharge = false;
 		public bool WVC_EscortIfDraftedOrDowned = false;
+		public bool WVC_HiveMindResearching = false;
 
+		// Features
 		public bool enableShutdownSearching = true;
 		public bool enableEnemySearching = true;
 		public bool enableSmartEscort = true;
 
+		// Mechanoid Idle Optimization
 		public bool enableSmartChargingForAllMechanoids = false;
 		public bool enableShutdownForAllMechanoids = false;
 
@@ -63,6 +68,7 @@ namespace WVC
 
 			Scribe_Values.Look(ref WVC_EscortIfEnemyWorkAndRecharge, "WVC_EscortIfEnemyWorkAndRecharge", defaultValue: false);
 			Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false);
+			Scribe_Values.Look(ref WVC_HiveMindResearching, "WVC_HiveMindResearching", defaultValue: false);
 
 			Scribe_Values.Look(ref enableShutdownSearching, "enableShutdownSearching", defaultValue: true);
 			Scribe_Values.Look(ref enableEnemySearching, "enableEnemySearching", defaultValue: true);
@@ -141,6 +147,7 @@ namespace WVC
 			listingStandard.CheckboxLabeled("WVC_Label_EscortIfEnemyWorkAndRecharge".Translate(), ref settings.WVC_EscortIfEnemyWorkAndRecharge, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_EscortIfDraftedOrDowned".Translate(), ref settings.WVC_EscortIfDraftedOrDowned, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
 			// CheckboxTemplate(listingStandard, "WVC_Label_EscortIfEnemyWorkAndRecharge", settings.WVC_EscortIfEnemyWorkAndRecharge, false);
+			listingStandard.CheckboxLabeled("WVC_Label_HiveMindResearching".Translate(), ref settings.WVC_HiveMindResearching, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
 
 			listingStandard.Gap();
 			listingStandard.CheckboxLabeled("WVC_Label_enableSmartChargingForAllMechanoids".Translate(), ref settings.enableSmartChargingForAllMechanoids, "WVC_ToolTip_enableSmartChargingForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_VanillaModeOptimizationWarning".Translate());
