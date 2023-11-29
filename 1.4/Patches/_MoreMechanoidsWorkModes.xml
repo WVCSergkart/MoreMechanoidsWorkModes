@@ -33,13 +33,20 @@
 		<active Class="PatchOperationSequence">
 			<operations>
 
-				<li Class="PatchOperationAdd">
-				  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses</xpath>
-				  <order>Prepend</order>
+				<li Class="PatchOperationInsert">
+				  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses/li[contains(text(),'Designator_Deconstruct')]</xpath>
+				  <order>Append</order>
 				  <value>
 					<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>
 				  </value>
 				</li>
+				<!-- <li Class="PatchOperationInsert"> -->
+				  <!-- <xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses[li[contains(text(),'Designator_ZoneAddStockpile_Resources')]]</xpath> -->
+				  <!-- <order>Prepend</order> -->
+				  <!-- <value> -->
+					<!-- <li>WVC_WorkModes.Designator_MechanoidShutdownZone</li> -->
+				  <!-- </value> -->
+				<!-- </li> -->
 
 			</operations>
 		</active>
@@ -301,12 +308,23 @@
 				  <li Class="JobGiver_SeekAllowedArea" />
 				  <li Class="JobGiver_GetEnergy_Charger" />
 				  <li Class="JobGiver_AIFightEnemies">
-					<targetAcquireRadius>12</targetAcquireRadius>
-					<targetKeepRadius>15</targetKeepRadius>
+					<targetAcquireRadius>9</targetAcquireRadius>
+					<targetKeepRadius>12</targetKeepRadius>
 				  </li>
-				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
-					<!-- <spotDefName>WVC_IOMSS_DefendYourself</spotDefName> -->
-				  <!-- </li> -->
+				  <li Class="WVC_WorkModes.ThinkNode_ConditionalCanRepair">
+					<subNodes>
+					  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+						<workModeType>Safe</workModeType>
+						<spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+						<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+					  </li>
+					  <!-- Very-very long shutdown -->
+					  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+						<tickInterval>6000</tickInterval>
+						<forced>true</forced>
+					  </li>
+					</subNodes>
+				  </li>
 				  <li Class="JobGiver_WanderColony">
 					<maxDanger>Deadly</maxDanger>
 					<reportStringOverride>Protects itself.</reportStringOverride>

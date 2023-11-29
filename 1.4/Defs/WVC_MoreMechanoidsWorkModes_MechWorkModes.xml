@@ -15,12 +15,12 @@
 
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_DefendYourself</defName>
-	<label>defend yourself</label>
-	<description>Mechanoid, regardless of type, will attack enemies that get too close.
+	<label>safe yourself</label>
+	<description>Mechanoids, regardless of type, will attack enemies that get too close. In case of damage, they will try to retreat to a safe zone if possible.
 
-&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; None
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Safe
 &lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
-&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; If damaged
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>10</uiOrder>
 	<iconPath>WVC/UI/MechWork/DefendYourself</iconPath>

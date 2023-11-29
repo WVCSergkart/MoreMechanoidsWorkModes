@@ -67,8 +67,12 @@
     <Compile Include="Resources_Main\Patches.cs" />
     <Compile Include="Resources_Main\ShutdownUtility.cs" />
     <Compile Include="Resources_ThingComps\CompSmartEscort.cs" />
+    <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalCanRepair.cs" />
+    <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalStatValue.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalDraftedOrDowned.cs" />
+    <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalEnabledWorkTypes.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalEnemyOnMap.cs" />
+    <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalResearchProject.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalSettings.cs" />
     <Compile Include="Resources_Zones\MechanoidShutdownZone.cs" />
     <Compile Include="Resources_Zones\MechanoidZoneColorUtility.cs" />
