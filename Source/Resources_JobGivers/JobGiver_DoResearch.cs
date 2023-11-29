@@ -12,28 +12,40 @@ namespace WVC_WorkModes
 
 		public float researchFactor = 1f;
 
+		private float? cachedBandwidthCost;
+
+		// public override ThinkNode DeepCopy(bool resolve = true)
+		// {
+			// JobGiver_MechDoResearch obj = (JobGiver_MechDoResearch)base.DeepCopy(resolve);
+			// obj.researchFactor = researchFactor;
+			// return obj;
+		// }
+
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			// Mech hive mind is researching.
 			ResearchManager researchManager = Find.ResearchManager;
 			ResearchProjectDef currentProject = researchManager.currentProj;
 			if (currentProject != null)
 			{
-				// researchAmount += researchManager.ResearchPointsPerWorkTick * Find.Storyteller.difficulty.researchSpeedFactor * pawn.GetStatValue(StatDefOf.BandwidthCost) / currentProject.CostFactor(pawn.Faction.def.techLevel);
-				// pawn?.records.AddTo(RecordDefOf.ResearchPointsResearched, researchAmount);
-				// float progress = GetProgress(currentProject);
-				// progress += researchAmount;
-				researchManager.ResearchPerformed(pawn.GetStatValue(StatDefOf.BandwidthCost) * researchFactor, pawn);
+				researchManager.ResearchPerformed(1f + (BandwidthCost(pawn) * researchFactor), pawn);
 			}
 			return null;
 		}
 
-		public Building GetClosestShutdownSpot(Pawn mech, ThingDef spotDefName, int maxDistance)
+		public float BandwidthCost(Pawn pawn)
 		{
-			return (Building)GenClosest.ClosestThingReachable(mech.Position, mech.Map, ThingRequest.ForDef(spotDefName), PathEndMode.OnCell, TraverseParms.For(mech), maxDistance, delegate (Thing t)
+			if (!cachedBandwidthCost.HasValue)
 			{
-				return !t.IsForbidden(mech);
-			});
+				if (!ModsConfig.BiotechActive)
+				{
+					cachedBandwidthCost = 0f;
+				}
+				else
+				{
+					cachedBandwidthCost = pawn.GetStatValue(StatDefOf.BandwidthCost);
+				}
+			}
+			return cachedBandwidthCost.Value;
 		}
 	}
 }

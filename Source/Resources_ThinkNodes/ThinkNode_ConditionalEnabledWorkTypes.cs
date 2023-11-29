@@ -16,6 +16,15 @@ namespace WVC_WorkModes
 
 		public List<WorkTypeDef> anyOfMechEnabledWorkTypes;
 
+		// public override ThinkNode DeepCopy(bool resolve = true)
+		// {
+			// ThinkNode_ConditionalEnabledWorkTypes obj = (ThinkNode_ConditionalEnabledWorkTypes)base.DeepCopy(resolve);
+			// obj.invert = invert;
+			// obj.allOfMechEnabledWorkTypes = allOfMechEnabledWorkTypes;
+			// obj.anyOfMechEnabledWorkTypes = anyOfMechEnabledWorkTypes;
+			// return obj;
+		// }
+
 		protected override bool Satisfied(Pawn pawn)
 		{
 			List<WorkTypeDef> mechWorkTypes = pawn.def.race.mechEnabledWorkTypes;

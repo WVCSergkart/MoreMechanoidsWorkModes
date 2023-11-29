@@ -18,6 +18,17 @@ namespace WVC_WorkModes
 
 		public MechanoidWorkType workModeType = 0;
 
+		// public override ThinkNode DeepCopy(bool resolve = true)
+		// {
+			// JobGiver_GoToShutdownZone obj = (JobGiver_GoToShutdownZone)base.DeepCopy(resolve);
+			// obj.workModeType = workModeType;
+			// obj.spotDefName = spotDefName;
+			// obj.backupSpotDefName = backupSpotDefName;
+			// obj.minDistanceForSpot = minDistanceForSpot;
+			// obj.maxDistanceForSpot = maxDistanceForSpot;
+			// return obj;
+		// }
+
 		protected override Job TryGiveJob(Pawn pawn)
 		{
 			if (WVC_MMWM.settings.enableShutdownSearching)

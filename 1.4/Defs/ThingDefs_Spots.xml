@@ -51,11 +51,11 @@
   <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
 	<defName>WVC_IOMSS_WorkAndRecharge</defName>
 	<label>worker spot</label>
-	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Work and recharge"&lt;/color&gt; mode will return here.</description>
-	<descriptionHyperlinks>
-	  <MechWorkModeDef>WVC_WorkAndRecharge</MechWorkModeDef>
-	  <MechWorkModeDef>WVC_SafeWorkAndRecharge</MechWorkModeDef>
-	</descriptionHyperlinks>
+	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Work"&lt;/color&gt; type mode will return here.</description>
+	<!-- <descriptionHyperlinks> -->
+	  <!-- <MechWorkModeDef>WVC_WorkAndRecharge</MechWorkModeDef> -->
+	  <!-- <MechWorkModeDef>WVC_SafeWorkAndRecharge</MechWorkModeDef> -->
+	<!-- </descriptionHyperlinks> -->
 	<graphicData>
 	  <texPath>WVC/Spots/WorkerMechanoidShutdownSpot</texPath>
 	</graphicData>
@@ -64,10 +64,10 @@
   <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
 	<defName>WVC_IOMSS_TotallySafeSpot</defName>
 	<label>safe spot</label>
-	<description>Mechanoids with a &lt;color=#f5ffa2&gt;"Safe"&lt;/color&gt; job will return here in case of danger.</description>
-	<descriptionHyperlinks>
-	  <MechWorkModeDef>WVC_SafeWorkAndRecharge</MechWorkModeDef>
-	</descriptionHyperlinks>
+	<description>Mechanoids with a &lt;color=#f5ffa2&gt;"Safe"&lt;/color&gt; type mode will return here in case of danger.</description>
+	<!-- <descriptionHyperlinks> -->
+	  <!-- <MechWorkModeDef>WVC_SafeWorkAndRecharge</MechWorkModeDef> -->
+	<!-- </descriptionHyperlinks> -->
 	<graphicData>
 	  <texPath>WVC/Spots/EscapeMechanoidShutdownSpot</texPath>
 	</graphicData>
@@ -76,10 +76,10 @@
   <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
 	<defName>WVC_IOMSS_Ambush</defName>
 	<label>ambush spot</label>
-	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Ambush"&lt;/color&gt; mode will return here.</description>
-	<descriptionHyperlinks>
-	  <MechWorkModeDef>WVC_Ambush</MechWorkModeDef>
-	</descriptionHyperlinks>
+	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Ambush"&lt;/color&gt; type mode will return here.</description>
+	<!-- <descriptionHyperlinks> -->
+	  <!-- <MechWorkModeDef>WVC_Ambush</MechWorkModeDef> -->
+	<!-- </descriptionHyperlinks> -->
 	<graphicData>
 	  <texPath>WVC/Spots/AmbushMechanoidShutdownSpot</texPath>
 	</graphicData>
@@ -88,12 +88,12 @@
   <ThingDef ParentName="WVC_IdleOptimization_MechanoidShutdownSpot">
 	<defName>WVC_IOMSS_WaitEnemy</defName>
 	<label>waiting spot</label>
-	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Wait enemy"&lt;/color&gt; or &lt;color=#f5ffa2&gt;"Work and wait"&lt;/color&gt; or &lt;color=#f5ffa2&gt;"Escort if enemy"&lt;/color&gt; mode will return here.</description>
-	<descriptionHyperlinks>
-	  <MechWorkModeDef>WVC_WaitEnemy</MechWorkModeDef>
-	  <MechWorkModeDef>WVC_WorkAndWaitEnemy</MechWorkModeDef>
-	  <MechWorkModeDef>WVC_EscortIfEnemyOnMap</MechWorkModeDef>
-	</descriptionHyperlinks>
+	<description>Mechanoids with the &lt;color=#f5ffa2&gt;"Combat"&lt;/color&gt; type mode will return here.</description>
+	<!-- <descriptionHyperlinks> -->
+	  <!-- <MechWorkModeDef>WVC_WaitEnemy</MechWorkModeDef> -->
+	  <!-- <MechWorkModeDef>WVC_WorkAndWaitEnemy</MechWorkModeDef> -->
+	  <!-- <MechWorkModeDef>WVC_EscortIfEnemyOnMap</MechWorkModeDef> -->
+	<!-- </descriptionHyperlinks> -->
 	<graphicData>
 	  <texPath>WVC/Spots/WaitMechanoidShutdownSpot</texPath>
 	</graphicData>

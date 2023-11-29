@@ -16,6 +16,15 @@ namespace WVC_WorkModes
 
 		public StatDef statDef;
 
+		// public override ThinkNode DeepCopy(bool resolve = true)
+		// {
+			// ThinkNode_ConditionalStatValue obj = (ThinkNode_ConditionalStatValue)base.DeepCopy(resolve);
+			// obj.invert = invert;
+			// obj.statDef = statDef;
+			// obj.requiredStatValue = requiredStatValue;
+			// return obj;
+		// }
+
 		protected override bool Satisfied(Pawn pawn)
 		{
 			if (statDef != null)

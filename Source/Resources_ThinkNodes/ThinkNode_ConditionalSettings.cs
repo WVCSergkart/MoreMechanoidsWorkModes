@@ -12,6 +12,14 @@ namespace WVC_WorkModes
 	{
 		public string settingName;
 
+		// public override ThinkNode DeepCopy(bool resolve = true)
+		// {
+			// ThinkNode_ConditionalSettings obj = (ThinkNode_ConditionalSettings)base.DeepCopy(resolve);
+			// obj.invert = invert;
+			// obj.settingName = settingName;
+			// return obj;
+		// }
+
 		protected override bool Satisfied(Pawn pawn)
 		{
 

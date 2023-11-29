@@ -51,45 +51,16 @@
 					  </li>
 					</value>
 				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>/Defs</xpath>
-					<value>
-					  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
-						<defName>WVC_EscortIfEnemyWorkAndRecharge</defName>
-						<label>escort if enemy, work and recharge</label>
-						<description>Mechanoids, regardless of their type, will accompany the overseer when an enemy is in their zone of operation. Otherwise, they will work.
-
-&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
-&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; Yes
-&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; Yes
-&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
-						<uiOrder>170</uiOrder>
-						<iconPath>WVC/UI/MechWork/EscortIfEnemyWorkAndRecharge</iconPath>
-						<workerClass>WorkModeDrawer_Escort</workerClass>
-					  </MechWorkModeDef>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>/Defs/ThingDef[defName="WVC_IOMSS_WorkAndRecharge"]/descriptionHyperlinks</xpath>
-					<success>Always</success>
-					<value>
-					  <MechWorkModeDef>WVC_EscortIfEnemyWorkAndRecharge</MechWorkModeDef>
-					</value>
-				</li>
 			</operations>
 		</active>
-		<!-- <deActive Class="PatchOperationSequence"> -->
-			<!-- <operations> -->
-				<!-- <li Class="PatchOperationRemove"> -->
-					<!-- <xpath>/Defs/MechWorkModeDef[defName="WVC_EscortIfEnemyWorkAndRecharge"]</xpath> -->
-					<!-- <success>Always</success> -->
-				<!-- </li> -->
-				<!-- <li Class="PatchOperationRemove"> -->
-					<!-- <xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath> -->
-					<!-- <success>Always</success> -->
-				<!-- </li> -->
-			<!-- </operations> -->
-		<!-- </deActive> -->
+		<deActive Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/MechWorkModeDef[defName="WVC_EscortIfEnemyWorkAndRecharge"]</xpath>
+					<success>Always</success>
+				</li>
+			</operations>
+		</deActive>
 	</Operation>
 
 	<!-- =========================================================== -->
@@ -152,33 +123,16 @@
 					  </li>
 					</value>
 				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>/Defs</xpath>
-					<value>
-					  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
-						<defName>WVC_EscortIfDraftedOrDowned</defName>
-						<label>escort if drafted or downed</label>
-						<description>Mechanoids, regardless of type, will accompany an overseer if it is drafted or downed.
-
-&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
-&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
-&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; Yes
-&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
-						<uiOrder>175</uiOrder>
-						<iconPath>WVC/UI/MechWork/EscortIfDraftedOrDowned</iconPath>
-						<workerClass>WorkModeDrawer_Escort</workerClass>
-					  </MechWorkModeDef>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>/Defs/ThingDef[defName="WVC_IOMSS_WaitEnemy"]/descriptionHyperlinks</xpath>
-					<success>Always</success>
-					<value>
-					  <MechWorkModeDef>WVC_EscortIfDraftedOrDowned</MechWorkModeDef>
-					</value>
-				</li>
 			</operations>
 		</active>
+		<deActive Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/MechWorkModeDef[defName="WVC_EscortIfDraftedOrDowned"]</xpath>
+					<success>Always</success>
+				</li>
+			</operations>
+		</deActive>
 	</Operation>
 
 	<!-- =========================================================== -->
@@ -188,47 +142,22 @@
 		<active Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationAdd">
-					<xpath>/Defs</xpath>
-					<value>
-					  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
-						<defName>WVC_HiveMindResearching</defName>
-						<label>hive mind research</label>
-						<description>Mechanoids, regardless of type, will generate research points relative to their bandwidth cost. The speed and efficiency of research directly depends on the number of mechanoids involved in it.
-
-If there is an enemy on the map or in case of damage, the mechanoids will head to a safe zone.
-
-This mode requires the &lt;color=#00cccc&gt;"Redirection of capacities"&lt;/color&gt; technology.
-
-&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Safe
-&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
-&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; If damaged
-&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
-						<uiOrder>10</uiOrder>
-						<iconPath>WVC/UI/MechWork/ResearchMind</iconPath>
-					  </MechWorkModeDef>
-
-					  <ResearchProjectDef>
-						<defName>WVC_WorkModes_RedirectionOfCapacities</defName>
-						<label>redirection of capacities</label>
-						<description>Allows mechanoids to generate research points when they are in &lt;color=#00cccc&gt;"Hive mind research"&lt;/color&gt; mode.</description>
-						<techLevel>Spacer</techLevel>
-						<baseCost>1600</baseCost>
-						<requiresMechanitor>true</requiresMechanitor>
-						<tab>WVC_TechTab</tab>
-						<researchViewX>6.00</researchViewX>
-						<researchViewY>2.00</researchViewY>
-						<prerequisites>
-						  <li>StandardMechtech</li>
-						</prerequisites>
-					  </ResearchProjectDef>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
 					<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
 					<value>
 					  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 						<workMode>WVC_HiveMindResearching</workMode>
 						<subNodes>
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects">
+							<invert>true</invert>
+							<allOfResearchProjects>
+							  <li>WVC_WorkModes_RedirectionOfCapacities</li>
+							</allOfResearchProjects>
+							<subNodes>
+							  <li Class="WVC_WorkModes.JobGiver_ChangeMode">
+								<workMode>Work</workMode>
+							  </li>
+							</subNodes>
+						  </li>
 						  <!-- Find Enemy -->
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 							<subNodes>
@@ -265,37 +194,32 @@ This mode requires the &lt;color=#00cccc&gt;"Redirection of capacities"&lt;/colo
 							  </li>
 							</subNodes>
 						  </li>
-						  <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects">
-							<allOfResearchProjects>
-							  <li>WVC_WorkModes_RedirectionOfCapacities</li>
-							</allOfResearchProjects>
-							<subNodes>
-							  <li Class="WVC_WorkModes.JobGiver_MechDoResearch">
-								<researchFactor>10</researchFactor>
-							  </li>
-							  <li Class="JobGiver_WanderColony">
-								<maxDanger>Deadly</maxDanger>
-								<locomotionUrgency>Amble</locomotionUrgency>
-								<reportStringOverride>Mech hive mind is researching.</reportStringOverride>
-							  </li>
-							</subNodes>
+						  <li Class="WVC_WorkModes.JobGiver_MechDoResearch">
+							<researchFactor>10</researchFactor>
 						  </li>
 						  <li Class="JobGiver_WanderColony">
 							<maxDanger>Deadly</maxDanger>
+							<locomotionUrgency>Amble</locomotionUrgency>
+							<reportStringOverride>Mech hive mind is researching.</reportStringOverride>
 						  </li>
 						</subNodes>
 					  </li>
 					</value>
 				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>/Defs/ThingDef[defName="WVC_IOMSS_TotallySafeSpot"]/descriptionHyperlinks</xpath>
-					<success>Always</success>
-					<value>
-					  <MechWorkModeDef>WVC_HiveMindResearching</MechWorkModeDef>
-					</value>
-				</li>
 			</operations>
 		</active>
+		<deActive Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/MechWorkModeDef[defName="WVC_HiveMindResearching"]</xpath>
+					<success>Always</success>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ResearchProjectDef[defName="WVC_WorkModes_RedirectionOfCapacities"]</xpath>
+					<success>Always</success>
+				</li>
+			</operations>
+		</deActive>
 	</Operation>
 
 </Patch>

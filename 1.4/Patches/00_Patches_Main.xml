@@ -119,10 +119,6 @@
 					<xpath>/Defs/MechWorkModeDef[defName="WVC_FindAndDestroy"]</xpath>
 					<success>Always</success>
 				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath>
-					<success>Always</success>
-				</li>
 			</operations>
 		</deActive>
 	</Operation>
@@ -163,7 +159,7 @@
 					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
 				  </li>
 				  <!-- Shutdown -->
-				  <li Class="JobGiver_GetEnergy_SelfShutdown">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 					<forced>true</forced>
 				  </li>
 				</subNodes>
@@ -174,10 +170,6 @@
 			<operations>
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/MechWorkModeDef[defName="WVC_WaitEnemy"]</xpath>
-					<success>Always</success>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath>
 					<success>Always</success>
 				</li>
 			</operations>
@@ -241,10 +233,6 @@
 					<xpath>/Defs/MechWorkModeDef[defName="WVC_WorkAndWaitEnemy"]</xpath>
 					<success>Always</success>
 				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath>
-					<success>Always</success>
-				</li>
 			</operations>
 		</deActive>
 	</Operation>
@@ -274,7 +262,7 @@
 					<spotDefName>WVC_IOMSS_Ambush</spotDefName>
 				  </li>
 				  <!-- Shutdown -->
-				  <li Class="JobGiver_GetEnergy_SelfShutdown">
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 					<forced>true</forced>
 				  </li>
 				</subNodes>
@@ -285,10 +273,6 @@
 			<operations>
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/MechWorkModeDef[defName="WVC_Ambush"]</xpath>
-					<success>Always</success>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath>
 					<success>Always</success>
 				</li>
 			</operations>
@@ -337,10 +321,6 @@
 			<operations>
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/MechWorkModeDef[defName="WVC_DefendYourself"]</xpath>
-					<success>Always</success>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath>
 					<success>Always</success>
 				</li>
 			</operations>
@@ -398,10 +378,6 @@
 			<operations>
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/MechWorkModeDef[defName="WVC_WorkAndRecharge"]</xpath>
-					<success>Always</success>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath>
 					<success>Always</success>
 				</li>
 			</operations>
@@ -480,10 +456,6 @@
 					<xpath>/Defs/MechWorkModeDef[defName="WVC_SafeWorkAndRecharge"]</xpath>
 					<success>Always</success>
 				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath>
-					<success>Always</success>
-				</li>
 			</operations>
 		</deActive>
 	</Operation>
@@ -512,10 +484,6 @@
 			<operations>
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/MechWorkModeDef[defName="WVC_EscaortAndRecharge"]</xpath>
-					<success>Always</success>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath>
 					<success>Always</success>
 				</li>
 			</operations>
@@ -553,10 +521,6 @@
 					<xpath>/Defs/MechWorkModeDef[defName="WVC_WorkRechargeEscort"]</xpath>
 					<success>Always</success>
 				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath>
-					<success>Always</success>
-				</li>
 			</operations>
 		</deActive>
 	</Operation>
@@ -591,6 +555,8 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Combat</workModeType>
+					<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
 				  </li>
 				  <!-- Shutdown short -->
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
@@ -605,10 +571,6 @@
 			<operations>
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/MechWorkModeDef[defName="WVC_EscortIfEnemyOnMap"]</xpath>
-					<success>Always</success>
-				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ThingDef[@ParentName="WVC_IdleOptimization_MechanoidShutdownSpot"]/descriptionHyperlinks</xpath>
 					<success>Always</success>
 				</li>
 			</operations>

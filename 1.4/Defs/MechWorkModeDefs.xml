@@ -26,6 +26,23 @@
 	<iconPath>WVC/UI/MechWork/DefendYourself</iconPath>
   </MechWorkModeDef>
 
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+	<defName>WVC_HiveMindResearching</defName>
+	<label>hive mind research</label>
+	<description>Mechanoids, regardless of type, will generate research points relative to their bandwidth cost. The speed and efficiency of research directly depends on the number of mechanoids involved in it.
+
+If there is an enemy on the map or in case of damage, the mechanoids will head to a safe zone.
+
+This mode requires the &lt;color=#00cccc&gt;"Redirection of capacities"&lt;/color&gt; technology.
+
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Safe
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; If damaged
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
+	<uiOrder>15</uiOrder>
+	<iconPath>WVC/UI/MechWork/ResearchMind</iconPath>
+  </MechWorkModeDef>
+
   <!-- =========================================== -->
 
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
@@ -104,7 +121,7 @@
 &lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; Yes
 &lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; Yes
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
-	<uiOrder>110</uiOrder>
+	<uiOrder>120</uiOrder>
 	<iconPath>WVC/UI/MechWork/SafeWorkAndRecharge</iconPath>
   </MechWorkModeDef>
 
@@ -121,6 +138,34 @@
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>150</uiOrder>
 	<iconPath>WVC/UI/MechWork/WorkAndEscort</iconPath>
+	<workerClass>WorkModeDrawer_Escort</workerClass>
+  </MechWorkModeDef>
+
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+	<defName>WVC_EscortIfEnemyWorkAndRecharge</defName>
+	<label>escort if enemy, work and recharge</label>
+	<description>Mechanoids, regardless of their type, will accompany the overseer when an enemy is in their zone of operation. Otherwise, they will work.
+
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; Yes
+&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; Yes
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
+	<uiOrder>170</uiOrder>
+	<iconPath>WVC/UI/MechWork/EscortIfEnemyWorkAndRecharge</iconPath>
+	<workerClass>WorkModeDrawer_Escort</workerClass>
+  </MechWorkModeDef>
+
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+	<defName>WVC_EscortIfDraftedOrDowned</defName>
+	<label>escort if drafted or downed</label>
+	<description>Mechanoids, regardless of type, will accompany an overseer if it is drafted or downed.
+
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Combat
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; Yes
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
+	<uiOrder>175</uiOrder>
+	<iconPath>WVC/UI/MechWork/EscortIfDraftedOrDowned</iconPath>
 	<workerClass>WorkModeDrawer_Escort</workerClass>
   </MechWorkModeDef>
 

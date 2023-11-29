@@ -58,36 +58,4 @@ Restart required!</WVC_ToolTip_shutdownModeZonesOrSpots>
 	<WVC_Label_useCustomShutdownBehavior>Use custom shutdown behavior</WVC_Label_useCustomShutdownBehavior>
 	<WVC_ToolTip_useCustomShutdownBehavior>Vanilla shutdown is too stupid, but reliable. If you encounter bugs related to mechanoid shutdown, disable this option.</WVC_ToolTip_useCustomShutdownBehavior>
 
-	<!-- Zones -->
-	<WVC_MechanoidShutdownZone>Mechanoid shutdown zone</WVC_MechanoidShutdownZone>
-	<WVC_MechanoidShutdownZoneDesc>Mechanoids will return here before shutting down.</WVC_MechanoidShutdownZoneDesc>
-
-	<WVC_ShutdownZone_AllowWorkers>Work type</WVC_ShutdownZone_AllowWorkers>
-	<WVC_ShutdownZone_AllowSafe>Safe type</WVC_ShutdownZone_AllowSafe>
-	<WVC_ShutdownZone_AllowCombatants>Combat type</WVC_ShutdownZone_AllowCombatants>
-	<WVC_ShutdownZone_AllowAmbush>Ambush type</WVC_ShutdownZone_AllowAmbush>
-
-	<WVC_ShutdownZone_BasicDesc>Responsible for whether mechanoids with this type of work will be able to shutdown here.</WVC_ShutdownZone_BasicDesc>
-
-	<WVC_WorkModes_On>On</WVC_WorkModes_On>
-	<WVC_WorkModes_Off>Off</WVC_WorkModes_Off>
-
-	<WVC_ShutdownZoneInPrisonCell>Shutdown zone cannot be in a prison cell.</WVC_ShutdownZoneInPrisonCell>
-	<!-- <WVC_ShutdownZoneNotStandable>Shutdown zone cannot be located on impassable terrain or located on other objects.</WVC_ShutdownZoneNotStandable> -->
-	<WVC_ShutdownZoneNotStandable>Shutdown zone should be standable.</WVC_ShutdownZoneNotStandable>
-
-	<!-- SmartEscort -->
-	<WVC_WorkModes_AssignToPawnEscortLabel>Assign to escort</WVC_WorkModes_AssignToPawnEscortLabel>
-	<WVC_WorkModes_AssignToPawnEscortLabelReset>Reset escorted pawn</WVC_WorkModes_AssignToPawnEscortLabelReset>
-	<!-- <WVC_WorkModes_AssignedPawnEscortLabel>{0} assigned escort {1}</WVC_WorkModes_AssignedPawnEscortLabel> -->
-	<WVC_WorkModes_AssignToPawnEscortDesc>{0} assigned escort {1}
-
-Allows you to specify to the mechanoid what colony pawn it will escort.
-
-{0} cannot follow anyone other than an overseer in a caravan or on non-home maps.</WVC_WorkModes_AssignToPawnEscortDesc>
-
-	<WVC_WorkModes_AssignToPawnEscortAssigned>{0} assigned to escort {1}.</WVC_WorkModes_AssignToPawnEscortAssigned>
-	<WVC_WorkModes_AssignToPawnEscortNoLongerEscort>{0} no longer escort {1}.</WVC_WorkModes_AssignToPawnEscortNoLongerEscort>
-	<WVC_WorkModes_EscortsAssignTargetLabel>Assigned to escorts {0}</WVC_WorkModes_EscortsAssignTargetLabel>
-
 </LanguageData>

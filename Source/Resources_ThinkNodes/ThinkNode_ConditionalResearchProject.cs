@@ -16,6 +16,15 @@ namespace WVC_WorkModes
 
 		public List<ResearchProjectDef> anyOfResearchProjects;
 
+		// public override ThinkNode DeepCopy(bool resolve = true)
+		// {
+			// ThinkNode_ConditionalResearchProjects obj = (ThinkNode_ConditionalResearchProjects)base.DeepCopy(resolve);
+			// obj.invert = invert;
+			// obj.allOfResearchProjects = allOfResearchProjects;
+			// obj.anyOfResearchProjects = anyOfResearchProjects;
+			// return obj;
+		// }
+
 		protected override bool Satisfied(Pawn pawn)
 		{
 			if (AllProjectsFinished(allOfResearchProjects) || AnyProjectFinished(anyOfResearchProjects))
