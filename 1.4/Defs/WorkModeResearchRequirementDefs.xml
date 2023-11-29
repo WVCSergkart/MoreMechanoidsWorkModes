@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WVC_WorkModes.WorkModeResearchRequirementDef>
+	<defName>WVC_WorkModes_CombatModes</defName>
+	<workModes>
+	  <li>WVC_Ambush</li>
+	  <li>WVC_FindAndDestroy</li>
+	</workModes>
+	<researchPrerequisites>
+	  <li>WVC_WorkModes_CombatModes</li>
+	</researchPrerequisites>
+  </WVC_WorkModes.WorkModeResearchRequirementDef>
+
+  <WVC_WorkModes.WorkModeResearchRequirementDef>
+	<defName>WVC_WorkModes_HiveMindResearch</defName>
+	<workModes>
+	  <li>WVC_HiveMindResearching</li>
+	</workModes>
+	<researchPrerequisites>
+	  <li>WVC_WorkModes_HiveMindResearch</li>
+	</researchPrerequisites>
+  </WVC_WorkModes.WorkModeResearchRequirementDef>
+
+  <WVC_WorkModes.WorkModeResearchRequirementDef>
+	<defName>WVC_WorkModes_AdvancedCombatModes</defName>
+	<workModes>
+	  <li>WVC_WaitEnemy</li>
+	  <li>WVC_WorkAndWaitEnemy</li>
+	  <li>WVC_EscortIfEnemyOnMap</li>
+	</workModes>
+	<researchPrerequisites>
+	  <li>WVC_WorkModes_AdvancedCombatModes</li>
+	</researchPrerequisites>
+  </WVC_WorkModes.WorkModeResearchRequirementDef>
+
+  <WVC_WorkModes.WorkModeResearchRequirementDef>
+	<defName>WVC_WorkModes_AdvancedWorkModes</defName>
+	<workModes>
+	  <li>WVC_WorkAndRecharge</li>
+	  <li>WVC_WorkAndWaitEnemy</li>
+	  <li>WVC_WorkRechargeEscort</li>
+	  <li>WVC_EscortIfEnemyWorkAndRecharge</li>
+	  <li>WVC_SafeWorkAndRecharge</li>
+	</workModes>
+	<researchPrerequisites>
+	  <li>WVC_WorkModes_AdvancedWorkModes</li>
+	</researchPrerequisites>
+  </WVC_WorkModes.WorkModeResearchRequirementDef>
+
+  <WVC_WorkModes.WorkModeResearchRequirementDef>
+	<defName>WVC_WorkModes_SafeModes</defName>
+	<workModes>
+	  <li>WVC_DefendYourself</li>
+	  <li>WVC_SafeWorkAndRecharge</li>
+	  <li>WVC_EscortIfDraftedOrDowned</li>
+	</workModes>
+	<researchPrerequisites>
+	  <li>WVC_WorkModes_SafeModes</li>
+	</researchPrerequisites>
+  </WVC_WorkModes.WorkModeResearchRequirementDef>
+
+  <WVC_WorkModes.WorkModeResearchRequirementDef>
+	<defName>WVC_WorkModes_AdvancedEscortModes</defName>
+	<workModes>
+	  <li>WVC_EscortIfEnemyOnMap</li>
+	  <li>WVC_EscortIfDraftedOrDowned</li>
+	  <li>WVC_WorkRechargeEscort</li>
+	  <li>WVC_EscaortAndRecharge</li>
+	  <li>WVC_EscortIfEnemyWorkAndRecharge</li>
+	</workModes>
+	<researchPrerequisites>
+	  <li>WVC_WorkModes_AdvancedEscortModes</li>
+	</researchPrerequisites>
+  </WVC_WorkModes.WorkModeResearchRequirementDef>
+
+</Defs>

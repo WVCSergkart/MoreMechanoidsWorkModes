@@ -26,14 +26,14 @@
 	<iconPath>WVC/UI/MechWork/DefendYourself</iconPath>
   </MechWorkModeDef>
 
+
+<!-- This mode requires the &lt;color=#00cccc&gt;"Redirection of capacities"&lt;/color&gt; technology. -->
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_HiveMindResearching</defName>
 	<label>hive mind research</label>
 	<description>Mechanoids, regardless of type, will generate research points relative to their bandwidth cost. The speed and efficiency of research directly depends on the number of mechanoids involved in it.
 
 If there is an enemy on the map or in case of damage, the mechanoids will head to a safe zone.
-
-This mode requires the &lt;color=#00cccc&gt;"Redirection of capacities"&lt;/color&gt; technology.
 
 &lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Safe
 &lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No

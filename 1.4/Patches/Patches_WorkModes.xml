@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+	  <xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+	  <order>Append</order>
+	  <value>
+
+		  <!-- ============================== TECHNOLOGY REQUIREMENT ============================== -->
+		  <!-- ============================== TECHNOLOGY REQUIREMENT ============================== -->
+		  <!-- ============================== TECHNOLOGY REQUIREMENT ============================== -->
+
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalSettings">
+			<settingName>techRequirementMode</settingName>
+			<subNodes>
+
+			  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModesWithResearchRequirement" MayRequire="Ludeon.RimWorld.Biotech">
+				<workMode>Work</workMode>
+				<workModeResearchRequirementDefs>
+				  <li>WVC_WorkModes_CombatModes</li>
+				  <li>WVC_WorkModes_HiveMindResearch</li>
+				  <li>WVC_WorkModes_AdvancedCombatModes</li>
+				  <li>WVC_WorkModes_AdvancedWorkModes</li>
+				  <li>WVC_WorkModes_SafeModes</li>
+				  <li>WVC_WorkModes_AdvancedEscortModes</li>
+				</workModeResearchRequirementDefs>
+			  </li>
+
+			  <!-- MECH RESEARCH MODE -->
+			  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech"> -->
+				<!-- <workModes> -->
+				  <!-- <li>WVC_HiveMindResearching</li> -->
+				<!-- </workModes> -->
+				<!-- <subNodes> -->
+				  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+					<!-- <invert>true</invert> -->
+					<!-- <allOfResearchProjects> -->
+					  <!-- <li>WVC_WorkModes_HiveMindResearch</li> -->
+					<!-- </allOfResearchProjects> -->
+					<!-- <subNodes> -->
+					  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+						<!-- <workMode>Work</workMode> -->
+					  <!-- </li> -->
+					<!-- </subNodes> -->
+				  <!-- </li> -->
+				<!-- </subNodes> -->
+			  <!-- </li> -->
+
+			  <!-- COMBAT MODES -->
+			  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech"> -->
+				<!-- <workModes> -->
+				  <!-- <li>WVC_Ambush</li> -->
+				  <!-- <li>WVC_FindAndDestroy</li> -->
+				<!-- </workModes> -->
+				<!-- <subNodes> -->
+				  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+					<!-- <invert>true</invert> -->
+					<!-- <allOfResearchProjects> -->
+					  <!-- <li>WVC_WorkModes_CombatModes</li> -->
+					<!-- </allOfResearchProjects> -->
+					<!-- <subNodes> -->
+					  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+						<!-- <workMode>Work</workMode> -->
+					  <!-- </li> -->
+					<!-- </subNodes> -->
+				  <!-- </li> -->
+				<!-- </subNodes> -->
+			  <!-- </li> -->
+
+			  <!-- ADVANCED COMBAT MODES -->
+			  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech"> -->
+				<!-- <workModes> -->
+				  <!-- <li>WVC_WaitEnemy</li> -->
+				  <!-- <li>WVC_WorkAndWaitEnemy</li> -->
+				  <!-- <li>WVC_EscortIfEnemyOnMap</li> -->
+				<!-- </workModes> -->
+				<!-- <subNodes> -->
+				  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+					<!-- <invert>true</invert> -->
+					<!-- <allOfResearchProjects> -->
+					  <!-- <li>WVC_WorkModes_AdvancedCombatModes</li> -->
+					<!-- </allOfResearchProjects> -->
+					<!-- <subNodes> -->
+					  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+						<!-- <workMode>Work</workMode> -->
+					  <!-- </li> -->
+					<!-- </subNodes> -->
+				  <!-- </li> -->
+				<!-- </subNodes> -->
+			  <!-- </li> -->
+
+			  <!-- ADVANCED WORK MODES -->
+			  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech"> -->
+				<!-- <workModes> -->
+				  <!-- <li>WVC_WorkAndRecharge</li> -->
+				  <!-- <li>WVC_WorkAndWaitEnemy</li> -->
+				  <!-- <li>WVC_WorkRechargeEscort</li> -->
+				  <!-- <li>WVC_EscortIfEnemyWorkAndRecharge</li> -->
+				  <!-- <li>WVC_SafeWorkAndRecharge</li> -->
+				<!-- </workModes> -->
+				<!-- <subNodes> -->
+				  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+					<!-- <invert>true</invert> -->
+					<!-- <allOfResearchProjects> -->
+					  <!-- <li>WVC_WorkModes_AdvancedWorkModes</li> -->
+					<!-- </allOfResearchProjects> -->
+					<!-- <subNodes> -->
+					  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+						<!-- <workMode>Work</workMode> -->
+					  <!-- </li> -->
+					<!-- </subNodes> -->
+				  <!-- </li> -->
+				<!-- </subNodes> -->
+			  <!-- </li> -->
+
+			  <!-- SAFE MODES -->
+			  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech"> -->
+				<!-- <workModes> -->
+				  <!-- <li>WVC_DefendYourself</li> -->
+				  <!-- <li>WVC_SafeWorkAndRecharge</li> -->
+				  <!-- <li>WVC_EscortIfDraftedOrDowned</li> -->
+				<!-- </workModes> -->
+				<!-- <subNodes> -->
+				  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+					<!-- <invert>true</invert> -->
+					<!-- <allOfResearchProjects> -->
+					  <!-- <li>WVC_WorkModes_SafeModes</li> -->
+					<!-- </allOfResearchProjects> -->
+					<!-- <subNodes> -->
+					  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+						<!-- <workMode>Work</workMode> -->
+					  <!-- </li> -->
+					<!-- </subNodes> -->
+				  <!-- </li> -->
+				<!-- </subNodes> -->
+			  <!-- </li> -->
+
+			  <!-- ADVANCED ESCORT MODES -->
+			  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech"> -->
+				<!-- <workModes> -->
+				  <!-- <li>WVC_EscortIfEnemyOnMap</li> -->
+				  <!-- <li>WVC_EscortIfDraftedOrDowned</li> -->
+				  <!-- <li>WVC_WorkRechargeEscort</li> -->
+				  <!-- <li>WVC_EscaortAndRecharge</li> -->
+				  <!-- <li>WVC_EscortIfEnemyWorkAndRecharge</li> -->
+				<!-- </workModes> -->
+				<!-- <subNodes> -->
+				  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+					<!-- <invert>true</invert> -->
+					<!-- <allOfResearchProjects> -->
+					  <!-- <li>WVC_WorkModes_AdvancedEscortModes</li> -->
+					<!-- </allOfResearchProjects> -->
+					<!-- <subNodes> -->
+					  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+						<!-- <workMode>Work</workMode> -->
+					  <!-- </li> -->
+					<!-- </subNodes> -->
+				  <!-- </li> -->
+				<!-- </subNodes> -->
+			  <!-- </li> -->
+
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== SAFE SHUTDOWN MODE ============================== -->
+		  <!-- ============================== SAFE SHUTDOWN MODE ============================== -->
+		  <!-- ============================== SAFE SHUTDOWN MODE ============================== -->
+
+		  <!-- Safe spot -->
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_SafeWorkAndRecharge</li>
+			  <li>WVC_HiveMindResearching</li>
+			</workModes>
+			<subNodes>
+			  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+				<subNodes>
+				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+					<workModeType>Safe</workModeType>
+					<spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+				  </li>
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+					<tickInterval>1500</tickInterval>
+					<forced>true</forced>
+				  </li>
+				</subNodes>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== ESCORT: DRAFTED ============================== -->
+		  <!-- ============================== ESCORT: DRAFTED ============================== -->
+		  <!-- ============================== ESCORT: DRAFTED ============================== -->
+
+		  <!-- Draft Escort -->
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_EscortIfDraftedOrDowned</li>
+			</workModes>
+			<subNodes>
+			  <li Class="WVC_WorkModes.ThinkNode_ConditionalDrafted">
+				<subNodes>
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+				  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+				</subNodes>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== ESCORT: DOWNED ============================== -->
+		  <!-- ============================== ESCORT: DOWNED ============================== -->
+		  <!-- ============================== ESCORT: DOWNED ============================== -->
+
+		  <!-- Downed Escort -->
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_EscortIfDraftedOrDowned</li>
+			  <li>WVC_EscortIfEnemyOnMap</li>
+			  <li>WVC_EscortIfEnemyWorkAndRecharge</li>
+			</workModes>
+			<subNodes>
+			  <li Class="WVC_WorkModes.ThinkNode_ConditionalDowned">
+				<subNodes>
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+				  <li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>65</targetAcquireRadius>
+					<targetKeepRadius>72</targetKeepRadius>
+				  </li>
+				  <!-- <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" /> -->
+				  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+				</subNodes>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== ESCORT: ENEMY ON MAP ============================== -->
+		  <!-- ============================== ESCORT: ENEMY ON MAP ============================== -->
+		  <!-- ============================== ESCORT: ENEMY ON MAP ============================== -->
+
+		  <!-- ESCORT: ENEMY ON MAP -->
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_EscortIfEnemyOnMap</li>
+			  <li>WVC_EscortIfEnemyWorkAndRecharge</li>
+			  <!-- <li>WVC_EscortIfEnemyOnMap</li> -->
+			  <!-- <li>WVC_EscortIfEnemyOnMap</li> -->
+			</workModes>
+			<subNodes>
+			  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+				<subNodes>
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+				  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+				  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+				</subNodes>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== ALLOWED AREA ============================== -->
+		  <!-- ============================== ALLOWED AREA ============================== -->
+		  <!-- ============================== ALLOWED AREA ============================== -->
+
+		  <!-- Seek ALLOWED AREA -->
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_FindAndDestroy</li>
+			  <li>WVC_WaitEnemy</li>
+			  <li>WVC_WorkAndWaitEnemy</li>
+			  <li>WVC_Ambush</li>
+			  <li>WVC_DefendYourself</li>
+			  <li>WVC_WorkAndRecharge</li>
+			  <li>WVC_SafeWorkAndRecharge</li>
+			  <li>WVC_EscortIfDraftedOrDowned</li>
+			  <!-- <li>WVC_WorkAndWaitEnemy</li> -->
+			  <!-- <li>WVC_WorkAndWaitEnemy</li> -->
+			  <!-- <li>WVC_WorkAndWaitEnemy</li> -->
+			  <!-- <li>WVC_WorkAndWaitEnemy</li> -->
+			</workModes>
+			<subNodes>
+			  <li Class="JobGiver_SeekAllowedArea" />
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== COMBAT MODE ============================== -->
+		  <!-- ============================== COMBAT MODE ============================== -->
+		  <!-- ============================== COMBAT MODE ============================== -->
+
+		  <!-- Fight -->
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_FindAndDestroy</li>
+			  <li>WVC_WaitEnemy</li>
+			  <li>WVC_WorkAndWaitEnemy</li>
+			  <!-- <li>WVC_FindAndDestroy</li> -->
+			  <!-- <li>WVC_FindAndDestroy</li> -->
+			  <!-- <li>WVC_FindAndDestroy</li> -->
+			</workModes>
+			<subNodes>
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>65</targetAcquireRadius>
+				<targetKeepRadius>72</targetKeepRadius>
+			  </li>
+			  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+				<subNodes>
+				  <li Class="JobGiver_AIGotoNearestHostile" />
+				</subNodes>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== VANILLA CHARGE ============================== -->
+		  <!-- ============================== VANILLA CHARGE ============================== -->
+		  <!-- ============================== VANILLA CHARGE ============================== -->
+
+		  <!-- Vanilla Charge -->
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_WorkAndWaitEnemy</li>
+			  <li>WVC_WorkAndRecharge</li>
+			  <li>WVC_SafeWorkAndRecharge</li>
+			  <li>WVC_WorkRechargeEscort</li>
+			  <!-- <li>WVC_WorkAndWaitEnemy</li> -->
+			  <li>WVC_EscortIfEnemyWorkAndRecharge</li>
+			  <li>WVC_EscortIfDraftedOrDowned</li>
+			</workModes>
+			<subNodes>
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== WORK ============================== -->
+		  <!-- ============================== WORK ============================== -->
+		  <!-- ============================== WORK ============================== -->
+
+		  <!-- Work -->
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_WorkAndWaitEnemy</li>
+			  <li>WVC_WorkAndRecharge</li>
+			  <li>WVC_SafeWorkAndRecharge</li>
+			  <li>WVC_WorkRechargeEscort</li>
+			  <!-- <li>WVC_WorkAndWaitEnemy</li> -->
+			  <li>WVC_EscortIfEnemyWorkAndRecharge</li>
+			</workModes>
+			<subNodes>
+			  <li Class="JobGiver_Work">
+				<emergency>true</emergency>
+			  </li>
+			  <li Class="JobGiver_Work" />
+			  <li Class="ThinkNode_ConditionalWorkMech">
+				<invert>true</invert>
+				<subNodes>
+				  <li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>65</targetAcquireRadius>
+					<targetKeepRadius>72</targetKeepRadius>
+				  </li>
+				</subNodes>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== SMART CHARGE ============================== -->
+		  <!-- ============================== SMART CHARGE ============================== -->
+		  <!-- ============================== SMART CHARGE ============================== -->
+
+		  <!-- Smart Charge -->
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_WorkAndWaitEnemy</li>
+			  <li>WVC_WaitEnemy</li>
+			  <li>WVC_FindAndDestroy</li>
+			  <li>WVC_WorkAndRecharge</li>
+			  <!-- <li>WVC_WorkRechargeEscort</li> -->
+			  <li>WVC_SafeWorkAndRecharge</li>
+			  <li>WVC_EscortIfEnemyOnMap</li>
+			  <li>WVC_EscortIfEnemyWorkAndRecharge</li>
+			  <li>WVC_EscortIfDraftedOrDowned</li>
+			</workModes>
+			<subNodes>
+			  <!-- Go to smart charge -->
+			  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+				<tickInterval>625</tickInterval>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== SMART CHARGE END ============================== -->
+		  <!-- ============================== SMART CHARGE END ============================== -->
+		  <!-- ============================== SMART CHARGE END ============================== -->
+
+		  <!-- ================================================================ -->
+
+		  <!-- Find and Destroy -->
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_FindAndDestroy</workMode>
+			<subNodes>
+			  <li Class="JobGiver_WanderColony">
+				<maxDanger>Deadly</maxDanger>
+				<reportStringOverride>Patrolling.</reportStringOverride>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ================================================================ -->
+
+		  <!-- Ambush -->
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_Ambush</workMode>
+			<subNodes>
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>65</targetAcquireRadius>
+				<targetKeepRadius>72</targetKeepRadius>
+			  </li>
+			  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+				<workModeType>Ambush</workModeType>
+				<spotDefName>WVC_IOMSS_Ambush</spotDefName>
+			  </li>
+			  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+				<forced>true</forced>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== SAFE YOURSELF ============================== -->
+		  <!-- ============================== SAFE YOURSELF ============================== -->
+		  <!-- ============================== SAFE YOURSELF ============================== -->
+
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_DefendYourself</li>
+			</workModes>
+			<subNodes>
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="JobGiver_AIFightEnemies">
+				<targetAcquireRadius>9</targetAcquireRadius>
+				<targetKeepRadius>12</targetKeepRadius>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ================================================================ -->
+
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_DefendYourself</li>
+			</workModes>
+			<subNodes>
+			  <li Class="WVC_WorkModes.ThinkNode_ConditionalCanRepair">
+				<subNodes>
+				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+					<workModeType>Safe</workModeType>
+					<spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+				  </li>
+				  <!-- Very-very long shutdown -->
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+					<tickInterval>6000</tickInterval>
+					<forced>true</forced>
+				  </li>
+				</subNodes>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_DefendYourself</workMode>
+			<subNodes>
+			  <li Class="JobGiver_WanderColony">
+				<maxDanger>Deadly</maxDanger>
+				<reportStringOverride>Protects itself.</reportStringOverride>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================== BASIC ESCORT ============================== -->
+		  <!-- ============================== BASIC ESCORT ============================== -->
+		  <!-- ============================== BASIC ESCORT ============================== -->
+
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_EscaortAndRecharge</workMode>
+			<subNodes>
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+			  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+			  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+			  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+			</subNodes>
+		  </li>
+
+		  <!-- ================================================================ -->
+
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_WorkRechargeEscort</workMode>
+			<subNodes>
+			  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+			  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+			  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+			  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+			</subNodes>
+		  </li>
+
+		  <!-- ============================ MECH RESEARCH ============================ -->
+		  <!-- ============================ MECH RESEARCH ============================ -->
+		  <!-- ============================ MECH RESEARCH ============================ -->
+
+		  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+			<workMode>WVC_HiveMindResearching</workMode>
+			<subNodes>
+			  <!-- If Safe -->
+			  <li Class="JobGiver_SeekAllowedArea" />
+			  <li Class="JobGiver_GetEnergy_Charger" />
+			  <li Class="WVC_WorkModes.ThinkNode_ConditionalCanRepair">
+				<subNodes>
+				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+					<workModeType>Safe</workModeType>
+					<spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+				  </li>
+				  <!-- Very-very long shutdown -->
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+					<tickInterval>6000</tickInterval>
+					<forced>true</forced>
+				  </li>
+				</subNodes>
+			  </li>
+			  <li Class="WVC_WorkModes.JobGiver_MechDoResearch">
+				<researchFactor>10</researchFactor>
+			  </li>
+			  <li Class="JobGiver_WanderColony">
+				<maxDanger>Deadly</maxDanger>
+				<locomotionUrgency>Amble</locomotionUrgency>
+				<reportStringOverride>Mech hive mind is researching.</reportStringOverride>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================ SHUTDOWN RULES ============================ -->
+		  <!-- ============================ SHUTDOWN RULES ============================ -->
+		  <!-- ============================ SHUTDOWN RULES ============================ -->
+
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_WaitEnemy</li>
+			  <li>WVC_WorkAndWaitEnemy</li>
+			  <li>WVC_EscortIfEnemyOnMap</li>
+			  <li>WVC_EscortIfDraftedOrDowned</li>
+			  <!-- <li>WVC_WorkAndWaitEnemy</li> -->
+			</workModes>
+			<subNodes>
+			  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+				<workModeType>Combat</workModeType>
+				<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
+				<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+			  </li>
+			  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+				<forced>true</forced>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ================================================================ -->
+
+		  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModes" MayRequire="Ludeon.RimWorld.Biotech">
+			<workModes>
+			  <li>WVC_WorkAndRecharge</li>
+			  <li>WVC_SafeWorkAndRecharge</li>
+			  <li>WVC_EscortIfEnemyWorkAndRecharge</li>
+			  <li>Work</li>
+			</workModes>
+			<subNodes>
+			  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+				<workModeType>Work</workModeType>
+				<spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
+				<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+			  </li>
+			  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+				<forced>true</forced>
+			  </li>
+			</subNodes>
+		  </li>
+
+		  <!-- ============================ SHUTDOWN RULES END ============================ -->
+		  <!-- ============================ SHUTDOWN RULES END ============================ -->
+		  <!-- ============================ SHUTDOWN RULES END ============================ -->
+
+	  </value>
+	</Operation>
+
+</Patch>

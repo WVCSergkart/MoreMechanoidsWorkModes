@@ -1,13 +1,12 @@
+using RimWorld;
 using System.Collections.Generic;
 using Verse;
-using RimWorld;
 using Verse.AI;
-using WVC;
 
 namespace WVC_WorkModes
 {
 
-	public enum MechanoidWorkType : byte
+    public enum MechanoidWorkType : byte
 	{
 		Work,
 		Safe,

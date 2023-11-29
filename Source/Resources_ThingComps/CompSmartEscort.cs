@@ -7,7 +7,7 @@ using Verse;
 namespace WVC_WorkModes
 {
 
-	public class CompProperties_SmartEscort : CompProperties
+    public class CompProperties_SmartEscort : CompProperties
 	{
 
 		public string uiIconAssign = "WVC/UI/MechWork/EscortTargetAssign";

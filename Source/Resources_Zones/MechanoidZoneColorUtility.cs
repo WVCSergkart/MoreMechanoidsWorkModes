@@ -1,16 +1,11 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
-using RimWorld;
-using Verse;
-using Verse.AI;
 using System.Collections.Generic;
-using WVC;
 using UnityEngine;
-using Verse.Sound;
 
 namespace WVC_WorkModes
 {
 
-	public static class MechanoidZoneColorUtility
+    public static class MechanoidZoneColorUtility
 	{
 
 		public static List<Color> mechanoidZoneColors;

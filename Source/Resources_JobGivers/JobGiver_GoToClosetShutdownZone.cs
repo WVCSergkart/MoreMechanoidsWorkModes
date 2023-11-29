@@ -1,14 +1,12 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
 using RimWorld;
+using System.Collections.Generic;
 using Verse;
 using Verse.AI;
-using System.Collections.Generic;
-using WVC;
-using System.Linq;
 
 namespace WVC_WorkModes
 {
-	public class JobGiver_GoToShutdownZone : ThinkNode_JobGiver
+    public class JobGiver_GoToShutdownZone : ThinkNode_JobGiver
 	{
 
 		public ThingDef spotDefName;

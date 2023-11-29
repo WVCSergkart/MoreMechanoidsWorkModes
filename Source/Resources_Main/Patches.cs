@@ -1,15 +1,11 @@
-using System.Xml;
 using System.Linq;
-using System.Reflection;
-using System.Collections.Generic;
+using System.Xml;
 using Verse;
-using UnityEngine;
-using WVC;
 
-namespace WVC
+namespace WVC_WorkModes
 {
 
-	public class PatchOperation_MMWM : PatchOperation
+    public class PatchOperation_MMWM : PatchOperation
 	{
 		public string settingName;
 		public PatchOperation active;

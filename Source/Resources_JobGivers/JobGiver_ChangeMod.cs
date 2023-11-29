@@ -2,12 +2,10 @@
 using RimWorld;
 using Verse;
 using Verse.AI;
-using System.Collections.Generic;
-using WVC;
 
 namespace WVC_WorkModes
 {
-	public class JobGiver_ChangeMode : ThinkNode_JobGiver
+    public class JobGiver_ChangeMode : ThinkNode_JobGiver
 	{
 
 		public MechWorkModeDef workMode;

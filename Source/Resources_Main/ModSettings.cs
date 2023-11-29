@@ -1,30 +1,29 @@
-using System.Xml;
-using System.Linq;
-using System.Reflection;
 using System.Collections.Generic;
-using Verse;
+using System.Linq;
 using UnityEngine;
-using WVC;
+using Verse;
 
-namespace WVC
+namespace WVC_WorkModes
 {
-	public class WVC_MMWM_Settings : ModSettings
+    public class WVC_MMWM_Settings : ModSettings
 	{
-		public bool WVC_FindAndDestroy = true;
-		public bool WVC_WaitEnemy = true;
-		public bool WVC_WorkAndWaitEnemy = true;
-		public bool WVC_DefendYourself = true;
-		public bool WVC_Ambush = true;
-		public bool WVC_WorkAndRecharge = true;
-		public bool WVC_SafeWorkAndRecharge = true;
-		public bool WVC_EscaortAndRecharge = true;
-		public bool WVC_WorkRechargeEscort = true;
-		public bool WVC_EscortIfEnemyOnMap = true;
+		// public bool WVC_FindAndDestroy = true;
+		// public bool WVC_WaitEnemy = true;
+		// public bool WVC_WorkAndWaitEnemy = true;
+		// public bool WVC_DefendYourself = true;
+		// public bool WVC_Ambush = true;
+		// public bool WVC_WorkAndRecharge = true;
+		// public bool WVC_SafeWorkAndRecharge = true;
+		// public bool WVC_EscaortAndRecharge = true;
+		// public bool WVC_WorkRechargeEscort = true;
+		// public bool WVC_EscortIfEnemyOnMap = true;
+
+		public bool techRequirementMode = true;
 
 		// Bonus
-		public bool WVC_EscortIfEnemyWorkAndRecharge = false;
-		public bool WVC_EscortIfDraftedOrDowned = false;
-		public bool WVC_HiveMindResearching = false;
+		// public bool WVC_EscortIfEnemyWorkAndRecharge = false;
+		// public bool WVC_EscortIfDraftedOrDowned = false;
+		// public bool WVC_HiveMindResearching = false;
 
 		// Features
 		public bool enableShutdownSearching = true;
@@ -32,8 +31,8 @@ namespace WVC
 		public bool enableSmartEscort = true;
 
 		// Mechanoid Idle Optimization
-		public bool enableSmartChargingForAllMechanoids = false;
-		public bool enableShutdownForAllMechanoids = false;
+		// public bool enableSmartChargingForAllMechanoids = false;
+		// public bool enableShutdownForAllMechanoids = false;
 
 		// Zones by default
 		public bool shutdownModeZonesOrSpots = true;
@@ -54,28 +53,30 @@ namespace WVC
 
 		public override void ExposeData()
 		{
-			Scribe_Values.Look(ref WVC_FindAndDestroy, "WVC_FindAndDestroy", defaultValue: true);
-			Scribe_Values.Look(ref WVC_WaitEnemy, "WVC_WaitEnemy", defaultValue: true);
-			Scribe_Values.Look(ref WVC_WorkAndWaitEnemy, "WVC_WorkAndWaitEnemy", defaultValue: true);
-			Scribe_Values.Look(ref WVC_DefendYourself, "WVC_DefendYourself", defaultValue: true);
-			Scribe_Values.Look(ref WVC_Ambush, "WVC_Ambush", defaultValue: true);
+			Scribe_Values.Look(ref techRequirementMode, "techRequirementMode", defaultValue: true);
 
-			Scribe_Values.Look(ref WVC_WorkAndRecharge, "WVC_WorkAndRecharge", defaultValue: true);
-			Scribe_Values.Look(ref WVC_SafeWorkAndRecharge, "WVC_SafeWorkAndRecharge", defaultValue: true);
-			Scribe_Values.Look(ref WVC_EscaortAndRecharge, "WVC_EscaortAndRecharge", defaultValue: true);
-			Scribe_Values.Look(ref WVC_WorkRechargeEscort, "WVC_WorkRechargeEscort", defaultValue: true);
-			Scribe_Values.Look(ref WVC_EscortIfEnemyOnMap, "WVC_EscortIfEnemyOnMap", defaultValue: true);
+			// Scribe_Values.Look(ref WVC_FindAndDestroy, "WVC_FindAndDestroy", defaultValue: true);
+			// Scribe_Values.Look(ref WVC_WaitEnemy, "WVC_WaitEnemy", defaultValue: true);
+			// Scribe_Values.Look(ref WVC_WorkAndWaitEnemy, "WVC_WorkAndWaitEnemy", defaultValue: true);
+			// Scribe_Values.Look(ref WVC_DefendYourself, "WVC_DefendYourself", defaultValue: true);
+			// Scribe_Values.Look(ref WVC_Ambush, "WVC_Ambush", defaultValue: true);
 
-			Scribe_Values.Look(ref WVC_EscortIfEnemyWorkAndRecharge, "WVC_EscortIfEnemyWorkAndRecharge", defaultValue: false);
-			Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false);
-			Scribe_Values.Look(ref WVC_HiveMindResearching, "WVC_HiveMindResearching", defaultValue: false);
+			// Scribe_Values.Look(ref WVC_WorkAndRecharge, "WVC_WorkAndRecharge", defaultValue: true);
+			// Scribe_Values.Look(ref WVC_SafeWorkAndRecharge, "WVC_SafeWorkAndRecharge", defaultValue: true);
+			// Scribe_Values.Look(ref WVC_EscaortAndRecharge, "WVC_EscaortAndRecharge", defaultValue: true);
+			// Scribe_Values.Look(ref WVC_WorkRechargeEscort, "WVC_WorkRechargeEscort", defaultValue: true);
+			// Scribe_Values.Look(ref WVC_EscortIfEnemyOnMap, "WVC_EscortIfEnemyOnMap", defaultValue: true);
+
+			// Scribe_Values.Look(ref WVC_EscortIfEnemyWorkAndRecharge, "WVC_EscortIfEnemyWorkAndRecharge", defaultValue: false);
+			// Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false);
+			// Scribe_Values.Look(ref WVC_HiveMindResearching, "WVC_HiveMindResearching", defaultValue: false);
 
 			Scribe_Values.Look(ref enableShutdownSearching, "enableShutdownSearching", defaultValue: true);
 			Scribe_Values.Look(ref enableEnemySearching, "enableEnemySearching", defaultValue: true);
 			Scribe_Values.Look(ref enableSmartEscort, "enableSmartEscort", defaultValue: true);
 
-			Scribe_Values.Look(ref enableSmartChargingForAllMechanoids, "enableSmartChargingForAllMechanoids", defaultValue: false);
-			Scribe_Values.Look(ref enableShutdownForAllMechanoids, "enableShutdownForAllMechanoids", defaultValue: false);
+			// Scribe_Values.Look(ref enableSmartChargingForAllMechanoids, "enableSmartChargingForAllMechanoids", defaultValue: false);
+			// Scribe_Values.Look(ref enableShutdownForAllMechanoids, "enableShutdownForAllMechanoids", defaultValue: false);
 
 			Scribe_Values.Look(ref shutdownModeZonesOrSpots, "shutdownModeZonesOrSpots", defaultValue: true);
 			Scribe_Values.Look(ref useCustomShutdownBehavior, "useCustomShutdownBehavior", defaultValue: true);
@@ -115,48 +116,19 @@ namespace WVC
 			Widgets.BeginScrollView(outRect, ref scrollPosition, rect);
 			Listing_Standard listingStandard = new();
 			listingStandard.Begin(rect);
-			// CheckboxTemplate(listingStandard, "WVC_Label_DefendYourself", settings.WVC_DefendYourself);
-			// CheckboxTemplate(listingStandard, "WVC_Label_Ambush", settings.WVC_Ambush);
-			// CheckboxTemplate(listingStandard, "WVC_Label_FindAndDestroy", settings.WVC_FindAndDestroy);
-			// CheckboxTemplate(listingStandard, "WVC_Label_WaitEnemy", settings.WVC_WaitEnemy);
-			// CheckboxTemplate(listingStandard, "WVC_Label_WorkAndWaitEnemy", settings.WVC_WorkAndWaitEnemy);
-			// CheckboxTemplate(listingStandard, "WVC_Label_WorkAndRecharge", settings.WVC_WorkAndRecharge);
-			// CheckboxTemplate(listingStandard, "WVC_Label_SafeWorkAndRecharge", settings.WVC_SafeWorkAndRecharge);
-			// CheckboxTemplate(listingStandard, "WVC_Label_EscaortAndRecharge", settings.WVC_EscaortAndRecharge);
-			// CheckboxTemplate(listingStandard, "WVC_Label_WorkRechargeEscort", settings.WVC_WorkRechargeEscort);
-			// CheckboxTemplate(listingStandard, "WVC_Label_EscortIfEnemyOnMap", settings.WVC_EscortIfEnemyOnMap);
-			listingStandard.Label("WVC_Label_MainModeLabelSetting".Translate() + ": ");
-			listingStandard.CheckboxLabeled("WVC_Label_DefendYourself".Translate(), ref settings.WVC_DefendYourself, "WVC_ToolTip_Setting".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_Ambush".Translate(), ref settings.WVC_Ambush, "WVC_ToolTip_Setting".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_FindAndDestroy".Translate(), ref settings.WVC_FindAndDestroy, "WVC_ToolTip_Setting".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_WaitEnemy".Translate(), ref settings.WVC_WaitEnemy, "WVC_ToolTip_Setting".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_WorkAndWaitEnemy".Translate(), ref settings.WVC_WorkAndWaitEnemy, "WVC_ToolTip_Setting".Translate());
 
-			listingStandard.CheckboxLabeled("WVC_Label_WorkAndRecharge".Translate(), ref settings.WVC_WorkAndRecharge, "WVC_ToolTip_Setting".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_SafeWorkAndRecharge".Translate(), ref settings.WVC_SafeWorkAndRecharge, "WVC_ToolTip_Setting".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_EscaortAndRecharge".Translate(), ref settings.WVC_EscaortAndRecharge, "WVC_ToolTip_Setting".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_WorkRechargeEscort".Translate(), ref settings.WVC_WorkRechargeEscort, "WVC_ToolTip_Setting".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_EscortIfEnemyOnMap".Translate(), ref settings.WVC_EscortIfEnemyOnMap, "WVC_ToolTip_Setting".Translate());
+			listingStandard.CheckboxLabeled("WVC_Label_techRequirementMode".Translate(), ref settings.techRequirementMode, "WVC_ToolTip_techRequirementMode".Translate());
 
 			listingStandard.Gap();
 			listingStandard.CheckboxLabeled("WVC_Label_enableShutdownSearching".Translate(), ref settings.enableShutdownSearching, "WVC_ToolTip_enableShutdownSearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_enableEnemySearching".Translate(), ref settings.enableEnemySearching, "WVC_ToolTip_enableEnemySearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
-
-			listingStandard.Gap();
-			listingStandard.Label("WVC_Label_BonusModeLabelSetting".Translate() + ": ");
-			listingStandard.CheckboxLabeled("WVC_Label_EscortIfEnemyWorkAndRecharge".Translate(), ref settings.WVC_EscortIfEnemyWorkAndRecharge, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_EscortIfDraftedOrDowned".Translate(), ref settings.WVC_EscortIfDraftedOrDowned, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
-			// CheckboxTemplate(listingStandard, "WVC_Label_EscortIfEnemyWorkAndRecharge", settings.WVC_EscortIfEnemyWorkAndRecharge, false);
-			listingStandard.CheckboxLabeled("WVC_Label_HiveMindResearching".Translate(), ref settings.WVC_HiveMindResearching, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
-
-			listingStandard.Gap();
-			listingStandard.CheckboxLabeled("WVC_Label_enableSmartChargingForAllMechanoids".Translate(), ref settings.enableSmartChargingForAllMechanoids, "WVC_ToolTip_enableSmartChargingForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_VanillaModeOptimizationWarning".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_enableShutdownForAllMechanoids".Translate(), ref settings.enableShutdownForAllMechanoids, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_VanillaModeOptimizationWarning".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_enableSmartEscort".Translate(), ref settings.enableSmartEscort, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_enableSmartEscort".Translate());
-
-			listingStandard.Gap();
 			listingStandard.CheckboxLabeled("WVC_Label_shutdownModeZonesOrSpots".Translate(), ref settings.shutdownModeZonesOrSpots, "WVC_ToolTip_shutdownModeZonesOrSpots".Translate());
+
+			listingStandard.Gap();
 			listingStandard.CheckboxLabeled("WVC_Label_useCustomShutdownBehavior".Translate(), ref settings.useCustomShutdownBehavior, "WVC_ToolTip_useCustomShutdownBehavior".Translate());
+
+			listingStandard.Gap();
+			listingStandard.CheckboxLabeled("WVC_Label_enableEnemySearching".Translate(), ref settings.enableEnemySearching, "WVC_ToolTip_enableEnemySearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
+			listingStandard.CheckboxLabeled("WVC_Label_enableSmartEscort".Translate(), ref settings.enableSmartEscort, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_enableSmartEscort".Translate());
 
 			// listingStandard.Label("");
 			// listingStandard.Label("WVC_Label_CustomModeLabelSetting".Translate() + ": ");

@@ -64,9 +64,11 @@
     <Compile Include="Resources_JobGivers\JobGiver_GetEnergy.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_GoToClosetShutdownZone.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_SmartEscort.cs" />
+    <Compile Include="Resources_Main\ModExtension.cs" />
     <Compile Include="Resources_Main\ModSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources_Main\Patches.cs" />
+    <Compile Include="Resources_Main\PostInitializationStartup.cs" />
     <Compile Include="Resources_Main\ShutdownUtility.cs" />
     <Compile Include="Resources_ThingComps\CompSmartEscort.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalCanRepair.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalEnemyOnMap.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalResearchProject.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalSettings.cs" />
+    <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalWorkModes.cs" />
     <Compile Include="Resources_Zones\MechanoidShutdownZone.cs" />
     <Compile Include="Resources_Zones\MechanoidZoneColorUtility.cs" />
   </ItemGroup>

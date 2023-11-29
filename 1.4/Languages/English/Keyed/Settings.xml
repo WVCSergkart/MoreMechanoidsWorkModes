@@ -3,29 +3,29 @@
 
 	<WVC_MMWM_Settings>Work Modes</WVC_MMWM_Settings>
 
-	<WVC_Label_MainModeLabelSetting>Main</WVC_Label_MainModeLabelSetting>
-	<WVC_Label_BonusModeLabelSetting>Bonus</WVC_Label_BonusModeLabelSetting>
+	<!-- <WVC_Label_MainModeLabelSetting>Main</WVC_Label_MainModeLabelSetting> -->
+	<!-- <WVC_Label_BonusModeLabelSetting>Bonus</WVC_Label_BonusModeLabelSetting> -->
 
 	<!-- Main -->
-	<WVC_Label_FindAndDestroy>Find and destroy</WVC_Label_FindAndDestroy>
-	<WVC_Label_WaitEnemy>Wait enemy</WVC_Label_WaitEnemy>
-	<WVC_Label_WorkAndWaitEnemy>Work and wait</WVC_Label_WorkAndWaitEnemy>
-	<WVC_Label_DefendYourself>Defend yourself</WVC_Label_DefendYourself>
-	<WVC_Label_Ambush>Ambush</WVC_Label_Ambush>
-	<WVC_Label_WorkAndRecharge>Work and recharge</WVC_Label_WorkAndRecharge>
-	<WVC_Label_SafeWorkAndRecharge>Work if safe</WVC_Label_SafeWorkAndRecharge>
-	<WVC_Label_EscaortAndRecharge>Escort and recharge</WVC_Label_EscaortAndRecharge>
-	<WVC_Label_WorkRechargeEscort>Work, recharge and escort</WVC_Label_WorkRechargeEscort>
-	<WVC_Label_EscortIfEnemyOnMap>Escort if enemy</WVC_Label_EscortIfEnemyOnMap>
+	<!-- <WVC_Label_FindAndDestroy>Find and destroy</WVC_Label_FindAndDestroy> -->
+	<!-- <WVC_Label_WaitEnemy>Wait enemy</WVC_Label_WaitEnemy> -->
+	<!-- <WVC_Label_WorkAndWaitEnemy>Work and wait</WVC_Label_WorkAndWaitEnemy> -->
+	<!-- <WVC_Label_DefendYourself>Defend yourself</WVC_Label_DefendYourself> -->
+	<!-- <WVC_Label_Ambush>Ambush</WVC_Label_Ambush> -->
+	<!-- <WVC_Label_WorkAndRecharge>Work and recharge</WVC_Label_WorkAndRecharge> -->
+	<!-- <WVC_Label_SafeWorkAndRecharge>Work if safe</WVC_Label_SafeWorkAndRecharge> -->
+	<!-- <WVC_Label_EscaortAndRecharge>Escort and recharge</WVC_Label_EscaortAndRecharge> -->
+	<!-- <WVC_Label_WorkRechargeEscort>Work, recharge and escort</WVC_Label_WorkRechargeEscort> -->
+	<!-- <WVC_Label_EscortIfEnemyOnMap>Escort if enemy</WVC_Label_EscortIfEnemyOnMap> -->
 
-	<WVC_ToolTip_Setting>Before disabling, switch all mechanoid modes to vanilla. A restart is required to apply the settings.</WVC_ToolTip_Setting>
+	<!-- <WVC_ToolTip_Setting>Before disabling, switch all mechanoid modes to vanilla. A restart is required to apply the settings.</WVC_ToolTip_Setting> -->
 
 	<!-- Bonus -->
-	<WVC_Label_EscortIfEnemyWorkAndRecharge>Escort if enemy, work and recharge</WVC_Label_EscortIfEnemyWorkAndRecharge>
-	<WVC_Label_EscortIfDraftedOrDowned>Escort if drafted or downed</WVC_Label_EscortIfDraftedOrDowned>
-	<WVC_Label_HiveMindResearching>Hive mind researching</WVC_Label_HiveMindResearching>
+	<!-- <WVC_Label_EscortIfEnemyWorkAndRecharge>Escort if enemy, work and recharge</WVC_Label_EscortIfEnemyWorkAndRecharge> -->
+	<!-- <WVC_Label_EscortIfDraftedOrDowned>Escort if drafted or downed</WVC_Label_EscortIfDraftedOrDowned> -->
+	<!-- <WVC_Label_HiveMindResearching>Hive mind researching</WVC_Label_HiveMindResearching> -->
 
-	<WVC_ToolTip_BonusSetting>Bonus mode. It is disabled by default. Enabling is compatible with saves.</WVC_ToolTip_BonusSetting>
+	<!-- <WVC_ToolTip_BonusSetting>Bonus mode. It is disabled by default. Enabling is compatible with saves.</WVC_ToolTip_BonusSetting> -->
 
 	<WVC_Label_enableShutdownSearching>Enable shutdown zone searching</WVC_Label_enableShutdownSearching>
 	<WVC_ToolTip_enableShutdownSearching>If enabled, mechanoids will search for a mechanoid shutdown zone before shutdown.</WVC_ToolTip_enableShutdownSearching>
@@ -35,11 +35,14 @@
 
 	<WVC_ToolTip_enableSearchingWarning>If you don't understand what this option does, leave it enabled.</WVC_ToolTip_enableSearchingWarning>
 
-	<WVC_Label_enableShutdownForAllMechanoids>Idle optimization for vanilla modes</WVC_Label_enableShutdownForAllMechanoids>
-	<WVC_ToolTip_enableShutdownForAllMechanoids>If enabled, idle optimization will also affect vanilla modes.</WVC_ToolTip_enableShutdownForAllMechanoids>
+	<!-- <WVC_Label_enableShutdownForAllMechanoids>Idle optimization for vanilla modes</WVC_Label_enableShutdownForAllMechanoids> -->
+	<!-- <WVC_ToolTip_enableShutdownForAllMechanoids>If enabled, idle optimization will also affect vanilla modes.</WVC_ToolTip_enableShutdownForAllMechanoids> -->
 
-	<WVC_Label_enableSmartChargingForAllMechanoids>Smart charging for vanilla modes</WVC_Label_enableSmartChargingForAllMechanoids>
-	<WVC_ToolTip_enableSmartChargingForAllMechanoids>If enabled, then the mechanoids will go to charge when they are not busy with anything, and not only when the charge runs out.</WVC_ToolTip_enableSmartChargingForAllMechanoids>
+	<!-- <WVC_Label_enableSmartChargingForAllMechanoids>Smart charging for vanilla modes</WVC_Label_enableSmartChargingForAllMechanoids> -->
+	<!-- <WVC_ToolTip_enableSmartChargingForAllMechanoids>If enabled, then the mechanoids will go to charge when they are not busy with anything, and not only when the charge runs out.</WVC_ToolTip_enableSmartChargingForAllMechanoids> -->
+
+	<WVC_Label_techRequirementMode>Tech requirement mode</WVC_Label_techRequirementMode>
+	<WVC_ToolTip_techRequirementMode>If enabled, all new modes require technology research before they can be used.</WVC_ToolTip_techRequirementMode>
 
 	<WVC_Label_enableSmartEscort>Smart escort</WVC_Label_enableSmartEscort>
 	<WVC_ToolTip_enableSmartEscort>If enabled, it allows you to select an escort target for mechanoids.

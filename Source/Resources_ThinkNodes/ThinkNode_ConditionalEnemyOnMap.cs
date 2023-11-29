@@ -1,13 +1,12 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
 using RimWorld;
+using System.Collections.Generic;
 using Verse;
 using Verse.AI;
-using System.Collections.Generic;
-using WVC;
 
 namespace WVC_WorkModes
 {
-	public class ThinkNode_ConditionalEnemyOnMap : ThinkNode_Conditional
+    public class ThinkNode_ConditionalEnemyOnMap : ThinkNode_Conditional
 	{
 		protected override bool Satisfied(Pawn pawn)
 		{

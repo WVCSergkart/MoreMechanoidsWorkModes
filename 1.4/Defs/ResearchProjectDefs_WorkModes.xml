@@ -6,20 +6,70 @@
 	<baseCost>1600</baseCost>
 	<requiresMechanitor>true</requiresMechanitor>
 	<tab>WVC_TechTab</tab>
-	<hiddenPrerequisites>
+	<prerequisites>
 	  <li>StandardMechtech</li>
-	</hiddenPrerequisites>
+	</prerequisites>
   </ResearchProjectDef>
 
+  <!-- ========================================== -->
+
   <ResearchProjectDef ParentName="WVC_WorkModes_ResearchProjects_Base">
-	<defName>WVC_WorkModes_RedirectionOfCapacities</defName>
-	<label>redirection of capacities</label>
+	<defName>WVC_WorkModes_HiveMindResearch</defName>
+	<label>mech research mode</label>
 	<description>Allows you to use the &lt;color=#00cccc&gt;"Hive mind research"&lt;/color&gt; mode. In this mode, mechanoids generate research points.</description>
 	<researchViewX>3.00</researchViewX>
 	<researchViewY>4.50</researchViewY>
-	<!-- <prerequisites> -->
-	  <!-- <li>StandardMechtech</li> -->
-	<!-- </prerequisites> -->
+  </ResearchProjectDef>
+
+  <!-- ========================================== -->
+
+  <ResearchProjectDef ParentName="WVC_WorkModes_ResearchProjects_Base">
+	<defName>WVC_WorkModes_CombatModes</defName>
+	<label>combat modes</label>
+	<description>Allows you to use the &lt;color=#00cccc&gt;"Find and destroy"&lt;/color&gt; mode. In this mode, mechanoids hunt all enemies present on the map.</description>
+	<researchViewX>3.00</researchViewX>
+	<researchViewY>5.00</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="WVC_WorkModes_ResearchProjects_Base">
+	<defName>WVC_WorkModes_AdvancedCombatModes</defName>
+	<label>advanced combat modes</label>
+	<description>Allows you to use the &lt;color=#00cccc&gt;"Wait enemy"&lt;/color&gt; mode. In this mode, mechanoids will shutdown and wait for the enemy, and when it appears, it will wake up and head towards the target.</description>
+	<researchViewX>4.00</researchViewX>
+	<researchViewY>5.00</researchViewY>
+	<prerequisites>
+	  <li>WVC_WorkModes_CombatModes</li>
+	</prerequisites>
+  </ResearchProjectDef>
+
+  <!-- ========================================== -->
+
+  <ResearchProjectDef ParentName="WVC_WorkModes_ResearchProjects_Base">
+	<defName>WVC_WorkModes_AdvancedWorkModes</defName>
+	<label>advanced work modes</label>
+	<description>Allows you to use the &lt;color=#00cccc&gt;"Work and recharge"&lt;/color&gt; mode. In this mode, mechanoids will charge as needed before shutting down.</description>
+	<researchViewX>3.00</researchViewX>
+	<researchViewY>5.50</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- ========================================== -->
+
+  <ResearchProjectDef ParentName="WVC_WorkModes_ResearchProjects_Base">
+	<defName>WVC_WorkModes_SafeModes</defName>
+	<label>safe modes</label>
+	<description>Allows you to use the &lt;color=#00cccc&gt;"Safe yourself"&lt;/color&gt; mode. In this mode, mechanoids will defend themselves and retreat as necessary.</description>
+	<researchViewX>4.00</researchViewX>
+	<researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- ========================================== -->
+
+  <ResearchProjectDef ParentName="WVC_WorkModes_ResearchProjects_Base">
+	<defName>WVC_WorkModes_AdvancedEscortModes</defName>
+	<label>advanced escort modes</label>
+	<description>Allows you to use the &lt;color=#00cccc&gt;"Wait enemy"&lt;/color&gt; mode. In this mode, mechanoids will shutdown and wait for the enemy, and when it appears, it will wake up and head towards the target.</description>
+	<researchViewX>4.00</researchViewX>
+	<researchViewY>5.50</researchViewY>
   </ResearchProjectDef>
 
 </Defs>
