@@ -5,6 +5,7 @@
 
 	<WVC_Label_MainModeLabelSetting>Main</WVC_Label_MainModeLabelSetting>
 	<WVC_Label_BonusModeLabelSetting>Bonus</WVC_Label_BonusModeLabelSetting>
+	<WVC_Label_WorkModeMechanicsLabelSetting>Mechanics</WVC_Label_WorkModeMechanicsLabelSetting>
 
 	<!-- Main -->
 	<WVC_Label_FindAndDestroy>Find and destroy</WVC_Label_FindAndDestroy>
@@ -27,6 +28,16 @@
 
 	<WVC_ToolTip_BonusSetting>Bonus mode. It is disabled by default. Enabling is compatible with saves.</WVC_ToolTip_BonusSetting>
 
+	<!-- Idle Optimization -->
+	<WVC_Label_enableShutdownForAllMechanoids>Idle optimization for vanilla modes</WVC_Label_enableShutdownForAllMechanoids>
+	<WVC_ToolTip_enableShutdownForAllMechanoids>If enabled, idle optimization will also affect vanilla modes.</WVC_ToolTip_enableShutdownForAllMechanoids>
+
+	<WVC_Label_enableSmartChargingForAllMechanoids>Smart charging for vanilla modes</WVC_Label_enableSmartChargingForAllMechanoids>
+	<WVC_ToolTip_enableSmartChargingForAllMechanoids>If enabled, then the mechanoids will go to charge when they are not busy with anything, and not only when the charge runs out.</WVC_ToolTip_enableSmartChargingForAllMechanoids>
+
+	<WVC_ToolTip_VanillaModeOptimizationWarning>Does not affect combat mechanoids, as their idle has been replaced with a simulated patrol.</WVC_ToolTip_VanillaModeOptimizationWarning>
+
+	<!-- Features -->
 	<WVC_Label_enableShutdownSearching>Enable shutdown zone searching</WVC_Label_enableShutdownSearching>
 	<WVC_ToolTip_enableShutdownSearching>If enabled, mechanoids will search for a mechanoid shutdown zone before shutdown.</WVC_ToolTip_enableShutdownSearching>
 
@@ -35,18 +46,10 @@
 
 	<WVC_ToolTip_enableSearchingWarning>If you don't understand what this option does, leave it enabled.</WVC_ToolTip_enableSearchingWarning>
 
-	<WVC_Label_enableShutdownForAllMechanoids>Idle optimization for vanilla modes</WVC_Label_enableShutdownForAllMechanoids>
-	<WVC_ToolTip_enableShutdownForAllMechanoids>If enabled, idle optimization will also affect vanilla modes.</WVC_ToolTip_enableShutdownForAllMechanoids>
-
-	<WVC_Label_enableSmartChargingForAllMechanoids>Smart charging for vanilla modes</WVC_Label_enableSmartChargingForAllMechanoids>
-	<WVC_ToolTip_enableSmartChargingForAllMechanoids>If enabled, then the mechanoids will go to charge when they are not busy with anything, and not only when the charge runs out.</WVC_ToolTip_enableSmartChargingForAllMechanoids>
-
 	<WVC_Label_enableSmartEscort>Smart escort</WVC_Label_enableSmartEscort>
 	<WVC_ToolTip_enableSmartEscort>If enabled, it allows you to select an escort target for mechanoids.
 
 Restart required!</WVC_ToolTip_enableSmartEscort>
-
-	<WVC_ToolTip_VanillaModeOptimizationWarning>Does not affect combat mechanoids, as their idle has been replaced with a simulated patrol.</WVC_ToolTip_VanillaModeOptimizationWarning>
 
 	<WVC_Label_shutdownModeZonesOrSpots>Shutdown mode: Zones or Spots</WVC_Label_shutdownModeZonesOrSpots>
 	<WVC_ToolTip_shutdownModeZonesOrSpots>If enabled, zones will be used. Alternatively, spots. It is recommended to enable it.

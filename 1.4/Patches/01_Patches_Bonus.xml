@@ -148,16 +148,16 @@
 						<workMode>WVC_HiveMindResearching</workMode>
 						<subNodes>
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects">
-							<workMode>Work</workMode>
+							<!-- <workMode>Work</workMode> -->
 							<invert>true</invert>
 							<allOfResearchProjects>
-							  <li>WVC_WorkModes_RedirectionOfCapacities</li>
+							  <li>WVC_WorkModes_HiveMindResearch</li>
 							</allOfResearchProjects>
-							<!-- <subNodes> -->
-							  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
-								<!-- <workMode>Work</workMode> -->
-							  <!-- </li> -->
-							<!-- </subNodes> -->
+							<subNodes>
+							  <li Class="WVC_WorkModes.JobGiver_ChangeMode">
+								<workMode>Work</workMode>
+							  </li>
+							</subNodes>
 						  </li>
 						  <!-- Find Enemy -->
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
@@ -216,7 +216,7 @@
 					<success>Always</success>
 				</li>
 				<li Class="PatchOperationRemove">
-					<xpath>/Defs/ResearchProjectDef[defName="WVC_WorkModes_RedirectionOfCapacities"]</xpath>
+					<xpath>/Defs/ResearchProjectDef[defName="WVC_WorkModes_HiveMindResearch"]</xpath>
 					<success>Always</success>
 				</li>
 			</operations>

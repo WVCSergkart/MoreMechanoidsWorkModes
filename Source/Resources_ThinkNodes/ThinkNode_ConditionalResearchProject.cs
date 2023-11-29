@@ -10,7 +10,7 @@ namespace WVC_WorkModes
     public class ThinkNode_ConditionalResearchProjects : ThinkNode_Conditional
 	{
 
-		public MechWorkModeDef workMode;
+		// public MechWorkModeDef workMode = null;
 
 		public List<ResearchProjectDef> allOfResearchProjects;
 
@@ -33,13 +33,13 @@ namespace WVC_WorkModes
 			{
 				return true;
 			}
-			Pawn overseer = pawn.GetOverseer();
-			if (workMode != null)
-			{
-				MechanitorControlGroup controlGroup = overseer.mechanitor.GetControlGroup(pawn);
-				Messages.Message(message.Translate(controlGroup.WorkMode.label.CapitalizeFirst(), workMode.label.CapitalizeFirst()), null, MessageTypeDefOf.RejectInput, historical: false);
-				controlGroup.SetWorkMode(workMode);
-			}
+			// if (workMode != null)
+			// {
+				// Pawn overseer = pawn.GetOverseer();
+				// MechanitorControlGroup controlGroup = overseer.mechanitor.GetControlGroup(pawn);
+				// Messages.Message(message.Translate(controlGroup.WorkMode.label.CapitalizeFirst(), workMode.label.CapitalizeFirst()), null, MessageTypeDefOf.RejectInput, historical: false);
+				// controlGroup.SetWorkMode(workMode);
+			// }
 			return false;
 		}
 

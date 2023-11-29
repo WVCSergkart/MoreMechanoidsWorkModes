@@ -23,17 +23,15 @@ namespace WVC
 		public bool WVC_EscortIfDraftedOrDowned = false;
 		public bool WVC_HiveMindResearching = false;
 
-		// Features
-		public bool enableShutdownSearching = true;
-		public bool enableEnemySearching = true;
-		public bool enableSmartEscort = true;
-
 		// Mechanoid Idle Optimization
 		public bool enableSmartChargingForAllMechanoids = false;
 		public bool enableShutdownForAllMechanoids = false;
 
-		// Zones by default
+		// Features
 		public bool shutdownModeZonesOrSpots = true;
+		public bool enableShutdownSearching = true;
+		public bool enableEnemySearching = true;
+		public bool enableSmartEscort = true;
 		public bool useCustomShutdownBehavior = true;
 
 		// public bool WVC_CustomWorkMode = false;
@@ -145,13 +143,14 @@ namespace WVC
 			listingStandard.Gap();
 			listingStandard.CheckboxLabeled("WVC_Label_enableSmartChargingForAllMechanoids".Translate(), ref settings.enableSmartChargingForAllMechanoids, "WVC_ToolTip_enableSmartChargingForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_VanillaModeOptimizationWarning".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_enableShutdownForAllMechanoids".Translate(), ref settings.enableShutdownForAllMechanoids, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_VanillaModeOptimizationWarning".Translate());
-			listingStandard.CheckboxLabeled("WVC_Label_enableSmartEscort".Translate(), ref settings.enableSmartEscort, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_enableSmartEscort".Translate());
 
 			listingStandard.Gap();
+			listingStandard.Label("WVC_Label_WorkModeMechanicsLabelSetting".Translate() + ": ");
 			listingStandard.CheckboxLabeled("WVC_Label_enableShutdownSearching".Translate(), ref settings.enableShutdownSearching, "WVC_ToolTip_enableShutdownSearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_shutdownModeZonesOrSpots".Translate(), ref settings.shutdownModeZonesOrSpots, "WVC_ToolTip_shutdownModeZonesOrSpots".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_useCustomShutdownBehavior".Translate(), ref settings.useCustomShutdownBehavior, "WVC_ToolTip_useCustomShutdownBehavior".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_enableEnemySearching".Translate(), ref settings.enableEnemySearching, "WVC_ToolTip_enableEnemySearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
+			listingStandard.CheckboxLabeled("WVC_Label_enableSmartEscort".Translate(), ref settings.enableSmartEscort, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_enableSmartEscort".Translate());
 
 			// listingStandard.Label("");
 			// listingStandard.Label("WVC_Label_CustomModeLabelSetting".Translate() + ": ");
