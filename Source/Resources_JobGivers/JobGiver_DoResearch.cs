@@ -10,15 +10,18 @@ namespace WVC_WorkModes
 
 		public float researchFactor = 1f;
 
-		public StatDef statDef = StatDefOf.BandwidthCost;
+		public StatDef statDef;
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			ResearchManager researchManager = Find.ResearchManager;
-			ResearchProjectDef currentProject = researchManager.currentProj;
-			if (currentProject != null)
+			if (statDef != null)
 			{
-				researchManager.ResearchPerformed(1f + (pawn.GetStatValue(statDef) * researchFactor), pawn);
+				ResearchManager researchManager = Find.ResearchManager;
+				ResearchProjectDef currentProject = researchManager.currentProj;
+				if (currentProject != null)
+				{
+					researchManager.ResearchPerformed(1f + (pawn.GetStatValue(statDef) * researchFactor), pawn);
+				}
 			}
 			return null;
 		}

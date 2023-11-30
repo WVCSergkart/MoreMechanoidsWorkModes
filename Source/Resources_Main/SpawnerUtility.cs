@@ -21,7 +21,7 @@ namespace WVC_WorkModes
 	public static class SpawnerUtility
 	{
 
-		public static void ScavengeSpawner(Pawn parent, ThingDef productDef, int productCount, string spawnMessage = "MessageCompSpawnerSpawnedItem", bool spawnForbidden = false, bool showMessageIfOwned = false)
+		public static void ScavengeSpawner(Pawn parent, ThingDef productDef, int productCount, string spawnMessage = "MessageCompSpawnerSpawnedItem", bool spawnForbidden = false, bool showMessageIfOwned = false, EffecterDef effecterDef = null)
 		{
 			if (productDef != null)
 			{
@@ -36,6 +36,11 @@ namespace WVC_WorkModes
 				{
 					Messages.Message(spawnMessage.Translate(productDef.LabelCap), thing, MessageTypeDefOf.PositiveEvent);
 				}
+				if (effecterDef == null)
+				{
+					effecterDef = EffecterDefOf.Mine;
+				}
+				effecterDef.Spawn().Trigger(parent, thing);
 			}
 		}
 
