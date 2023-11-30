@@ -1,16 +1,13 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
 using RimWorld;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 using Verse;
-using Verse.Sound;
-using WVC;
 
 namespace WVC_WorkModes
 {
 
-	public class Zone_MechanoidScavenge : Zone
+    public class Zone_MechanoidScavenge : Zone
 	{
 
 		private readonly int reqCells = WVC_MMWM.settings.WVC_Scavenging_ReqCells;

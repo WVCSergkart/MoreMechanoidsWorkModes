@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace WVC
+namespace WVC_WorkModes
 {
     public class WVC_MMWM_Settings : ModSettings
 	{
@@ -69,7 +69,7 @@ namespace WVC
 			Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false);
 			Scribe_Values.Look(ref WVC_HiveMindResearching, "WVC_HiveMindResearching", defaultValue: false);
 			Scribe_Values.Look(ref WVC_Scavenging, "WVC_Scavenging", defaultValue: false);
-			Scribe_Values.Look(ref WVC_Scavenging_ReqCells, "WVC_Scavenging_ReqCells");
+			Scribe_Values.Look(ref WVC_Scavenging_ReqCells, "WVC_Scavenging_ReqCells", defaultValue: 120);
 
 			// Mechanics
 			Scribe_Values.Look(ref enableShutdownSearching, "enableShutdownSearching", defaultValue: true);

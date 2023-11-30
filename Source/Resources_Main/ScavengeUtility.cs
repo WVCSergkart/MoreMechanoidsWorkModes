@@ -2,12 +2,11 @@ using RimWorld;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
-using WVC;
 
 namespace WVC_WorkModes
 {
 
-	public static class ScavengeUtility
+    public static class ScavengeUtility
 	{
 
 		public static IntVec3 GetScavengeWanderRoot(Pawn pawn)

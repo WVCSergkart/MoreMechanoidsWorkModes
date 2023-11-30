@@ -2,10 +2,10 @@ using System.Linq;
 using System.Xml;
 using Verse;
 
-namespace WVC
+namespace WVC_WorkModes
 {
 
-    public class PatchOperation_MMWM : PatchOperation
+    public class PatchOperation_Settings : PatchOperation
 	{
 		public string settingName;
 		public PatchOperation active;

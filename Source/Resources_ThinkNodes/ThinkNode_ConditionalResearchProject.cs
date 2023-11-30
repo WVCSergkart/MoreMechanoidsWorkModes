@@ -76,4 +76,41 @@ namespace WVC_WorkModes
 
 	}
 
+	public class ThinkNode_ConditionalWorkModesWithResearchRequirement : ThinkNode_Conditional
+	{
+
+		public MechWorkModeDef workMode;
+
+		public string message = "WVC_WorkModes_ChangeModDefaultMessage";
+
+		public List<WorkModeResearchRequirementDef> workModeResearchRequirementDefs;
+
+		protected override bool Satisfied(Pawn pawn)
+		{
+			foreach (WorkModeResearchRequirementDef def in workModeResearchRequirementDefs)
+			{
+			// Log.Error("0");
+				Pawn overseer = pawn.GetOverseer();
+				List<MechWorkModeDef> workModes = def.workModes;
+				MechanitorControlGroup controlGroup = overseer.mechanitor.GetControlGroup(pawn);
+				// Log.Error("1");
+				if (workModes.Contains(controlGroup.WorkMode))
+				{
+					// Log.Error("2");
+					if (ThinkNode_ConditionalResearchProjects.AllProjectsFinished(def.researchPrerequisites))
+					{
+						// Log.Error("2.1");
+						return true;
+					}
+					// Log.Error("3");
+					Messages.Message(message.Translate(controlGroup.WorkMode.label.CapitalizeFirst(), workMode.label.CapitalizeFirst()), null, MessageTypeDefOf.RejectInput, historical: false);
+					controlGroup.SetWorkMode(workMode);
+				}
+			}
+			// Log.Error("4");
+			return false;
+		}
+
+	}
+
 }

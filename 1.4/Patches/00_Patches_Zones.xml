@@ -28,7 +28,7 @@
 	  <!-- </value> -->
 	<!-- </Operation> -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_Scavenging</settingName>
 		<active Class="PatchOperationSequence">
 			<operations>
@@ -45,7 +45,7 @@
 		</active>
 	</Operation>
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>shutdownModeZonesOrSpots</settingName>
 		<active Class="PatchOperationSequence">
 			<operations>
@@ -81,7 +81,7 @@
 		</deActive>
 	</Operation>
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>enableSmartEscort</settingName>
 		<active Class="PatchOperationSequence">
 			<operations>

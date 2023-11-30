@@ -2,7 +2,6 @@
 using RimWorld;
 using Verse;
 using Verse.AI;
-using WVC;
 
 namespace WVC_WorkModes
 {

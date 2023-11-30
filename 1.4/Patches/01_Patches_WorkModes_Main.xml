@@ -3,7 +3,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_FindAndDestroy</settingName>
 		<active Class="PatchOperationAdd">
 			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
@@ -46,7 +46,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_WaitEnemy</settingName>
 		<active Class="PatchOperationAdd">
 			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
@@ -99,7 +99,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_WorkAndWaitEnemy</settingName>
 		<active Class="PatchOperationAdd">
 			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
@@ -160,7 +160,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_Ambush</settingName>
 		<active Class="PatchOperationAdd">
 			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
@@ -202,7 +202,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_DefendYourself</settingName>
 		<active Class="PatchOperationAdd">
 			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
@@ -250,7 +250,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_WorkAndRecharge</settingName>
 		<active Class="PatchOperationAdd">
 			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
@@ -307,7 +307,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_SafeWorkAndRecharge</settingName>
 		<active Class="PatchOperationAdd">
 			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
@@ -383,7 +383,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_EscaortAndRecharge</settingName>
 		<active Class="PatchOperationAdd">
 			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
@@ -413,7 +413,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_WorkRechargeEscort</settingName>
 		<active Class="PatchOperationAdd">
 			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
@@ -448,7 +448,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_EscortIfEnemyOnMap</settingName>
 		<active Class="PatchOperationAdd">
 			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>

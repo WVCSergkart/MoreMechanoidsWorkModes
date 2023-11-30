@@ -42,6 +42,9 @@ Allows you to specify to the mechanoid what colony pawn it will escort.
 	<WVC_WorkModes_EscortsAssignTargetLabel>Assigned to escorts {0}</WVC_WorkModes_EscortsAssignTargetLabel>
 
 	<!-- Job Givers -->
-	<WVC_WorkModes_ChangeModDefaultMessage>{0} is not available. Mode changed to {1}.</WVC_WorkModes_ChangeModDefaultMessage>
+	<WVC_WorkModes_ChangeModDefaultMessage>{0} is not researched. Mode changed to {1}.</WVC_WorkModes_ChangeModDefaultMessage>
+
+	<!-- Tech Req -->
+	<WVC_WorkModes_ModeTechnologyRequirement>Required technologies:</WVC_WorkModes_ModeTechnologyRequirement>
 
 </LanguageData>

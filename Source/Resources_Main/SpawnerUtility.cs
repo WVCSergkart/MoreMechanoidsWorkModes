@@ -1,13 +1,10 @@
 using RimWorld;
-using System.Collections.Generic;
 using Verse;
-using Verse.AI;
-using WVC;
 
 namespace WVC_WorkModes
 {
 
-	public class ThingDefByWeight
+    public class ThingDefByWeight
 	{
 
 		public ThingDef productDef;

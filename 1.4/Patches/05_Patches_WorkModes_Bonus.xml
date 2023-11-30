@@ -3,7 +3,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_EscortIfEnemyWorkAndRecharge</settingName>
 		<active Class="PatchOperationSequence">
 			<operations>
@@ -65,7 +65,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_EscortIfDraftedOrDowned</settingName>
 		<active Class="PatchOperationSequence">
 			<operations>
@@ -137,7 +137,7 @@
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_HiveMindResearching</settingName>
 		<active Class="PatchOperationSequence">
 			<operations>
@@ -147,17 +147,22 @@
 					  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 						<workMode>WVC_HiveMindResearching</workMode>
 						<subNodes>
-						  <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects">
-							<!-- <workMode>Work</workMode> -->
-							<invert>true</invert>
-							<allOfResearchProjects>
+						  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+							<!-- <invert>true</invert> -->
+							<!-- <allOfResearchProjects> -->
+							  <!-- <li>WVC_WorkModes_HiveMindResearch</li> -->
+							<!-- </allOfResearchProjects> -->
+							<!-- <subNodes> -->
+							  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+								<!-- <workMode>Work</workMode> -->
+							  <!-- </li> -->
+							<!-- </subNodes> -->
+						  <!-- </li> -->
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModesWithResearchRequirement" MayRequire="Ludeon.RimWorld.Biotech">
+							<workMode>Work</workMode>
+							<workModeResearchRequirementDefs>
 							  <li>WVC_WorkModes_HiveMindResearch</li>
-							</allOfResearchProjects>
-							<subNodes>
-							  <li Class="WVC_WorkModes.JobGiver_ChangeMode">
-								<workMode>Work</workMode>
-							  </li>
-							</subNodes>
+							</workModeResearchRequirementDefs>
 						  </li>
 						  <!-- Find Enemy -->
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
@@ -202,7 +207,7 @@
 						  <li Class="JobGiver_WanderColony">
 							<maxDanger>Deadly</maxDanger>
 							<locomotionUrgency>Amble</locomotionUrgency>
-							<reportStringOverride>Mech hive mind is researching.</reportStringOverride>
+							<reportStringOverride>Researching.</reportStringOverride>
 						  </li>
 						</subNodes>
 					  </li>
@@ -220,13 +225,17 @@
 					<xpath>/Defs/ResearchProjectDef[defName="WVC_WorkModes_HiveMindResearch"]</xpath>
 					<success>Always</success>
 				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/WVC_WorkModes.WorkModeResearchRequirementDef[defName="WVC_WorkModes_HiveMindResearch"]</xpath>
+					<success>Always</success>
+				</li>
 			</operations>
 		</deActive>
 	</Operation>
 
 	<!-- =========================================================== -->
 
-	<Operation Class="WVC.PatchOperation_MMWM">
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_Scavenging</settingName>
 		<active Class="PatchOperationSequence">
 			<operations>
@@ -236,17 +245,22 @@
 					  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
 						<workMode>WVC_Scavenging</workMode>
 						<subNodes>
-						  <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects">
-							<!-- <workMode>Work</workMode> -->
-							<invert>true</invert>
-							<allOfResearchProjects>
+						  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+							<!-- <invert>true</invert> -->
+							<!-- <allOfResearchProjects> -->
+							  <!-- <li>WVC_WorkModes_Scavenging</li> -->
+							<!-- </allOfResearchProjects> -->
+							<!-- <subNodes> -->
+							  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+								<!-- <workMode>Work</workMode> -->
+							  <!-- </li> -->
+							<!-- </subNodes> -->
+						  <!-- </li> -->
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModesWithResearchRequirement" MayRequire="Ludeon.RimWorld.Biotech">
+							<workMode>Work</workMode>
+							<workModeResearchRequirementDefs>
 							  <li>WVC_WorkModes_Scavenging</li>
-							</allOfResearchProjects>
-							<subNodes>
-							  <li Class="WVC_WorkModes.JobGiver_ChangeMode">
-								<workMode>Work</workMode>
-							  </li>
-							</subNodes>
+							</workModeResearchRequirementDefs>
 						  </li>
 						  <!-- Find Enemy -->
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
@@ -345,6 +359,10 @@
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/ResearchProjectDef[defName="WVC_WorkModes_Scavenging"]</xpath>
+					<success>Always</success>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/WVC_WorkModes.WorkModeResearchRequirementDef[defName="WVC_WorkModes_Scavenging"]</xpath>
 					<success>Always</success>
 				</li>
 			</operations>
