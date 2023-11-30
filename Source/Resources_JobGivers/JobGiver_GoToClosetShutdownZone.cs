@@ -43,7 +43,11 @@ namespace WVC_WorkModes
 					{
 						return null;
 					}
-					if (ShutdownUtility.TryFindNearbyMechShutdownZone(mapZones, pawn, pawn.Map, workModeType, out var result))
+					if (ShutdownUtility.MechInShutdownZone(pawn, pawn.Position, workModeType))
+					{
+						return null;
+					}
+					if (ShutdownUtility.TryFindRandomMechShutdownZone(mapZones, pawn, pawn.Map, workModeType, out var result))
 					{
 						if (pawn.Position == result)
 						{

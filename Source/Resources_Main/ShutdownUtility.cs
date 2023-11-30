@@ -64,7 +64,20 @@ namespace WVC_WorkModes
 			return false;
 		}
 
-		public static bool TryFindNearbyMechShutdownZone(List<Zone> zones, Pawn pawn, Map map, MechanoidWorkType workModeType, out IntVec3 result)
+		public static bool MechInShutdownZone(Pawn pawn, IntVec3 cell, MechanoidWorkType workModeType)
+		{
+			Zone zone = GridsUtility.GetZone(cell, pawn.Map);
+			if (zone is Zone_MechanoidShutdown shutZone)
+			{
+				if (MechanoidWorkTypeIsCorrect(shutZone, workModeType))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		public static bool TryFindRandomMechShutdownZone(List<Zone> zones, Pawn pawn, Map map, MechanoidWorkType workModeType, out IntVec3 result)
 		{
 			for (int i = 0; i < zones.Count; i++)
 			{
@@ -78,6 +91,25 @@ namespace WVC_WorkModes
 							// return true;
 						// }
 					// }
+					// List<IntVec3> cells = shutZone.Cells;
+					IntVec3 cell = shutZone.Cells.RandomElement();
+					if (CanSelfShutdown(cell, pawn, map, false))
+					{
+						result = cell;
+						return true;
+					}
+				}
+			}
+			// result = pawn.Position;
+			return TryFindAnyMechShutdownZone(zones, pawn, map, workModeType, out result);
+		}
+
+		public static bool TryFindAnyMechShutdownZone(List<Zone> zones, Pawn pawn, Map map, MechanoidWorkType workModeType, out IntVec3 result)
+		{
+			for (int i = 0; i < zones.Count; i++)
+			{
+				if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType))
+				{
 					List<IntVec3> cells = shutZone.Cells;
 					for (int j = 0; j < cells.Count; j++)
 					{

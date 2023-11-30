@@ -1,6 +1,7 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
 using RimWorld;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -53,18 +54,6 @@ namespace WVC_WorkModes
 
 		public override void AddCell(IntVec3 sq)
 		{
-			// Map map = zoneManager.map;
-			// Room room = sq.GetRoom(map);
-			// if (room != null && room.IsPrisonCell)
-			// {
-				// Messages.Message("WVC_ShutdownZoneInPrisonCell".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
-				// return;
-			// }
-			// if (!sq.Standable(map))
-			// {
-				// Messages.Message("WVC_ShutdownZoneNotStandable".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
-				// return;
-			// }
 			base.AddCell(sq);
 		}
 
@@ -172,14 +161,17 @@ namespace WVC_WorkModes
 			yield return DesignatorUtility.FindAllowedDesignator<Designator_MechanoidShutdownZone_Expand>();
 		}
 
-		// public override string GetInspectString()
-		// {
-			// base.GetInspectString();
-			// return string.Format("{0}: {1}", "WVC_ShutdownZone_AllowWorkers".Translate(), OnOrOff(allowWorkers));
-			// return string.Format("{0}: {1}", "WVC_ShutdownZone_AllowSafe".Translate(), OnOrOff(allowSafe));
-			// return string.Format("{0}: {1}", "WVC_ShutdownZone_AllowCombatants".Translate(), OnOrOff(allowCombatants));
-			// return string.Format("{0}: {1}", "WVC_ShutdownZone_AllowAmbush".Translate(), OnOrOff(allowAmbush));
-		// }
+		public override string GetInspectString()
+		{
+			StringBuilder stringBuilder = new(base.GetInspectString());
+			stringBuilder.AppendLine();
+			// stringBuilder.AppendLine(string.Format("{0}", "WVC_MechanoidShutdownZone_FreeCells".Translate(AllContainedThings.ToString()).Resolve()));
+			stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowWorkers".Translate().Resolve(), OnOrOff(allowWorkers)));
+			stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowSafe".Translate().Resolve(), OnOrOff(allowSafe)));
+			stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowCombatants".Translate().Resolve(), OnOrOff(allowCombatants)));
+			stringBuilder.Append(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowAmbush".Translate().Resolve(), OnOrOff(allowAmbush)));
+			return stringBuilder.ToString();
+		}
 
 	}
 

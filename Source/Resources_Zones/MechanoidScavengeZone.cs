@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
+using WVC;
 
 namespace WVC_WorkModes
 {
@@ -12,9 +13,11 @@ namespace WVC_WorkModes
 	public class Zone_MechanoidScavenge : Zone
 	{
 
+		private readonly int reqCells = WVC_MMWM.settings.WVC_Scavenging_ReqCells;
+
 		public bool ZoneIsActive()
 		{
-			if (CellCount >= 100)
+			if (CellCount >= reqCells)
 			{
 				return true;
 			}
@@ -75,7 +78,7 @@ namespace WVC_WorkModes
 				// stringBuilder.AppendLine(string.Format("{0}", "WVC_MechanoidScavengeZone_CellsCount".Translate(CellCount, "25").CapitalizeFirst()));
 			// }
 			// return stringBuilder.ToString();
-			return string.Format("{0}", "WVC_MechanoidScavengeZone_CellsCount".Translate(CellCount, "100").CapitalizeFirst());
+			return string.Format("{0}", "WVC_MechanoidScavengeZone_CellsCount".Translate(CellCount, reqCells.ToString()).CapitalizeFirst());
 		}
 
 	}

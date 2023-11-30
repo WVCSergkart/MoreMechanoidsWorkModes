@@ -23,6 +23,7 @@ namespace WVC
 		public bool WVC_EscortIfDraftedOrDowned = false;
 		public bool WVC_HiveMindResearching = false;
 		public bool WVC_Scavenging = false;
+		public int WVC_Scavenging_ReqCells = 120;
 
 		// Mechanoid Idle Optimization
 		public bool enableSmartChargingForAllMechanoids = false;
@@ -68,6 +69,7 @@ namespace WVC
 			Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false);
 			Scribe_Values.Look(ref WVC_HiveMindResearching, "WVC_HiveMindResearching", defaultValue: false);
 			Scribe_Values.Look(ref WVC_Scavenging, "WVC_Scavenging", defaultValue: false);
+			Scribe_Values.Look(ref WVC_Scavenging_ReqCells, "WVC_Scavenging_ReqCells");
 
 			// Mechanics
 			Scribe_Values.Look(ref enableShutdownSearching, "enableShutdownSearching", defaultValue: true);
@@ -137,6 +139,8 @@ namespace WVC
 			listingStandard.CheckboxLabeled("WVC_Label_EscortIfDraftedOrDowned".Translate(), ref settings.WVC_EscortIfDraftedOrDowned, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_HiveMindResearching".Translate(), ref settings.WVC_HiveMindResearching, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_Scavenging".Translate(), ref settings.WVC_Scavenging, "WVC_ToolTip_BonusSetting".Translate() + "\n\n" + "WVC_ToolTip_Setting".Translate());
+			listingStandard.Label("WVC_Label_ScavenZoneCells".Translate(settings.WVC_Scavenging_ReqCells.ToString()));
+			listingStandard.IntAdjuster(ref settings.WVC_Scavenging_ReqCells, 20, 20);
 
 			// Mechanics
 			listingStandard.Gap();
