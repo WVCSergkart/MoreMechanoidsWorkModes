@@ -19,6 +19,12 @@
 	<!-- <WVC_ShutdownZoneNotStandable>Shutdown zone cannot be located on impassable terrain or located on other objects.</WVC_ShutdownZoneNotStandable> -->
 	<WVC_ShutdownZoneNotStandable>Shutdown zone should be standable.</WVC_ShutdownZoneNotStandable>
 
+	<!-- Scavenge Zone -->
+	<WVC_MechanoidScavengeZone>Mechanoid scavenge zone</WVC_MechanoidScavengeZone>
+	<WVC_MechanoidScavengeZoneDesc>In the "Scavenge" work mode, mechanoids will look for useful resources in this zone.</WVC_MechanoidScavengeZoneDesc>
+
+	<WVC_MechanoidScavengeZone_CellsCount>Cells: {0} | Minimum allowed: {1}</WVC_MechanoidScavengeZone_CellsCount>
+
 	<!-- SmartEscort -->
 	<WVC_WorkModes_AssignToPawnEscortLabel>Assign to escort</WVC_WorkModes_AssignToPawnEscortLabel>
 	<WVC_WorkModes_AssignToPawnEscortLabelReset>Reset escorted pawn</WVC_WorkModes_AssignToPawnEscortLabelReset>

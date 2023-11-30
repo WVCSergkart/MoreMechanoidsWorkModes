@@ -196,6 +196,7 @@
 							</subNodes>
 						  </li>
 						  <li Class="WVC_WorkModes.JobGiver_MechDoResearch">
+							<statDef>BandwidthCost</statDef>
 							<researchFactor>10</researchFactor>
 						  </li>
 						  <li Class="JobGiver_WanderColony">
@@ -217,6 +218,128 @@
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>/Defs/ResearchProjectDef[defName="WVC_WorkModes_HiveMindResearch"]</xpath>
+					<success>Always</success>
+				</li>
+			</operations>
+		</deActive>
+	</Operation>
+
+	<!-- =========================================================== -->
+
+	<Operation Class="WVC.PatchOperation_MMWM">
+		<settingName>WVC_Scavenging</settingName>
+		<active Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+					<value>
+					  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+						<workMode>WVC_Scavenging</workMode>
+						<subNodes>
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects">
+							<!-- <workMode>Work</workMode> -->
+							<invert>true</invert>
+							<allOfResearchProjects>
+							  <li>WVC_WorkModes_Scavenging</li>
+							</allOfResearchProjects>
+							<subNodes>
+							  <li Class="WVC_WorkModes.JobGiver_ChangeMode">
+								<workMode>Work</workMode>
+							  </li>
+							</subNodes>
+						  </li>
+						  <!-- Find Enemy -->
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+							<subNodes>
+							  <!-- If Danger -->
+							  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+								<!-- <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName> -->
+								<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+							  <!-- </li> -->
+							  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+								<workModeType>Safe</workModeType>
+								<spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+								<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+							  </li>
+							  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+								<tickInterval>1500</tickInterval>
+								<forced>true</forced>
+							  </li>
+							</subNodes>
+						  </li>
+						  <!-- If Safe -->
+						  <li Class="JobGiver_SeekAllowedArea" />
+						  <li Class="JobGiver_GetEnergy_Charger" />
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalCanRepair">
+							<subNodes>
+							  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+								<workModeType>Safe</workModeType>
+								<spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
+								<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+							  </li>
+							  <!-- Very-very long shutdown -->
+							  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+								<tickInterval>6000</tickInterval>
+								<forced>true</forced>
+							  </li>
+							</subNodes>
+						  </li>
+						  <!-- Scavenge -->
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalAnyScavengeZone">
+							<subNodes>
+							  <li Class="WVC_WorkModes.JobGiver_GoToScavengeZone"/>
+							  <li Class="WVC_WorkModes.JobGiver_ScavengeSpawner">
+								<statDef>WorkSpeedGlobal</statDef>
+								<chanceToSuccess>0.02</chanceToSuccess>
+								<productDefs>
+								  <li>
+									<productDef>Steel</productDef>
+									<productCount>1~3</productCount>
+									<selectionWeight>1.2</selectionWeight>
+								  </li>
+								  <li>
+									<productDef>WoodLog</productDef>
+									<productCount>1~2</productCount>
+									<selectionWeight>0.77</selectionWeight>
+								  </li>
+								  <li>
+									<productDef>Silver</productDef>
+									<productCount>1~3</productCount>
+									<selectionWeight>0.03</selectionWeight>
+								  </li>
+								  <li>
+									<productDef>Gold</productDef>
+									<productCount>1~2</productCount>
+									<selectionWeight>0.03</selectionWeight>
+								  </li>
+								  <li>
+									<productDef>ComponentIndustrial</productDef>
+									<productCount>1~1</productCount>
+									<selectionWeight>0.02</selectionWeight>
+								  </li>
+								</productDefs>
+							  </li>
+							  <li Class="WVC_WorkModes.JobGiver_WanderScavenge">
+								<maxDanger>Deadly</maxDanger>
+								<locomotionUrgency>Amble</locomotionUrgency>
+								<reportStringOverride>Scavenging.</reportStringOverride>
+							  </li>
+							</subNodes>
+						  </li>
+						</subNodes>
+					  </li>
+					</value>
+				</li>
+			</operations>
+		</active>
+		<deActive Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/MechWorkModeDef[defName="WVC_Scavenging"]</xpath>
+					<success>Always</success>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ResearchProjectDef[defName="WVC_WorkModes_Scavenging"]</xpath>
 					<success>Always</success>
 				</li>
 			</operations>

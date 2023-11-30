@@ -10,14 +10,7 @@ namespace WVC_WorkModes
 
 		public float researchFactor = 1f;
 
-		private float? cachedBandwidthCost;
-
-		// public override ThinkNode DeepCopy(bool resolve = true)
-		// {
-			// JobGiver_MechDoResearch obj = (JobGiver_MechDoResearch)base.DeepCopy(resolve);
-			// obj.researchFactor = researchFactor;
-			// return obj;
-		// }
+		public StatDef statDef = StatDefOf.BandwidthCost;
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
@@ -25,25 +18,10 @@ namespace WVC_WorkModes
 			ResearchProjectDef currentProject = researchManager.currentProj;
 			if (currentProject != null)
 			{
-				researchManager.ResearchPerformed(1f + (BandwidthCost(pawn) * researchFactor), pawn);
+				researchManager.ResearchPerformed(1f + (pawn.GetStatValue(statDef) * researchFactor), pawn);
 			}
 			return null;
 		}
 
-		public float BandwidthCost(Pawn pawn)
-		{
-			if (!cachedBandwidthCost.HasValue)
-			{
-				if (!ModsConfig.BiotechActive)
-				{
-					cachedBandwidthCost = 0f;
-				}
-				else
-				{
-					cachedBandwidthCost = pawn.GetStatValue(StatDefOf.BandwidthCost);
-				}
-			}
-			return cachedBandwidthCost.Value;
-		}
 	}
 }

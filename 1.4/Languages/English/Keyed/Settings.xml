@@ -25,6 +25,7 @@
 	<WVC_Label_EscortIfEnemyWorkAndRecharge>Escort if enemy, work and recharge</WVC_Label_EscortIfEnemyWorkAndRecharge>
 	<WVC_Label_EscortIfDraftedOrDowned>Escort if drafted or downed</WVC_Label_EscortIfDraftedOrDowned>
 	<WVC_Label_HiveMindResearching>Hive mind researching</WVC_Label_HiveMindResearching>
+	<WVC_Label_Scavenging>Scavenging</WVC_Label_Scavenging>
 
 	<WVC_ToolTip_BonusSetting>Bonus mode. It is disabled by default. Enabling is compatible with saves.</WVC_ToolTip_BonusSetting>
 

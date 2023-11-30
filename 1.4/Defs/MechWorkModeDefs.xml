@@ -43,6 +43,21 @@ This mode requires the &lt;color=#00cccc&gt;"Mech research mode"&lt;/color&gt; t
 	<iconPath>WVC/UI/MechWork/ResearchMind</iconPath>
   </MechWorkModeDef>
 
+  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+	<defName>WVC_Scavenging</defName>
+	<label>scavenging mode</label>
+	<description>Mechanoids, regardless of type, will search for useful resources in special "Scavenge" zones.
+
+This mode requires the &lt;color=#00cccc&gt;"Scavenging mode"&lt;/color&gt; technology.
+
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Safe
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; If damaged
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
+	<uiOrder>20</uiOrder>
+	<iconPath>WVC/UI/MechWork/Scavenging</iconPath>
+  </MechWorkModeDef>
+
   <!-- =========================================== -->
 
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">

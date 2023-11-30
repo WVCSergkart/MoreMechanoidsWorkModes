@@ -53,18 +53,18 @@ namespace WVC_WorkModes
 
 		public override void AddCell(IntVec3 sq)
 		{
-			Map map = zoneManager.map;
-			Room room = sq.GetRoom(map);
-			if (room != null && room.IsPrisonCell)
-			{
-				Messages.Message("WVC_ShutdownZoneInPrisonCell".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
-				return;
-			}
-			if (!sq.Standable(map))
-			{
-				Messages.Message("WVC_ShutdownZoneNotStandable".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
-				return;
-			}
+			// Map map = zoneManager.map;
+			// Room room = sq.GetRoom(map);
+			// if (room != null && room.IsPrisonCell)
+			// {
+				// Messages.Message("WVC_ShutdownZoneInPrisonCell".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
+				// return;
+			// }
+			// if (!sq.Standable(map))
+			// {
+				// Messages.Message("WVC_ShutdownZoneNotStandable".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
+				// return;
+			// }
 			base.AddCell(sq);
 		}
 
@@ -207,7 +207,23 @@ namespace WVC_WorkModes
 
 		public override AcceptanceReport CanDesignateCell(IntVec3 c)
 		{
-			return base.CanDesignateCell(c).Accepted;
+			if (!base.CanDesignateCell(c).Accepted)
+			{
+				return false;
+			}
+			// Map map = zoneManager.map;
+			Room room = c.GetRoom(Map);
+			if (room != null && room.IsPrisonCell)
+			{
+				// Messages.Message("WVC_ShutdownZoneInPrisonCell".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
+				return false;
+			}
+			if (!c.Standable(Map))
+			{
+				// Messages.Message("WVC_ShutdownZoneNotStandable".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
+				return false;
+			}
+			return true;
 		}
 
 		protected override Zone MakeNewZone()
