@@ -15,9 +15,10 @@ namespace WVC_WorkModes
 			if (WVC_MMWM.settings.WVC_HiveMindResearching || WVC_MMWM.settings.WVC_Scavenging)
 			{
 				List<MechWorkModeDef> mechWorkModeDefs = new();
-				// List<ResearchProjectDef> researchPrerequisites = new();
+				List<ResearchProjectDef> researchPrerequisites = new();
 				List<WorkModeResearchRequirementDef> requirementDef = new();
 				string mainInfo = "\n\n" + "WVC_WorkModes_ModeTechnologyRequirement".Translate().Resolve().Colorize(ColoredText.TipSectionTitleColor);
+				string techInfo = "\n\n" + "WVC_WorkModes_TechnologyAllowsModes".Translate().Resolve().Colorize(ColoredText.TipSectionTitleColor);
 				// string info = "";
 				foreach (WorkModeResearchRequirementDef def in DefDatabase<WorkModeResearchRequirementDef>.AllDefsListForReading)
 				{
@@ -30,13 +31,28 @@ namespace WVC_WorkModes
 							mechWorkModeDefs.Add(modeDef);
 						}
 					}
-					// foreach (ResearchProjectDef researchDef in def.researchPrerequisites)
-					// {
-						// if (!researchPrerequisites.Contains(researchDef))
-						// {
-							// researchPrerequisites.Add(researchDef);
-						// }
-					// }
+					foreach (ResearchProjectDef researchDef in def.researchPrerequisites)
+					{
+						if (!researchPrerequisites.Contains(researchDef))
+						{
+							researchPrerequisites.Add(researchDef);
+						}
+					}
+				}
+				foreach (ResearchProjectDef researchDef in researchPrerequisites)
+				{
+					researchDef.description += techInfo;
+					foreach (WorkModeResearchRequirementDef reqDef in requirementDef)
+					{
+						foreach (MechWorkModeDef modeDef3 in mechWorkModeDefs)
+						{
+							if (reqDef.researchPrerequisites.Contains(researchDef) && reqDef.workModes.Contains(modeDef3))
+							{
+								string info = "\n" + "WVC_WorkModes_TechnologyAllowsModes_Desc".Translate(modeDef3.label.CapitalizeFirst(), modeDef3.description).Resolve();
+								researchDef.description += info;
+							}
+						}
+					}
 				}
 				foreach (MechWorkModeDef modeDef2 in mechWorkModeDefs)
 				{

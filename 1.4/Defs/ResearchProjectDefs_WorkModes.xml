@@ -2,8 +2,9 @@
 <Defs>
 
   <ResearchProjectDef Abstract="True" Name="WVC_WorkModes_ResearchProjects_Base">
+	<description>Allows the mechanitor to use of advanced work modes for mechanoid groups.</description>
 	<techLevel>Spacer</techLevel>
-	<baseCost>550</baseCost>
+	<baseCost>2000</baseCost>
 	<requiresMechanitor>true</requiresMechanitor>
 	<tab>WVC_TechTab</tab>
 	<!-- <hiddenPrerequisites> -->
@@ -14,7 +15,7 @@
   <ResearchProjectDef ParentName="WVC_WorkModes_ResearchProjects_Base">
 	<defName>WVC_WorkModes_HiveMindResearch</defName>
 	<label>mech research mode</label>
-	<description>Allows you to use the &lt;color=#00cccc&gt;"Hive mind research"&lt;/color&gt; mode. In this mode, mechanoids generate research points.</description>
+	<!-- <description>Allows you to use the &lt;color=#00cccc&gt;"Hive mind research"&lt;/color&gt; mode. In this mode, mechanoids generate research points.</description> -->
 	<researchViewX>3.00</researchViewX>
 	<researchViewY>4.50</researchViewY>
   </ResearchProjectDef>
@@ -22,7 +23,7 @@
   <ResearchProjectDef ParentName="WVC_WorkModes_ResearchProjects_Base">
 	<defName>WVC_WorkModes_Scavenging</defName>
 	<label>scavenging mode</label>
-	<description>Allows you to use the &lt;color=#00cccc&gt;"Scavenging"&lt;/color&gt; mode. In this mode, mechanoids, will search for useful resources in special "Scavenge" zones.</description>
+	<!-- <description>Allows you to use the &lt;color=#00cccc&gt;"Scavenging"&lt;/color&gt; mode. In this mode, mechanoids, will search for useful resources in special "Scavenge" zones.</description> -->
 	<researchViewX>3.00</researchViewX>
 	<researchViewY>5.00</researchViewY>
   </ResearchProjectDef>

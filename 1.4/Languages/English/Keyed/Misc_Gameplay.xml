@@ -46,5 +46,7 @@ Allows you to specify to the mechanoid what colony pawn it will escort.
 
 	<!-- Tech Req -->
 	<WVC_WorkModes_ModeTechnologyRequirement>Required technologies:</WVC_WorkModes_ModeTechnologyRequirement>
+	<WVC_WorkModes_TechnologyAllowsModes>Allows use new modes:</WVC_WorkModes_TechnologyAllowsModes>
+	<WVC_WorkModes_TechnologyAllowsModes_Desc> - &lt;color=#00cccc&gt;{0}&lt;/color&gt;: {1}</WVC_WorkModes_TechnologyAllowsModes_Desc>
 
 </LanguageData>
