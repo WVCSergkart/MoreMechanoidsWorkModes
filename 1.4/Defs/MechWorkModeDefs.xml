@@ -43,7 +43,7 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 
   <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
 	<defName>WVC_Scavenging</defName>
-	<label>scavenging mode</label>
+	<label>scavenging</label>
 	<description>Mechanoids, regardless of type, will search for useful resources in special "Scavenge" zones.
 
 If there is an enemy on the map or in case of damage, the mechanoids will head to a safe zone.
