@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <MechWorkModeDef Name="WVC_MMVM_MechWorkMode_Base" Abstract="True">
+  <MechWorkModeDef Name="WVC_WorkModes_MechWorkMode_Base" Abstract="True">
 	<label>TEST</label>
 	<description>TEST</description>
 	<!-- <descriptionHyperlinks> -->
@@ -11,9 +11,11 @@
 	<iconPath>WVC/UI/MechWork/DefendYourself</iconPath>
   </MechWorkModeDef>
 
-  <!-- =========================================== -->
+  <!-- ===================== SPECIAL ===================== -->
+  <!-- ===================== SPECIAL ===================== -->
+  <!-- ===================== SPECIAL ===================== -->
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base">
 	<defName>WVC_DefendYourself</defName>
 	<label>safe yourself</label>
 	<description>Mechanoids, regardless of type, will attack enemies that get too close. In case of damage, they will try to retreat to a safe zone if possible.
@@ -26,7 +28,7 @@
 	<iconPath>WVC/UI/MechWork/DefendYourself</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base">
 	<defName>WVC_HiveMindResearching</defName>
 	<label>hive mind research</label>
 	<description>Mechanoids, regardless of type, will generate research points relative to their bandwidth cost. The speed and efficiency of research directly depends on the number of mechanoids involved in it.
@@ -41,7 +43,7 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 	<iconPath>WVC/UI/MechWork/ResearchMind</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base">
 	<defName>WVC_Scavenging</defName>
 	<label>scavenging</label>
 	<description>Mechanoids, regardless of type, will search for useful resources in special "Scavenge" zones.
@@ -56,9 +58,11 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 	<iconPath>WVC/UI/MechWork/Scavenging</iconPath>
   </MechWorkModeDef>
 
-  <!-- =========================================== -->
+  <!-- ===================== COMBAT ===================== -->
+  <!-- ===================== COMBAT ===================== -->
+  <!-- ===================== COMBAT ===================== -->
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base">
 	<defName>WVC_FindAndDestroy</defName>
 	<label>find and destroy</label>
 	<description>Mechanoids, regardless of their type, will look for enemies and try to destroy them.
@@ -71,7 +75,7 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 	<iconPath>WVC/UI/MechWork/FindAndDestroy</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base">
 	<defName>WVC_WaitEnemy</defName>
 	<label>wait enemy</label>
 	<description>The mechanoid will shutdown and wait for the enemy, and when it appears, it will wake up and head towards the target.
@@ -84,7 +88,7 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 	<iconPath>WVC/UI/MechWork/WaitEnemy</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base">
 	<defName>WVC_WorkAndWaitEnemy</defName>
 	<label>work and wait</label>
 	<description>Mechanoids, depending on the type, will work, and when an enemy appears, they will drop everything and go to destroy him. If they don't have a job, they'll just shutdown.
@@ -97,7 +101,7 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 	<iconPath>WVC/UI/MechWork/WorkAndWaitEnemy</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base">
 	<defName>WVC_Ambush</defName>
 	<label>ambush</label>
 	<description>The mechanoid shutdown and waits for the enemy to approach it, then attacks.
@@ -110,9 +114,11 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 	<iconPath>WVC/UI/MechWork/Ambush</iconPath>
   </MechWorkModeDef>
 
-  <!-- =========================================== -->
+  <!-- ===================== WORK ===================== -->
+  <!-- ===================== WORK ===================== -->
+  <!-- ===================== WORK ===================== -->
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base">
 	<defName>WVC_WorkAndRecharge</defName>
 	<label>work and recharge</label>
 	<description>Work autonomously according to mechanoid type. If the mechanoid cannot work or it has done all the work it shuts down.
@@ -125,7 +131,7 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 	<iconPath>WVC/UI/MechWork/WorkAndRecharge</iconPath>
   </MechWorkModeDef>
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base">
 	<defName>WVC_SafeWorkAndRecharge</defName>
 	<label>work if safe</label>
 	<description>Mechanoids will work, but only as long as there are no enemies on the map. In case of danger, they will try to get to the &lt;color=#f5ffa2&gt;safe spot&lt;/color&gt;.
@@ -138,9 +144,23 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 	<iconPath>WVC/UI/MechWork/SafeWorkAndRecharge</iconPath>
   </MechWorkModeDef>
 
-  <!-- =========================================== -->
+  <!-- ===================== ESCORT ===================== -->
+  <!-- ===================== ESCORT ===================== -->
+  <!-- ===================== ESCORT ===================== -->
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base"  Name="WVC_WorkModes_MechWorkMode_Escort" Abstract="True">
+	<uiOrder>150</uiOrder>
+	<workerClass>WVC_WorkModes.WorkModeDrawer_SmartEscort</workerClass>
+	<modExtensions>
+		<li Class="WVC_WorkModes.WorkModeExtension_SmartEscort">
+			<hideAssignGizmo>false</hideAssignGizmo>
+		</li>
+	</modExtensions>
+  </MechWorkModeDef>
+
+  <!-- ===================== -->
+
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Escort">
 	<defName>WVC_WorkRechargeEscort</defName>
 	<label>work, recharge and escort</label>
 	<description>The mechanoid will accompany the overseer if it does not have a job, and will also be charged if necessary.
@@ -151,10 +171,9 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>150</uiOrder>
 	<iconPath>WVC/UI/MechWork/WorkAndEscort</iconPath>
-	<workerClass>WorkModeDrawer_Escort</workerClass>
   </MechWorkModeDef>
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Escort">
 	<defName>WVC_EscortIfEnemyWorkAndRecharge</defName>
 	<label>escort if enemy, work and recharge</label>
 	<description>Mechanoids, regardless of their type, will accompany the overseer when an enemy is in their zone of operation. Otherwise, they will work.
@@ -165,10 +184,9 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 	<uiOrder>170</uiOrder>
 	<iconPath>WVC/UI/MechWork/EscortIfEnemyWorkAndRecharge</iconPath>
-	<workerClass>WorkModeDrawer_Escort</workerClass>
   </MechWorkModeDef>
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Escort">
 	<defName>WVC_EscortIfDraftedOrDowned</defName>
 	<label>escort if drafted or downed</label>
 	<description>Mechanoids, regardless of type, will accompany an overseer if it is drafted or downed.
@@ -179,10 +197,9 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 	<uiOrder>175</uiOrder>
 	<iconPath>WVC/UI/MechWork/EscortIfDraftedOrDowned</iconPath>
-	<workerClass>WorkModeDrawer_Escort</workerClass>
   </MechWorkModeDef>
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Escort">
 	<defName>WVC_EscortIfEnemyOnMap</defName>
 	<label>escort if enemy</label>
 	<description>Mechanoids, regardless of type, will accompany the overseer, but only if there is an enemy on the map. When there is no enemy, mechanoids shutdown.
@@ -193,10 +210,9 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
 	<uiOrder>190</uiOrder>
 	<iconPath>WVC/UI/MechWork/EscortIfEnemyOnMap</iconPath>
-	<workerClass>WorkModeDrawer_Escort</workerClass>
   </MechWorkModeDef>
 
-  <MechWorkModeDef ParentName="WVC_MMVM_MechWorkMode_Base">
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Escort">
 	<defName>WVC_EscaortAndRecharge</defName>
 	<label>escort and recharge</label>
 	<description>The mechanoid, regardless of its type, will accompany the overseer and, if necessary, go to charge.
@@ -207,7 +223,6 @@ If there is an enemy on the map or in case of damage, the mechanoids will head t
 &lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; No</description>
 	<uiOrder>210</uiOrder>
 	<iconPath>WVC/UI/MechWork/EscortAndRecharge</iconPath>
-	<workerClass>WorkModeDrawer_Escort</workerClass>
   </MechWorkModeDef>
 
 </Defs>

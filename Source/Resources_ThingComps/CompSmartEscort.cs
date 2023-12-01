@@ -29,6 +29,8 @@ namespace WVC_WorkModes
 
 		public Pawn escortTarget = null;
 
+		private List<MechWorkModeDef> cachedEscortModes;
+
 		// public int tickCounter = 1500;
 
 		public CompProperties_SmartEscort Props => (CompProperties_SmartEscort)props;
@@ -48,6 +50,14 @@ namespace WVC_WorkModes
 			Pawn pawn = parent as Pawn;
 			overseer = pawn.GetOverseer();
 			if (overseer == null)
+			{
+				yield break;
+			}
+			if (cachedEscortModes.NullOrEmpty())
+			{
+				cachedEscortModes = SmartEscortUtility.SmartEscortModesList();
+			}
+			if (!SmartEscortUtility.ShowAssignGizmo(overseer, pawn, cachedEscortModes))
 			{
 				yield break;
 			}
@@ -115,7 +125,8 @@ namespace WVC_WorkModes
 		public override string CompInspectStringExtra()
 		{
 			base.CompInspectStringExtra();
-			if (escortTarget != null)
+			Pawn pawn = parent as Pawn;
+			if (escortTarget != null && SmartEscortUtility.ShowAssignGizmo(overseer, pawn, cachedEscortModes))
 			{
 				return "WVC_WorkModes_EscortsAssignTargetLabel".Translate(escortTarget.LabelIndefinite().CapitalizeFirst()).Colorize(ColorLibrary.Orange);
 			}

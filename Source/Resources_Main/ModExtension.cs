@@ -13,4 +13,10 @@ namespace WVC_WorkModes
 		public List<ResearchProjectDef> researchPrerequisites;
 
 	}
+
+	public class WorkModeExtension_SmartEscort : DefModExtension
+	{
+		public bool hideAssignGizmo = true;
+	}
+
 }

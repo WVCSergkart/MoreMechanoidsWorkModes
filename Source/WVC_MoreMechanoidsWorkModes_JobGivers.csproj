@@ -73,6 +73,7 @@
     <Compile Include="Resources_Main\PostInitializationStartup.cs" />
     <Compile Include="Resources_Main\ScavengeUtility.cs" />
     <Compile Include="Resources_Main\ShutdownUtility.cs" />
+    <Compile Include="Resources_Main\SmartEscortUtility.cs" />
     <Compile Include="Resources_Main\SpawnerUtility.cs" />
     <Compile Include="Resources_ThingComps\CompSmartEscort.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalAnyScavengeZone.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalResearchProject.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalSettings.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalWorkModes.cs" />
+    <Compile Include="Resources_WorkModeDrawers\WorkModeDrawer_SmartEscort.cs" />
     <Compile Include="Resources_Zones\MechanoidScavengeZone.cs" />
     <Compile Include="Resources_Zones\MechanoidShutdownZone.cs" />
     <Compile Include="Resources_Zones\MechanoidZoneColorUtility.cs" />
