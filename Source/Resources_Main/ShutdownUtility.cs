@@ -17,6 +17,16 @@ namespace WVC_WorkModes
 	public static class ShutdownUtility
 	{
 
+		public static bool CanRecharge(Pawn pawn, out Need_MechEnergy energy)
+		{
+			energy = pawn?.needs?.energy;
+			if (energy == null)
+			{
+				return false;
+			}
+			return true;
+		}
+
 		public static Pawn GetAssignedPawnOnMap(Pawn pawn)
 		{
 			if (WVC_MMWM.settings.enableSmartEscort)
