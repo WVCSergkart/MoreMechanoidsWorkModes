@@ -12,7 +12,7 @@ namespace WVC_WorkModes
 
 		protected override Pawn GetDefendee(Pawn pawn)
 		{
-			return ShutdownUtility.GetAssignedPawnOnMap(pawn);
+			return SmartEscortUtility.GetAssignedPawnOnMap(pawn);
 		}
 
 		protected override float GetFlagRadius(Pawn pawn)
@@ -27,7 +27,7 @@ namespace WVC_WorkModes
 
 		protected override Pawn GetFollowee(Pawn pawn)
 		{
-			return ShutdownUtility.GetAssignedPawnOnMap(pawn);
+			return SmartEscortUtility.GetAssignedPawnOnMap(pawn);
 		}
 
 		protected override float GetRadius(Pawn pawn)
@@ -37,7 +37,7 @@ namespace WVC_WorkModes
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			if (ShutdownUtility.GetAssignedPawnOnMap(pawn) == null)
+			if (SmartEscortUtility.GetAssignedPawnOnMap(pawn) == null)
 			{
 				return null;
 			}
@@ -51,7 +51,7 @@ namespace WVC_WorkModes
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			Pawn overseer = ShutdownUtility.GetAssignedPawnOnMap(pawn);
+			Pawn overseer = SmartEscortUtility.GetAssignedPawnOnMap(pawn);
 			if (overseer == null || overseer.Awake())
 			{
 				return null;
@@ -98,7 +98,7 @@ namespace WVC_WorkModes
 
 		private GlobalTargetInfo Target(Pawn pawn)
 		{
-			return ShutdownUtility.GetAssignedPawnOnMap(pawn);
+			return SmartEscortUtility.GetAssignedPawnOnMap(pawn);
 		}
 
 		protected override Job TryGiveJob(Pawn pawn)

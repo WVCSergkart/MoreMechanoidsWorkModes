@@ -28,6 +28,10 @@ namespace WVC_WorkModes
 		public bool allowCombatants = true;
 		public bool allowAmbush = true;
 
+		public Pawn owner;
+		// public MechanitorControlGroup ownerGroup;
+		public int ownerIndexGroup = 0;
+
 		// Zone Color
 
 		protected override Color NextZoneColor => MechanoidZoneColorUtility.NextMechanoidZoneColor();
@@ -41,6 +45,10 @@ namespace WVC_WorkModes
 			Scribe_Values.Look(ref allowSafe, "allowSafe", true);
 			Scribe_Values.Look(ref allowCombatants, "allowCombatants", true);
 			Scribe_Values.Look(ref allowAmbush, "allowAmbush", true);
+			// Groups
+			Scribe_References.Look(ref owner, "owner");
+			// Scribe_Deep.Look(ref ownerGroup, "ownerGroup");
+			Scribe_Values.Look(ref ownerIndexGroup, "ownerIndexGroup", 0);
 		}
 
 		public Zone_MechanoidShutdown()
@@ -82,76 +90,152 @@ namespace WVC_WorkModes
 			{
 				yield return gizmo;
 			}
+			if (owner == null || ownerIndexGroup == 0)
+			{
+				yield return new Command_Action
+				{
+					defaultLabel = "WVC_ShutdownZone_AllowWorkers".Translate().Resolve() + ": " + "\n" + OnOrOff(allowWorkers),
+					defaultDesc = "WVC_ShutdownZone_BasicDesc".Translate(),
+					icon = ContentFinder<Texture2D>.Get("WVC/Spots/WorkerMechanoidShutdownSpot"),
+					action = delegate
+					{
+						allowWorkers = !allowWorkers;
+						if (allowWorkers)
+						{
+							SoundDefOf.Tick_High.PlayOneShotOnCamera();
+						}
+						else
+						{
+							SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+						}
+					}
+				};
+				yield return new Command_Action
+				{
+					defaultLabel = "WVC_ShutdownZone_AllowSafe".Translate().Resolve() + ": " + "\n" + OnOrOff(allowSafe),
+					defaultDesc = "WVC_ShutdownZone_BasicDesc".Translate(),
+					icon = ContentFinder<Texture2D>.Get("WVC/Spots/EscapeMechanoidShutdownSpot"),
+					action = delegate
+					{
+						allowSafe = !allowSafe;
+						if (allowSafe)
+						{
+							SoundDefOf.Tick_High.PlayOneShotOnCamera();
+						}
+						else
+						{
+							SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+						}
+					}
+				};
+				yield return new Command_Action
+				{
+					defaultLabel = "WVC_ShutdownZone_AllowCombatants".Translate().Resolve() + ": " + "\n" + OnOrOff(allowCombatants),
+					defaultDesc = "WVC_ShutdownZone_BasicDesc".Translate(),
+					icon = ContentFinder<Texture2D>.Get("WVC/Spots/WaitMechanoidShutdownSpot"),
+					action = delegate
+					{
+						allowCombatants = !allowCombatants;
+						if (allowCombatants)
+						{
+							SoundDefOf.Tick_High.PlayOneShotOnCamera();
+						}
+						else
+						{
+							SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+						}
+					}
+				};
+				yield return new Command_Action
+				{
+					defaultLabel = "WVC_ShutdownZone_AllowAmbush".Translate().Resolve() + ": " + "\n" + OnOrOff(allowAmbush),
+					defaultDesc = "WVC_ShutdownZone_BasicDesc".Translate(),
+					icon = ContentFinder<Texture2D>.Get("WVC/Spots/AmbushMechanoidShutdownSpot"),
+					action = delegate
+					{
+						allowAmbush = !allowAmbush;
+						if (allowAmbush)
+						{
+							SoundDefOf.Tick_High.PlayOneShotOnCamera();
+						}
+						else
+						{
+							SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+						}
+					}
+				};
+			}
 			yield return new Command_Action
 			{
-				defaultLabel = "WVC_ShutdownZone_AllowWorkers".Translate().Resolve() + ": " + "\n" + OnOrOff(allowWorkers),
-				defaultDesc = "WVC_ShutdownZone_BasicDesc".Translate(),
-				icon = ContentFinder<Texture2D>.Get("WVC/Spots/WorkerMechanoidShutdownSpot"),
+				defaultLabel = "WVC_WorkModes_ChosenMechanitorLabel".Translate(),
+				defaultDesc = "WVC_WorkModes_ChosenMechanitorDesc".Translate(),
+				icon = ContentFinder<Texture2D>.Get("WVC/UI/WorkModes_General/Ui_Overseer"),
+				shrinkable = true,
 				action = delegate
 				{
-					allowWorkers = !allowWorkers;
-					if (allowWorkers)
+					List<FloatMenuOption> list = new();
+					List<Pawn> mechanitors = MechGroupUtility.GetAllMechanitors(Map);
+					for (int i = 0; i < mechanitors.Count; i++)
 					{
-						SoundDefOf.Tick_High.PlayOneShotOnCamera();
+						Pawn localPawn = mechanitors[i];
+						if (localPawn != owner)
+						{
+							list.Add(new FloatMenuOption(localPawn.Name.ToStringFull, delegate
+							{
+								owner = localPawn;
+								Messages.Message("WVC_WorkModes_MechanitorIsChosen".Translate(localPawn.Name.ToStringFull, label.CapitalizeFirst()), localPawn, MessageTypeDefOf.NeutralEvent, historical: false);
+							}));
+						}
 					}
-					else
+					if (list.Any())
 					{
-						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+						Find.WindowStack.Add(new FloatMenu(list));
+					}
+				}
+			};
+			if (owner == null)
+			{
+				yield break;
+			}
+			yield return new Command_Action
+			{
+				defaultLabel = "WVC_WorkModes_ChosenGroupLabel".Translate(),
+				defaultDesc = "WVC_WorkModes_ChosenGroupDesc".Translate(),
+				icon = ContentFinder<Texture2D>.Get(MechGroupUtility.GetGroupIconPath(owner, ownerIndexGroup)),
+				shrinkable = true,
+				action = delegate
+				{
+					List<FloatMenuOption> list = new();
+					List<MechanitorControlGroup> groups = owner.mechanitor.controlGroups;
+					for (int i = 0; i < groups.Count; i++)
+					{
+						MechanitorControlGroup localGroup = groups[i];
+						if (ownerIndexGroup == 0 || (localGroup.Index != ownerIndexGroup || localGroup.Tracker.Pawn != owner))
+						{
+							list.Add(new FloatMenuOption(localGroup.LabelIndexWithWorkMode, delegate
+							{
+								ownerIndexGroup = localGroup.Index;
+								Messages.Message("WVC_WorkModes_GroupIsChosen".Translate(localGroup.Index.ToString(), label.CapitalizeFirst()), owner, MessageTypeDefOf.NeutralEvent, historical: false);
+							}));
+						}
+					}
+					if (list.Any())
+					{
+						Find.WindowStack.Add(new FloatMenu(list));
 					}
 				}
 			};
 			yield return new Command_Action
 			{
-				defaultLabel = "WVC_ShutdownZone_AllowSafe".Translate().Resolve() + ": " + "\n" + OnOrOff(allowSafe),
-				defaultDesc = "WVC_ShutdownZone_BasicDesc".Translate(),
-				icon = ContentFinder<Texture2D>.Get("WVC/Spots/EscapeMechanoidShutdownSpot"),
+				defaultLabel = "WVC_WorkModes_ResetOwnerLabel".Translate(),
+				defaultDesc = "WVC_WorkModes_ResetOwnerDesc".Translate(),
+				icon = ContentFinder<Texture2D>.Get("WVC/UI/WorkModes_General/UiRandomize"),
+				shrinkable = true,
 				action = delegate
 				{
-					allowSafe = !allowSafe;
-					if (allowSafe)
-					{
-						SoundDefOf.Tick_High.PlayOneShotOnCamera();
-					}
-					else
-					{
-						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
-					}
-				}
-			};
-			yield return new Command_Action
-			{
-				defaultLabel = "WVC_ShutdownZone_AllowCombatants".Translate().Resolve() + ": " + "\n" + OnOrOff(allowCombatants),
-				defaultDesc = "WVC_ShutdownZone_BasicDesc".Translate(),
-				icon = ContentFinder<Texture2D>.Get("WVC/Spots/WaitMechanoidShutdownSpot"),
-				action = delegate
-				{
-					allowCombatants = !allowCombatants;
-					if (allowCombatants)
-					{
-						SoundDefOf.Tick_High.PlayOneShotOnCamera();
-					}
-					else
-					{
-						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
-					}
-				}
-			};
-			yield return new Command_Action
-			{
-				defaultLabel = "WVC_ShutdownZone_AllowAmbush".Translate().Resolve() + ": " + "\n" + OnOrOff(allowAmbush),
-				defaultDesc = "WVC_ShutdownZone_BasicDesc".Translate(),
-				icon = ContentFinder<Texture2D>.Get("WVC/Spots/AmbushMechanoidShutdownSpot"),
-				action = delegate
-				{
-					allowAmbush = !allowAmbush;
-					if (allowAmbush)
-					{
-						SoundDefOf.Tick_High.PlayOneShotOnCamera();
-					}
-					else
-					{
-						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
-					}
+					owner = null;
+					ownerIndexGroup = 0;
+					Messages.Message("WVC_WorkModes_ResetOwnerMessage".Translate(label.CapitalizeFirst()), null, MessageTypeDefOf.NeutralEvent, historical: false);
 				}
 			};
 		}
@@ -165,11 +249,19 @@ namespace WVC_WorkModes
 		{
 			StringBuilder stringBuilder = new(base.GetInspectString());
 			stringBuilder.AppendLine();
+			if (owner == null || ownerIndexGroup == 0)
+			{
+				stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowWorkers".Translate().Resolve(), OnOrOff(allowWorkers)));
+				stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowSafe".Translate().Resolve(), OnOrOff(allowSafe)));
+				stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowCombatants".Translate().Resolve(), OnOrOff(allowCombatants)));
+				stringBuilder.Append(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowAmbush".Translate().Resolve(), OnOrOff(allowAmbush)));
+			}
+			else
+			{
+				stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_WorkModes_CurrentZoneGroup".Translate().Resolve(), MechGroupUtility.GetGroupFromIndex(owner, ownerIndexGroup).LabelIndexWithWorkMode.Colorize(ColorLibrary.LightBlue)));
+				stringBuilder.Append(string.Format("{0}: {1}", "WVC_WorkModes_CurrentZoneOwner".Translate().Resolve(), owner.Name.ToStringFull.Colorize(ColoredText.NameColor)));
+			}
 			// stringBuilder.AppendLine(string.Format("{0}", "WVC_MechanoidShutdownZone_FreeCells".Translate(AllContainedThings.ToString()).Resolve()));
-			stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowWorkers".Translate().Resolve(), OnOrOff(allowWorkers)));
-			stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowSafe".Translate().Resolve(), OnOrOff(allowSafe)));
-			stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowCombatants".Translate().Resolve(), OnOrOff(allowCombatants)));
-			stringBuilder.Append(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowAmbush".Translate().Resolve(), OnOrOff(allowAmbush)));
 			return stringBuilder.ToString();
 		}
 

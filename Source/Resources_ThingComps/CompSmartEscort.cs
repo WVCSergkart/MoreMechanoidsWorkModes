@@ -10,9 +10,9 @@ namespace WVC_WorkModes
     public class CompProperties_SmartEscort : CompProperties
 	{
 
-		public string uiIconAssign = "WVC/UI/MechWork/EscortTargetAssign";
+		public string uiIconAssign = "WVC/UI/WorkModes_General/EscortTargetAssign";
 
-		public string uiIconReset = "WVC/UI/MechWork/EscortTargetAssignReset";
+		public string uiIconReset = "WVC/UI/WorkModes_General/EscortTargetAssignReset";
 
 		// public float uiIconSize = 1.0f;
 

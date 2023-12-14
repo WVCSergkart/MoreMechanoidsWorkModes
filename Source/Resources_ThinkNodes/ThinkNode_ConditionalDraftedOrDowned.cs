@@ -10,7 +10,7 @@ namespace WVC_WorkModes
 		protected override bool Satisfied(Pawn pawn)
 		{
 
-			Pawn overseer = ShutdownUtility.GetAssignedPawnOnMap(pawn);
+			Pawn overseer = SmartEscortUtility.GetAssignedPawnOnMap(pawn);
 			if (overseer != null)
 			{
 				if (overseer.Drafted && pawn.CanReach(overseer, PathEndMode.OnCell, Danger.Deadly))
@@ -39,7 +39,7 @@ namespace WVC_WorkModes
 		protected override bool Satisfied(Pawn pawn)
 		{
 
-			Pawn overseer = ShutdownUtility.GetAssignedPawnOnMap(pawn);
+			Pawn overseer = SmartEscortUtility.GetAssignedPawnOnMap(pawn);
 			if (overseer != null)
 			{
 				if (overseer.Downed && pawn.CanReach(overseer, PathEndMode.OnCell, Danger.Deadly))

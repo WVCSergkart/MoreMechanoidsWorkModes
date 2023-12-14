@@ -66,6 +66,7 @@
     <Compile Include="Resources_JobGivers\JobGiver_ScavengeSpawner.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_SmartEscort.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_GoToRandomScavengeZone.cs" />
+    <Compile Include="Resources_Main\MechGroupUtility.cs" />
     <Compile Include="Resources_Main\ModExtension.cs" />
     <Compile Include="Resources_Main\ModSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -17,6 +17,23 @@ namespace WVC_WorkModes
 	public static class ShutdownUtility
 	{
 
+		// public static List<Pawn> GetAllMechanitors(Map map)
+		// {
+			// List<Pawn> list = new();
+			// List<Pawn> colonists = map.mapPawns.FreeColonists;
+			// if (!colonists.NullOrEmpty())
+			// {
+				// foreach (Pawn colonist in colonists)
+				// {
+					// if (MechanitorUtility.IsMechanitor(colonist))
+					// {
+						// list.Add(colonist);
+					// }
+				// }
+			// }
+			// return list;
+		// }
+
 		public static bool CanRecharge(Pawn pawn, out Need_MechEnergy energy)
 		{
 			energy = pawn?.needs?.energy;
@@ -25,32 +42,6 @@ namespace WVC_WorkModes
 				return false;
 			}
 			return true;
-		}
-
-		public static Pawn GetAssignedPawnOnMap(Pawn pawn)
-		{
-			if (WVC_MMWM.settings.enableSmartEscort)
-			{
-				if(!pawn.RaceProps.IsMechanoid)
-				{
-					return null;
-				}
-				CompSmartEscort comp = pawn.TryGetComp<CompSmartEscort>();
-				if(comp != null && AssignedPawnAtHome(comp.escortTarget))
-				{
-					return comp.escortTarget;
-				}
-			}
-			return pawn.GetOverseer();
-		}
-
-		public static bool AssignedPawnAtHome(Pawn pawn)
-		{
-			if(pawn != null && pawn.Map != null && pawn.Map.IsPlayerHome)
-			{
-				return true;
-			}
-			return false;
 		}
 
 		public static Building GetClosestShutdownSpot(Pawn mech, ThingDef spotDefName, int maxDistance)
@@ -78,7 +69,7 @@ namespace WVC_WorkModes
 			Zone zone = GridsUtility.GetZone(cell, pawn.Map);
 			if (zone is Zone_MechanoidShutdown shutZone)
 			{
-				if (MechanoidWorkTypeIsCorrect(shutZone, workModeType))
+				if (MechanoidWorkTypeIsCorrect(shutZone, workModeType, pawn))
 				{
 					return true;
 				}
@@ -90,7 +81,7 @@ namespace WVC_WorkModes
 		{
 			for (int i = 0; i < zones.Count; i++)
 			{
-				if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType))
+				if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType, pawn))
 				{
 					// foreach (IntVec3 cell in shutZone.Cells)
 					// {
@@ -117,7 +108,7 @@ namespace WVC_WorkModes
 		{
 			for (int i = 0; i < zones.Count; i++)
 			{
-				if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType))
+				if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType, pawn))
 				{
 					List<IntVec3> cells = shutZone.Cells;
 					for (int j = 0; j < cells.Count; j++)
@@ -134,11 +125,22 @@ namespace WVC_WorkModes
 			return false;
 		}
 
-		public static bool MechanoidWorkTypeIsCorrect(Zone_MechanoidShutdown shutZone, MechanoidWorkType workModeType)
+		public static bool MechanoidWorkTypeIsCorrect(Zone_MechanoidShutdown shutZone, MechanoidWorkType workModeType, Pawn mech)
 		{
-			if ((shutZone.allowWorkers && workModeType == MechanoidWorkType.Work) || (shutZone.allowSafe && workModeType == MechanoidWorkType.Safe) || (shutZone.allowCombatants && workModeType == MechanoidWorkType.Combat) || (shutZone.allowAmbush && workModeType == MechanoidWorkType.Ambush))
+			if (shutZone.owner == null || shutZone.ownerIndexGroup == 0)
 			{
-				return true;
+				if ((shutZone.allowWorkers && workModeType == MechanoidWorkType.Work) || (shutZone.allowSafe && workModeType == MechanoidWorkType.Safe) || (shutZone.allowCombatants && workModeType == MechanoidWorkType.Combat) || (shutZone.allowAmbush && workModeType == MechanoidWorkType.Ambush))
+				{
+					return true;
+				}
+			}
+			else
+			{
+				Pawn overseer = mech.GetOverseer();
+				if (overseer == shutZone.owner && shutZone.ownerIndexGroup == overseer.mechanitor.GetControlGroup(mech).Index)
+				{
+					return true;
+				}
 			}
 			return false;
 		}

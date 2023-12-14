@@ -33,7 +33,7 @@
 	<!-- <WVC_WorkModes_AssignedPawnEscortLabel>{0} assigned escort {1}</WVC_WorkModes_AssignedPawnEscortLabel> -->
 	<WVC_WorkModes_AssignToPawnEscortDesc>{0} assigned escort {1}
 
-Allows you to specify to the mechanoid what colony pawn it will escort.
+Allows you to specify to the mechanoid what colonist it will escort.
 
 {0} cannot follow anyone other than an overseer in a caravan or on non-home maps.</WVC_WorkModes_AssignToPawnEscortDesc>
 
@@ -48,5 +48,21 @@ Allows you to specify to the mechanoid what colony pawn it will escort.
 	<WVC_WorkModes_ModeTechnologyRequirement>Required technologies:</WVC_WorkModes_ModeTechnologyRequirement>
 	<WVC_WorkModes_TechnologyAllowsModes>Allows use new modes:</WVC_WorkModes_TechnologyAllowsModes>
 	<WVC_WorkModes_TechnologyAllowsModes_Desc> - &lt;color=#00cccc&gt;{0}&lt;/color&gt;: {1}</WVC_WorkModes_TechnologyAllowsModes_Desc>
+
+	<!-- GroupZoning -->
+	<WVC_WorkModes_CurrentZoneGroup>Current group</WVC_WorkModes_CurrentZoneGroup>
+	<WVC_WorkModes_CurrentZoneOwner>Current owner</WVC_WorkModes_CurrentZoneOwner>
+
+	<WVC_WorkModes_ChosenGroupLabel>Assign group</WVC_WorkModes_ChosenGroupLabel>
+	<WVC_WorkModes_ChosenGroupDesc>Allows you to designate a group of mechanoids that will return to this zone.</WVC_WorkModes_ChosenGroupDesc>
+	<WVC_WorkModes_GroupIsChosen>Group {0} assigned to {1}.</WVC_WorkModes_GroupIsChosen>
+
+	<WVC_WorkModes_ChosenMechanitorLabel>Assign mechanitor</WVC_WorkModes_ChosenMechanitorLabel>
+	<WVC_WorkModes_ChosenMechanitorDesc>Allows you to assign a zone owner.</WVC_WorkModes_ChosenMechanitorDesc>
+	<WVC_WorkModes_MechanitorIsChosen>{0} assigned as owner of {1}.</WVC_WorkModes_MechanitorIsChosen>
+
+	<WVC_WorkModes_ResetOwnerLabel>Reset owner</WVC_WorkModes_ResetOwnerLabel>
+	<WVC_WorkModes_ResetOwnerDesc>Allows you to reset a zone owner.</WVC_WorkModes_ResetOwnerDesc>
+	<WVC_WorkModes_ResetOwnerMessage>{0} settings are reset to default.</WVC_WorkModes_ResetOwnerMessage>
 
 </LanguageData>
