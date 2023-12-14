@@ -84,6 +84,16 @@ namespace WVC_WorkModes
 			return "WVC_WorkModes_Off".Translate().Colorize(ColorLibrary.RedReadable);
 		}
 
+		private void ModeSwitch(bool onOrOff, Pawn pawn, int groupIndex)
+		{
+			allowSafe = onOrOff;
+			allowWorkers = onOrOff;
+			allowCombatants = onOrOff;
+			allowAmbush = onOrOff;
+			owner = pawn;
+			ownerIndexGroup = groupIndex;
+		}
+
 		public override IEnumerable<Gizmo> GetGizmos()
 		{
 			foreach (Gizmo gizmo in base.GetGizmos())
@@ -112,8 +122,9 @@ namespace WVC_WorkModes
 							{
 								list.Add(new FloatMenuOption(localPawn.Name.ToStringFull + " | " + localGroup.LabelIndexWithWorkMode, delegate
 								{
-									owner = localPawn;
-									ownerIndexGroup = localGroup.Index;
+									// owner = localPawn;
+									// ownerIndexGroup = localGroup.Index;
+									ModeSwitch(false, localPawn, localGroup.Index);
 									Messages.Message("WVC_WorkModes_GroupIsChosen".Translate(localGroup.Index.ToString(), label.CapitalizeFirst()), owner, MessageTypeDefOf.NeutralEvent, historical: false);
 								}));
 							}
@@ -135,8 +146,9 @@ namespace WVC_WorkModes
 					shrinkable = true,
 					action = delegate
 					{
-						owner = null;
-						ownerIndexGroup = 0;
+						// owner = null;
+						// ownerIndexGroup = 0;
+						ModeSwitch(true, null, 0);
 						Messages.Message("WVC_WorkModes_ResetOwnerMessage".Translate(label.CapitalizeFirst()), null, MessageTypeDefOf.NeutralEvent, historical: false);
 					}
 				};

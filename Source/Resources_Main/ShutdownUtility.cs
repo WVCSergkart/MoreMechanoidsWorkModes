@@ -17,23 +17,6 @@ namespace WVC_WorkModes
 	public static class ShutdownUtility
 	{
 
-		// public static List<Pawn> GetAllMechanitors(Map map)
-		// {
-			// List<Pawn> list = new();
-			// List<Pawn> colonists = map.mapPawns.FreeColonists;
-			// if (!colonists.NullOrEmpty())
-			// {
-				// foreach (Pawn colonist in colonists)
-				// {
-					// if (MechanitorUtility.IsMechanitor(colonist))
-					// {
-						// list.Add(colonist);
-					// }
-				// }
-			// }
-			// return list;
-		// }
-
 		public static bool CanRecharge(Pawn pawn, out Need_MechEnergy energy)
 		{
 			energy = pawn?.needs?.energy;
@@ -64,6 +47,8 @@ namespace WVC_WorkModes
 			return false;
 		}
 
+		// Pawn Zone Check
+
 		public static bool MechInShutdownZone(Pawn pawn, IntVec3 cell, MechanoidWorkType workModeType)
 		{
 			Zone zone = GridsUtility.GetZone(cell, pawn.Map);
@@ -76,6 +61,8 @@ namespace WVC_WorkModes
 			}
 			return false;
 		}
+
+		// Zone Searching
 
 		public static bool TryFindRandomMechShutdownZone(List<Zone> zones, Pawn pawn, Map map, MechanoidWorkType workModeType, out IntVec3 result)
 		{
@@ -125,9 +112,11 @@ namespace WVC_WorkModes
 			return false;
 		}
 
+		// Zone Check
+
 		public static bool MechanoidWorkTypeIsCorrect(Zone_MechanoidShutdown shutZone, MechanoidWorkType workModeType, Pawn mech)
 		{
-			if (shutZone.owner == null || shutZone.ownerIndexGroup == 0)
+			if ((shutZone.owner == null || shutZone.ownerIndexGroup == 0) && !MechZoneRestricted(mech))
 			{
 				if ((shutZone.allowWorkers && workModeType == MechanoidWorkType.Work) || (shutZone.allowSafe && workModeType == MechanoidWorkType.Safe) || (shutZone.allowCombatants && workModeType == MechanoidWorkType.Combat) || (shutZone.allowAmbush && workModeType == MechanoidWorkType.Ambush))
 				{
@@ -144,6 +133,18 @@ namespace WVC_WorkModes
 			}
 			return false;
 		}
+
+		public static bool MechZoneRestricted(Pawn mech)
+		{
+			CompMechSettings comp = mech.TryGetComp<CompMechSettings>();
+			if(comp != null && comp.restrictZoneByGroup)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		// Shutdown Check
 
 		public static bool TryFindNearbyMechSelfShutdownSpot(IntVec3 root, Pawn pawn, Map map, out IntVec3 result, bool allowForbidden = false)
 		{

@@ -52,7 +52,7 @@ Allows you to specify to the mechanoid what colonist it will escort.
 	<WVC_WorkModes_TechnologyAllowsModes>Allows use new modes:</WVC_WorkModes_TechnologyAllowsModes>
 	<WVC_WorkModes_TechnologyAllowsModes_Desc> - &lt;color=#00cccc&gt;{0}&lt;/color&gt;: {1}</WVC_WorkModes_TechnologyAllowsModes_Desc>
 
-	<!-- GroupZoning -->
+	<!-- Group Zoning -->
 	<WVC_WorkModes_CurrentZoneGroup>Current group</WVC_WorkModes_CurrentZoneGroup>
 	<WVC_WorkModes_CurrentZoneOwner>Current owner</WVC_WorkModes_CurrentZoneOwner>
 
@@ -67,5 +67,10 @@ Allows you to specify to the mechanoid what colonist it will escort.
 	<WVC_WorkModes_ResetOwnerLabel>Reset owner</WVC_WorkModes_ResetOwnerLabel>
 	<WVC_WorkModes_ResetOwnerDesc>Allows you to reset a zone owner.</WVC_WorkModes_ResetOwnerDesc>
 	<WVC_WorkModes_ResetOwnerMessage>{0} settings are reset to default.</WVC_WorkModes_ResetOwnerMessage>
+
+	<!-- Group Zoning Mechs -->
+	<WVC_WorkModes_RestrictZoneByGroupLabel>Use only group zones</WVC_WorkModes_RestrictZoneByGroupLabel>
+	<WVC_WorkModes_RestrictZoneByGroupDesc>Allows you to limit the mechanoid's choice of zones to those specifically assigned to its group.</WVC_WorkModes_RestrictZoneByGroupDesc>
+	<WVC_WorkModes_RestrictZoneByGroupInspect>Uses only zones of its group</WVC_WorkModes_RestrictZoneByGroupInspect>
 
 </LanguageData>

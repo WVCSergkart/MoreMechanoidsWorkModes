@@ -28,7 +28,7 @@ namespace WVC_WorkModes
 
 		public static bool AssignedPawnAtHome(Pawn pawn)
 		{
-			if(pawn != null && pawn.Map != null && pawn.Map.IsPlayerHome)
+			if (pawn != null && pawn.Map != null && pawn.Map.IsPlayerHome)
 			{
 				return true;
 			}
