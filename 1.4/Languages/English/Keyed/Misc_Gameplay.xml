@@ -10,7 +10,10 @@
 	<WVC_ShutdownZone_AllowCombatants>Combat type</WVC_ShutdownZone_AllowCombatants>
 	<WVC_ShutdownZone_AllowAmbush>Ambush type</WVC_ShutdownZone_AllowAmbush>
 
+	<WVC_WorkModes_allowAllGroups>All groups allowed</WVC_WorkModes_allowAllGroups>
+
 	<WVC_ShutdownZone_BasicDesc>Responsible for whether mechanoids with this type of work will be able to shutdown here.</WVC_ShutdownZone_BasicDesc>
+	<WVC_WorkModes_allowAllGroupsDesc>Responsible for whether all mechanoids, regardless of the group, can use this zone.</WVC_WorkModes_allowAllGroupsDesc>
 
 	<WVC_WorkModes_On>On</WVC_WorkModes_On>
 	<WVC_WorkModes_Off>Off</WVC_WorkModes_Off>
