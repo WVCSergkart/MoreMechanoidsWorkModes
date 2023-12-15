@@ -40,6 +40,7 @@
 				<li Class="PatchOperationInsert">
 				  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses/li[contains(text(),'Designator_Deconstruct')]</xpath>
 				  <order>Append</order>
+				  <success>Always</success>
 				  <value>
 					<li>WVC_WorkModes.Designator_MechanoidScavengeZone</li>
 				  </value>
@@ -57,6 +58,7 @@
 				<li Class="PatchOperationInsert">
 				  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses/li[contains(text(),'Designator_Deconstruct')]</xpath>
 				  <order>Append</order>
+				  <success>Always</success>
 				  <value>
 					<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>
 				  </value>
@@ -68,6 +70,13 @@
 					<!-- <li>WVC_WorkModes.Designator_MechanoidShutdownZone</li> -->
 				  <!-- </value> -->
 				<!-- </li> -->
+				<li Class="PatchOperationAdd">
+				  <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath>
+				  <success>Always</success>
+				  <value>
+					  <li Class="WVC_WorkModes.CompProperties_MechSettings"/>
+				  </value>
+				</li>
 
 			</operations>
 		</active>
@@ -103,12 +112,12 @@
 
 	<!-- Without choice -->
 
-	<Operation Class="PatchOperationAdd">
-	  <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath>
-	  <value>
-		  <li Class="WVC_WorkModes.CompProperties_MechSettings"/>
-	  </value>
-	</Operation>
+	<!-- <Operation Class="PatchOperationAdd"> -->
+	  <!-- <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath> -->
+	  <!-- <value> -->
+		  <!-- <li Class="WVC_WorkModes.CompProperties_MechSettings"/> -->
+	  <!-- </value> -->
+	<!-- </Operation> -->
 
 	<!-- =========================================================== -->
 

@@ -2,6 +2,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
+// using Verse.AI;
 // using WVC;
 
 namespace WVC_WorkModes
@@ -12,6 +13,23 @@ namespace WVC_WorkModes
 	{
 		static PostInitializationWorkModeRequirement()
 		{
+			// foreach (ThinkTreeDef thinkTreeDef in DefDatabase<ThinkTreeDef>.AllDefsListForReading)
+			// {
+				// foreach (ThinkNode thinkNode in thinkTreeDef.thinkRoot.ChildrenRecursive.ToList())
+				// {
+					// if (thinkNode is ThinkNode_ConditionalWorkMode thinkWorkMode)
+					// {
+						// MechWorkModeDef mechWorkModeDef = thinkWorkMode.workMode;
+						// foreach (ThinkNode thinkNode2 in thinkWorkMode.ChildrenRecursive.ToList())
+						// {
+							// if (thinkNode2 is JobGiver_GoToShutdownZone)
+							// {
+								// Log.Error(mechWorkModeDef.label.CapitalizeFirst());
+							// }
+						// }
+					// }
+				// }
+			// }
 			if (WVC_MMWM.settings.WVC_HiveMindResearching || WVC_MMWM.settings.WVC_Scavenging)
 			{
 				List<MechWorkModeDef> mechWorkModeDefs = new();

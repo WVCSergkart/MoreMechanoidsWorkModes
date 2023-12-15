@@ -1,6 +1,7 @@
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -25,6 +26,8 @@ namespace WVC_WorkModes
 
 		public bool restrictZoneByGroup = false;
 
+		// public List<MechWorkModeDef> cachedShutdownModes;
+
 		public CompProperties_MechSettings Props => (CompProperties_MechSettings)props;
 
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -41,6 +44,7 @@ namespace WVC_WorkModes
 				defaultLabel = "WVC_WorkModes_RestrictZoneByGroupLabel".Translate().Resolve() + ": " + "\n" + Zone_MechanoidShutdown.OnOrOff(restrictZoneByGroup),
 				defaultDesc = "WVC_WorkModes_RestrictZoneByGroupDesc".Translate(),
 				icon = ContentFinder<Texture2D>.Get(Props.uiIconZoneRestrict),
+				shrinkable = true,
 				action = delegate
 				{
 					restrictZoneByGroup = !restrictZoneByGroup;
@@ -58,12 +62,19 @@ namespace WVC_WorkModes
 
 		public override string CompInspectStringExtra()
 		{
-			base.CompInspectStringExtra();
+			// base.CompInspectStringExtra();
+			// if (restrictZoneByGroup)
+			// {
+				// return "WVC_WorkModes_RestrictZoneByGroupInspect".Translate().Colorize(ColorLibrary.Orange);
+			// }
+			// return null;
+			StringBuilder stringBuilder = new(base.CompInspectStringExtra());
 			if (restrictZoneByGroup)
 			{
-				return "WVC_WorkModes_RestrictZoneByGroupInspect".Translate().Colorize(ColorLibrary.Orange);
+				stringBuilder.Append(string.Format("{0}", "WVC_WorkModes_RestrictZoneByGroupInspect".Translate().Colorize(ColorLibrary.Orange)));
 			}
-			return null;
+			// stringBuilder.Append();
+			return stringBuilder.ToString();
 		}
 
 		public override void PostExposeData()

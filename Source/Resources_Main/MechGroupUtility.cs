@@ -1,5 +1,6 @@
 using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using Verse;
 using Verse.AI;
 
@@ -20,6 +21,26 @@ namespace WVC_WorkModes
 					if (MechanitorUtility.IsMechanitor(colonist))
 					{
 						list.Add(colonist);
+					}
+				}
+			}
+			return list;
+		}
+
+		public static List<MechWorkModeDef> GetAllShutdownModes(Pawn mech)
+		{
+			List<MechWorkModeDef> list = new();
+			foreach (ThinkNode thinkNode in mech.RaceProps.thinkTreeMain.thinkRoot.ChildrenRecursive.ToList())
+			{
+				if (thinkNode is ThinkNode_ConditionalWorkMode thinkWorkMode)
+				{
+					MechWorkModeDef mechWorkModeDef = thinkWorkMode.workMode;
+					foreach (ThinkNode thinkNode2 in thinkWorkMode.ChildrenRecursive.ToList())
+					{
+						if (thinkNode2 is JobGiver_GoToShutdownZone)
+						{
+							list.Add(mechWorkModeDef);
+						}
 					}
 				}
 			}
