@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef Name="WVC_WorkModes_Hediffs_Base" Abstract="True">
+	<label>test</label>
+	<description>Should be invisible.</description>
+	<defaultLabelColor>(255,255,255)</defaultLabelColor>
+	<hediffClass>HediffWithComps</hediffClass>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<makesAlert>false</makesAlert>
+	<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+	<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+	<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+  </HediffDef>
+
+  <!--=====================================================================-->
+
+  <!-- <HediffDef ParentName="WVC_WorkModes_Hediffs_Base"> -->
+	<!-- <defName>WVC_WorkModes_InDormantMode</defName> -->
+	<!-- <label>dormant</label> -->
+	<!-- <description>Mechanoid in dormant mode. In this state, it uses less bandwidth.</description> -->
+	<!-- <stages> -->
+	  <!-- <li> -->
+		<!-- <minSeverity>0.0</minSeverity> -->
+		<!-- <becomeVisible>true</becomeVisible> -->
+	  <!-- </li> -->
+	<!-- </stages> -->
+	<!-- <comps> -->
+		<!-- <li Class="WVC_WorkModes.HediffCompProperties_RemoveIfIsNotDormant"/> -->
+		<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
+	<!-- </comps> -->
+  <!-- </HediffDef> -->
+
+</Defs>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<WVC_MMWM_Settings>Work Modes</WVC_MMWM_Settings>
+
+	<WVC_Label_MainModeLabelSetting>Main</WVC_Label_MainModeLabelSetting>
+	<WVC_Label_BonusModeLabelSetting>Bonus</WVC_Label_BonusModeLabelSetting>
+	<WVC_Label_WorkModeMechanicsLabelSetting>Mechanics</WVC_Label_WorkModeMechanicsLabelSetting>
+
+	<WVC_WorkModes_ResetButton>Reset</WVC_WorkModes_ResetButton>
+
+	<WVC_WorkModes_ResetButtonWarning>The settings will be changed, are you sure?</WVC_WorkModes_ResetButtonWarning>
+	<WVC_WorkModes_ResetButton_SettingsChanged>The settings have been changed.</WVC_WorkModes_ResetButton_SettingsChanged>
+
+	<!-- Main -->
+	<WVC_Label_FindAndDestroy>Find and destroy</WVC_Label_FindAndDestroy>
+	<WVC_Label_WaitEnemy>Wait enemy</WVC_Label_WaitEnemy>
+	<WVC_Label_WorkAndWaitEnemy>Work and wait</WVC_Label_WorkAndWaitEnemy>
+	<WVC_Label_DefendYourself>Defend yourself</WVC_Label_DefendYourself>
+	<WVC_Label_Ambush>Ambush</WVC_Label_Ambush>
+	<WVC_Label_WorkAndRecharge>Work and recharge</WVC_Label_WorkAndRecharge>
+	<WVC_Label_SafeWorkAndRecharge>Work if safe</WVC_Label_SafeWorkAndRecharge>
+	<WVC_Label_EscaortAndRecharge>Escort and recharge</WVC_Label_EscaortAndRecharge>
+	<WVC_Label_WorkRechargeEscort>Work, recharge and escort</WVC_Label_WorkRechargeEscort>
+	<WVC_Label_EscortIfEnemyOnMap>Escort if enemy</WVC_Label_EscortIfEnemyOnMap>
+
+	<WVC_ToolTip_Setting>Before disabling, switch all mechanoid modes to vanilla. A restart is required to apply the settings.</WVC_ToolTip_Setting>
+
+	<!-- Bonus -->
+	<WVC_Label_EscortIfEnemyWorkAndRecharge>Escort if enemy, work and recharge</WVC_Label_EscortIfEnemyWorkAndRecharge>
+	<WVC_Label_EscortIfDraftedOrDowned>Escort if drafted or downed</WVC_Label_EscortIfDraftedOrDowned>
+	<WVC_Label_HiveMindResearching>Hive mind researching</WVC_Label_HiveMindResearching>
+	<WVC_Label_Scavenging>Scavenging</WVC_Label_Scavenging>
+	<WVC_Label_ScavenZoneCells>Scavenge zone min required cells: {0}</WVC_Label_ScavenZoneCells>
+
+	<WVC_ToolTip_BonusSetting>Bonus mode. It is disabled by default. Enabling is compatible with saves.</WVC_ToolTip_BonusSetting>
+
+	<!-- Idle Optimization -->
+	<WVC_Label_enableShutdownForAllMechanoids>Idle optimization for vanilla modes</WVC_Label_enableShutdownForAllMechanoids>
+	<WVC_ToolTip_enableShutdownForAllMechanoids>If enabled, idle optimization will also affect vanilla modes.</WVC_ToolTip_enableShutdownForAllMechanoids>
+
+	<WVC_Label_enableSmartChargingForAllMechanoids>Smart charging for vanilla modes</WVC_Label_enableSmartChargingForAllMechanoids>
+	<WVC_ToolTip_enableSmartChargingForAllMechanoids>If enabled, then the mechanoids will go to charge when they are not busy with anything, and not only when the charge runs out.</WVC_ToolTip_enableSmartChargingForAllMechanoids>
+
+	<WVC_ToolTip_VanillaModeOptimizationWarning>Does not affect combat mechanoids, as their idle has been replaced with a simulated patrol.</WVC_ToolTip_VanillaModeOptimizationWarning>
+
+	<!-- Features -->
+	<WVC_Label_enableShutdownSearching>Enable shutdown zone searching</WVC_Label_enableShutdownSearching>
+	<WVC_ToolTip_enableShutdownSearching>If enabled, mechanoids will search for a mechanoid shutdown zone before shutdown.</WVC_ToolTip_enableShutdownSearching>
+
+	<WVC_Label_enableEnemySearching>Enable enemy searching</WVC_Label_enableEnemySearching>
+	<WVC_ToolTip_enableEnemySearching>If enabled, in safe modes, mechanoids will check the map for enemies.</WVC_ToolTip_enableEnemySearching>
+
+	<WVC_ToolTip_enableSearchingWarning>If you don't understand what this option does, leave it enabled.</WVC_ToolTip_enableSearchingWarning>
+
+	<WVC_Label_enableSmartEscort>Smart escort</WVC_Label_enableSmartEscort>
+	<WVC_ToolTip_enableSmartEscort>If enabled, it allows you to select an escort target for mechanoids.
+
+Restart required!</WVC_ToolTip_enableSmartEscort>
+
+	<WVC_Label_shutdownModeZonesOrSpots>Shutdown mode: Zones or Spots</WVC_Label_shutdownModeZonesOrSpots>
+	<WVC_ToolTip_shutdownModeZonesOrSpots>If enabled, zones will be used. Alternatively, spots. It is recommended to enable it.
+
+This option is for advanced users. If you don't know what spots are, then leave it enabled.
+
+Restart required!</WVC_ToolTip_shutdownModeZonesOrSpots>
+
+	<WVC_Label_useCustomShutdownBehavior>Use custom shutdown behavior</WVC_Label_useCustomShutdownBehavior>
+	<WVC_ToolTip_useCustomShutdownBehavior>Vanilla shutdown is too stupid, but reliable. If you encounter bugs related to mechanoid shutdown, disable this option.</WVC_ToolTip_useCustomShutdownBehavior>
+
+	<WVC_Label_enableDormantMode>Dormant mode</WVC_Label_enableDormantMode>
+	<WVC_ToolTip_enableDormantMode>If enabled, then when the mechanoid is in shutdown mode it does not consume bandwidth.
+
+In case of performance problems, it is recommended to disable it.
+
+Restart required!</WVC_ToolTip_enableDormantMode>
+	<WVC_Label_mechBandwithCostInDormantMode>Dormant mode bandwidth cost factor x{0}%</WVC_Label_mechBandwithCostInDormantMode>
+
+</LanguageData>

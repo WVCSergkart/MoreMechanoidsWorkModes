@@ -32,10 +32,14 @@ namespace WVC_WorkModes
 
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()
 		{
-			base.CompGetGizmosExtra();
-			Pawn pawn = parent as Pawn;
-			Pawn overseer = pawn.GetOverseer();
-			if (overseer == null)
+			// base.CompGetGizmosExtra();
+			// Pawn pawn = parent as Pawn;
+			// Pawn overseer = pawn.GetOverseer();
+			// if (overseer == null)
+			// {
+				// yield break;
+			// }
+			if (parent.Faction != Faction.OfPlayer)
 			{
 				yield break;
 			}
@@ -62,18 +66,11 @@ namespace WVC_WorkModes
 
 		public override string CompInspectStringExtra()
 		{
-			// base.CompInspectStringExtra();
-			// if (restrictZoneByGroup)
-			// {
-				// return "WVC_WorkModes_RestrictZoneByGroupInspect".Translate().Colorize(ColorLibrary.Orange);
-			// }
-			// return null;
 			StringBuilder stringBuilder = new(base.CompInspectStringExtra());
 			if (restrictZoneByGroup)
 			{
 				stringBuilder.Append(string.Format("{0}", "WVC_WorkModes_RestrictZoneByGroupInspect".Translate().Colorize(ColorLibrary.Orange)));
 			}
-			// stringBuilder.Append();
 			return stringBuilder.ToString();
 		}
 

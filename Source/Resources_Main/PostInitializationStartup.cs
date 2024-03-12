@@ -8,11 +8,16 @@ using Verse;
 namespace WVC_WorkModes
 {
 
-    [StaticConstructorOnStartup]
+	[StaticConstructorOnStartup]
 	public static class PostInitializationWorkModeRequirement
 	{
 		static PostInitializationWorkModeRequirement()
 		{
+			if (WVC_MMWM.settings.firstModLaunch)
+			{
+				WVC_MMWM.settings.firstModLaunch = false;
+				WVC_MMWM.settings.Write();
+			}
 			// foreach (ThinkTreeDef thinkTreeDef in DefDatabase<ThinkTreeDef>.AllDefsListForReading)
 			// {
 				// foreach (ThinkNode thinkNode in thinkTreeDef.thinkRoot.ChildrenRecursive.ToList())
@@ -37,11 +42,9 @@ namespace WVC_WorkModes
 				List<WorkModeResearchRequirementDef> requirementDef = new();
 				string mainInfo = "\n\n" + "WVC_WorkModes_ModeTechnologyRequirement".Translate().Resolve().Colorize(ColoredText.TipSectionTitleColor);
 				string techInfo = "\n\n" + "WVC_WorkModes_TechnologyAllowsModes".Translate().Resolve().Colorize(ColoredText.TipSectionTitleColor);
-				// string info = "";
 				foreach (WorkModeResearchRequirementDef def in DefDatabase<WorkModeResearchRequirementDef>.AllDefsListForReading)
 				{
 					requirementDef.Add(def);
-					// mechWorkModeDefs = new();
 					foreach (MechWorkModeDef modeDef in def.workModes)
 					{
 						if (!mechWorkModeDefs.Contains(modeDef))
@@ -84,23 +87,6 @@ namespace WVC_WorkModes
 						}
 					}
 				}
-				// foreach (ResearchProjectDef researchDef in researchPrerequisites)
-				// {
-					// if (researchDef.descriptionHyperlinks.NullOrEmpty())
-					// {
-						// researchDef.descriptionHyperlinks = new();
-					// }
-					// foreach (WorkModeResearchRequirementDef reqDef in requirementDef)
-					// {
-						// if (reqDef.researchPrerequisites.Contains(researchDef))
-						// {
-							// foreach (MechWorkModeDef modeDef3 in reqDef.workModes)
-							// {
-								// researchDef.descriptionHyperlinks.Add(new DefHyperlink(modeDef3));
-							// }
-						// }
-					// }
-				// }
 			}
 		}
 	}

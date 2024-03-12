@@ -1,4 +1,5 @@
 using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -27,6 +28,7 @@ namespace WVC_WorkModes
 			return list;
 		}
 
+		[Obsolete]
 		public static List<MechWorkModeDef> GetAllShutdownModes(Pawn mech)
 		{
 			List<MechWorkModeDef> list = new();
@@ -56,6 +58,7 @@ namespace WVC_WorkModes
 			return "WVC/UI/WorkModes_General/UI_MechGroup";
 		}
 
+		[Obsolete]
 		public static MechWorkModeDef GetGroupWorkMode(Pawn overseer, int groupIndex)
 		{
 			if (TryGetGroupFromIndex(overseer, groupIndex, out MechanitorControlGroup localGroup))

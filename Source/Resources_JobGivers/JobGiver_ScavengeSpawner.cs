@@ -35,7 +35,7 @@ namespace WVC_WorkModes
 					ThingDefByWeight thingDefByWeight = productDefs.RandomElementByWeight((ThingDefByWeight x) => x.selectionWeight);
 					ThingDef productDef = thingDefByWeight.productDef;
 					int productCount = thingDefByWeight.productCount.RandomInRange;
-					SpawnerUtility.ScavengeSpawner(pawn, productDef, productCount, message, showMessageIfOwned, spawnForbidden);
+					MiscUtility.ScavengeSpawner(pawn, productDef, productCount, message, showMessageIfOwned, spawnForbidden);
 				}
 			}
 			return null;

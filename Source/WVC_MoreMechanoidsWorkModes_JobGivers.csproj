@@ -19,7 +19,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\1.4\Assemblies\</OutputPath>
+    <OutputPath>..\1.5\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -66,6 +66,8 @@
     <Compile Include="Resources_JobGivers\JobGiver_ScavengeSpawner.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_SmartEscort.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_GoToRandomScavengeZone.cs" />
+    <Compile Include="Resources_Main\HediffClasses.cs" />
+    <Compile Include="Resources_Main\HediffComp_RemoveIf.cs" />
     <Compile Include="Resources_Main\MechGroupUtility.cs" />
     <Compile Include="Resources_Main\ModExtension.cs" />
     <Compile Include="Resources_Main\ModSettings.cs" />
@@ -76,6 +78,8 @@
     <Compile Include="Resources_Main\ShutdownUtility.cs" />
     <Compile Include="Resources_Main\SmartEscortUtility.cs" />
     <Compile Include="Resources_Main\SpawnerUtility.cs" />
+    <Compile Include="Resources_Main\StatPart_DormantMode.cs" />
+    <Compile Include="Resources_ThingComps\CompDormantMode.cs" />
     <Compile Include="Resources_ThingComps\CompMechSettings.cs" />
     <Compile Include="Resources_ThingComps\CompSmartEscort.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalAnyScavengeZone.cs" />

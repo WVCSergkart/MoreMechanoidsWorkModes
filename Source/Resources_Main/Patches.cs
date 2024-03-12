@@ -5,7 +5,7 @@ using Verse;
 namespace WVC_WorkModes
 {
 
-    public class PatchOperation_Settings : PatchOperation
+	public class PatchOperation_Settings : PatchOperation
 	{
 		public string settingName;
 		public PatchOperation active;

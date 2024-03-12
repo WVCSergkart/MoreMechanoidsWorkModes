@@ -6,7 +6,7 @@ using Verse.AI;
 namespace WVC_WorkModes
 {
 
-    public enum MechanoidWorkType : byte
+	public enum MechanoidWorkType : byte
 	{
 		Work,
 		Safe,
@@ -19,12 +19,22 @@ namespace WVC_WorkModes
 
 		public static bool CanRecharge(Pawn pawn, out Need_MechEnergy energy)
 		{
-			energy = pawn?.needs?.energy;
-			if (energy == null)
-			{
-				return false;
-			}
-			return true;
+			// energy = pawn?.needs?.energy;
+			// if (energy == null)
+			// {
+				// return false;
+			// }
+			// return true;
+			return (energy = pawn?.needs?.energy) != null;
+		}
+
+		public static bool InShutdownMode(this Pawn mech)
+		{
+			// if (CanRecharge(mech, out Need_MechEnergy energy) && energy.IsSelfShutdown)
+			// {
+				// return true;
+			// }
+			return CanRecharge(mech, out Need_MechEnergy energy) && energy.IsSelfShutdown;
 		}
 
 		public static Building GetClosestShutdownSpot(Pawn mech, ThingDef spotDefName, int maxDistance)
@@ -70,21 +80,22 @@ namespace WVC_WorkModes
 			{
 				if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType, pawn))
 				{
-					// foreach (IntVec3 cell in shutZone.Cells)
-					// {
-						// if (CanSelfShutdown(cell, pawn, map, false))
-						// {
-							// result = cell;
-							// return true;
-						// }
-					// }
-					// List<IntVec3> cells = shutZone.Cells;
-					IntVec3 cell = shutZone.Cells.RandomElement();
-					if (CanSelfShutdown(cell, pawn, map, false))
+					List<IntVec3> cells = shutZone.Cells;
+					cells.Shuffle();
+					foreach (IntVec3 cell in cells)
 					{
-						result = cell;
-						return true;
+						if (CanSelfShutdown(cell, pawn, map, false))
+						{
+							result = cell;
+							return true;
+						}
 					}
+					// IntVec3 cell = shutZone.Cells.RandomElement();
+					// if (CanSelfShutdown(cell, pawn, map, false))
+					// {
+						// result = cell;
+						// return true;
+					// }
 				}
 			}
 			// result = pawn.Position;

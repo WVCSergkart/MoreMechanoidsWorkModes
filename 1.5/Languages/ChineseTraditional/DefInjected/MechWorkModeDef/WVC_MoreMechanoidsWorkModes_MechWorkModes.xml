@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WVC_DefendYourself.label>自衛</WVC_DefendYourself.label>
+  <WVC_DefendYourself.description>無論類型如何，都會攻擊靠得太近的敵人。</WVC_DefendYourself.description>
+
+  <WVC_FindAndDestroy.label>殲滅</WVC_FindAndDestroy.label>
+  <WVC_FindAndDestroy.description>無論其類型如何，都會尋找敵人並摧毀。</WVC_FindAndDestroy.description>
+
+  <WVC_WaitEnemy.label>待命</WVC_WaitEnemy.label>
+  <WVC_WaitEnemy.description>休眠並等待敵人，當敵人出現時，它會醒來並朝著目標前去摧毀。</WVC_WaitEnemy.description>
+
+  <WVC_WorkAndWaitEnemy.label>役兵</WVC_WorkAndWaitEnemy.label>
+  <WVC_WorkAndWaitEnemy.description>根據機械族類型自主工作，當敵人出現時，會放下工作並朝著朝著目標前去摧毀。如果無法工作或已完成所有工作，則會返回關閉點休眠。</WVC_WorkAndWaitEnemy.description>
+
+  <WVC_Ambush.label>伏擊</WVC_Ambush.label>
+  <WVC_Ambush.description>休眠等待敵人靠近，然後發動攻擊。</WVC_Ambush.description>
+
+  <WVC_WorkAndRecharge.label>工人</WVC_WorkAndRecharge.label>
+  <WVC_WorkAndRecharge.description>根據機械族類型自主工作。如果無法工作或已完成所有工作，則會返回關閉點休眠。</WVC_WorkAndRecharge.description>
+
+  <WVC_SafeWorkAndRecharge.label>自保</WVC_SafeWorkAndRecharge.label>
+  <WVC_SafeWorkAndRecharge.description>根據機械族類型自主工作,但前提是地圖上沒有敵人。如果遇到危險，會試圖返回 &lt;color=#f5ffa2&gt;安全點&lt;/color&gt;.</WVC_SafeWorkAndRecharge.description>
+
+  <WVC_WorkRechargeEscort.label>侍衛</WVC_WorkRechargeEscort.label>
+  <WVC_WorkRechargeEscort.description>如果沒有工作，將在監督員附近待命，並在電力殆盡前進行充電。</WVC_WorkRechargeEscort.description>
+
+  <WVC_EscortIfEnemyOnMap.label>守衛</WVC_EscortIfEnemyOnMap.label>
+  <WVC_EscortIfEnemyOnMap.description>無論其類型如何，在監督員附近待命，但前提是地圖上有敵人。當沒有敵人時，則會返回待命點休眠。</WVC_EscortIfEnemyOnMap.description>
+
+  <WVC_EscaortAndRecharge.label>護衛</WVC_EscaortAndRecharge.label>
+  <WVC_EscaortAndRecharge.description>無論其類型如何，在監督員附近待命，並在電力殆盡前進行充電。</WVC_EscaortAndRecharge.description>
+
+
+</LanguageData>

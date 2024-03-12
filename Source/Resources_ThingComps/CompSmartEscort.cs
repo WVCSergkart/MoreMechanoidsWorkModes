@@ -46,7 +46,7 @@ namespace WVC_WorkModes
 
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()
 		{
-			base.CompGetGizmosExtra();
+			// base.CompGetGizmosExtra();
 			Pawn pawn = parent as Pawn;
 			overseer = pawn.GetOverseer();
 			if (overseer == null)
