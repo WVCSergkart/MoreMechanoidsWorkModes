@@ -76,6 +76,7 @@ namespace WVC_WorkModes
 
 		public static bool TryFindRandomMechShutdownZone(List<Zone> zones, Pawn pawn, Map map, MechanoidWorkType workModeType, out IntVec3 result)
 		{
+			zones.Shuffle();
 			for (int i = 0; i < zones.Count; i++)
 			{
 				if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType, pawn))
@@ -90,38 +91,33 @@ namespace WVC_WorkModes
 							return true;
 						}
 					}
-					// IntVec3 cell = shutZone.Cells.RandomElement();
-					// if (CanSelfShutdown(cell, pawn, map, false))
-					// {
-						// result = cell;
-						// return true;
-					// }
 				}
 			}
-			// result = pawn.Position;
-			return TryFindAnyMechShutdownZone(zones, pawn, map, workModeType, out result);
-		}
-
-		public static bool TryFindAnyMechShutdownZone(List<Zone> zones, Pawn pawn, Map map, MechanoidWorkType workModeType, out IntVec3 result)
-		{
-			for (int i = 0; i < zones.Count; i++)
-			{
-				if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType, pawn))
-				{
-					List<IntVec3> cells = shutZone.Cells;
-					for (int j = 0; j < cells.Count; j++)
-					{
-						if (CanSelfShutdown(cells[j], pawn, map, false))
-						{
-							result = cells[j];
-							return true;
-						}
-					}
-				}
-			}
+			// return TryFindAnyMechShutdownZone(zones, pawn, map, workModeType, out result);
 			result = pawn.Position;
 			return false;
 		}
+
+		// public static bool TryFindAnyMechShutdownZone(List<Zone> zones, Pawn pawn, Map map, MechanoidWorkType workModeType, out IntVec3 result)
+		// {
+			// for (int i = 0; i < zones.Count; i++)
+			// {
+				// if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType, pawn))
+				// {
+					// List<IntVec3> cells = shutZone.Cells;
+					// for (int j = 0; j < cells.Count; j++)
+					// {
+						// if (CanSelfShutdown(cells[j], pawn, map, false))
+						// {
+							// result = cells[j];
+							// return true;
+						// }
+					// }
+				// }
+			// }
+			// result = pawn.Position;
+			// return false;
+		// }
 
 		// Zone Check
 

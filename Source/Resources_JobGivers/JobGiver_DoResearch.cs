@@ -17,7 +17,7 @@ namespace WVC_WorkModes
 			if (statDef != null)
 			{
 				ResearchManager researchManager = Find.ResearchManager;
-				ResearchProjectDef currentProject = researchManager.currentProj;
+				ResearchProjectDef currentProject = researchManager.GetProject();
 				if (currentProject != null)
 				{
 					researchManager.ResearchPerformed(1f + (pawn.GetStatValue(statDef) * researchFactor), pawn);

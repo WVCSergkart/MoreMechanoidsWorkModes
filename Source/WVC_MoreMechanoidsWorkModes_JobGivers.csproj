@@ -66,6 +66,7 @@
     <Compile Include="Resources_JobGivers\JobGiver_ScavengeSpawner.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_SmartEscort.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_GoToRandomScavengeZone.cs" />
+    <Compile Include="Resources_Main\DefOf.cs" />
     <Compile Include="Resources_Main\HediffClasses.cs" />
     <Compile Include="Resources_Main\HediffComp_RemoveIf.cs" />
     <Compile Include="Resources_Main\MechGroupUtility.cs" />

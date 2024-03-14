@@ -124,7 +124,7 @@ namespace WVC_WorkModes
 			// {
 				// return false;
 			// }
-			if (!terrainDef.affordances.Contains(TerrainAffordanceDefOf.Diggable))
+			if (!terrainDef.affordances.Contains(WorkModesDefOf.Diggable))
 			{
 				return false;
 			}

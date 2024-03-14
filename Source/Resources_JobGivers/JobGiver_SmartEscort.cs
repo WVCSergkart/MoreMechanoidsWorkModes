@@ -70,7 +70,7 @@ namespace WVC_WorkModes
 		private IntVec3 GetWaitDest(IntVec3 root, Pawn mech)
 		{
 			Map map = mech.Map;
-			if (CellFinder.TryFindRandomReachableCellNear(root, map, randomCellNearRadius, TraverseParms.For(mech), (IntVec3 c) => CanUseCell(c, mech), null, out var result))
+			if (CellFinder.TryFindRandomReachableNearbyCell(root, map, 1.9f, TraverseParms.For(mech), (IntVec3 c) => CanUseCell(c, mech), null, out var result))
 			{
 				return result;
 			}

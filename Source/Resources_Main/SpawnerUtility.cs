@@ -27,7 +27,7 @@ namespace WVC_WorkModes
 			TextAnchor anchor = Text.Anchor;
 			Text.Anchor = TextAnchor.MiddleLeft;
 			Widgets.Label(rect2, label);
-			val = (int)Widgets.HorizontalSlider_NewTemp(rect3, val, min, max, middleAlignment: true);
+			val = (int)Widgets.HorizontalSlider(rect3, val, min, max, middleAlignment: true);
 			Text.Anchor = TextAnchor.MiddleRight;
 			if (!tooltip.NullOrEmpty())
 			{
