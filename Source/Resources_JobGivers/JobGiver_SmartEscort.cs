@@ -7,7 +7,7 @@ using Verse.AI;
 namespace WVC_WorkModes
 {
 
-    public class JobGiver_SmartAIDefendOverseer : JobGiver_AIDefendOverseer
+    public class JobGiver_SmartAIDefendOverseer : JobGiver_AIDefendPawn
 	{
 
 		protected override Pawn GetDefendee(Pawn pawn)
@@ -21,7 +21,7 @@ namespace WVC_WorkModes
 		}
 	}
 
-	public class JobGiver_SmartAIFollowOverseer : JobGiver_AIFollowOverseer
+	public class JobGiver_SmartAIFollowOverseer : JobGiver_AIFollowPawn
 	{
 		protected override int FollowJobExpireInterval => 200;
 
@@ -45,7 +45,7 @@ namespace WVC_WorkModes
 		}
 	}
 
-	public class JobGiver_SmartAIWaitWithOverseer : JobGiver_AIWaitWithOverseer
+	public class JobGiver_SmartAIWaitWithOverseer : ThinkNode_JobGiver
 	{
 		public float randomCellNearRadius = 1.9f;
 
@@ -88,7 +88,7 @@ namespace WVC_WorkModes
 		}
 	}
 
-	public class JobGiver_SmartWanderOverseer : JobGiver_WanderOverseer
+	public class JobGiver_SmartWanderOverseer : JobGiver_Wander
 	{
 		public JobGiver_SmartWanderOverseer()
 		{
