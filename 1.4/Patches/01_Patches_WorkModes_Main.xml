@@ -171,8 +171,8 @@
 				  <li Class="JobGiver_SeekAllowedArea" />
 				  <li Class="JobGiver_GetEnergy_Charger" />
 				  <li Class="JobGiver_AIFightEnemies">
-					<targetAcquireRadius>65</targetAcquireRadius>
-					<targetKeepRadius>72</targetKeepRadius>
+					<targetAcquireRadius>25</targetAcquireRadius>
+					<targetKeepRadius>42</targetKeepRadius>
 				  </li>
 				  <!-- Go to spot -->
 				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
