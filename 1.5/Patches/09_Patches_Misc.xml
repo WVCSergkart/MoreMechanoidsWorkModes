@@ -100,4 +100,26 @@
 		</active>
 	</Operation>
 
+	<!-- <Operation Class="PatchOperationSequence"> -->
+		<!-- <success>Always</success> -->
+		<!-- <operations> -->
+			<!-- <li Class="PatchOperationTest"> -->
+			  <!-- <xpath>/Defs/ResearchProjectDef[tab="WVC_TechTab"]</xpath> -->
+			  <!-- <success>Invert</success> -->
+			<!-- </li> -->
+			<!-- <li Class="PatchOperationRemove"> -->
+			  <!-- <xpath>/Defs/ResearchTabDef[defName="WVC_TechTab"]</xpath> -->
+			  <!-- <success>Always</success> -->
+			<!-- </li> -->
+		<!-- </operations> -->
+	<!-- </Operation> -->
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ResearchProjectDef[tab="WVC_TechTab"]</xpath>
+		<nomatch Class="PatchOperationRemove">
+		  <xpath>/Defs/ResearchTabDef[defName="WVC_TechTab"]</xpath>
+		  <success>Always</success>
+		</nomatch>
+	</Operation>
+
 </Patch>
