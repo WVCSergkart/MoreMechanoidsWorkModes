@@ -66,9 +66,9 @@
 				  </li>
 				  <!-- = -->
 				  <li Class="JobGiver_SeekAllowedArea" />
-				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
-					<tickInterval>625</tickInterval>
-				  </li>
+				  <!-- <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger"> -->
+					<!-- <tickInterval>625</tickInterval> -->
+				  <!-- </li> -->
 				  <!-- Go to spot -->
 				  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
 					<!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
