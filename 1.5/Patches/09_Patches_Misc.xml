@@ -4,7 +4,7 @@
 	<!-- =========================================================== -->
 
 	<!-- <Operation Class="PatchOperationAdd"> -->
-		<!-- <xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_Tagger"]/subNodes</xpath> -->
+		<!-- <xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_Tagger"]/subNodes</xpath> -->
 		<!-- <order>Prepend</order> -->
 		<!-- <value> -->
 		  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalSettings"> -->
