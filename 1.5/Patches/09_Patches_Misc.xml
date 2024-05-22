@@ -3,36 +3,6 @@
 
 	<!-- =========================================================== -->
 
-	<!-- <Operation Class="PatchOperationAdd"> -->
-		<!-- <xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_Tagger"]/subNodes</xpath> -->
-		<!-- <order>Prepend</order> -->
-		<!-- <value> -->
-		  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalSettings"> -->
-			<!-- <settingName>enableSmartChargingForAllMechanoids</settingName> -->
-			<!-- <subNodes> -->
-			  <!-- <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger"> -->
-				<!-- <tickInterval>625</tickInterval> -->
-			  <!-- </li> -->
-			<!-- </subNodes> -->
-		  <!-- </li> -->
-		  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalSettings"> -->
-			<!-- <settingName>enableShutdownForAllMechanoids</settingName> -->
-			<!-- <subNodes> -->
-			  <!-- <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone"> -->
-				<!-- <workModeType>Work</workModeType> -->
-				<!-- <spotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</spotDefName> -->
-				<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
-			  <!-- </li> -->
-			  <!-- <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown"> -->
-				<!-- <forced>true</forced> -->
-			  <!-- </li> -->
-			<!-- </subNodes> -->
-		  <!-- </li> -->
-		<!-- </value> -->
-	<!-- </Operation> -->
-
-	<!-- =========================================================== -->
-
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>dormantMode</settingName>
 		<active Class="PatchOperationSequence">
@@ -65,61 +35,16 @@
 				  </value>
 				</li>
 
-				<!-- <li Class="PatchOperationAdd"> -->
-				  <!-- <xpath>/Defs</xpath> -->
-				  <!-- <success>Always</success> -->
-				  <!-- <value> -->
-
-					  <!-- <HediffDef ParentName="WVC_WorkModes_Hediffs_Base"> -->
-						<!-- <defName>WVC_WorkModes_InDormantMode</defName> -->
-						<!-- <label>dormant</label> -->
-						<!-- <description>Mechanoid in dormant mode. In this state, it uses less bandwidth.</description> -->
-						<!-- <hediffClass>WVC_WorkModes.Hediff_DormantMode</hediffClass> -->
-						<!-- <comps> -->
-							<!-- <li Class="WVC_WorkModes.HediffCompProperties_RemoveIfIsNotDormant"/> -->
-							<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
-						<!-- </comps> -->
-					  <!-- </HediffDef> -->
-
-				  <!-- </value> -->
-				<!-- </li> -->
-
-				<!-- <li Class="PatchOperationAdd"> -->
-				  <!-- <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath> -->
-				  <!-- <success>Always</success> -->
-				  <!-- <value> -->
-					  <!-- <li Class="WVC_WorkModes.CompProperties_DormantMode"> -->
-						<!-- <hediffs> -->
-						  <!-- <li>WVC_WorkModes_InDormantMode</li> -->
-						<!-- </hediffs> -->
-					  <!-- </li> -->
-				  <!-- </value> -->
-				<!-- </li> -->
-
 			</operations>
 		</active>
 	</Operation>
 
-	<!-- <Operation Class="PatchOperationSequence"> -->
-		<!-- <success>Always</success> -->
-		<!-- <operations> -->
-			<!-- <li Class="PatchOperationTest"> -->
-			  <!-- <xpath>/Defs/ResearchProjectDef[tab="WVC_TechTab"]</xpath> -->
-			  <!-- <success>Invert</success> -->
-			<!-- </li> -->
-			<!-- <li Class="PatchOperationRemove"> -->
-			  <!-- <xpath>/Defs/ResearchTabDef[defName="WVC_TechTab"]</xpath> -->
-			  <!-- <success>Always</success> -->
-			<!-- </li> -->
-		<!-- </operations> -->
+	<!-- <Operation Class="PatchOperationConditional"> -->
+		<!-- <xpath>/Defs/ResearchProjectDef[tab="WVC_TechTab"]</xpath> -->
+		<!-- <nomatch Class="PatchOperationRemove"> -->
+		  <!-- <xpath>/Defs/ResearchTabDef[defName="WVC_TechTab"]</xpath> -->
+		  <!-- <success>Always</success> -->
+		<!-- </nomatch> -->
 	<!-- </Operation> -->
-
-	<Operation Class="PatchOperationConditional">
-		<xpath>/Defs/ResearchProjectDef[tab="WVC_TechTab"]</xpath>
-		<nomatch Class="PatchOperationRemove">
-		  <xpath>/Defs/ResearchTabDef[defName="WVC_TechTab"]</xpath>
-		  <success>Always</success>
-		</nomatch>
-	</Operation>
 
 </Patch>

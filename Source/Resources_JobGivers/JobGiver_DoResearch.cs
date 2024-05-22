@@ -1,30 +1,34 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
 using RimWorld;
+using System;
 using Verse;
 using Verse.AI;
 
 namespace WVC_WorkModes
 {
-    public class JobGiver_MechDoResearch : ThinkNode_JobGiver
+
+	public class JobGiver_MechDoResearch : ThinkNode_JobGiver
 	{
 
-		public float researchFactor = 1f;
+		public float researchAmount = 1f;
 
+		[Obsolete]
 		public StatDef statDef;
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			if (statDef != null)
+			// if (statDef != null)
+			// {
+			// }
+			ResearchManager researchManager = Find.ResearchManager;
+			ResearchProjectDef currentProject = researchManager.GetProject();
+			if (currentProject != null)
 			{
-				ResearchManager researchManager = Find.ResearchManager;
-				ResearchProjectDef currentProject = researchManager.GetProject();
-				if (currentProject != null)
-				{
-					researchManager.ResearchPerformed(1f + (pawn.GetStatValue(statDef) * researchFactor), pawn);
-				}
+				researchManager.ResearchPerformed(researchAmount, pawn);
 			}
 			return null;
 		}
 
 	}
+
 }

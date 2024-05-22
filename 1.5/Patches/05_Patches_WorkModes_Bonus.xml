@@ -10,7 +10,7 @@
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
 					<value>
-					  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+					  <li Class="ThinkNode_ConditionalWorkMode">
 						<workMode>WVC_EscortIfEnemyWorkAndRecharge</workMode>
 						<subNodes>
 						  <!-- Enemy = true -->
@@ -72,7 +72,7 @@
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
 					<value>
-					  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+					  <li Class="ThinkNode_ConditionalWorkMode">
 						<workMode>WVC_EscortIfDraftedOrDowned</workMode>
 						<subNodes>
 						  <!-- Drafted == true -->
@@ -144,7 +144,7 @@
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
 					<value>
-					  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+					  <li Class="ThinkNode_ConditionalWorkMode">
 						<workMode>WVC_HiveMindResearching</workMode>
 						<subNodes>
 						  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
@@ -158,12 +158,12 @@
 							  <!-- </li> -->
 							<!-- </subNodes> -->
 						  <!-- </li> -->
-						  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModesWithResearchRequirement" MayRequire="Ludeon.RimWorld.Biotech">
-							<workMode>Work</workMode>
-							<workModeResearchRequirementDefs>
-							  <li>WVC_WorkModes_HiveMindResearch</li>
-							</workModeResearchRequirementDefs>
-						  </li>
+						  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModesWithResearchRequirement"> -->
+							<!-- <workMode>Work</workMode> -->
+							<!-- <workModeResearchRequirementDefs> -->
+							  <!-- <li>WVC_WorkModes_HiveMindResearch</li> -->
+							<!-- </workModeResearchRequirementDefs> -->
+						  <!-- </li> -->
 						  <!-- Find Enemy -->
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 							<subNodes>
@@ -202,7 +202,7 @@
 						  </li>
 						  <li Class="WVC_WorkModes.JobGiver_MechDoResearch">
 							<statDef>BandwidthCost</statDef>
-							<researchFactor>10</researchFactor>
+							<researchAmount>10</researchAmount>
 						  </li>
 						  <li Class="JobGiver_WanderColony">
 							<maxDanger>Deadly</maxDanger>
@@ -242,7 +242,7 @@
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
 					<value>
-					  <li Class="ThinkNode_ConditionalWorkMode" MayRequire="Ludeon.RimWorld.Biotech">
+					  <li Class="ThinkNode_ConditionalWorkMode">
 						<workMode>WVC_Scavenging</workMode>
 						<subNodes>
 						  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
@@ -256,12 +256,12 @@
 							  <!-- </li> -->
 							<!-- </subNodes> -->
 						  <!-- </li> -->
-						  <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModesWithResearchRequirement" MayRequire="Ludeon.RimWorld.Biotech">
-							<workMode>Work</workMode>
-							<workModeResearchRequirementDefs>
-							  <li>WVC_WorkModes_Scavenging</li>
-							</workModeResearchRequirementDefs>
-						  </li>
+						  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalWorkModesWithResearchRequirement"> -->
+							<!-- <workMode>Work</workMode> -->
+							<!-- <workModeResearchRequirementDefs> -->
+							  <!-- <li>WVC_WorkModes_Scavenging</li> -->
+							<!-- </workModeResearchRequirementDefs> -->
+						  <!-- </li> -->
 						  <!-- Find Enemy -->
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 							<subNodes>
