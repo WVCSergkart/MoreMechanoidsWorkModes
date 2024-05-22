@@ -1,5 +1,6 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
 using RimWorld;
+using System;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
@@ -19,6 +20,7 @@ namespace WVC_WorkModes
 
 		public float chanceToSuccess = 0.05f;
 
+		[Obsolete]
 		public StatDef statDef;
 
 		protected override Job TryGiveJob(Pawn pawn)
@@ -28,9 +30,9 @@ namespace WVC_WorkModes
 			{
 				return null;
 			}
-			if (!productDefs.NullOrEmpty() && statDef != null)
+			if (!productDefs.NullOrEmpty())
 			{
-				if (Rand.Chance(chanceToSuccess * pawn.GetStatValue(statDef)))
+				if (Rand.Chance(chanceToSuccess))
 				{
 					ThingDefByWeight thingDefByWeight = productDefs.RandomElementByWeight((ThingDefByWeight x) => x.selectionWeight);
 					ThingDef productDef = thingDefByWeight.productDef;
