@@ -13,10 +13,10 @@ namespace WVC_WorkModes
 		{
 			if (WVC_MMWM.settings.enableSmartEscort)
 			{
-				if(!pawn.RaceProps.IsMechanoid)
-				{
-					return null;
-				}
+				//if(!pawn.RaceProps.IsMechanoid)
+				//{
+				//	return null;
+				//}
 				CompSmartEscort comp = pawn.TryGetComp<CompSmartEscort>();
 				if(comp != null && AssignedPawnAtHome(comp.escortTarget))
 				{
@@ -28,7 +28,7 @@ namespace WVC_WorkModes
 
 		public static bool AssignedPawnAtHome(Pawn pawn)
 		{
-			if (pawn != null && pawn.Map != null && pawn.Map.IsPlayerHome)
+			if (pawn?.Map?.IsPlayerHome == true)
 			{
 				return true;
 			}

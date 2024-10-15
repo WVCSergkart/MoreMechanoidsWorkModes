@@ -23,12 +23,12 @@ namespace WVC_WorkModes
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			if (WVC_MMWM.settings.enableShutdownSearching)
+			if (WVC_MMWM.settings.enable_GoToShutdownZoneJob)
 			{
-				if (!pawn.Map.IsPlayerHome)
-				{
-					return null;
-				}
+				//if (!pawn.Map.IsPlayerHome)
+				//{
+				//	return null;
+				//}
 				List<Zone> mapZones = pawn.Map.zoneManager.AllZones;
 				if (mapZones.NullOrEmpty() || !ShutdownUtility.AnyMechanoidZone(mapZones))
 				{
