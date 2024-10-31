@@ -5,8 +5,8 @@
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_FindAndDestroy</settingName>
-		<active Class="PatchOperationAdd">
-			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
 			<value>
 			  <li Class="ThinkNode_ConditionalWorkMode">
 				<workMode>WVC_FindAndDestroy</workMode>
@@ -48,8 +48,8 @@
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_WaitEnemy</settingName>
-		<active Class="PatchOperationAdd">
-			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
 			<value>
 			  <li Class="ThinkNode_ConditionalWorkMode">
 				<workMode>WVC_WaitEnemy</workMode>
@@ -101,8 +101,8 @@
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_WorkAndWaitEnemy</settingName>
-		<active Class="PatchOperationAdd">
-			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
 			<value>
 			  <li Class="ThinkNode_ConditionalWorkMode">
 				<workMode>WVC_WorkAndWaitEnemy</workMode>
@@ -162,8 +162,8 @@
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_Ambush</settingName>
-		<active Class="PatchOperationAdd">
-			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
 			<value>
 			  <li Class="ThinkNode_ConditionalWorkMode">
 				<workMode>WVC_Ambush</workMode>
@@ -204,8 +204,8 @@
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_DefendYourself</settingName>
-		<active Class="PatchOperationAdd">
-			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
 			<value>
 			  <li Class="ThinkNode_ConditionalWorkMode">
 				<workMode>WVC_DefendYourself</workMode>
@@ -252,8 +252,8 @@
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_WorkAndRecharge</settingName>
-		<active Class="PatchOperationAdd">
-			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
 			<value>
 			  <li Class="ThinkNode_ConditionalWorkMode">
 				<workMode>WVC_WorkAndRecharge</workMode>
@@ -309,8 +309,8 @@
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_SafeWorkAndRecharge</settingName>
-		<active Class="PatchOperationAdd">
-			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
 			<value>
 			  <li Class="ThinkNode_ConditionalWorkMode">
 				<workMode>WVC_SafeWorkAndRecharge</workMode>
@@ -385,8 +385,8 @@
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_EscaortAndRecharge</settingName>
-		<active Class="PatchOperationAdd">
-			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
 			<value>
 			  <li Class="ThinkNode_ConditionalWorkMode">
 				<workMode>WVC_EscaortAndRecharge</workMode>
@@ -415,8 +415,8 @@
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_WorkRechargeEscort</settingName>
-		<active Class="PatchOperationAdd">
-			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
 			<value>
 			  <li Class="ThinkNode_ConditionalWorkMode">
 				<workMode>WVC_WorkRechargeEscort</workMode>
@@ -450,8 +450,8 @@
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>WVC_EscortIfEnemyOnMap</settingName>
-		<active Class="PatchOperationAdd">
-			<xpath>/Defs/ThinkTreeDef[defName="Mechanoid" or defName="RM_Mechanoid_Caretaker" or defName="RM_Mechanoid_Sentinel" or defName="Miho_Reload_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes</xpath>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
 			<value>
 			  <li Class="ThinkNode_ConditionalWorkMode">
 				<workMode>WVC_EscortIfEnemyOnMap</workMode>
