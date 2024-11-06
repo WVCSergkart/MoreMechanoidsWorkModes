@@ -67,6 +67,10 @@ namespace WVC_WorkModes
 					return job;
 				}
 			}
+			else
+			{
+				energy.CurLevel += 2f;
+			}
 			return null;
 		}
 
