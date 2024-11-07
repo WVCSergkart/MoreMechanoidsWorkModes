@@ -67,7 +67,7 @@ namespace WVC_WorkModes
 					return job;
 				}
 			}
-			else
+			else if (energy.CurLevel + 2f < maxRechargeLimit)
 			{
 				energy.CurLevel += 2f;
 			}
