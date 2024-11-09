@@ -23,14 +23,37 @@ namespace WVC_WorkModes
 	public class Zone_MechanoidShutdown : Zone
 	{
 
+		//public List<MechanoidWorkType> allowedWorkTypes = new() { MechanoidWorkType.Work, MechanoidWorkType.Safe, MechanoidWorkType.Combat, MechanoidWorkType.Ambush };
+
 		public bool allowWorkers = true;
 		public bool allowSafe = true;
 		public bool allowCombatants = true;
 		public bool allowAmbush = true;
 
+		public bool MechanoidAllowed(MechanoidWorkType workModeType)
+		{
+			if (workModeType == MechanoidWorkType.Work)
+			{
+				return allowWorkers;
+			}
+			if (workModeType == MechanoidWorkType.Safe)
+			{
+				return allowSafe;
+			}
+			if (workModeType == MechanoidWorkType.Combat)
+			{
+				return allowCombatants;
+			}
+			if (workModeType == MechanoidWorkType.Ambush)
+			{
+				return allowAmbush;
+			}
+			return true;
+		}
+
 		public Pawn owner;
 		// public MechanitorControlGroup ownerGroup;
-		public int ownerIndexGroup = 0;
+		public int? ownerIndexGroup;
 
 		// Zone Color
 
@@ -48,7 +71,7 @@ namespace WVC_WorkModes
 			// Groups
 			Scribe_References.Look(ref owner, "owner");
 			// Scribe_Deep.Look(ref ownerGroup, "ownerGroup");
-			Scribe_Values.Look(ref ownerIndexGroup, "ownerIndexGroup", 0);
+			Scribe_Values.Look(ref ownerIndexGroup, "ownerIndexGroup");
 		}
 
 		public Zone_MechanoidShutdown()
@@ -84,7 +107,7 @@ namespace WVC_WorkModes
 			return "WVC_WorkModes_Off".Translate().Colorize(ColorLibrary.RedReadable);
 		}
 
-		private void ModeSwitch(bool onOrOff, Pawn pawn, int groupIndex)
+		private void ModeSwitch(bool onOrOff, Pawn pawn, int? groupIndex)
 		{
 			allowSafe = onOrOff;
 			allowWorkers = onOrOff;
@@ -118,14 +141,14 @@ namespace WVC_WorkModes
 						for (int j = 0; j < groups.Count; j++)
 						{
 							MechanitorControlGroup localGroup = groups[j];
-							if (currentGroup != null && currentGroup != localGroup|| currentGroup == null)
+							if (currentGroup == null || currentGroup != localGroup)
 							{
 								list.Add(new FloatMenuOption(localPawn.Name.ToStringFull + " | " + localGroup.LabelIndexWithWorkMode, delegate
 								{
 									// owner = localPawn;
 									// ownerIndexGroup = localGroup.Index;
 									ModeSwitch(false, localPawn, localGroup.Index);
-									Messages.Message("WVC_WorkModes_GroupIsChosen".Translate(localGroup.Index.ToString(), label.CapitalizeFirst()), owner, MessageTypeDefOf.NeutralEvent, historical: false);
+									Messages.Message("WVC_WorkModes_GroupIsChosen".Translate(localGroup.Index.ToString(), label), owner, MessageTypeDefOf.NeutralEvent, historical: false);
 								}));
 							}
 						}
@@ -136,7 +159,7 @@ namespace WVC_WorkModes
 					}
 				}
 			};
-			if (owner != null)
+			if (owner?.mechanitor != null)
 			{
 				yield return new Command_Action
 				{
@@ -148,7 +171,7 @@ namespace WVC_WorkModes
 					{
 						// owner = null;
 						// ownerIndexGroup = 0;
-						ModeSwitch(true, null, 0);
+						ModeSwitch(true, null, null);
 						Messages.Message("WVC_WorkModes_ResetOwnerMessage".Translate(label.CapitalizeFirst()), null, MessageTypeDefOf.NeutralEvent, historical: false);
 					}
 				};
@@ -161,35 +184,19 @@ namespace WVC_WorkModes
 				icon = ContentFinder<Texture2D>.Get("WVC/Spots/WorkerMechanoidShutdownSpot"),
 				action = delegate
 				{
-					allowWorkers = !allowWorkers;
-					if (allowWorkers)
-					{
-						SoundDefOf.Tick_High.PlayOneShotOnCamera();
-					}
-					else
-					{
-						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
-					}
+					Click(ref allowWorkers);
 				}
 			};
 			yield return new Command_Action
-			{
+            {
 				defaultLabel = "WVC_ShutdownZone_AllowSafe".Translate().Resolve() + ": " + "\n" + OnOrOff(allowSafe),
 				defaultDesc = "WVC_ShutdownZone_BasicDesc".Translate(),
 				icon = ContentFinder<Texture2D>.Get("WVC/Spots/EscapeMechanoidShutdownSpot"),
 				action = delegate
-				{
-					allowSafe = !allowSafe;
-					if (allowSafe)
-					{
-						SoundDefOf.Tick_High.PlayOneShotOnCamera();
-					}
-					else
-					{
-						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
-					}
-				}
-			};
+                {
+                    Click(ref allowSafe);
+                }
+            };
 			yield return new Command_Action
 			{
 				defaultLabel = "WVC_ShutdownZone_AllowCombatants".Translate().Resolve() + ": " + "\n" + OnOrOff(allowCombatants),
@@ -197,15 +204,7 @@ namespace WVC_WorkModes
 				icon = ContentFinder<Texture2D>.Get("WVC/Spots/WaitMechanoidShutdownSpot"),
 				action = delegate
 				{
-					allowCombatants = !allowCombatants;
-					if (allowCombatants)
-					{
-						SoundDefOf.Tick_High.PlayOneShotOnCamera();
-					}
-					else
-					{
-						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
-					}
+					Click(ref allowCombatants);
 				}
 			};
 			yield return new Command_Action
@@ -215,20 +214,25 @@ namespace WVC_WorkModes
 				icon = ContentFinder<Texture2D>.Get("WVC/Spots/AmbushMechanoidShutdownSpot"),
 				action = delegate
 				{
-					allowAmbush = !allowAmbush;
-					if (allowAmbush)
-					{
-						SoundDefOf.Tick_High.PlayOneShotOnCamera();
-					}
-					else
-					{
-						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
-					}
+					Click(ref allowAmbush);
 				}
 			};
 		}
 
-		public override IEnumerable<Gizmo> GetZoneAddGizmos()
+        private void Click(ref bool onOrOff)
+		{
+			onOrOff = !onOrOff;
+			if (onOrOff)
+            {
+                SoundDefOf.Tick_High.PlayOneShotOnCamera();
+            }
+            else
+            {
+                SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+            }
+        }
+
+        public override IEnumerable<Gizmo> GetZoneAddGizmos()
 		{
 			yield return DesignatorUtility.FindAllowedDesignator<Designator_MechanoidShutdownZone_Expand>();
 		}
@@ -237,7 +241,7 @@ namespace WVC_WorkModes
 		{
 			StringBuilder stringBuilder = new(base.GetInspectString());
 			stringBuilder.AppendLine();
-			if (owner == null || ownerIndexGroup == 0)
+			if (owner?.mechanitor == null || !ownerIndexGroup.HasValue)
 			{
 				stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowWorkers".Translate().Resolve(), OnOrOff(allowWorkers)));
 				stringBuilder.AppendLine(string.Format("{0}: {1}", "WVC_ShutdownZone_AllowSafe".Translate().Resolve(), OnOrOff(allowSafe)));

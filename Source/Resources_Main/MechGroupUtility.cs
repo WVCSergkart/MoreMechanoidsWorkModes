@@ -49,9 +49,9 @@ namespace WVC_WorkModes
 			return list;
 		}
 
-		public static string GetGroupIconPath(Pawn overseer, int groupIndex)
+		public static string GetGroupIconPath(Pawn overseer, int? groupIndex)
 		{
-			if (TryGetGroupFromIndex(overseer, groupIndex, out MechanitorControlGroup localGroup))
+			if (groupIndex.HasValue && TryGetGroupFromIndex(overseer, groupIndex, out MechanitorControlGroup localGroup))
 			{
 				return localGroup?.WorkMode?.iconPath;
 			}
@@ -68,7 +68,7 @@ namespace WVC_WorkModes
 			return null;
 		}
 
-		public static bool TryGetGroupFromIndex(Pawn overseer, int groupIndex, out MechanitorControlGroup mechGroup)
+		public static bool TryGetGroupFromIndex(Pawn overseer, int? groupIndex, out MechanitorControlGroup mechGroup)
 		{
 			mechGroup = GetGroupFromIndex(overseer, groupIndex);
 			if (mechGroup != null)
@@ -78,15 +78,19 @@ namespace WVC_WorkModes
 			return false;
 		}
 
-		public static MechanitorControlGroup GetGroupFromIndex(Pawn overseer, int groupIndex)
+		public static MechanitorControlGroup GetGroupFromIndex(Pawn overseer, int? groupIndex)
 		{
-			if (overseer != null && groupIndex != 0)
+			if (overseer?.mechanitor != null && groupIndex.HasValue)
 			{
-				List<MechanitorControlGroup> groups = overseer.mechanitor.controlGroups;
+				List<MechanitorControlGroup> groups = overseer?.mechanitor?.controlGroups;
+				if (groups.NullOrEmpty())
+				{
+					return null;
+				}
 				for (int i = 0; i < groups.Count; i++)
 				{
 					MechanitorControlGroup localGroup = groups[i];
-					if (groupIndex == localGroup.Index)
+					if (groupIndex.Value == localGroup.Index)
 					{
 						return localGroup;
 					}

@@ -29,7 +29,7 @@ namespace WVC_WorkModes
 				//{
 				//	return null;
 				//}
-				List<Zone> mapZones = pawn.Map.zoneManager.AllZones;
+				List<Zone> mapZones = pawn.Map?.zoneManager?.AllZones;
 				if (mapZones.NullOrEmpty() || !ShutdownUtility.AnyMechanoidZone(mapZones))
 				{
 					return null;

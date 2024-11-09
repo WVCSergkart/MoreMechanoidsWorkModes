@@ -123,17 +123,14 @@ namespace WVC_WorkModes
 
 		public static bool MechanoidWorkTypeIsCorrect(Zone_MechanoidShutdown shutZone, MechanoidWorkType workModeType, Pawn mech)
 		{
-			if ((shutZone.owner == null || shutZone.ownerIndexGroup == 0) && !MechZoneRestricted(mech))
+			if ((shutZone.owner?.mechanitor == null || !shutZone.ownerIndexGroup.HasValue) && !MechZoneRestricted(mech))
 			{
-				if ((shutZone.allowWorkers && workModeType == MechanoidWorkType.Work) || (shutZone.allowSafe && workModeType == MechanoidWorkType.Safe) || (shutZone.allowCombatants && workModeType == MechanoidWorkType.Combat) || (shutZone.allowAmbush && workModeType == MechanoidWorkType.Ambush))
-				{
-					return true;
-				}
+				return shutZone.MechanoidAllowed(workModeType);
 			}
 			else
 			{
 				Pawn overseer = mech.GetOverseer();
-				if (overseer == shutZone.owner && shutZone.ownerIndexGroup == overseer.mechanitor.GetControlGroup(mech).Index)
+				if (overseer == shutZone.owner && shutZone.ownerIndexGroup.Value == overseer.mechanitor.GetControlGroup(mech).Index)
 				{
 					return true;
 				}
@@ -143,12 +140,7 @@ namespace WVC_WorkModes
 
 		public static bool MechZoneRestricted(Pawn mech)
 		{
-			CompMechSettings comp = mech.TryGetComp<CompMechSettings>();
-			if(comp != null && comp.restrictZoneByGroup)
-			{
-				return true;
-			}
-			return false;
+			return mech?.TryGetComp<CompMechSettings>()?.restrictZoneByGroup == true;
 		}
 
 		// Shutdown Check
