@@ -127,7 +127,7 @@ namespace WVC_WorkModes
 			listingStandard.CheckboxLabeled("WVC_Label_enableSmartEscort".Translate(), ref settings.enableSmartEscort, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_enableSmartEscort".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_enableDormantMode".Translate(), ref settings.dormantMode, "WVC_ToolTip_enableDormantMode".Translate());
 			listingStandard.SliderLabeledWithRef("WVC_Label_mechBandwithCostInDormantMode".Translate(settings.mechBandwithCostInDormantMode.ToString()), ref settings.mechBandwithCostInDormantMode, 0, 100);
-			listingStandard.CheckboxLabeled("WVC_Label_enableAutoRepairByDefault".Translate(), ref settings.enableAutoRepairByDefault, "WVC_ToolTip_enableAutoRepairByDefault".Translate());
+			listingStandard.CheckboxLabeled("WVC_WM_Label_enableAutoRepairByDefault".Translate(), ref settings.enableAutoRepairByDefault, "WVC_WM_ToolTip_enableAutoRepairByDefault".Translate());
 			// =============== Buttons ===============
 			listingStandard.GapLine();
 			if (listingStandard.ButtonText("WVC_WorkModes_ResetButton".Translate()))

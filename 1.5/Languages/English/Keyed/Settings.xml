@@ -77,6 +77,6 @@ Restart required!</WVC_ToolTip_enableDormantMode>
 	<WVC_Label_mechBandwithCostInDormantMode>Dormant mode bandwidth cost factor x{0}%</WVC_Label_mechBandwithCostInDormantMode>
 
 	<WVC_WM_Label_enableAutoRepairByDefault>Auto-repair on by default</WVC_WM_Label_enableAutoRepairByDefault>
-	<WVC_ToolTip_enableAutoRepairByDefault>Only affects mechanoids inherited from vanilla Abstract XML files. Custom Abstracts require a manual patch from the author if support for this mod is intended.</WVC_ToolTip_enableAutoRepairByDefault>
+	<WVC_WM_ToolTip_enableAutoRepairByDefault>Only affects mechanoids inherited from vanilla Abstract XML files. Custom Abstracts require a manual patch from the author if support for this mod is intended.</WVC_WM_ToolTip_enableAutoRepairByDefault>
 
 </LanguageData>
