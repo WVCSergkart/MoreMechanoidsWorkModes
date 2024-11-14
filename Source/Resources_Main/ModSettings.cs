@@ -37,6 +37,7 @@ namespace WVC_WorkModes
 		public bool useCustomShutdownBehavior = true;
 		public bool dormantMode = false;
 		public int mechBandwithCostInDormantMode = 0;
+		public bool enableAutoRepairByDefault = true;
 
 		public IEnumerable<string> GetEnabledSettings => from specificSetting in GetType().GetFields()
 			where specificSetting.FieldType == typeof(bool) && (bool)specificSetting.GetValue(this)
@@ -66,11 +67,12 @@ namespace WVC_WorkModes
 			Scribe_Values.Look(ref WVC_Scavenging_ReqCells, "WVC_Scavenging_ReqCells", defaultValue: 120, forceSave: true);
 
 			// Mechanics
-			Scribe_Values.Look(ref enable_GoToShutdownZoneJob, "enableShutdownSearching", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref enableEnemySearching, "enableEnemySearching", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref enableSmartEscort, "enableSmartEscort", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref useCustomShutdownBehavior, "useCustomShutdownBehavior", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref dormantMode, "dormantMode", defaultValue: false, forceSave: true);
+			Scribe_Values.Look(ref enable_GoToShutdownZoneJob, "enableShutdownSearching", defaultValue: true);
+			Scribe_Values.Look(ref enableEnemySearching, "enableEnemySearching", defaultValue: true);
+			Scribe_Values.Look(ref enableSmartEscort, "enableSmartEscort", defaultValue: true);
+			Scribe_Values.Look(ref useCustomShutdownBehavior, "useCustomShutdownBehavior", defaultValue: true);
+			Scribe_Values.Look(ref dormantMode, "dormantMode", defaultValue: false);
+			Scribe_Values.Look(ref enableAutoRepairByDefault, "enableAutoRepairByDefault", defaultValue: true);
 		}
 	}
 
@@ -125,6 +127,7 @@ namespace WVC_WorkModes
 			listingStandard.CheckboxLabeled("WVC_Label_enableSmartEscort".Translate(), ref settings.enableSmartEscort, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_enableSmartEscort".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_enableDormantMode".Translate(), ref settings.dormantMode, "WVC_ToolTip_enableDormantMode".Translate());
 			listingStandard.SliderLabeledWithRef("WVC_Label_mechBandwithCostInDormantMode".Translate(settings.mechBandwithCostInDormantMode.ToString()), ref settings.mechBandwithCostInDormantMode, 0, 100);
+			listingStandard.CheckboxLabeled("WVC_Label_enableAutoRepairByDefault".Translate(), ref settings.enableAutoRepairByDefault, "WVC_ToolTip_enableAutoRepairByDefault".Translate());
 			// =============== Buttons ===============
 			listingStandard.GapLine();
 			if (listingStandard.ButtonText("WVC_WorkModes_ResetButton".Translate()))
@@ -173,6 +176,7 @@ namespace WVC_WorkModes
 			WVC_MMWM.settings.useCustomShutdownBehavior = true;
 			WVC_MMWM.settings.dormantMode = false;
 			WVC_MMWM.settings.mechBandwithCostInDormantMode = 0;
+			WVC_MMWM.settings.enableAutoRepairByDefault = true;
 			// Initial
 			WVC_MMWM.settings.firstModLaunch = false;
 			WVC_MMWM.settings.Write();

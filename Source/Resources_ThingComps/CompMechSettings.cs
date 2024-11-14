@@ -64,6 +64,18 @@ namespace WVC_WorkModes
 			};
 		}
 
+		public override void PostSpawnSetup(bool respawningAfterLoad)
+		{
+			if (!respawningAfterLoad && WVC_MMWM.settings.enableAutoRepairByDefault && parent is Pawn mech)
+			{
+				CompMechRepairable compMechRepairable = mech?.TryGetComp<CompMechRepairable>();
+				if (compMechRepairable != null)
+				{
+					compMechRepairable.autoRepair = true;
+				}
+			}
+		}
+
 		public override string CompInspectStringExtra()
 		{
 			StringBuilder stringBuilder = new(base.CompInspectStringExtra());

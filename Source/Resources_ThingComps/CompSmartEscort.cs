@@ -29,7 +29,7 @@ namespace WVC_WorkModes
 
 		public Pawn escortTarget = null;
 
-		private List<MechWorkModeDef> cachedEscortModes;
+		private List<MechWorkModeDef> cachedEscortModes = null;
 
 		// public int tickCounter = 1500;
 
@@ -53,7 +53,7 @@ namespace WVC_WorkModes
 			{
 				yield break;
 			}
-			if (cachedEscortModes.NullOrEmpty())
+			if (cachedEscortModes == null)
 			{
 				cachedEscortModes = SmartEscortUtility.SmartEscortModesList();
 			}
