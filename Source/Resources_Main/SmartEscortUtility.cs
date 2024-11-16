@@ -17,7 +17,7 @@ namespace WVC_WorkModes
 				//{
 				//	return null;
 				//}
-				CompSmartEscort comp = pawn.TryGetComp<CompSmartEscort>();
+				CompMechSettings comp = pawn.TryGetComp<CompMechSettings>();
 				if(comp != null && AssignedPawnAtHome(comp.escortTarget))
 				{
 					return comp.escortTarget;

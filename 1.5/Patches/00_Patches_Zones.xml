@@ -58,29 +58,29 @@
 		<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>
 	  </value>
 	</Operation>
-	<Operation Class="PatchOperationAdd">
-	  <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath>
-	  <success>Always</success>
-	  <value>
-		  <li Class="WVC_WorkModes.CompProperties_MechSettings"/>
-	  </value>
-	</Operation>
+	<!-- <Operation Class="PatchOperationAdd"> -->
+	  <!-- <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath> -->
+	  <!-- <success>Always</success> -->
+	  <!-- <value> -->
+		  <!-- <li Class="WVC_WorkModes.CompProperties_MechSettings"/> -->
+	  <!-- </value> -->
+	<!-- </Operation> -->
 
-	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
-		<settingName>enableSmartEscort</settingName>
-		<active Class="PatchOperationSequence">
-			<operations>
+	<!-- <Operation Class="WVC_WorkModes.PatchOperation_Settings"> -->
+		<!-- <settingName>enableSmartEscort</settingName> -->
+		<!-- <active Class="PatchOperationSequence"> -->
+			<!-- <operations> -->
 
-				<li Class="PatchOperationAdd">
-				  <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath>
-				  <value>
-					  <li Class="WVC_WorkModes.CompProperties_SmartEscort"/>
-				  </value>
-				</li>
+				<!-- <li Class="PatchOperationAdd"> -->
+				  <!-- <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath> -->
+				  <!-- <value> -->
+					  <!-- <li Class="WVC_WorkModes.CompProperties_SmartEscort"/> -->
+				  <!-- </value> -->
+				<!-- </li> -->
 
-			</operations>
-		</active>
-	</Operation>
+			<!-- </operations> -->
+		<!-- </active> -->
+	<!-- </Operation> -->
 
 	<!-- Without choice -->
 

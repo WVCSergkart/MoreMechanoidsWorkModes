@@ -8,87 +8,42 @@ using Verse;
 namespace WVC_WorkModes
 {
 
-	[StaticConstructorOnStartup]
-	public static class PostInitializationWorkModeRequirement
-	{
-		static PostInitializationWorkModeRequirement()
-		{
-			if (WVC_MMWM.settings.firstModLaunch)
-			{
-				WVC_MMWM.settings.firstModLaunch = false;
-				WVC_MMWM.settings.Write();
-			}
-			// foreach (ThinkTreeDef thinkTreeDef in DefDatabase<ThinkTreeDef>.AllDefsListForReading)
-			// {
-				// foreach (ThinkNode thinkNode in thinkTreeDef.thinkRoot.ChildrenRecursive.ToList())
-				// {
-					// if (thinkNode is ThinkNode_ConditionalWorkMode thinkWorkMode)
-					// {
-						// MechWorkModeDef mechWorkModeDef = thinkWorkMode.workMode;
-						// foreach (ThinkNode thinkNode2 in thinkWorkMode.ChildrenRecursive.ToList())
-						// {
-							// if (thinkNode2 is JobGiver_GoToShutdownZone)
-							// {
-								// Log.Error(mechWorkModeDef.label.CapitalizeFirst());
-							// }
-						// }
-					// }
-				// }
-			// }
-			// if (WVC_MMWM.settings.WVC_HiveMindResearching || WVC_MMWM.settings.WVC_Scavenging)
-			// {
-				// List<MechWorkModeDef> mechWorkModeDefs = new();
-				// List<ResearchProjectDef> researchPrerequisites = new();
-				// List<WorkModeResearchRequirementDef> requirementDef = new();
-				// string mainInfo = "\n\n" + "WVC_WorkModes_ModeTechnologyRequirement".Translate().Resolve().Colorize(ColoredText.TipSectionTitleColor);
-				// string techInfo = "\n\n" + "WVC_WorkModes_TechnologyAllowsModes".Translate().Resolve().Colorize(ColoredText.TipSectionTitleColor);
-				// foreach (WorkModeResearchRequirementDef def in DefDatabase<WorkModeResearchRequirementDef>.AllDefsListForReading)
-				// {
-					// requirementDef.Add(def);
-					// foreach (MechWorkModeDef modeDef in def.workModes)
-					// {
-						// if (!mechWorkModeDefs.Contains(modeDef))
-						// {
-							// mechWorkModeDefs.Add(modeDef);
-						// }
-					// }
-					// foreach (ResearchProjectDef researchDef in def.researchPrerequisites)
-					// {
-						// if (!researchPrerequisites.Contains(researchDef))
-						// {
-							// researchPrerequisites.Add(researchDef);
-						// }
-					// }
-				// }
-				// foreach (ResearchProjectDef researchDef in researchPrerequisites)
-				// {
-					// researchDef.description += techInfo;
-					// foreach (WorkModeResearchRequirementDef reqDef in requirementDef)
-					// {
-						// foreach (MechWorkModeDef modeDef3 in mechWorkModeDefs)
-						// {
-							// if (reqDef.researchPrerequisites.Contains(researchDef) && reqDef.workModes.Contains(modeDef3))
-							// {
-								// string info = "\n" + "WVC_WorkModes_TechnologyAllowsModes_Desc".Translate(modeDef3.label.CapitalizeFirst(), modeDef3.description).Resolve();
-								// researchDef.description += info;
-							// }
-						// }
-					// }
-				// }
-				// foreach (MechWorkModeDef modeDef2 in mechWorkModeDefs)
-				// {
-					// modeDef2.description += mainInfo;
-					// foreach (WorkModeResearchRequirementDef reqDef in requirementDef)
-					// {
-						// if (reqDef.workModes.Contains(modeDef2))
-						// {
-							// string info = "\n" + reqDef.researchPrerequisites.Select((ResearchProjectDef x) => x.label).ToLineList("  - ", capitalizeItems: true);
-							// modeDef2.description += info;
-						// }
-					// }
-				// }
-			// }
-		}
-	}
+    [StaticConstructorOnStartup]
+    public static class PostInitializationWorkModeRequirement
+    {
+        static PostInitializationWorkModeRequirement()
+        {
+            if (WVC_MMWM.settings.firstModLaunch)
+            {
+                WVC_MMWM.settings.firstModLaunch = false;
+                WVC_MMWM.settings.Write();
+            }
+            AutoPatch();
+        }
+
+        public static void AutoPatch()
+        {
+            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefsListForReading)
+            {
+                if (thingDef?.race == null)
+                {
+                    continue;
+                }
+                if (!thingDef.race.IsMechanoid)
+                {
+                    continue;
+                }
+                if (!thingDef.HasComp<CompOverseerSubject>())
+                {
+                    continue;
+                }
+                if (!thingDef.HasComp<CompMechSettings>())
+                {
+                    thingDef.comps.Add(new CompProperties_MechSettings());
+                }
+            }
+        }
+
+    }
 
 }
