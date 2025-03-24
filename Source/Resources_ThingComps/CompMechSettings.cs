@@ -173,19 +173,26 @@ namespace WVC_WorkModes
 			return pawn;
 		}
 
-		public override void PostSpawnSetup(bool respawningAfterLoad)
-		{
-			if (!respawningAfterLoad && WVC_MMWM.settings.enableAutoRepairByDefault && parent is Pawn mech)
-			{
-				CompMechRepairable compMechRepairable = mech?.TryGetComp<CompMechRepairable>();
-				if (compMechRepairable != null)
-				{
-					compMechRepairable.autoRepair = true;
-				}
-			}
-		}
+		public bool autoRepairUpdated = false;
 
-		public override string CompInspectStringExtra()
+		public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            if (respawningAfterLoad || autoRepairUpdated)
+            {
+                return;
+            }
+            if (WVC_MMWM.settings.enableAutoRepairByDefault && parent is Pawn mech)
+            {
+                CompMechRepairable compMechRepairable = mech?.TryGetComp<CompMechRepairable>();
+                if (compMechRepairable != null)
+                {
+                    compMechRepairable.autoRepair = true;
+                }
+            }
+            autoRepairUpdated = true;
+        }
+
+        public override string CompInspectStringExtra()
 		{
 			StringBuilder stringBuilder = new();
 			bool addAppendLine = false;
@@ -211,6 +218,7 @@ namespace WVC_WorkModes
 			Scribe_Values.Look(ref restrictZoneByGroup, "restrictZoneByGroup", false);
 			//Scribe_References.Look(ref overseer, "overseer");
 			Scribe_References.Look(ref escortTarget, "escortTarget");
+			Scribe_Values.Look(ref autoRepairUpdated, "autoRepairUpdated", false);
 		}
 
 	}
