@@ -30,6 +30,8 @@ namespace WVC_WorkModes
 		public bool WVC_Scavenging = false;
 		public int WVC_Scavenging_ReqCells = 120;
 
+		public bool WVC_RechargeAndShutdown = false;
+
 		// Features
 		public bool enable_GoToShutdownZoneJob = true;
 		public bool enableEnemySearching = true;
@@ -59,6 +61,8 @@ namespace WVC_WorkModes
 			Scribe_Values.Look(ref WVC_EscaortAndRecharge, "WVC_EscaortAndRecharge", defaultValue: true, forceSave: true);
 			Scribe_Values.Look(ref WVC_WorkRechargeEscort, "WVC_WorkRechargeEscort", defaultValue: true, forceSave: true);
 			Scribe_Values.Look(ref WVC_EscortIfEnemyOnMap, "WVC_EscortIfEnemyOnMap", defaultValue: true, forceSave: true);
+
+			Scribe_Values.Look(ref WVC_RechargeAndShutdown, "WVC_RechargeAndShutdown", defaultValue: true, forceSave: true);
 
 			Scribe_Values.Look(ref WVC_EscortIfEnemyWorkAndRecharge, "WVC_EscortIfEnemyWorkAndRecharge", defaultValue: false, forceSave: true);
 			Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false, forceSave: true);
@@ -110,6 +114,8 @@ namespace WVC_WorkModes
 			listingStandard.CheckboxLabeled("WVC_Label_EscaortAndRecharge".Translate(), ref settings.WVC_EscaortAndRecharge, "WVC_ToolTip_Setting".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_WorkRechargeEscort".Translate(), ref settings.WVC_WorkRechargeEscort, "WVC_ToolTip_Setting".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_EscortIfEnemyOnMap".Translate(), ref settings.WVC_EscortIfEnemyOnMap, "WVC_ToolTip_Setting".Translate());
+
+			listingStandard.CheckboxLabeled("WVC_Label_RechargeAndShutdown".Translate(), ref settings.WVC_RechargeAndShutdown, "WVC_ToolTip_Setting".Translate());
 			// Bonus
 			listingStandard.Gap();
 			listingStandard.Label("WVC_Label_BonusModeLabelSetting".Translate() + ": ");
@@ -163,6 +169,8 @@ namespace WVC_WorkModes
 			WVC_MMWM.settings.WVC_EscaortAndRecharge = true;
 			WVC_MMWM.settings.WVC_WorkRechargeEscort = true;
 			WVC_MMWM.settings.WVC_EscortIfEnemyOnMap = true;
+			// =
+			WVC_MMWM.settings.WVC_RechargeAndShutdown = true;
 			// =
 			WVC_MMWM.settings.WVC_EscortIfEnemyWorkAndRecharge = false;
 			WVC_MMWM.settings.WVC_EscortIfDraftedOrDowned = false;

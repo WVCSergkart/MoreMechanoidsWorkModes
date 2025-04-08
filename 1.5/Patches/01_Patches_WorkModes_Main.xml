@@ -500,4 +500,41 @@
 
 	<!-- =========================================================== -->
 
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
+		<settingName>WVC_RechargeAndShutdown</settingName>
+		<active Class="PatchOperationInsert">
+			<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
+			<value>
+			  <li Class="ThinkNode_ConditionalWorkMode">
+				<workMode>WVC_RechargeAndShutdown</workMode>
+				<subNodes>
+				  <!-- Charge -->
+				  <li Class="JobGiver_SeekAllowedArea" />
+				  <li Class="JobGiver_GetEnergy_Charger" />
+				  <!-- Go to smart charge -->
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+					<tickInterval>625</tickInterval>
+				  </li>
+				  <!-- Shutdown long -->
+				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+					<workModeType>Safe</workModeType>
+				  </li>
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+					<tickInterval>6000</tickInterval>
+					<forced>true</forced>
+				  </li>
+				</subNodes>
+			  </li>
+			</value>
+		</active>
+		<deActive Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/MechWorkModeDef[defName="WVC_RechargeAndShutdown"]</xpath>
+					<success>Always</success>
+				</li>
+			</operations>
+		</deActive>
+	</Operation>
+
 </Patch>

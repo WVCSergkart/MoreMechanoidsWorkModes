@@ -140,6 +140,23 @@
 	<iconPath>WVC/UI/MechWork/SafeWorkAndRecharge</iconPath>
   </MechWorkModeDef>
 
+  <!-- ===================== RECHARGE ===================== -->
+  <!-- ===================== RECHARGE ===================== -->
+  <!-- ===================== RECHARGE ===================== -->
+
+  <MechWorkModeDef ParentName="WVC_WorkModes_MechWorkMode_Base">
+	<defName>WVC_RechargeAndShutdown</defName>
+	<label>recharge and shutdown</label>
+	<description>Mechanoids, regardless of type, will first go to charge, and then to the shutdown zone.
+
+&lt;color=#f5ffa2&gt;Type:&lt;/color&gt; Safe
+&lt;color=#f5ffa2&gt;Enemy searching:&lt;/color&gt; No
+&lt;color=#f5ffa2&gt;Shutdown:&lt;/color&gt; Yes
+&lt;color=#f5ffa2&gt;Smart charging:&lt;/color&gt; Yes</description>
+	<uiOrder>310</uiOrder>
+	<iconPath>WVC/UI/MechWork/RechargeAndShutdown</iconPath>
+  </MechWorkModeDef>
+
   <!-- ===================== ESCORT ===================== -->
   <!-- ===================== ESCORT ===================== -->
   <!-- ===================== ESCORT ===================== -->

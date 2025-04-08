@@ -23,6 +23,7 @@
 	<WVC_Label_EscaortAndRecharge>Escort and recharge</WVC_Label_EscaortAndRecharge>
 	<WVC_Label_WorkRechargeEscort>Work, recharge and escort</WVC_Label_WorkRechargeEscort>
 	<WVC_Label_EscortIfEnemyOnMap>Escort if enemy</WVC_Label_EscortIfEnemyOnMap>
+	<WVC_Label_RechargeAndShutdown>Recharge and shutdown</WVC_Label_RechargeAndShutdown>
 
 	<WVC_ToolTip_Setting>Before disabling, switch all mechanoid modes to vanilla. A restart is required to apply the settings.</WVC_ToolTip_Setting>
 
