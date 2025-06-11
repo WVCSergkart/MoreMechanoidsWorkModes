@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- =========================================================== -->
+
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
+		<settingName>dormantMode</settingName>
+		<active Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationSequence">
+					<success>Always</success>
+					<operations>
+						<li Class="PatchOperationTest">
+						  <xpath>/Defs/StatDef[defName="BandwidthCost"]/parts</xpath>
+						  <success>Invert</success>
+						</li>
+						<li Class="PatchOperationAdd">
+						  <xpath>/Defs/StatDef[defName="BandwidthCost"]</xpath>
+						  <success>Always</success>
+						  <value>
+							<parts/>
+						  </value>
+						</li>
+					</operations>
+				</li>
+
+				<li Class="PatchOperationAdd">
+				  <xpath>/Defs/StatDef[defName="BandwidthCost"]/parts</xpath>
+				  <success>Always</success>
+				  <value>
+
+					  <li Class="WVC_WorkModes.StatPart_DormantMode"/>
+
+				  </value>
+				</li>
+
+			</operations>
+		</active>
+	</Operation>
+
+	<!-- <Operation Class="PatchOperationConditional"> -->
+		<!-- <xpath>/Defs/ResearchProjectDef[tab="WVC_TechTab"]</xpath> -->
+		<!-- <nomatch Class="PatchOperationRemove"> -->
+		  <!-- <xpath>/Defs/ResearchTabDef[defName="WVC_TechTab"]</xpath> -->
+		  <!-- <success>Always</success> -->
+		<!-- </nomatch> -->
+	<!-- </Operation> -->
+
+</Patch>

@@ -27,7 +27,7 @@ namespace WVC_WorkModes
 			}
 			if (ScavengeUtility.TryFindFirstMechScavengeZone(mapZones, pawn, out var result))
 			{
-				if (result == null || pawn.Position == result)
+				if (pawn.Position == result)
 				{
 					return null;
 				}

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WVC_IdleOptimization_MechanoidShutdownSpot.label>機械關閉點</WVC_IdleOptimization_MechanoidShutdownSpot.label>
+  <WVC_IdleOptimization_MechanoidShutdownSpot.description>機械族在休眠之前返回這裡。\n\n&lt;color=#f5ffa2&gt;注意：&lt;/color&gt;如果沒有其他點，機械族將返回這裡。除了伏擊。</WVC_IdleOptimization_MechanoidShutdownSpot.description>
+
+  <WVC_IOMSS_WorkAndRecharge.label>工人點</WVC_IOMSS_WorkAndRecharge.label>
+  <WVC_IOMSS_WorkAndRecharge.description>設置 &lt;color=#f5ffa2&gt;"工人"&lt;/color&gt; 模式的機械族將返回這裡。</WVC_IOMSS_WorkAndRecharge.description>
+
+  <WVC_IOMSS_TotallySafeSpot.label>安全點</WVC_IOMSS_TotallySafeSpot.label>
+  <WVC_IOMSS_TotallySafeSpot.description>設置 &lt;color=#f5ffa2&gt;"自保"&lt;/color&gt; 模式的機械族在敵方出現時返回此點。</WVC_IOMSS_TotallySafeSpot.description>
+
+  <WVC_IOMSS_Ambush.label>伏擊點</WVC_IOMSS_Ambush.label>
+  <WVC_IOMSS_Ambush.description>設置 &lt;color=#f5ffa2&gt;"伏擊"&lt;/color&gt; 模式的機械族將返回這裡。</WVC_IOMSS_Ambush.description>
+
+  <WVC_IOMSS_WaitEnemy.label>待命點</WVC_IOMSS_WaitEnemy.label>
+  <WVC_IOMSS_WaitEnemy.description>設置 &lt;color=#f5ffa2&gt;"待命"&lt;/color&gt; 、 &lt;color=#f5ffa2&gt;"役兵"&lt;/color&gt; 或 &lt;color=#f5ffa2&gt;"守衛"&lt;/color&gt; 模式的機械族將返回這裡。</WVC_IOMSS_WaitEnemy.description>
+
+
+</LanguageData>
