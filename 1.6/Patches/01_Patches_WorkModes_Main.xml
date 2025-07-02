@@ -15,6 +15,8 @@
 				  <li Class="JobGiver_AIFightEnemies">
 					<targetAcquireRadius>65</targetAcquireRadius>
 					<targetKeepRadius>72</targetKeepRadius>
+					<!-- <targetAcquireRadius>1333</targetAcquireRadius> -->
+					<!-- <targetKeepRadius>1777</targetKeepRadius> -->
 				  </li>
 				  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 					<subNodes>

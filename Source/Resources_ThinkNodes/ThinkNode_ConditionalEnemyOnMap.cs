@@ -18,7 +18,7 @@ namespace WVC_WorkModes
 				for (int i = 0; i < potentialTargetsFor.Count; i++)
 				{
 					IAttackTarget attackTarget = potentialTargetsFor[i];
-					if (!attackTarget.ThreatDisabled(pawn) && AttackTargetFinder.IsAutoTargetable(attackTarget) && (!(attackTarget.Thing is Pawn pawn2) || pawn2.IsCombatant() || GenSight.LineOfSightToThing(pawn.Position, pawn2, pawn.Map)))
+					if (!attackTarget.ThreatDisabled(pawn) && AttackTargetFinder.IsAutoTargetable(attackTarget) && (attackTarget.Thing is not Pawn pawn2 || pawn2.IsCombatant() || GenSight.LineOfSightToThing(pawn.Position, pawn2, pawn.Map)))
 					{
 						Thing thing2 = (Thing)attackTarget;
 						int num2 = thing2.Position.DistanceToSquared(pawn.Position);
