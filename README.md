@@ -55,4 +55,8 @@ _Note:_ The shutdown state from the mod uses the vanilla shutdown job. That is, 
 
 **_Dormant mode_** - Mechanoids consume less bandwidth when they are in a shutdown state. Requires manual activation in settings.
 
-**_Auto-repair On_** - New mechanoids **spawn** with auto-repair enabled. Enabled by default.
+**_Auto-repair On_** - New mechanoids **spawn** with auto-repair enabled. Enabled by default.[b]Version 1.6:[/b]
+
+**Version 1.6:**
+
+**_Mechanoid hangar_** - any room that has a mechanoid charger will be considered a hangar. If possible and in the absence of zones, mechanoids will be sent to a random hangar for shutdown. Enabled by default.
