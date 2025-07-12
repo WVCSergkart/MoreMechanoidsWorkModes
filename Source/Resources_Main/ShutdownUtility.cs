@@ -17,6 +17,20 @@ namespace WVC_WorkModes
 	public static class ShutdownUtility
 	{
 
+		public static List<RoomRoleDef> ConvertToDefs(this List<string> strings)
+		{
+			List<RoomRoleDef> list = new();
+			List<RoomRoleDef> dataBase = DefDatabase<RoomRoleDef>.AllDefsListForReading;
+			foreach (RoomRoleDef room in dataBase)
+            {
+				if (strings.Contains(room.defName))
+                {
+					list.Add(room);
+				}
+            }
+			return list;
+		}
+
 		public static bool CanRecharge(Pawn pawn, out Need_MechEnergy energy)
 		{
 			// energy = pawn?.needs?.energy;
@@ -72,6 +86,16 @@ namespace WVC_WorkModes
 			return false;
 		}
 
+		public static bool MechInShutdownZone(Pawn pawn, IntVec3 cell, List<RoomRoleDef> possibleRooms)
+		{
+			Room room = GridsUtility.GetRoom(cell, pawn.Map);
+			if (possibleRooms.Contains(room.Role))
+			{
+				return true;
+			}
+			return false;
+		}
+
 		// Zone Searching
 
 		public static bool TryFindRandomMechShutdownZone(List<Zone> zones, Pawn pawn, Map map, MechanoidWorkType workModeType, out IntVec3 result)
@@ -81,15 +105,18 @@ namespace WVC_WorkModes
 			{
 				if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType, pawn))
 				{
-					List<IntVec3> cells = shutZone.Cells;
-					cells.Shuffle();
-					foreach (IntVec3 cell in cells)
+					//List<IntVec3> cells = shutZone.Cells;
+					//cells.Shuffle();
+					//foreach (IntVec3 cell in cells)
+					//{
+					//	if (CanSelfShutdown(cell, pawn, map, false))
+					//	{
+					//		result = cell;
+					//	}
+					//}
+					if (TryFindRandomMechShutdownZone(shutZone.Cells, pawn, map, out result))
 					{
-						if (CanSelfShutdown(cell, pawn, map, false))
-						{
-							result = cell;
-							return true;
-						}
+						return true;
 					}
 				}
 			}
@@ -98,25 +125,41 @@ namespace WVC_WorkModes
 			return false;
 		}
 
+		public static bool TryFindRandomMechShutdownZone(List<IntVec3> targetCells, Pawn pawn, Map map, out IntVec3 result)
+		{
+			List<IntVec3> cells = targetCells;
+			cells.Shuffle();
+			foreach (IntVec3 cell in cells)
+			{
+				if (CanSelfShutdown(cell, pawn, map, false))
+				{
+					result = cell;
+					return true;
+				}
+			}
+			result = pawn.Position;
+			return false;
+		}
+
 		// public static bool TryFindAnyMechShutdownZone(List<Zone> zones, Pawn pawn, Map map, MechanoidWorkType workModeType, out IntVec3 result)
 		// {
-			// for (int i = 0; i < zones.Count; i++)
-			// {
-				// if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType, pawn))
-				// {
-					// List<IntVec3> cells = shutZone.Cells;
-					// for (int j = 0; j < cells.Count; j++)
-					// {
-						// if (CanSelfShutdown(cells[j], pawn, map, false))
-						// {
-							// result = cells[j];
-							// return true;
-						// }
-					// }
-				// }
-			// }
-			// result = pawn.Position;
-			// return false;
+		// for (int i = 0; i < zones.Count; i++)
+		// {
+		// if (zones[i] is Zone_MechanoidShutdown shutZone && MechanoidWorkTypeIsCorrect(shutZone, workModeType, pawn))
+		// {
+		// List<IntVec3> cells = shutZone.Cells;
+		// for (int j = 0; j < cells.Count; j++)
+		// {
+		// if (CanSelfShutdown(cells[j], pawn, map, false))
+		// {
+		// result = cells[j];
+		// return true;
+		// }
+		// }
+		// }
+		// }
+		// result = pawn.Position;
+		// return false;
 		// }
 
 		// Zone Check

@@ -46,8 +46,17 @@
 	<WVC_ToolTip_VanillaModeOptimizationWarning>Does not affect combat mechanoids, as their idle has been replaced with a simulated patrol.</WVC_ToolTip_VanillaModeOptimizationWarning>
 
 	<!-- Features -->
-	<WVC_Label_enableShutdownSearching>Enable shutdown zone searching</WVC_Label_enableShutdownSearching>
+	<WVC_Label_enableShutdownSearching>Enable mechanoid shutdown zones</WVC_Label_enableShutdownSearching>
 	<WVC_ToolTip_enableShutdownSearching>If enabled, mechanoids will search for a mechanoid shutdown zone before shutdown.</WVC_ToolTip_enableShutdownSearching>
+
+	<WVC_Label_enable_GoToShutdownRoomJob>Enable mechanoid hangar rooms (Beta)</WVC_Label_enable_GoToShutdownRoomJob>
+	<WVC_ToolTip_enable_GoToShutdownRoomJob>If enabled, all mechanoid chargers will create a new room type "Mechanoid Hangar". Mechanoids will sleep there if there are no alternatives in the form of zones.
+
+Recommended when playing through gravships (Odyssey DLC), since the zones are reset when the ship flies.
+
+(Beta) A special beacon is planned that will allow for fine-tuning similar to that with zones.
+
+Restart required!</WVC_ToolTip_enable_GoToShutdownRoomJob>
 
 	<WVC_Label_enableEnemySearching>Enable enemy searching</WVC_Label_enableEnemySearching>
 	<WVC_ToolTip_enableEnemySearching>If enabled, in safe modes, mechanoids will check the map for enemies.</WVC_ToolTip_enableEnemySearching>

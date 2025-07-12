@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RoomRoleDef>
+	<defName>WVC_MechHangar</defName>
+	<label>mechanoid hangar</label>
+	<workerClass>WVC_WorkModes.RoomRoleWorker_Shutdown</workerClass>
+	<relatedStats>
+	  <li>Space</li>
+	</relatedStats>
+  </RoomRoleDef>
+
+</Defs>

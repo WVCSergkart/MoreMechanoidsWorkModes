@@ -8,7 +8,7 @@ using Verse;
 namespace WVC_WorkModes
 {
 
-	[Obsolete]
+    [Obsolete]
     public class CompProperties_SmartEscort : CompProperties
 	{
 

@@ -80,6 +80,7 @@
     <Compile Include="Resources_Main\StatPart_DormantMode.cs" />
     <Compile Include="Resources_ThingComps\CompDormantMode.cs" />
     <Compile Include="Resources_ThingComps\CompMechSettings.cs" />
+    <Compile Include="Resources_ThingComps\CompProperties_ShutdownRoom.cs" />
     <Compile Include="Resources_ThingComps\CompSmartEscort.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalAnyScavengeZone.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalCanRepair.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Resources_Zones\MechanoidScavengeZone.cs" />
     <Compile Include="Resources_Zones\MechanoidShutdownZone.cs" />
     <Compile Include="Resources_Zones\MechanoidZoneColorUtility.cs" />
+    <Compile Include="Resources_Zones\RoomRoleWorker_Shutdown.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

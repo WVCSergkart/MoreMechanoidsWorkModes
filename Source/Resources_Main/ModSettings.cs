@@ -34,6 +34,7 @@ namespace WVC_WorkModes
 
 		// Features
 		public bool enable_GoToShutdownZoneJob = true;
+		public bool enable_GoToShutdownRoomJob = true;
 		public bool enableEnemySearching = true;
 		public bool enableSmartEscort = true;
 		public bool useCustomShutdownBehavior = true;
@@ -72,6 +73,7 @@ namespace WVC_WorkModes
 
 			// Mechanics
 			Scribe_Values.Look(ref enable_GoToShutdownZoneJob, "enableShutdownSearching", defaultValue: true);
+			Scribe_Values.Look(ref enable_GoToShutdownRoomJob, "enable_GoToShutdownRoomJob", defaultValue: true);
 			Scribe_Values.Look(ref enableEnemySearching, "enableEnemySearching", defaultValue: true);
 			Scribe_Values.Look(ref enableSmartEscort, "enableSmartEscort", defaultValue: true);
 			Scribe_Values.Look(ref useCustomShutdownBehavior, "useCustomShutdownBehavior", defaultValue: true);
@@ -128,6 +130,7 @@ namespace WVC_WorkModes
 			listingStandard.Gap();
 			listingStandard.Label("WVC_Label_WorkModeMechanicsLabelSetting".Translate() + ": ");
 			listingStandard.CheckboxLabeled("WVC_Label_enableShutdownSearching".Translate(), ref settings.enable_GoToShutdownZoneJob, "WVC_ToolTip_enableShutdownSearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
+			listingStandard.CheckboxLabeled("WVC_Label_enable_GoToShutdownRoomJob".Translate(), ref settings.enable_GoToShutdownRoomJob, "WVC_ToolTip_enable_GoToShutdownRoomJob".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_useCustomShutdownBehavior".Translate(), ref settings.useCustomShutdownBehavior, "WVC_ToolTip_useCustomShutdownBehavior".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_enableEnemySearching".Translate(), ref settings.enableEnemySearching, "WVC_ToolTip_enableEnemySearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_enableSmartEscort".Translate(), ref settings.enableSmartEscort, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_enableSmartEscort".Translate());
@@ -179,6 +182,7 @@ namespace WVC_WorkModes
 			WVC_MMWM.settings.WVC_Scavenging_ReqCells = 120;
 			// Features
 			WVC_MMWM.settings.enable_GoToShutdownZoneJob = true;
+			WVC_MMWM.settings.enable_GoToShutdownRoomJob = true;
 			WVC_MMWM.settings.enableEnemySearching = true;
 			WVC_MMWM.settings.enableSmartEscort = true;
 			WVC_MMWM.settings.useCustomShutdownBehavior = true;

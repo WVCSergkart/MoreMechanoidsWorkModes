@@ -23,13 +23,6 @@
 	  </operations>
 	</Operation>
 
-	<!-- <Operation Class="PatchOperationAdd"> -->
-	  <!-- <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses</xpath> -->
-	  <!-- <value> -->
-		<!-- <li>WVC_WorkModes.Designator_MechanoidShutdownZone</li> -->
-	  <!-- </value> -->
-	<!-- </Operation> -->
-
 	<!-- By choice -->
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
@@ -50,47 +43,24 @@
 		</active>
 	</Operation>
 
-	<Operation Class="PatchOperationInsert">
-	  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses/li[contains(text(),'Designator_Deconstruct')]</xpath>
-	  <order>Append</order>
-	  <success>Always</success>
-	  <value>
-		<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>
-	  </value>
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
+		<settingName>enable_GoToShutdownZoneJob</settingName>
+		<active Class="PatchOperationInsert">
+		  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses/li[contains(text(),'Designator_Deconstruct')]</xpath>
+		  <order>Append</order>
+		  <success>Always</success>
+		  <value>
+			<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>
+		  </value>
+		</active>
 	</Operation>
-	<!-- <Operation Class="PatchOperationAdd"> -->
-	  <!-- <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath> -->
-	  <!-- <success>Always</success> -->
-	  <!-- <value> -->
-		  <!-- <li Class="WVC_WorkModes.CompProperties_MechSettings"/> -->
-	  <!-- </value> -->
-	<!-- </Operation> -->
 
-	<!-- <Operation Class="WVC_WorkModes.PatchOperation_Settings"> -->
-		<!-- <settingName>enableSmartEscort</settingName> -->
-		<!-- <active Class="PatchOperationSequence"> -->
-			<!-- <operations> -->
-
-				<!-- <li Class="PatchOperationAdd"> -->
-				  <!-- <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath> -->
-				  <!-- <value> -->
-					  <!-- <li Class="WVC_WorkModes.CompProperties_SmartEscort"/> -->
-				  <!-- </value> -->
-				<!-- </li> -->
-
-			<!-- </operations> -->
-		<!-- </active> -->
-	<!-- </Operation> -->
-
-	<!-- Without choice -->
-
-	<!-- <Operation Class="PatchOperationAdd"> -->
-	  <!-- <xpath>/Defs/ThingDef[@Name="BaseMechanoid"]/comps</xpath> -->
-	  <!-- <value> -->
-		  <!-- <li Class="WVC_WorkModes.CompProperties_MechSettings"/> -->
-	  <!-- </value> -->
-	<!-- </Operation> -->
-
-	<!-- =========================================================== -->
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
+		<settingName>enable_GoToShutdownRoomJob</settingName>
+		<deActive Class="PatchOperationRemove">
+		  <xpath>/Defs/RoomRoleDef[defName="WVC_MechHangar"]</xpath>
+		  <success>Always</success>
+		</deActive>
+	</Operation>
 
 </Patch>

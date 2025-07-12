@@ -78,8 +78,9 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Combat</workModeType>
-					<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
-					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+					<possibleRooms>
+						<li>WVC_MechHangar</li>
+					</possibleRooms>
 				  </li>
 				  <!-- Shutdown -->
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
@@ -139,8 +140,9 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Combat</workModeType>
-					<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
-					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+					<possibleRooms>
+						<li>WVC_MechHangar</li>
+					</possibleRooms>
 				  </li>
 				  <!-- Shutdown long -->
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
@@ -182,7 +184,9 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Ambush</workModeType>
-					<spotDefName>WVC_IOMSS_Ambush</spotDefName>
+					<possibleRooms>
+						<li>WVC_MechHangar</li>
+					</possibleRooms>
 				  </li>
 				  <!-- Shutdown -->
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
@@ -222,8 +226,9 @@
 					<subNodes>
 					  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 						<workModeType>Safe</workModeType>
-						<spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
-						<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+						<possibleRooms>
+							<li>WVC_MechHangar</li>
+						</possibleRooms>
 					  </li>
 					  <!-- Very-very long shutdown -->
 					  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
@@ -286,8 +291,9 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Work</workModeType>
-					<spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
-					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+					<possibleRooms>
+						<li>WVC_MechHangar</li>
+					</possibleRooms>
 				  </li>
 				  <!-- Shutdown long -->
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
@@ -327,8 +333,9 @@
 					  <!-- </li> -->
 					  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 						<workModeType>Safe</workModeType>
-						<spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName>
-						<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+						<possibleRooms>
+							<li>WVC_MechHangar</li>
+						</possibleRooms>
 					  </li>
 					  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 						<tickInterval>1500</tickInterval>
@@ -363,8 +370,9 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Work</workModeType>
-					<spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName>
-					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+					<possibleRooms>
+						<li>WVC_MechHangar</li>
+					</possibleRooms>
 				  </li>
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 					<forced>true</forced>
@@ -478,8 +486,9 @@
 				  <!-- </li> -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Combat</workModeType>
-					<spotDefName>WVC_IOMSS_WaitEnemy</spotDefName>
-					<backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName>
+					<possibleRooms>
+						<li>WVC_MechHangar</li>
+					</possibleRooms>
 				  </li>
 				  <!-- Shutdown short -->
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
@@ -520,6 +529,9 @@
 				  <!-- Shutdown long -->
 				  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 					<workModeType>Safe</workModeType>
+					<possibleRooms>
+						<li>WVC_MechHangar</li>
+					</possibleRooms>
 				  </li>
 				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
 					<tickInterval>6000</tickInterval>
