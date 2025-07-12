@@ -119,6 +119,7 @@ namespace WVC_WorkModes
 
 		public override IEnumerable<Gizmo> GetGizmos()
 		{
+			yield return new Command_Hide_ZoneShutdown(this);
 			foreach (Gizmo gizmo in base.GetGizmos())
 			{
 				yield return gizmo;
@@ -307,6 +308,39 @@ namespace WVC_WorkModes
 			PlayerKnowledgeDatabase.KnowledgeDemonstrated(ConceptDefOf.WVC_MMWM_BehaviorsGuide, KnowledgeAmount.Total);
 			return new Zone_MechanoidShutdown(Find.CurrentMap.zoneManager);
 		}
+	}
+
+	[StaticConstructorOnStartup]
+	public class Command_Hide_ZoneShutdown : Command_Hide
+	{
+		private static readonly Texture2D IconTex = ContentFinder<Texture2D>.Get("WVC/Spots/MechanoidShutdownZone");
+
+		public Command_Hide_ZoneShutdown(IHideable hideable)
+			: base(hideable)
+		{
+		}
+
+		protected override IEnumerable<FloatMenuOption> GetOptions()
+		{
+			return GetHideOptions();
+		}
+
+		public static IEnumerable<FloatMenuOption> GetHideOptions()
+		{
+			yield return new FloatMenuOption("ShowAllZones".Translate(), delegate
+			{
+				Command_Hide.ToggleAll(hidden: false);
+			});
+			yield return new FloatMenuOption("HideAllZones".Translate(), delegate
+			{
+				Command_Hide.ToggleAll(hidden: true);
+			});
+			foreach (FloatMenuOption item in Command_Hide.ZoneTypeOptions<Zone_MechanoidShutdown>("WVC_WM_ShutdownGroup".Translate(), IconTex))
+			{
+				yield return item;
+			}
+		}
+
 	}
 
 }

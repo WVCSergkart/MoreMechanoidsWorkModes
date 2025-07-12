@@ -75,4 +75,6 @@ Allows you to specify to the mechanoid what colonist it will escort.
 
 	<WVC_WorkModes_DormantModeStatPart>In shutdown mode x{0}%</WVC_WorkModes_DormantModeStatPart>
 
+	<WVC_WM_ShutdownGroup>shutdown</WVC_WM_ShutdownGroup>
+
 </LanguageData>
