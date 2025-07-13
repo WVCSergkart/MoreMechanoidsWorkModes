@@ -11,16 +11,16 @@ namespace WVC_WorkModes
 	public class JobGiver_GoToShutdownZone : ThinkNode_JobGiver
 	{
 
-		//[Obsolete]
-		//public string spotDefName;
-		//[Obsolete]
-		//public string backupSpotDefName;
-		//[Obsolete]
-		//public int minDistanceForSpot = 9;
-		//[Obsolete]
-		//public int maxDistanceForSpot = 9999;
+        [Obsolete]
+        public string spotDefName;
+        [Obsolete]
+        public string backupSpotDefName;
+        [Obsolete]
+        public int minDistanceForSpot = 9;
+        [Obsolete]
+        public int maxDistanceForSpot = 9999;
 
-		public List<string> possibleRooms;
+        public List<string> possibleRooms;
 
 		private static List<RoomRoleDef> cachedPossibleRooms;
 
@@ -40,18 +40,15 @@ namespace WVC_WorkModes
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			if (WVC_MMWM.settings.enable_GoToShutdownZoneJob)
+			if (WVC_MMWM.settings.enable_GoToShutdownZoneJob && GetZoneJob(pawn, out Job job))
 			{
-				if (GetZoneJob(pawn, out Job job))
-                {
-					return job;
-				}
+				return job;
 			}
-			if (WVC_MMWM.settings.enable_GoToShutdownRoomJob)
+			else if (WVC_MMWM.settings.enable_GoToShutdownRoomJob)
 			{
-				if (GetRoomJob(pawn, out Job job))
+				if (GetRoomJob(pawn, out Job job2))
 				{
-					return job;
+					return job2;
 				}
 			}
 			return null;
@@ -62,7 +59,7 @@ namespace WVC_WorkModes
 			job = null;
 			if (ShutdownUtility.MechInShutdownZone(pawn, pawn.Position, PossibleRooms))
 			{
-				return false;
+				return true;
 			}
 			if (GetShutdownRoom(pawn, out job))
 			{
@@ -81,13 +78,13 @@ namespace WVC_WorkModes
 			}
 			if (ShutdownUtility.MechInShutdownZone(pawn, pawn.Position, workModeType))
 			{
-				return false;
+				return true;
 			}
 			if (ShutdownUtility.TryFindRandomMechShutdownZone(mapZones, pawn, pawn.Map, workModeType, out var result))
 			{
 				if (pawn.Position == result)
 				{
-					return false;
+					return true;
 				}
 				job = JobMaker.MakeJob(JobDefOf.Goto, result);
 				return true;
