@@ -10,6 +10,7 @@
 	<v1.6>
 		<li>/</li>
 		<li>1.6</li>
+		<li IfModActive="ludeon.rimworld.odyssey">1.6/Odyssey</li>
 	</v1.6>
 </loadFolders>
 

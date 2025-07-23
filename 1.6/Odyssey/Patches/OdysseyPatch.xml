@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+			  <xpath>/Defs/WorldObjectDef[defName="Gravship"]/comps</xpath>
+			  <success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+			  <xpath>/Defs/WorldObjectDef[defName="Gravship"]</xpath>
+			  <success>Always</success>
+			  <value>
+				<comps/>
+			  </value>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+	  <xpath>/Defs/WorldObjectDef[defName="Gravship"]/comps</xpath>
+	  <success>Always</success>
+	  <value>
+		<li Class="WVC_WorkModes.WorldObjectCompProperties_Zones"/>
+	  </value>
+	</Operation>
+
+</Patch>

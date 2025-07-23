@@ -95,7 +95,9 @@
     <Compile Include="Resources_Zones\MechanoidScavengeZone.cs" />
     <Compile Include="Resources_Zones\MechanoidShutdownZone.cs" />
     <Compile Include="Resources_Zones\MechanoidZoneColorUtility.cs" />
+    <Compile Include="Resources_Zones\MoveableShutdownZone.cs" />
     <Compile Include="Resources_Zones\RoomRoleWorker_Shutdown.cs" />
+    <Compile Include="Resources_Zones\WorldObjectCompProperties_Zones.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

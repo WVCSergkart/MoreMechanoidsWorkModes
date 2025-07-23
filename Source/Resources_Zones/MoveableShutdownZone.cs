@@ -46,17 +46,21 @@ namespace WVC_WorkModes
 			Scribe_Values.Look(ref hidden, "hidden", defaultValue: false);
 		}
 
-		public void TryCreateStockpile(ZoneManager zoneManager, IntVec3 newOrigin)
+		public void TryCreateShutdown(ZoneManager zoneManager, IntVec3 newOrigin)
 		{
-			Zone_Stockpile zone_Stockpile = new Zone_Stockpile(StorageSettingsPreset.DefaultStockpile, zoneManager)
+			Zone_MechanoidShutdown zone_Stockpile = new(zoneManager)
 			{
 				label = label,
 				Hidden = hidden,
 				color = color,
-				ID = id
+				ID = id,
+				owner = owner,
+				allowWorkers = allowWorkers,
+				allowSafe = allowSafe,
+				allowCombatants = allowCombatants,
+				allowAmbush = allowAmbush,
+				ownerIndexGroup = ownerIndexGroup
 			};
-			zone_Stockpile.settings = new StorageSettings(zone_Stockpile);
-			zone_Stockpile.settings.CopyFrom(settings);
 			zoneManager.RegisterZone(zone_Stockpile);
 			foreach (IntVec3 relativeCell in base.RelativeCells)
 			{
