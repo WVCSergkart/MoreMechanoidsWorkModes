@@ -26,29 +26,23 @@ namespace WVC_WorkModes.Odyssey
 	{
 		public static void Postfix(Gravship __instance, Map oldMap, IntVec3 origin, HashSet<IntVec3> engineFloors)
         {
-            try
+			//try
+			//{
+			//	__instance.GetComponent<WorldObjectComp_Zones>().TransferZones(oldMap, origin, engineFloors);
+			//}
+			//catch
+			//{
+			//	Log.Warning("Failed save zones. Trying use backup method.");
+			//}
+			try
 			{
-				//if (__instance.AllComps.NullOrEmpty())
-				//{
-				//	__instance.PostMake();
-				//	Log.Warning("Gravship comps were not initialized, trying to initialize them.");
-				//}
-				__instance.GetComponent<WorldObjectComp_Zones>().TransferZones(oldMap, origin, engineFloors);
-            }
-            catch
-            {
-				Log.Warning("Failed save zones. Trying use backup method.");
-				try
-				{
-					WorldObjectComp_Zones.backupSavedZones = new();
-					WorldObjectComp_Zones.SaveZonesFromMap(oldMap, origin, engineFloors, __instance, WorldObjectComp_Zones.backupSavedZones);
-				}
-				catch
-				{
-					Log.Error("Failed save zones anyway. Thanks for broken gravship comps Ludeon.");
-				}
+				ShutdownUtility.SaveZonesFromMap(oldMap, origin, engineFloors, __instance, ref StaticCollectionsClass.backupSavedZones);
 			}
-        }
+			catch
+			{
+				Log.Error("Failed save zones. Not your lucky day, Buddy.");
+			}
+		}
     }
 
 	[HarmonyPatch(typeof(GravshipPlacementUtility), "CopyZonesIntoMap")]
@@ -58,27 +52,26 @@ namespace WVC_WorkModes.Odyssey
 		{
 			try
 			{
-				bool useBackUp = false;
-				if (!WorldObjectComp_Zones.backupSavedZones.NullOrEmpty())
-                {
-					useBackUp = true;
-				}
-				if (useBackUp)
-				{
-					WorldObjectComp_Zones.CopyZonesIntoMap(WorldObjectComp_Zones.backupSavedZones, gravship, map, root);
-					WorldObjectComp_Zones.backupSavedZones = null;
-				}
-				else
-                {
-					foreach (WorldObjectComp objectComp in gravship.AllComps)
-					{
-						if (objectComp is WorldObjectComp_Zones zones)
-						{
-							//Log.Error("1");
-							zones.CopyZonesIntoMap(gravship, map, root);
-						}
-					}
-				}
+				//bool useBackUp = false;
+				//if (!StaticCollectionsClass.backupSavedZones.NullOrEmpty())
+				//{
+				//	useBackUp = true;
+				//}
+				//if (useBackUp)
+				//{
+				//}
+				//else
+				//{
+				//	foreach (WorldObjectComp objectComp in gravship.AllComps)
+				//	{
+				//		if (objectComp is WorldObjectComp_Zones zones)
+				//		{
+				//			//Log.Error("1");
+				//			zones.CopyZonesIntoMap(gravship, map, root);
+				//		}
+				//	}
+				//}
+				ShutdownUtility.CopyZonesIntoMap(ref StaticCollectionsClass.backupSavedZones, gravship, map, root);
 			}
 			catch
 			{

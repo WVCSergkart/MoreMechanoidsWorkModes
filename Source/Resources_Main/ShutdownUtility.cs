@@ -1,4 +1,5 @@
 using RimWorld;
+using RimWorld.Planet;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
@@ -16,6 +17,44 @@ namespace WVC_WorkModes
 
 	public static class ShutdownUtility
 	{
+
+		public static void CopyZonesIntoMap(ref List<MoveableShutdownZone> savedZones, Gravship gravship, Map map, IntVec3 root)
+		{
+			foreach (MoveableShutdownZone stockpile in savedZones)
+			{
+				stockpile.TryCreateShutdown(map.zoneManager, root);
+			}
+			savedZones = new();
+		}
+
+		public static void SaveZonesFromMap(Map oldMap, IntVec3 origin, HashSet<IntVec3> engineFloors, Gravship gravship, ref List<MoveableShutdownZone> savedZones)
+		{
+			savedZones = new();
+			for (int num = oldMap.zoneManager.AllZones.Count - 1; num >= 0; num--)
+			{
+				Zone zone = oldMap.zoneManager.AllZones[num];
+				if (zone is Zone_MechanoidShutdown stutdown)
+				{
+					MoveableShutdownZone moveableShutdown = null;
+					foreach (IntVec3 cell in stutdown.Cells)
+					{
+						if (engineFloors.Contains(cell))
+						{
+							if (moveableShutdown == null)
+							{
+								moveableShutdown = new MoveableShutdownZone(gravship, stutdown);
+							}
+							moveableShutdown.Add(cell - origin);
+						}
+					}
+					if (moveableShutdown != null)
+					{
+						savedZones.Add(moveableShutdown);
+						zone.Delete();
+					}
+				}
+			}
+		}
 
 		public static List<RoomRoleDef> ConvertToDefs(this List<string> strings)
 		{
