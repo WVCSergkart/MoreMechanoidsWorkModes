@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<!-- Zones -->
+	<WVC_MechanoidShutdownZone>休眠區</WVC_MechanoidShutdownZone>
+	<WVC_MechanoidShutdownZoneDesc>機械體將在休眠前返回此處。</WVC_MechanoidShutdownZoneDesc>
+
+	<WVC_ShutdownZone_AllowWorkers>工作</WVC_ShutdownZone_AllowWorkers>
+	<WVC_ShutdownZone_AllowSafe>安全</WVC_ShutdownZone_AllowSafe>
+	<WVC_ShutdownZone_AllowCombatants>戰鬥</WVC_ShutdownZone_AllowCombatants>
+	<WVC_ShutdownZone_AllowAmbush>埋伏</WVC_ShutdownZone_AllowAmbush>
+
+	<WVC_ShutdownZone_BasicDesc>處於此類工作模式的機械體是否能夠在此區域內休眠。</WVC_ShutdownZone_BasicDesc>
+	
+	<WVC_WorkModes_allowAllGroups>允許所有控制組</WVC_WorkModes_allowAllGroups>
+	<WVC_WorkModes_allowAllGroupsDesc>所有機械體，無論是哪一控制組，都可以使用該區域。</WVC_WorkModes_allowAllGroupsDesc>
+
+	<WVC_WorkModes_On>是</WVC_WorkModes_On>
+	<WVC_WorkModes_Off>否</WVC_WorkModes_Off>
+
+	<!-- <WVC_ShutdownZoneInPrisonCell>休眠區不能位於監獄內。</WVC_ShutdownZoneInPrisonCell> -->
+	<!-- <WVC_ShutdownZoneNotStandable>休眠區不能位於無法通行的地形或其他物體上。</WVC_ShutdownZoneNotStandable> -->
+	<!-- <WVC_ShutdownZoneNotStandable>休眠區必須是可站立的區域。</WVC_ShutdownZoneNotStandable> -->
+
+	<!-- <WVC_MechanoidShutdownZone_FreeCells>區域未被機械體佔據: {0}</WVC_MechanoidShutdownZone_FreeCells> -->
+
+	<!-- Scavenge Zone -->
+	<WVC_MechanoidScavengeZone>搜刮區</WVC_MechanoidScavengeZone>
+	<WVC_MechanoidScavengeZoneDesc>在"搜刮"模式下的機械體將在此區域內尋找有用的資源。</WVC_MechanoidScavengeZoneDesc>
+
+	<WVC_MechanoidScavengeZone_CellsCount>大小: {0} | 允許的最小面積: {1}</WVC_MechanoidScavengeZone_CellsCount>
+	
+	<!-- SmartEscort -->
+	<WVC_WorkModes_AssignToPawnEscortLabel>分配給護衛</WVC_WorkModes_AssignToPawnEscortLabel>
+	<WVC_WorkModes_AssignToPawnEscortLabelReset>重置護衛目標</WVC_WorkModes_AssignToPawnEscortLabelReset>
+	<!-- <WVC_WorkModes_AssignedPawnEscortLabel>{0}已經分配給護衛{1}</WVC_WorkModes_AssignedPawnEscortLabel> -->
+	<WVC_WorkModes_AssignToPawnEscortDesc>{0}已經分配給護衛{1}
+
+允許你給機械體指定它將護衛的殖民者。
+
+{0}不能在遠行隊或非主地圖上護衛除監管者以外的人。</WVC_WorkModes_AssignToPawnEscortDesc>
+
+	<WVC_WorkModes_AssignToPawnEscortAssigned>{0}已經分配給護衛{1}。</WVC_WorkModes_AssignToPawnEscortAssigned>
+	<WVC_WorkModes_AssignToPawnEscortNoLongerEscort>{0}不再護衛{1}。</WVC_WorkModes_AssignToPawnEscortNoLongerEscort>
+	<WVC_WorkModes_EscortsAssignTargetLabel>分配給護衛{0}</WVC_WorkModes_EscortsAssignTargetLabel>
+
+	<!-- Job Givers -->
+	<WVC_WorkModes_ChangeModDefaultMessage>{0}模式尚未研究完成。重置為{1}模式。</WVC_WorkModes_ChangeModDefaultMessage>
+
+	<!-- Tech Req -->
+	<WVC_WorkModes_ModeTechnologyRequirement>需要研究專案:</WVC_WorkModes_ModeTechnologyRequirement>
+	<WVC_WorkModes_TechnologyAllowsModes>允許使用新模式:</WVC_WorkModes_TechnologyAllowsModes>
+	<WVC_WorkModes_TechnologyAllowsModes_Desc> - &lt;color=#00cccc&gt;{0}&lt;/color&gt;: {1}</WVC_WorkModes_TechnologyAllowsModes_Desc>
+
+	<!-- Group Zoning -->
+	<WVC_WorkModes_CurrentZoneGroup>當前控制組</WVC_WorkModes_CurrentZoneGroup>
+	<WVC_WorkModes_CurrentZoneOwner>當前所有者</WVC_WorkModes_CurrentZoneOwner>
+
+	<WVC_WorkModes_ChosenGroupLabel>分配控制組</WVC_WorkModes_ChosenGroupLabel>
+	<WVC_WorkModes_ChosenGroupDesc>允許你指定一組將返回此區域的機械體。</WVC_WorkModes_ChosenGroupDesc>
+	<WVC_WorkModes_GroupIsChosen>控制組 {0}被分配到{1}。</WVC_WorkModes_GroupIsChosen>
+
+	<WVC_WorkModes_ChosenMechanitorLabel>分配機械體</WVC_WorkModes_ChosenMechanitorLabel>
+	<WVC_WorkModes_ChosenMechanitorDesc>允許你分配此區域的所有者。</WVC_WorkModes_ChosenMechanitorDesc>
+	<WVC_WorkModes_MechanitorIsChosen>{0}被分配給{1}。</WVC_WorkModes_MechanitorIsChosen>
+
+	<WVC_WorkModes_ResetOwnerLabel>重置所有者</WVC_WorkModes_ResetOwnerLabel>
+	<WVC_WorkModes_ResetOwnerDesc>允許你重置該區域的所有者。</WVC_WorkModes_ResetOwnerDesc>
+	<WVC_WorkModes_ResetOwnerMessage>{0}的設定已重置。</WVC_WorkModes_ResetOwnerMessage>
+
+	<!-- Group Zoning Mechs -->
+	<WVC_WorkModes_RestrictZoneByGroupLabel>僅使用所屬控制組的分配區域</WVC_WorkModes_RestrictZoneByGroupLabel>
+	<WVC_WorkModes_RestrictZoneByGroupDesc>允許你將機械體的分配區域限制為專門指定給所屬控制組的分配區域。</WVC_WorkModes_RestrictZoneByGroupDesc>
+	<WVC_WorkModes_RestrictZoneByGroupInspect>僅使用所屬控制組的分配區域</WVC_WorkModes_RestrictZoneByGroupInspect>
+	
+	<WVC_WorkModes_DormantModeStatPart>處於休眠狀態 x{0}%</WVC_WorkModes_DormantModeStatPart>
+
+</LanguageData>

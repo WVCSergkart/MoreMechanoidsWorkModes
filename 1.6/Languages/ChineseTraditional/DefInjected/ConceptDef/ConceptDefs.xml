@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: More Mechanoids Work Modes - Behaviors -->
+  <WVC_MMWM_BehaviorsGuide.label>更多機械體工作模式——行為表現</WVC_MMWM_BehaviorsGuide.label>
+  <!-- EN: The mod adds some unique behaviors worth knowing about.\n\n-\nChecking for enemies on the map - if the enemy is reachable and is not in the zone in which the mechanoid operates, then False is returned and the mechanoid will continue to work normally.\n\nWhat does it mean:\nIf you enable the "Work if safe" mode and limit the working area, the mechanoid will ignore the intrusion until the enemy is in the mechanoid's working area.\n\nIf you have enabled the "Find and destroy" mode and locked the mechanoids in a small but open area, then the mechanoid will not pursue enemies, but will try to fight with the enemy that is in the field of view of the mechanoid. This can lead to too smart AI kiting your mechs.\n\n-\nSmart charge - In some modes, mechanoids will try to maintain close to the maximum charge. This is calculated according to the formula (Maximum charge level - 5), that is, if you set the charge to 100%, the mechanoids will be charged up to 95%, and so on. However, unlike vanilla charging, mechanoids will be interrupted if necessary.\n\n-\nShutdown mode - some work modes disable mechanoids for optimization when they are not doing anything. In work modes, the cooldown is much longer than in combat.\n\n-\nMechanoid shutdown zone - Mechanoids that have finished all their business and are going to sleep will go to the nearest such zone, if it is in an accessible area for them.\n\n-\nSmart escort - Mechanoids can be assigned an escort purpose. This way the mechanoids will be able to protect and accompany different pawns. This feature only works for the home map. -->
+  <WVC_MMWM_BehaviorsGuide.description>這個mod新增了一些值得了解的獨特行為。
+ 1.檢查地圖上的敵人——如果敵人在可到達但不在機械體允許的區域內，機械體將繼續正常工作。
+  
+這意味著
+如果啟用“安全時工作”模式並限制工作區域，機械體將忽略危險，直到敵人進入機械體的工作區域。
+
+如果您啟用了“搜尋並摧毀”模式，並將機械體限制在一個小而開放的區域，那麼機械體將不會追擊敵人，而是嘗試與處於機械體活動範圍內的敵人戰鬥。這可能導致“聰明”的ai風箏你的機械體。
+
+2.智慧充電——在某些模式下，機械體將自動充電至設定的充電規則-5%（如果你設定充電至100%則實際充電至95%）。然而，與原版充電不同的是，如果需要，機械體充電可以被打斷。
+
+3.在休眠模式——某些工作模式下機械體不工作時，會前往休眠區進行休眠。在工作模式下，休眠檢查間隔比在戰鬥中的長得多。
+
+4.休眠區——如果機械體已經完成了所有的工作，並且準備休眠，那麼它會去最近的休眠區，如果這個區域在它的活動內。
+
+5.智慧護衛 - 機械體可以被指定護衛目標。這樣機械體就能保護和跟隨不同的殖民者。此功能僅適用於主地圖。</WVC_MMWM_BehaviorsGuide.description>
+  <!-- EN: The mod adds some unique behaviors worth knowing about.\n\n-\nChecking for enemies on the map - if the enemy is reachable and is not in the zone in which the mechanoid operates, then False is returned and the mechanoid will continue to work normally.\n\nWhat does it mean:\nIf you enable the "Work if safe" mode and limit the working area, the mechanoid will ignore the intrusion until the enemy is in the mechanoid's working area.\n\nIf you have enabled the "Find and destroy" mode and locked the mechanoids in a small but open area, then the mechanoid will not pursue enemies, but will try to fight with the enemy that is in the field of view of the mechanoid. This can lead to too smart AI kiting your mechs.\n\n-\nSmart charge - In some modes, mechanoids will try to maintain close to the maximum charge. This is calculated according to the formula (Maximum charge level - 5), that is, if you set the charge to 100%, the mechanoids will be charged up to 95%, and so on. However, unlike vanilla charging, mechanoids will be interrupted if necessary.\n\n-\nShutdown mode - some work modes disable mechanoids for optimization when they are not doing anything. In work modes, the cooldown is much longer than in combat.\n\n-\nMechanoid shutdown zone - Mechanoids that have finished all their business and are going to sleep will go to a such zone, if it is in an accessible area for them.\n\n-\nSmart escort - Mechanoids can be assigned an escort purpose. This way the mechanoids will be able to protect and accompany different pawns. This feature only works for the home map. -->
+  <WVC_MMWM_BehaviorsGuide.helpText>這個mod新增了一些值得了解的獨特行為。
+1.檢查地圖上的敵人——如果敵人在可到達但不在機械體允許的區域內，機械體將繼續正常工作。
+
+這意味著
+如果啟用“安全時工作”模式並限制工作區域，機械體將忽略危險，直到敵人進入機械體的工作區域。
+
+如果您啟用了“搜尋並摧毀”模式，並將機械體限制在一個小而開放的區域，那麼機械體將不會追擊敵人，而是嘗試與處於機械體活動範圍內的敵人戰鬥。這可能導致“聰明”的ai風箏你的機械體。
+
+2.智慧充電——在某些模式下，機械體將自動充電至設定的充電規則-5%（如果你設定充電至100%則實際充電至95%）。然而，與原版充電不同的是，如果需要，機械體充電可以被打斷。
+
+3.休眠模式——在某些工作模式下機械體不工作時，會前往休眠區進行休眠。在工作模式下，休眠檢查間隔比在戰鬥中的長得多。
+
+4.休眠區——如果機械體已經完成了所有的工作，並且準備休眠，那麼它會去最近的休眠區，如果這個區域在它的活動內。
+
+5.智慧護衛 - 機械體可以被指定護衛目標。這樣機械體就能保護和跟隨不同的殖民者。此功能僅適用於主地圖。</WVC_MMWM_BehaviorsGuide.helpText>
+  
+</LanguageData>

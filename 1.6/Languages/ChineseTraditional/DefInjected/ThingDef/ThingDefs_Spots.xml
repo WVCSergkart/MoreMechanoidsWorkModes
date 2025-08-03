@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: mechanoid shutdown spot -->
+  <WVC_IdleOptimization_MechanoidShutdownSpot.label>休眠點</WVC_IdleOptimization_MechanoidShutdownSpot.label>
+  <!-- EN: Mechanoids will return here before shutting down.\n\n<color=#f5ffa2>Note:</color> Mechanoids will return here if there are no other spots. Except ambush. -->
+  <WVC_IdleOptimization_MechanoidShutdownSpot.description>機械體將在休眠前返回此處。\n\n&lt;color=#f5ffa2>注意:&lt;/color>如果沒有其它地點，機械體將於此處休眠。伏擊點除外。</WVC_IdleOptimization_MechanoidShutdownSpot.description>
+  
+  <!-- EN: ambush spot -->
+  <WVC_IOMSS_Ambush.label>伏擊點</WVC_IOMSS_Ambush.label>
+  <!-- EN: Mechanoids with the <color=#f5ffa2>"Ambush"</color> type mode will return here. -->
+  <WVC_IOMSS_Ambush.description>機械體處於 &lt;color=#f5ffa2>"埋伏"&lt;/color> 模式將於此處休眠。</WVC_IOMSS_Ambush.description>
+  
+  <!-- EN: safe spot -->
+  <WVC_IOMSS_TotallySafeSpot.label>安全點</WVC_IOMSS_TotallySafeSpot.label>
+  <!-- EN: Mechanoids with a <color=#f5ffa2>"Safe"</color> type mode will return here in case of danger. -->
+  <WVC_IOMSS_TotallySafeSpot.description>機械體處於 &lt;color=#f5ffa2>"安全"&lt;/color> 模式將於此處休眠。</WVC_IOMSS_TotallySafeSpot.description>
+  
+  <!-- EN: waiting spot -->
+  <WVC_IOMSS_WaitEnemy.label>候敵點</WVC_IOMSS_WaitEnemy.label>
+  <!-- EN: Mechanoids with the <color=#f5ffa2>"Combat"</color> type mode will return here. -->
+  <WVC_IOMSS_WaitEnemy.description>機械體處於 &lt;color=#f5ffa2>"戰鬥"&lt;/color> 模式將於此處休眠。</WVC_IOMSS_WaitEnemy.description>
+  
+  <!-- EN: worker spot -->
+  <WVC_IOMSS_WorkAndRecharge.label>工作點</WVC_IOMSS_WorkAndRecharge.label>
+  <!-- EN: Mechanoids with the <color=#f5ffa2>"Work"</color> type mode will return here. -->
+  <WVC_IOMSS_WorkAndRecharge.description>機械體處於 &lt;color=#f5ffa2>"工作"&lt;/color> 模式將於此處休眠。</WVC_IOMSS_WorkAndRecharge.description>
+  
+</LanguageData>
