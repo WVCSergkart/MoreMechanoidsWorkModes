@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <WVC_WorkModes_HiveMindResearch.label>機械體研究模式</WVC_WorkModes_HiveMindResearch.label>
+  <WVC_WorkModes_HiveMindResearch.description>允許你使用&lt;color=#00cccc&gt;"蜂巢思維研究"&lt;/color&gt;模式。在這種模式下，機械體會生成研究點數。</WVC_WorkModes_HiveMindResearch.description>
+
+  <WVC_WorkModes_Scavenging.label>搜刮模式</WVC_WorkModes_Scavenging.label>
+  <WVC_WorkModes_Scavenging.description>允許你使用&lt;color=#00cccc&gt;"搜刮"&lt;/color&gt;模式。在這種模式下，機械體將在搜刮區內搜尋有用的資源。</WVC_WorkModes_Scavenging.description>
+
+</LanguageData>

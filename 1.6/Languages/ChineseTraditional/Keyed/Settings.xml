@@ -1,44 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
-  <WVC_MMWM_Settings>工作模式</WVC_MMWM_Settings>
+	<WVC_MMWM_Settings>Work Modes工作模式</WVC_MMWM_Settings>
 
-  <WVC_Label_MainModeLabelSetting>主要</WVC_Label_MainModeLabelSetting>
-  <WVC_Label_BonusModeLabelSetting>獎勵</WVC_Label_BonusModeLabelSetting>
+	<WVC_Label_MainModeLabelSetting>主要</WVC_Label_MainModeLabelSetting>
+	<WVC_Label_BonusModeLabelSetting>其它</WVC_Label_BonusModeLabelSetting>
+	<WVC_Label_WorkModeMechanicsLabelSetting>機械體</WVC_Label_WorkModeMechanicsLabelSetting>
 
-  <!-- Main -->
-  <WVC_Label_FindAndDestroy>殲滅</WVC_Label_FindAndDestroy>
-  <WVC_Label_WaitEnemy>待命</WVC_Label_WaitEnemy>
-  <WVC_Label_WorkAndWaitEnemy>役兵</WVC_Label_WorkAndWaitEnemy>
-  <WVC_Label_DefendYourself>自衛</WVC_Label_DefendYourself>
-  <WVC_Label_Ambush>伏擊</WVC_Label_Ambush>
-  <WVC_Label_WorkAndRecharge>工人</WVC_Label_WorkAndRecharge>
-  <WVC_Label_SafeWorkAndRecharge>自保</WVC_Label_SafeWorkAndRecharge>
-  <WVC_Label_EscaortAndRecharge>護衛</WVC_Label_EscaortAndRecharge>
-  <WVC_Label_WorkRechargeEscort>侍衛</WVC_Label_WorkRechargeEscort>
-  <WVC_Label_EscortIfEnemyOnMap>守衛</WVC_Label_EscortIfEnemyOnMap>
+	<WVC_WorkModes_ResetButton>重置</WVC_WorkModes_ResetButton>
 
-  <WVC_ToolTip_Setting>禁用與保存不兼容。需要重新啟動才能應用設置。</WVC_ToolTip_Setting>
+	<WVC_WorkModes_ResetButtonWarning>設定將被更改，你確定嗎？</WVC_WorkModes_ResetButtonWarning>
+	<WVC_WorkModes_ResetButton_SettingsChanged>設定已被更改</WVC_WorkModes_ResetButton_SettingsChanged>
 
-  <!-- Bonus -->
-  <WVC_Label_EscortIfEnemyWorkAndRecharge>管家</WVC_Label_EscortIfEnemyWorkAndRecharge>
+	<!-- Main -->
+	<WVC_Label_FindAndDestroy>搜尋並摧毀</WVC_Label_FindAndDestroy>
+	<WVC_Label_WaitEnemy>候敵</WVC_Label_WaitEnemy>
+	<WVC_Label_WorkAndWaitEnemy>工作並候敵</WVC_Label_WorkAndWaitEnemy>
+	<WVC_Label_DefendYourself>自我保護</WVC_Label_DefendYourself>
+	<WVC_Label_Ambush>伏擊</WVC_Label_Ambush>
+	<WVC_Label_WorkAndRecharge>工作並充電</WVC_Label_WorkAndRecharge>
+	<WVC_Label_SafeWorkAndRecharge>安全時工作</WVC_Label_SafeWorkAndRecharge>
+	<WVC_Label_EscaortAndRecharge>護衛並充電</WVC_Label_EscaortAndRecharge>
+	<WVC_Label_WorkRechargeEscort>工作、充電並護衛</WVC_Label_WorkRechargeEscort>
+	<WVC_Label_EscortIfEnemyOnMap>來敵時護衛</WVC_Label_EscortIfEnemyOnMap>
+	<WVC_Label_RechargeAndShutdown>充電並休眠</WVC_Label_RechargeAndShutdown>
 
-  <WVC_ToolTip_BonusSetting>獎勵模式。默認情況下禁用。啟用後與保存檔案兼容。</WVC_ToolTip_BonusSetting>
+	<WVC_ToolTip_Setting>禁用之後不會立即應用到存檔，需要重新啟動才能應用設定。</WVC_ToolTip_Setting>
 
-  <WVC_Label_enableShutdownSearching>啟用休眠搜索</WVC_Label_enableShutdownSearching>
-  <WVC_ToolTip_enableShutdownSearching>如果啟用，機械族在休眠前會尋找點位。</WVC_ToolTip_enableShutdownSearching>
+	<!-- Bonus -->
+	<WVC_Label_EscortIfEnemyWorkAndRecharge>護衛、工作並充電</WVC_Label_EscortIfEnemyWorkAndRecharge>
+	<WVC_Label_EscortIfDraftedOrDowned>徵召時護衛</WVC_Label_EscortIfDraftedOrDowned>
+	<WVC_Label_HiveMindResearching>蜂巢思維研究</WVC_Label_HiveMindResearching>
+	<WVC_Label_Scavenging>搜刮</WVC_Label_Scavenging>
+	<WVC_Label_ScavenZoneCells>搜刮區最小面積: {0}</WVC_Label_ScavenZoneCells>
 
-  <WVC_Label_enableEnemySearching>啟用索敵</WVC_Label_enableEnemySearching>
-  <WVC_ToolTip_enableEnemySearching>如果啟用，機械族在自保模式下將檢索地圖上是否有敵人。</WVC_ToolTip_enableEnemySearching>
+	<WVC_ToolTip_BonusSetting>其他模式。預設禁用。可以在存檔中途開啟。</WVC_ToolTip_BonusSetting>
 
-  <WVC_ToolTip_enableSearchingWarning>如果不了解此選項的作用，請保持啟用狀態。</WVC_ToolTip_enableSearchingWarning>
+	<!-- Idle Optimization -->
+	<WVC_Label_enableShutdownForAllMechanoids>原版模式空閒最佳化</WVC_Label_enableShutdownForAllMechanoids>
+	<WVC_ToolTip_enableShutdownForAllMechanoids>如果允許，空閒最佳化也將影響原版模式。</WVC_ToolTip_enableShutdownForAllMechanoids>
 
-  <WVC_Label_enableShutdownForAllMechanoids>閒置優化（經典模式）</WVC_Label_enableShutdownForAllMechanoids>
-  <WVC_ToolTip_enableShutdownForAllMechanoids>如果啟用，閒置優化將對經典模式產生影響。</WVC_ToolTip_enableShutdownForAllMechanoids>
+	<WVC_Label_enableSmartChargingForAllMechanoids>原版模式智慧充電</WVC_Label_enableSmartChargingForAllMechanoids>
+	<WVC_ToolTip_enableSmartChargingForAllMechanoids>如果允許, 處於原版模式的機械體將在工作空閒狀態前往充電而非在能量耗盡時。</WVC_ToolTip_enableSmartChargingForAllMechanoids>
 
-  <WVC_Label_enableSmartChargingForAllMechanoids>智能充電（經典模式）</WVC_Label_enableSmartChargingForAllMechanoids>
-  <WVC_ToolTip_enableSmartChargingForAllMechanoids>如果啟用，機械族在閒置時前往充電，而不是電量耗盡時。</WVC_ToolTip_enableSmartChargingForAllMechanoids>
+	<WVC_ToolTip_VanillaModeOptimizationWarning>不會影響戰鬥類機械體，因為它們的空閒狀態已被巡邏狀態所取代。</WVC_ToolTip_VanillaModeOptimizationWarning>
 
-  <WVC_ToolTip_VanillaModeOptimizationWarning>不會影響戰鬥機械族，因為它們的閒置已被模擬巡邏取代。</WVC_ToolTip_VanillaModeOptimizationWarning>
+	<!-- Features -->
+	<WVC_Label_enableShutdownSearching>允許搜尋休眠區</WVC_Label_enableShutdownSearching>
+	<WVC_ToolTip_enableShutdownSearching>如果允許，機械體將在休眠前尋找休眠區。</WVC_ToolTip_enableShutdownSearching>
+	<WVC_Label_enable_GoToShutdownRoomJob>啟用機械體機庫房間（Beta）</WVC_Label_enable_GoToShutdownRoomJob>
+	<WVC_ToolTip_enable_GoToShutdownRoomJob>啟用後，所有機械體充電器將建立一種新的房間類型：「機械體機庫」。如果沒有其他區域可選擇，機械體會在這裡休眠。</WVC_ToolTip_enable_GoToShutdownRoomJob>
+
+	<WVC_Label_enableEnemySearching>允許搜尋敵人</WVC_Label_enableEnemySearching>
+	<WVC_ToolTip_enableEnemySearching>如果允許，在安全模式，機械體將在全圖範圍尋找敵人。</WVC_ToolTip_enableEnemySearching>
+
+	<WVC_ToolTip_enableSearchingWarning>如果你不理解選項的含義，請保持啟用。</WVC_ToolTip_enableSearchingWarning>
+
+	<WVC_Label_enableSmartEscort>智慧護衛</WVC_Label_enableSmartEscort>
+	<WVC_ToolTip_enableSmartEscort>如果啟用，它允許您為機械體選擇護衛目標。
+
+需要重新啟動！</WVC_ToolTip_enableSmartEscort>
+
+	<WVC_Label_shutdownModeZonesOrSpots>休眠模式: 休眠區/休眠點</WVC_Label_shutdownModeZonesOrSpots>
+	<WVC_ToolTip_shutdownModeZonesOrSpots>如果啟用，將使用休眠區。禁止則使用休眠點。建議啟用它。
+	
+此選項適用於高階使用者。如果你不知道休眠點是什麼，那就啟用它。
+
+需要重新啟動！</WVC_ToolTip_shutdownModeZonesOrSpots>
+
+	<WVC_Label_useCustomShutdownBehavior>使用模組的休眠邏輯</WVC_Label_useCustomShutdownBehavior>
+	<WVC_ToolTip_useCustomShutdownBehavior>原版裡的機械體太蠢了，但是可靠。如果你發現了和機械體休眠相關的bug，請禁用這個選項。 </WVC_ToolTip_useCustomShutdownBehavior>
+
+	<WVC_Label_enableDormantMode>冬眠模式</WVC_Label_enableDormantMode>
+	<WVC_ToolTip_enableDormantMode>如果啟用，當機械體處於休眠狀態時，不會佔據頻寬。
+
+如果出現效能問題，建議禁用它。
+
+需要重新啟動！</WVC_ToolTip_enableDormantMode>
+	<WVC_Label_mechBandwithCostInDormantMode>冬眠模式頻寬佔用係數 x{0}%</WVC_Label_mechBandwithCostInDormantMode>
+
+	<WVC_WM_Label_enableAutoRepairByDefault>預設情況下啟用自動修復</WVC_WM_Label_enableAutoRepairByDefault>
+	<WVC_WM_ToolTip_enableAutoRepairByDefault>機械體生成後，將啟用自動修復。</WVC_WM_ToolTip_enableAutoRepairByDefault>
 
 </LanguageData>
