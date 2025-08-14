@@ -10,10 +10,10 @@ namespace WVC_WorkModes
 		public int tickInterval = 3000;
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			if (!ShouldAutoRecharge(pawn))
-			{
-				return null;
-			}
+			//if (!ShouldAutoRecharge(pawn))
+			//{
+			//	return null;
+			//}
 			if (WVC_MMWM.settings.useCustomShutdownBehavior)
 			{
 				if (ShutdownUtility.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
