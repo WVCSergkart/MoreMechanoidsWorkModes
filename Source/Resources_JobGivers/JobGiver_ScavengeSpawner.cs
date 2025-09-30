@@ -21,7 +21,7 @@ namespace WVC_WorkModes
 		public float chanceToSuccess = 0.05f;
 
 		[Obsolete]
-		public StatDef statDef;
+		public string statDef;
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
