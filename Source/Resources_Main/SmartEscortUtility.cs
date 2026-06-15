@@ -1,4 +1,5 @@
 using RimWorld;
+using System;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
@@ -17,8 +18,8 @@ namespace WVC_WorkModes
 				//{
 				//	return null;
 				//}
-				CompMechSettings comp = pawn.TryGetComp<CompMechSettings>();
-				if(comp != null && AssignedPawnAtHome(comp.escortTarget))
+				CompMechSettings comp = pawn.GetMechSettings();
+				if(comp != null && comp?.escortTarget?.Map == pawn.Map)
 				{
 					return comp.escortTarget;
 				}
@@ -26,6 +27,7 @@ namespace WVC_WorkModes
 			return pawn.GetOverseer();
 		}
 
+		[Obsolete]
 		public static bool AssignedPawnAtHome(Pawn pawn)
 		{
 			if (pawn?.Map?.IsPlayerHome == true)

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- =========================================================== -->
+
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
+		<settingName>WVC_EscortIfDraftedOrDowned</settingName>
+		<active Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationInsert">
+					<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
+					<value>
+					  <li Class="ThinkNode_ConditionalWorkMode">
+						<workMode>WVC_EscortIfDraftedOrDowned</workMode>
+						<subNodes>
+						  <!-- Drafted == true -->
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalDrafted">
+							<subNodes>
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" />
+							  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+							</subNodes>
+						  </li>
+						  <!-- Drafted == false -->
+						  <!-- Downed == true -->
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalDowned">
+							<subNodes>
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
+							  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>
+							  <li Class="JobGiver_AIFightEnemies">
+								<targetAcquireRadius>65</targetAcquireRadius>
+								<targetKeepRadius>72</targetKeepRadius>
+							  </li>
+							  <!-- <li Class="WVC_WorkModes.JobGiver_SmartAIWaitWithOverseer" /> -->
+							  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
+							</subNodes>
+						  </li>
+						  <!-- Downed == false -->
+						  <li Class="JobGiver_SeekAllowedArea" />
+						  <li Class="JobGiver_GetEnergy_Charger" />
+						  <!-- if shutdown allowed -->
+						  <li Class="WVC_WorkModes.ThinkNode_CanShutdown">
+							<subNodes>
+							  <!-- Go to smart charge -->
+							  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+								<tickInterval>625</tickInterval>
+							  </li>
+							  <!-- Go to spot -->
+							  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+								<!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
+								<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+							  <!-- </li> -->
+							  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+								<workModeType>Combat</workModeType>
+								<possibleRooms>
+									<li>WVC_MechHangar</li>
+								</possibleRooms>
+							  </li>
+							  <!-- Shutdown long -->
+							  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+								<forced>true</forced>
+							  </li>
+							</subNodes>
+						  </li>
+						</subNodes>
+					  </li>
+					</value>
+				</li>
+			</operations>
+		</active>
+		<deActive Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/MechWorkModeDef[defName="WVC_EscortIfDraftedOrDowned"]</xpath>
+					<success>Always</success>
+				</li>
+			</operations>
+		</deActive>
+	</Operation>
+
+</Patch>

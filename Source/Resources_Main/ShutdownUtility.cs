@@ -18,6 +18,26 @@ namespace WVC_WorkModes
 	public static class ShutdownUtility
 	{
 
+		public static readonly CachedTexture Icon_CanShutdown_Yes = new("WVC/UI/WorkModes_General/CanShutdown_Yes");
+		public static readonly CachedTexture Icon_CanShutdown_No = new("WVC/UI/WorkModes_General/CanShutdown_No");
+
+		public static void ResetAllStaticCache()
+		{
+			cachedMechSettings = null;
+			ThinkNode_CanShutdown.ResetCache();
+			// .ResetCache();
+		}
+
+		private static CompMechSettings cachedMechSettings;
+		public static CompMechSettings GetMechSettings(this Pawn mech)
+		{
+			if (cachedMechSettings == null || cachedMechSettings.Mech != mech)
+			{
+				cachedMechSettings = mech.TryGetComp<CompMechSettings>();
+			}
+			return cachedMechSettings;
+		}
+
 		public static void CopyZonesIntoMap(ref List<MoveableShutdownZone> savedZones, Gravship gravship, Map map, IntVec3 root)
 		{
 			foreach (MoveableShutdownZone stockpile in savedZones)
@@ -222,7 +242,7 @@ namespace WVC_WorkModes
 
 		public static bool MechZoneRestricted(Pawn mech)
 		{
-			return mech?.TryGetComp<CompMechSettings>()?.restrictZoneByGroup == true;
+			return mech?.GetMechSettings()?.restrictZoneByGroup == true;
 		}
 
 		// Shutdown Check

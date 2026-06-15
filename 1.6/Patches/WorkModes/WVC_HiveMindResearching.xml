@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- =========================================================== -->
+
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
+		<settingName>WVC_HiveMindResearching</settingName>
+		<active Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationInsert">
+					<xpath>/Defs/ThinkTreeDef/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[workMode="Work"]</xpath>
+					<value>
+					  <li Class="ThinkNode_ConditionalWorkMode">
+						<workMode>WVC_HiveMindResearching</workMode>
+						<subNodes>
+						  <!-- <li Class="WVC_WorkModes.ThinkNode_ConditionalResearchProjects"> -->
+							<!-- <invert>true</invert> -->
+							<!-- <allOfResearchProjects> -->
+							  <!-- <li>WVC_WorkModes_HiveMindResearch</li> -->
+							<!-- </allOfResearchProjects> -->
+							<!-- <subNodes> -->
+							  <!-- <li Class="WVC_WorkModes.JobGiver_ChangeMode"> -->
+								<!-- <workMode>Work</workMode> -->
+							  <!-- </li> -->
+							<!-- </subNodes> -->
+						  <!-- </li> -->
+						  <!-- Find Enemy -->
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
+							<subNodes>
+							  <!-- If Danger -->
+							  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
+								<!-- <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName> -->
+								<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
+							  <!-- </li> -->
+							  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+								<workModeType>Safe</workModeType>
+								<possibleRooms>
+									<li>WVC_MechHangar</li>
+								</possibleRooms>
+							  </li>
+							  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+								<tickInterval>1500</tickInterval>
+								<forced>true</forced>
+							  </li>
+							</subNodes>
+						  </li>
+						  <!-- If Safe -->
+						  <li Class="JobGiver_SeekAllowedArea" />
+						  <li Class="JobGiver_GetEnergy_Charger" />
+						  <li Class="WVC_WorkModes.ThinkNode_ConditionalCanRepair">
+							<subNodes>
+							  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
+								<workModeType>Safe</workModeType>
+								<possibleRooms>
+									<li>WVC_MechHangar</li>
+								</possibleRooms>
+							  </li>
+							  <!-- Very-very long shutdown -->
+							  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+								<tickInterval>6000</tickInterval>
+								<forced>true</forced>
+							  </li>
+							</subNodes>
+						  </li>
+						  <li Class="WVC_WorkModes.JobGiver_MechDoResearch">
+							<statDef>BandwidthCost</statDef>
+							<researchAmount>10</researchAmount>
+						  </li>
+						  <li Class="JobGiver_WanderColony">
+							<maxDanger>Deadly</maxDanger>
+							<locomotionUrgency>Amble</locomotionUrgency>
+							<reportStringOverride>Researching.</reportStringOverride>
+						  </li>
+						</subNodes>
+					  </li>
+					</value>
+				</li>
+			</operations>
+		</active>
+		<deActive Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/MechWorkModeDef[defName="WVC_HiveMindResearching"]</xpath>
+					<success>Always</success>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ResearchProjectDef[defName="WVC_WorkModes_HiveMindResearch"]</xpath>
+					<success>Always</success>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/WVC_WorkModes.WorkModeResearchRequirementDef[defName="WVC_WorkModes_HiveMindResearch"]</xpath>
+					<success>Always</success>
+				</li>
+			</operations>
+		</deActive>
+	</Operation>
+
+</Patch>

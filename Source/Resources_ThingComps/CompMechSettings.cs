@@ -33,20 +33,22 @@ namespace WVC_WorkModes
 
 		// public List<MechWorkModeDef> cachedShutdownModes;
 
+		public bool allowShutdown = true;
+
 		public CompProperties_MechSettings Props => (CompProperties_MechSettings)props;
 
 		[Unsaved(false)]
-		private Pawn overseer = null;
+		private Pawn cachedOverseer = null;
 
 		public Pawn Overseer
         {
 			get
             {
-				if (overseer?.mechanitor == null)
+				if (cachedOverseer?.mechanitor == null)
                 {
-					overseer = Mech.GetOverseer();
+					cachedOverseer = Mech.GetOverseer();
 				}
-				return overseer;
+				return cachedOverseer;
             }
 		}
 
@@ -58,35 +60,29 @@ namespace WVC_WorkModes
 			}
 		}
 
+		private Texture2D AllowShutdownIcon => (allowShutdown ? ShutdownUtility.Icon_CanShutdown_Yes : ShutdownUtility.Icon_CanShutdown_No).Texture;
+
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()
 		{
 			if (parent.Faction != Faction.OfPlayer)
 			{
 				yield break;
 			}
-			yield return new Command_Action
+			foreach (Gizmo gizmo in ShutdownSettings())
 			{
-				defaultLabel = "WVC_WorkModes_RestrictZoneByGroupLabel".Translate().Resolve() + ": " + "\n" + Zone_MechanoidShutdown.OnOrOff(restrictZoneByGroup),
-				defaultDesc = "WVC_WorkModes_RestrictZoneByGroupDesc".Translate(),
-				icon = ContentFinder<Texture2D>.Get(Props.uiIconZoneRestrict),
-				shrinkable = true,
-				action = delegate
-				{
-					restrictZoneByGroup = !restrictZoneByGroup;
-					if (restrictZoneByGroup)
-					{
-						SoundDefOf.Tick_High.PlayOneShotOnCamera();
-					}
-					else
-					{
-						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
-					}
-				}
-			};
-			if (!WVC_MMWM.settings.enableSmartEscort)
-			{
-				yield break;
+				yield return gizmo;
 			}
+			if (WVC_MMWM.settings.enableSmartEscort)
+			{
+				foreach (Gizmo gizmo in SmartEscortSettings())
+				{
+					yield return gizmo;
+				}
+			}
+		}
+
+		private IEnumerable<Gizmo> SmartEscortSettings()
+		{
 			if (Overseer == null)
 			{
 				yield break;
@@ -123,7 +119,7 @@ namespace WVC_WorkModes
 							{
 								foreach (Pawn item2 in Find.Selector.SelectedPawns.Where((Pawn p) => p.RaceProps.IsMechanoid))
 								{
-									CompMechSettings comp = item2.TryGetComp<CompMechSettings>();
+									CompMechSettings comp = item2.GetMechSettings();
 									if (comp != null)
 									{
 										comp.escortTarget = localPawn;
@@ -149,7 +145,7 @@ namespace WVC_WorkModes
 				{
 					foreach (Pawn item2 in Find.Selector.SelectedPawns.Where((Pawn p) => p.RaceProps.IsMechanoid))
 					{
-						CompMechSettings comp = item2.TryGetComp<CompMechSettings>();
+						CompMechSettings comp = item2.GetMechSettings();
 						if (comp != null)
 						{
 							comp.escortTarget = null;
@@ -160,9 +156,55 @@ namespace WVC_WorkModes
 			};
 		}
 
+		private IEnumerable<Gizmo> ShutdownSettings()
+		{
+			yield return new Command_Action
+			{
+				defaultLabel = "WVC_WorkModes_AllowShutdownLabel".Translate().Resolve(),
+				defaultDesc = "WVC_WorkModes_AllowShutdownDesc".Translate(),
+				icon = AllowShutdownIcon,
+				shrinkable = true,
+				action = delegate
+				{
+					allowShutdown = !allowShutdown;
+					if (allowShutdown)
+					{
+						SoundDefOf.Tick_High.PlayOneShotOnCamera();
+					}
+					else
+					{
+						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+					}
+					ThinkNode_CanShutdown.ResetCache();
+				}
+			};
+			if (allowShutdown)
+			{
+				yield return new Command_Action
+				{
+					defaultLabel = "WVC_WorkModes_RestrictZoneByGroupLabel".Translate().Resolve() + ": " + "\n" + Zone_MechanoidShutdown.OnOrOff(restrictZoneByGroup),
+					defaultDesc = "WVC_WorkModes_RestrictZoneByGroupDesc".Translate(),
+					icon = ContentFinder<Texture2D>.Get(Props.uiIconZoneRestrict),
+					shrinkable = true,
+					action = delegate
+					{
+						restrictZoneByGroup = !restrictZoneByGroup;
+						if (restrictZoneByGroup)
+						{
+							SoundDefOf.Tick_High.PlayOneShotOnCamera();
+						}
+						else
+						{
+							SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+						}
+					}
+				};
+			}
+		}
+
 		public Pawn escortTarget = null;
 
-		private List<MechWorkModeDef> cachedEscortModes = null;
+		private static List<MechWorkModeDef> cachedEscortModes = null;
 
 		public Pawn GetEscortee(Pawn pawn)
 		{
@@ -219,6 +261,11 @@ namespace WVC_WorkModes
 			//Scribe_References.Look(ref overseer, "overseer");
 			Scribe_References.Look(ref escortTarget, "escortTarget");
 			Scribe_Values.Look(ref autoRepairUpdated, "autoRepairUpdated", false);
+			Scribe_Values.Look(ref allowShutdown, "allowShutdown", true);
+			if (Scribe.mode == LoadSaveMode.PostLoadInit)
+			{
+				ThinkNode_CanShutdown.ResetCache();
+			}
 		}
 
 	}

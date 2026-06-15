@@ -82,6 +82,7 @@
     <Compile Include="Resources_ThingComps\CompMechSettings.cs" />
     <Compile Include="Resources_ThingComps\CompProperties_ShutdownRoom.cs" />
     <Compile Include="Resources_ThingComps\CompSmartEscort.cs" />
+    <Compile Include="Resources_ThinkNodes\ThinkNode_CanShutdown.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalAnyScavengeZone.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalCanRepair.cs" />
     <Compile Include="Resources_ThinkNodes\ThinkNode_ConditionalDraftedOrDowned.cs" />

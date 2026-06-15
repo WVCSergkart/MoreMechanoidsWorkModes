@@ -77,4 +77,14 @@ Allows you to specify to the mechanoid what colonist it will escort.
 
 	<WVC_WM_ShutdownGroup>shutdown</WVC_WM_ShutdownGroup>
 
+	<!-- Performance -->
+	<WVC_WorkModes_EnemyCheckDelay>Enemy check delay {0} ticks</WVC_WorkModes_EnemyCheckDelay>
+	<WVC_WorkModes_EnemyCheckDelayDesc>Allows you to set the delay between checks for enemy presence on the map. Used in safe modes. 60 ticks = 1 second.
+
+Higher values ​​improve performance, but are detrimental to mechanoid responsiveness.</WVC_WorkModes_EnemyCheckDelayDesc>
+
+	<!-- Can shutdown check -->
+	<WVC_WorkModes_AllowShutdownLabel>Allow shutdown</WVC_WorkModes_AllowShutdownLabel>
+	<WVC_WorkModes_AllowShutdownDesc>Allows you to disable or enable shutdown for a specific mech.</WVC_WorkModes_AllowShutdownDesc>
+
 </LanguageData>

@@ -1,6 +1,7 @@
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using UnityEngine;
 using Verse;
 
@@ -41,6 +42,7 @@ namespace WVC_WorkModes
 		public bool dormantMode = false;
 		public int mechBandwithCostInDormantMode = 0;
 		public bool enableAutoRepairByDefault = true;
+		public int enemyCheckDelay = 120;
 
 		public IEnumerable<string> GetEnabledSettings => from specificSetting in GetType().GetFields()
 			where specificSetting.FieldType == typeof(bool) && (bool)specificSetting.GetValue(this)
@@ -51,25 +53,25 @@ namespace WVC_WorkModes
 			base.ExposeData();
 			Scribe_Values.Look(ref firstModLaunch, "firstModLaunch", defaultValue: true, forceSave: true);
 			// Main
-			Scribe_Values.Look(ref WVC_FindAndDestroy, "WVC_FindAndDestroy", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref WVC_WaitEnemy, "WVC_WaitEnemy", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref WVC_WorkAndWaitEnemy, "WVC_WorkAndWaitEnemy", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref WVC_DefendYourself, "WVC_DefendYourself", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref WVC_Ambush, "WVC_Ambush", defaultValue: true, forceSave: true);
+			Scribe_Values.Look(ref WVC_FindAndDestroy, "WVC_FindAndDestroy", defaultValue: true);
+			Scribe_Values.Look(ref WVC_WaitEnemy, "WVC_WaitEnemy", defaultValue: true);
+			Scribe_Values.Look(ref WVC_WorkAndWaitEnemy, "WVC_WorkAndWaitEnemy", defaultValue: true);
+			Scribe_Values.Look(ref WVC_DefendYourself, "WVC_DefendYourself", defaultValue: true);
+			Scribe_Values.Look(ref WVC_Ambush, "WVC_Ambush", defaultValue: true);
 
-			Scribe_Values.Look(ref WVC_WorkAndRecharge, "WVC_WorkAndRecharge", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref WVC_SafeWorkAndRecharge, "WVC_SafeWorkAndRecharge", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref WVC_EscaortAndRecharge, "WVC_EscaortAndRecharge", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref WVC_WorkRechargeEscort, "WVC_WorkRechargeEscort", defaultValue: true, forceSave: true);
-			Scribe_Values.Look(ref WVC_EscortIfEnemyOnMap, "WVC_EscortIfEnemyOnMap", defaultValue: true, forceSave: true);
+			Scribe_Values.Look(ref WVC_WorkAndRecharge, "WVC_WorkAndRecharge", defaultValue: true);
+			Scribe_Values.Look(ref WVC_SafeWorkAndRecharge, "WVC_SafeWorkAndRecharge", defaultValue: true);
+			Scribe_Values.Look(ref WVC_EscaortAndRecharge, "WVC_EscaortAndRecharge", defaultValue: true);
+			Scribe_Values.Look(ref WVC_WorkRechargeEscort, "WVC_WorkRechargeEscort", defaultValue: true);
+			Scribe_Values.Look(ref WVC_EscortIfEnemyOnMap, "WVC_EscortIfEnemyOnMap", defaultValue: true);
 
-			Scribe_Values.Look(ref WVC_RechargeAndShutdown, "WVC_RechargeAndShutdown", defaultValue: true, forceSave: true);
+			Scribe_Values.Look(ref WVC_RechargeAndShutdown, "WVC_RechargeAndShutdown", defaultValue: true);
 
-			Scribe_Values.Look(ref WVC_EscortIfEnemyWorkAndRecharge, "WVC_EscortIfEnemyWorkAndRecharge", defaultValue: false, forceSave: true);
-			Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false, forceSave: true);
-			Scribe_Values.Look(ref WVC_HiveMindResearching, "WVC_HiveMindResearching", defaultValue: false, forceSave: true);
-			Scribe_Values.Look(ref WVC_Scavenging, "WVC_Scavenging", defaultValue: false, forceSave: true);
-			Scribe_Values.Look(ref WVC_Scavenging_ReqCells, "WVC_Scavenging_ReqCells", defaultValue: 120, forceSave: true);
+			Scribe_Values.Look(ref WVC_EscortIfEnemyWorkAndRecharge, "WVC_EscortIfEnemyWorkAndRecharge", defaultValue: false);
+			Scribe_Values.Look(ref WVC_EscortIfDraftedOrDowned, "WVC_EscortIfDraftedOrDowned", defaultValue: false);
+			Scribe_Values.Look(ref WVC_HiveMindResearching, "WVC_HiveMindResearching", defaultValue: false);
+			Scribe_Values.Look(ref WVC_Scavenging, "WVC_Scavenging", defaultValue: false);
+			Scribe_Values.Look(ref WVC_Scavenging_ReqCells, "WVC_Scavenging_ReqCells", defaultValue: 120);
 
 			// Mechanics
 			Scribe_Values.Look(ref enable_GoToShutdownZoneJob, "enableShutdownSearching", defaultValue: true);
@@ -79,6 +81,7 @@ namespace WVC_WorkModes
 			Scribe_Values.Look(ref useCustomShutdownBehavior, "useCustomShutdownBehavior", defaultValue: true);
 			Scribe_Values.Look(ref dormantMode, "dormantMode", defaultValue: false);
 			Scribe_Values.Look(ref enableAutoRepairByDefault, "enableAutoRepairByDefault", defaultValue: true);
+			Scribe_Values.Look(ref enemyCheckDelay, "enemyCheckDelay", defaultValue: 120);
 		}
 	}
 
@@ -137,6 +140,7 @@ namespace WVC_WorkModes
 			listingStandard.CheckboxLabeled("WVC_Label_enableDormantMode".Translate(), ref settings.dormantMode, "WVC_ToolTip_enableDormantMode".Translate());
 			listingStandard.SliderLabeledWithRef("WVC_Label_mechBandwithCostInDormantMode".Translate(settings.mechBandwithCostInDormantMode.ToString()), ref settings.mechBandwithCostInDormantMode, 0, 100);
 			listingStandard.CheckboxLabeled("WVC_WM_Label_enableAutoRepairByDefault".Translate(), ref settings.enableAutoRepairByDefault, "WVC_WM_ToolTip_enableAutoRepairByDefault".Translate());
+			listingStandard.SliderLabeledWithRef("WVC_WorkModes_EnemyCheckDelay".Translate(settings.enemyCheckDelay.ToString()), ref settings.enemyCheckDelay, 0, 6000, "WVC_WorkModes_EnemyCheckDelayDesc".Translate());
 			// =============== Buttons ===============
 			listingStandard.GapLine();
 			if (listingStandard.ButtonText("WVC_WorkModes_ResetButton".Translate()))
@@ -161,37 +165,38 @@ namespace WVC_WorkModes
 		public static void ResetSettings_Default()
 		{
 			// =
-			WVC_MMWM.settings.WVC_FindAndDestroy = true;
-			WVC_MMWM.settings.WVC_WaitEnemy = true;
-			WVC_MMWM.settings.WVC_WorkAndWaitEnemy = true;
-			WVC_MMWM.settings.WVC_DefendYourself = true;
-			WVC_MMWM.settings.WVC_Ambush = true;
-			// =
-			WVC_MMWM.settings.WVC_WorkAndRecharge = true;
-			WVC_MMWM.settings.WVC_SafeWorkAndRecharge = true;
-			WVC_MMWM.settings.WVC_EscaortAndRecharge = true;
-			WVC_MMWM.settings.WVC_WorkRechargeEscort = true;
-			WVC_MMWM.settings.WVC_EscortIfEnemyOnMap = true;
-			// =
-			WVC_MMWM.settings.WVC_RechargeAndShutdown = true;
-			// =
-			WVC_MMWM.settings.WVC_EscortIfEnemyWorkAndRecharge = false;
-			WVC_MMWM.settings.WVC_EscortIfDraftedOrDowned = false;
-			WVC_MMWM.settings.WVC_HiveMindResearching = false;
-			WVC_MMWM.settings.WVC_Scavenging = false;
-			WVC_MMWM.settings.WVC_Scavenging_ReqCells = 120;
-			// Features
-			WVC_MMWM.settings.enable_GoToShutdownZoneJob = true;
-			WVC_MMWM.settings.enable_GoToShutdownRoomJob = true;
-			WVC_MMWM.settings.enableEnemySearching = true;
-			WVC_MMWM.settings.enableSmartEscort = true;
-			WVC_MMWM.settings.useCustomShutdownBehavior = true;
-			WVC_MMWM.settings.dormantMode = false;
-			WVC_MMWM.settings.mechBandwithCostInDormantMode = 0;
-			WVC_MMWM.settings.enableAutoRepairByDefault = true;
+			//WVC_MMWM.settings.WVC_FindAndDestroy = true;
+			//WVC_MMWM.settings.WVC_WaitEnemy = true;
+			//WVC_MMWM.settings.WVC_WorkAndWaitEnemy = true;
+			//WVC_MMWM.settings.WVC_DefendYourself = true;
+			//WVC_MMWM.settings.WVC_Ambush = true;
+			//// =
+			//WVC_MMWM.settings.WVC_WorkAndRecharge = true;
+			//WVC_MMWM.settings.WVC_SafeWorkAndRecharge = true;
+			//WVC_MMWM.settings.WVC_EscaortAndRecharge = true;
+			//WVC_MMWM.settings.WVC_WorkRechargeEscort = true;
+			//WVC_MMWM.settings.WVC_EscortIfEnemyOnMap = true;
+			//// =
+			//WVC_MMWM.settings.WVC_RechargeAndShutdown = true;
+			//// =
+			//WVC_MMWM.settings.WVC_EscortIfEnemyWorkAndRecharge = false;
+			//WVC_MMWM.settings.WVC_EscortIfDraftedOrDowned = false;
+			//WVC_MMWM.settings.WVC_HiveMindResearching = false;
+			//WVC_MMWM.settings.WVC_Scavenging = false;
+			//WVC_MMWM.settings.WVC_Scavenging_ReqCells = 120;
+			//// Features
+			//WVC_MMWM.settings.enable_GoToShutdownZoneJob = true;
+			//WVC_MMWM.settings.enable_GoToShutdownRoomJob = true;
+			//WVC_MMWM.settings.enableEnemySearching = true;
+			//WVC_MMWM.settings.enableSmartEscort = true;
+			//WVC_MMWM.settings.useCustomShutdownBehavior = true;
+			//WVC_MMWM.settings.dormantMode = false;
+			//WVC_MMWM.settings.mechBandwithCostInDormantMode = 0;
+			//WVC_MMWM.settings.enableAutoRepairByDefault = true;
+			settings = new();
 			// Initial
 			WVC_MMWM.settings.firstModLaunch = false;
-			WVC_MMWM.settings.Write();
+			//WVC_MMWM.settings.Write();
 		}
 
 	}

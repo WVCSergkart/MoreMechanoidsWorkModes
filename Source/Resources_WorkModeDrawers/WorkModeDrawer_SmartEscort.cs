@@ -40,7 +40,7 @@ namespace WVC_WorkModes
 
 		public static GlobalTargetInfo GetTargetForMech(MechanitorControlGroup group, Pawn mech)
 		{
-			CompMechSettings compSmartEscort = mech.TryGetComp<CompMechSettings>();
+			CompMechSettings compSmartEscort = mech.GetMechSettings();
 			if (compSmartEscort != null && compSmartEscort.escortTarget != null)
 			{
 				return compSmartEscort.escortTarget;

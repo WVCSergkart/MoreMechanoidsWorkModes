@@ -25,23 +25,23 @@
 
 	<!-- By choice -->
 
-	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
-		<settingName>WVC_Scavenging</settingName>
-		<active Class="PatchOperationSequence">
-			<operations>
+	<!-- <Operation Class="WVC_WorkModes.PatchOperation_Settings"> -->
+		<!-- <settingName>WVC_Scavenging</settingName> -->
+		<!-- <active Class="PatchOperationSequence"> -->
+			<!-- <operations> -->
 
-				<li Class="PatchOperationInsert">
-				  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses/li[contains(text(),'Designator_Deconstruct')]</xpath>
-				  <order>Append</order>
-				  <success>Always</success>
-				  <value>
-					<li>WVC_WorkModes.Designator_MechanoidScavengeZone</li>
-				  </value>
-				</li>
+				<!-- <li Class="PatchOperationInsert"> -->
+				  <!-- <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses/li[contains(text(),'Designator_Deconstruct')]</xpath> -->
+				  <!-- <order>Append</order> -->
+				  <!-- <success>Always</success> -->
+				  <!-- <value> -->
+					<!-- <li>WVC_WorkModes.Designator_MechanoidScavengeZone</li> -->
+				  <!-- </value> -->
+				<!-- </li> -->
 
-			</operations>
-		</active>
-	</Operation>
+			<!-- </operations> -->
+		<!-- </active> -->
+	<!-- </Operation> -->
 
 	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
 		<settingName>enable_GoToShutdownZoneJob</settingName>
