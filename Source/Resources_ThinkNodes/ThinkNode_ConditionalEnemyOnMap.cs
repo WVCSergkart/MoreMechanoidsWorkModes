@@ -46,12 +46,21 @@ namespace WVC_WorkModes
 			//	return true;
 			//},
 			// Small delay for better performance
-			if (cachedAnswer == null || delayTicks < Find.TickManager.TicksGame)
+			if (pawn.Map.IsPlayerHome)
 			{
-				cachedAnswer = pawn.Map.attackTargetsCache.GetPotentialTargetsFor(pawn).Any(target => target is Thing thing && pawn.CanReach(thing, PathEndMode.OnCell, Danger.Deadly) && !thing.IsForbidden(pawn));
-				delayTicks = Find.TickManager.TicksGame + Delay;
+				if (cachedAnswer == null || delayTicks < Find.TickManager.TicksGame)
+				{
+					cachedAnswer = AnyEnemyOnMap(pawn);
+					delayTicks = Find.TickManager.TicksGame + Delay;
+				}
+				return cachedAnswer.Value;
 			}
-			return cachedAnswer.Value;
+			return AnyEnemyOnMap(pawn);
+
+			static bool AnyEnemyOnMap(Pawn pawn)
+			{
+				return pawn.Map.attackTargetsCache.GetPotentialTargetsFor(pawn).Any(target => (target is Pawn enemy && enemy.CanReach(pawn, PathEndMode.OnCell, Danger.Deadly) || target is Thing thing && pawn.CanReach(thing, PathEndMode.OnCell, Danger.Deadly) && !thing.IsForbidden(pawn)));
+			}
 		}
 
 		// Hook
