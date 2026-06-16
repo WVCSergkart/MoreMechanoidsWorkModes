@@ -25,7 +25,7 @@ namespace WVC_WorkModes
 		{
 			cachedMechSettings = null;
 			ThinkNode_CanShutdown.ResetCache();
-			// .ResetCache();
+			JobGiver_GetEnergy_Charger.ResetCache();
 		}
 
 		private static CompMechSettings cachedMechSettings;
@@ -90,7 +90,7 @@ namespace WVC_WorkModes
 			return list;
 		}
 
-		public static bool CanRecharge(Pawn pawn, out Need_MechEnergy energy)
+		public static bool TryGetEnergy(this Pawn pawn, out Need_MechEnergy energy)
 		{
 			// energy = pawn?.needs?.energy;
 			// if (energy == null)
@@ -107,7 +107,7 @@ namespace WVC_WorkModes
 			// {
 				// return true;
 			// }
-			return CanRecharge(mech, out Need_MechEnergy energy) && energy.IsSelfShutdown;
+			return TryGetEnergy(mech, out Need_MechEnergy energy) && energy.IsSelfShutdown;
 		}
 
 		public static Building GetClosestShutdownSpot(Pawn mech, ThingDef spotDefName, int maxDistance)

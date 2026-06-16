@@ -43,6 +43,7 @@ namespace WVC_WorkModes
 		public int mechBandwithCostInDormantMode = 0;
 		public bool enableAutoRepairByDefault = true;
 		public int enemyCheckDelay = 120;
+		public bool enableOpportunisticChargers = true;
 
 		public IEnumerable<string> GetEnabledSettings => from specificSetting in GetType().GetFields()
 			where specificSetting.FieldType == typeof(bool) && (bool)specificSetting.GetValue(this)
@@ -82,6 +83,7 @@ namespace WVC_WorkModes
 			Scribe_Values.Look(ref dormantMode, "dormantMode", defaultValue: false);
 			Scribe_Values.Look(ref enableAutoRepairByDefault, "enableAutoRepairByDefault", defaultValue: true);
 			Scribe_Values.Look(ref enemyCheckDelay, "enemyCheckDelay", defaultValue: 120);
+			Scribe_Values.Look(ref enableOpportunisticChargers, "enableOpportunisticChargers", defaultValue: true);
 		}
 	}
 
@@ -134,13 +136,20 @@ namespace WVC_WorkModes
 			listingStandard.Label("WVC_Label_WorkModeMechanicsLabelSetting".Translate() + ": ");
 			listingStandard.CheckboxLabeled("WVC_Label_enableShutdownSearching".Translate(), ref settings.enable_GoToShutdownZoneJob, "WVC_ToolTip_enableShutdownSearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
 			listingStandard.CheckboxLabeled("WVC_Label_enable_GoToShutdownRoomJob".Translate(), ref settings.enable_GoToShutdownRoomJob, "WVC_ToolTip_enable_GoToShutdownRoomJob".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
+			listingStandard.Gap(6);
 			listingStandard.CheckboxLabeled("WVC_Label_useCustomShutdownBehavior".Translate(), ref settings.useCustomShutdownBehavior, "WVC_ToolTip_useCustomShutdownBehavior".Translate());
+			listingStandard.Gap(6);
 			listingStandard.CheckboxLabeled("WVC_Label_enableEnemySearching".Translate(), ref settings.enableEnemySearching, "WVC_ToolTip_enableEnemySearching".Translate() + "\n\n" + "WVC_ToolTip_enableSearchingWarning".Translate());
+			listingStandard.SliderLabeledWithRef("|- " + "WVC_WorkModes_EnemyCheckDelay".Translate(settings.enemyCheckDelay.ToString()), ref settings.enemyCheckDelay, 0, 6000, "WVC_WorkModes_EnemyCheckDelayDesc".Translate());
+			listingStandard.Gap(6);
 			listingStandard.CheckboxLabeled("WVC_Label_enableSmartEscort".Translate(), ref settings.enableSmartEscort, "WVC_ToolTip_enableShutdownForAllMechanoids".Translate() + "\n\n" + "WVC_ToolTip_enableSmartEscort".Translate());
+			listingStandard.Gap(6);
 			listingStandard.CheckboxLabeled("WVC_Label_enableDormantMode".Translate(), ref settings.dormantMode, "WVC_ToolTip_enableDormantMode".Translate());
-			listingStandard.SliderLabeledWithRef("WVC_Label_mechBandwithCostInDormantMode".Translate(settings.mechBandwithCostInDormantMode.ToString()), ref settings.mechBandwithCostInDormantMode, 0, 100);
+			listingStandard.SliderLabeledWithRef("|- " + "WVC_Label_mechBandwithCostInDormantMode".Translate(settings.mechBandwithCostInDormantMode.ToString()), ref settings.mechBandwithCostInDormantMode, 0, 100);
+			listingStandard.Gap(6);
 			listingStandard.CheckboxLabeled("WVC_WM_Label_enableAutoRepairByDefault".Translate(), ref settings.enableAutoRepairByDefault, "WVC_WM_ToolTip_enableAutoRepairByDefault".Translate());
-			listingStandard.SliderLabeledWithRef("WVC_WorkModes_EnemyCheckDelay".Translate(settings.enemyCheckDelay.ToString()), ref settings.enemyCheckDelay, 0, 6000, "WVC_WorkModes_EnemyCheckDelayDesc".Translate());
+			listingStandard.Gap(6);
+			listingStandard.CheckboxLabeled("WVC_Label_enableOpportunisticChargers".Translate(), ref settings.enableOpportunisticChargers, "WVC_ToolTip_enableOpportunisticChargers".Translate());
 			// =============== Buttons ===============
 			listingStandard.GapLine();
 			if (listingStandard.ButtonText("WVC_WorkModes_ResetButton".Translate()))

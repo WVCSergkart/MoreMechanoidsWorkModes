@@ -49,7 +49,7 @@
 	<WVC_Label_enableShutdownSearching>Enable mechanoid shutdown zones</WVC_Label_enableShutdownSearching>
 	<WVC_ToolTip_enableShutdownSearching>If enabled, mechanoids will search for a mechanoid shutdown zone before shutdown.</WVC_ToolTip_enableShutdownSearching>
 
-	<WVC_Label_enable_GoToShutdownRoomJob>Enable mechanoid hangar rooms (Beta)</WVC_Label_enable_GoToShutdownRoomJob>
+	<WVC_Label_enable_GoToShutdownRoomJob>Enable mechanoid hangar rooms</WVC_Label_enable_GoToShutdownRoomJob>
 	<WVC_ToolTip_enable_GoToShutdownRoomJob>If enabled, all mechanoid chargers will create a new room type "Mechanoid Hangar". Mechanoids will sleep there if there are no alternatives in the form of zones.
 
 Recommended when playing through gravships (Odyssey DLC), since the zones are reset when the ship flies.
@@ -88,5 +88,15 @@ Restart required!</WVC_ToolTip_enableDormantMode>
 
 	<WVC_WM_Label_enableAutoRepairByDefault>Auto-repair on by default</WVC_WM_Label_enableAutoRepairByDefault>
 	<WVC_WM_ToolTip_enableAutoRepairByDefault>After spawning, automatically switches the mechanoid's auto-repair to true.</WVC_WM_ToolTip_enableAutoRepairByDefault>
+
+	<!-- Performance -->
+	<WVC_WorkModes_EnemyCheckDelay>Enemy check delay {0} ticks</WVC_WorkModes_EnemyCheckDelay>
+	<WVC_WorkModes_EnemyCheckDelayDesc>Allows you to set the delay between checks for enemy presence on the map. Used in safe modes. 60 ticks = 1 second.
+
+Higher values ​​improve performance, but are detrimental to mechanoid responsiveness.</WVC_WorkModes_EnemyCheckDelayDesc>
+
+	<!-- Chargers -->
+	<WVC_Label_enableOpportunisticChargers>Opportunistic chargers</WVC_Label_enableOpportunisticChargers>
+	<WVC_ToolTip_enableOpportunisticChargers>If enabled, mechs heading for smart charging will track other mechs whose energy is below the group threshold and, if any, will interrupt smart charging, immediately heading to the shutdown spot, yielding the charger.</WVC_ToolTip_enableOpportunisticChargers>
 
 </LanguageData>

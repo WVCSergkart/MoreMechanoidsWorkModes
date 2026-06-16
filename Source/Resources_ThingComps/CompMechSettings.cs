@@ -264,7 +264,7 @@ namespace WVC_WorkModes
 			Scribe_Values.Look(ref allowShutdown, "allowShutdown", true);
 			if (Scribe.mode == LoadSaveMode.PostLoadInit)
 			{
-				ThinkNode_CanShutdown.ResetCache();
+				ShutdownUtility.ResetAllStaticCache();
 			}
 		}
 

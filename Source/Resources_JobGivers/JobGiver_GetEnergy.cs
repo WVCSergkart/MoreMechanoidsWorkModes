@@ -45,15 +45,19 @@ namespace WVC_WorkModes
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			if (!ShutdownUtility.CanRecharge(pawn, out Need_MechEnergy energy))
+			if (ShutdownUtility.TryGetEnergy(pawn, out Need_MechEnergy energy))
 			{
+				if (ShouldChargeNow(pawn))
+				{
+					return TryGetChargeJob(pawn, energy);
+				}
 				return null;
 			}
-			// Need_MechEnergy energy = pawn?.needs?.energy;
-			// if (energy == null)
-			// {
-				// return false;
-			// }
+			return null;
+		}
+
+		private Job TryGetChargeJob(Pawn pawn, Need_MechEnergy energy)
+		{
 			float maxRechargeLimit = GetMaxRechargeLimit(pawn);
 			if (energy.CurLevel + 0.1f < maxRechargeLimit - 5f)
 			{
@@ -74,29 +78,46 @@ namespace WVC_WorkModes
 			return null;
 		}
 
-		// public static Building_MechCharger GetClosestCharger(Pawn mech, Pawn carrier, bool forced)
-		// {
-			// Danger danger = (forced ? Danger.Deadly : Danger.Some);
-			// return (Building_MechCharger)GenClosest.ClosestThingReachable(mech.Position, mech.Map, ThingRequest.ForGroup(ThingRequestGroup.MechCharger), PathEndMode.InteractionCell, TraverseParms.For(carrier, danger), 9999f, delegate(Thing t)
-			// {
-				// Building_MechCharger building_MechCharger = (Building_MechCharger)t;
-				// if (!carrier.CanReach(t, PathEndMode.InteractionCell, danger))
-				// {
-					// return false;
-				// }
-				// if (carrier != mech)
-				// {
-					// if (!forced && building_MechCharger.Map.reservationManager.ReservedBy(building_MechCharger, carrier))
-					// {
-						// return false;
-					// }
-					// if (forced && KeyBindingDefOf.QueueOrder.IsDownEvent && building_MechCharger.Map.reservationManager.ReservedBy(building_MechCharger, carrier))
-					// {
-						// return false;
-					// }
-				// }
-				// return !t.IsForbidden(carrier) && carrier.CanReserve(t, 1, -1, null, forced) && building_MechCharger.CanPawnChargeCurrently(mech);
-			// });
-		// }
+		// Hook
+		private bool ShouldChargeNow(Pawn caller)
+		{
+			return AnyMechWithLowEnergyOnSameMap(caller);
+		}
+
+		private static int checkDelayTick = -1;
+		private static bool? cachedResult;
+
+		public static void ResetCache()
+		{
+			checkDelayTick = -1;
+			cachedResult = null;
+		}
+
+		public static bool AnyMechWithLowEnergyOnSameMap(Pawn caller)
+		{
+			if (!WVC_MMWM.settings.enableOpportunisticChargers)
+			{
+				return true;
+			}
+			if (cachedResult == null || checkDelayTick < Find.TickManager.TicksGame)
+			{
+				cachedResult = true;
+				foreach (Pawn mech in caller.Map.mapPawns.AllPawnsSpawned)
+				{
+					if (mech.IsColonyMech && mech.TryGetEnergy(out Need_MechEnergy energy))
+					{
+						int minThreshold = GetMinAutorechargeThreshold(mech);
+						if (minThreshold > energy.CurLevel)
+						{
+							cachedResult = false;
+							break;
+						}
+					}
+				}
+				checkDelayTick = Find.TickManager.TicksGame + 5000;
+			}
+			return cachedResult.Value;
+		}
+
 	}
 }
