@@ -46,20 +46,20 @@ namespace WVC_WorkModes
 			//	return true;
 			//},
 			// Small delay for better performance
-			if (pawn.Map.IsPlayerHome)
+			if (Find.Maps.Count > 1)
 			{
-				if (cachedAnswer == null || delayTicks < Find.TickManager.TicksGame)
-				{
-					cachedAnswer = AnyEnemyOnMap(pawn);
-					delayTicks = Find.TickManager.TicksGame + Delay;
-				}
-				return cachedAnswer.Value;
+				return AnyEnemyOnMap(pawn);
 			}
-			return AnyEnemyOnMap(pawn);
+			if (cachedAnswer == null || delayTicks < Find.TickManager.TicksGame)
+			{
+				cachedAnswer = AnyEnemyOnMap(pawn);
+				delayTicks = Find.TickManager.TicksGame + Delay;
+			}
+			return cachedAnswer.Value;
 
 			static bool AnyEnemyOnMap(Pawn pawn)
 			{
-				return pawn.Map.attackTargetsCache.GetPotentialTargetsFor(pawn).Any(target => (target is Pawn enemy && enemy.CanReach(pawn, PathEndMode.OnCell, Danger.Deadly) || target is Thing thing && pawn.CanReach(thing, PathEndMode.OnCell, Danger.Deadly) && !thing.IsForbidden(pawn)));
+				return pawn.Map.attackTargetsCache.GetPotentialTargetsFor(pawn).Any(target => !target.ThreatDisabled(pawn) && (target is Pawn enemy && enemy.CanReach(pawn, PathEndMode.OnCell, Danger.Deadly) && pawn.IsCombatant() || target is Thing thing && pawn.CanReach(thing, PathEndMode.OnCell, Danger.Deadly) && !thing.IsForbidden(pawn)));
 			}
 		}
 
