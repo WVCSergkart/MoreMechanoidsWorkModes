@@ -141,12 +141,34 @@ namespace WVC_WorkModes
 			{
 				float num = p.RaceProps.mechFixedSkillLevel;
 				Texture2D image;
+				Texture2D image2;
 				float a;
-				image = WidgetsWork.WorkBoxBGTex_Mid;
-				a = (num - 4f) / 10f;
+				if (num < 4f)
+				{
+					image = WidgetsWork.WorkBoxBGTex_Awful;
+					image2 = WidgetsWork.WorkBoxBGTex_Bad;
+					a = num / 4f;
+				}
+				else if (num <= 14f)
+				{
+					image = WidgetsWork.WorkBoxBGTex_Bad;
+					image2 = WidgetsWork.WorkBoxBGTex_Mid;
+					a = (num - 4f) / 10f;
+				}
+				else
+				{
+					image = WidgetsWork.WorkBoxBGTex_Mid;
+					image2 = WidgetsWork.WorkBoxBGTex_Excellent;
+					a = (num - 14f) / 6f;
+				}
 				GUI.DrawTexture(rect, image);
 				GUI.color = new Color(GUI.color.r, GUI.color.g, GUI.color.b, a);
-				GUI.DrawTexture(rect, image);
+				GUI.DrawTexture(rect, image2);
+				if (workDef.relevantSkills.Any() && num <= 2f && p.workSettings.WorkIsActive(workDef))
+				{
+					GUI.color = Color.white;
+					GUI.DrawTexture(rect.ContractedBy(-2f), WidgetsWork.WorkBoxOverlay_Warning);
+				}
 				GUI.color = Color.white;
 				return false;
 			}
