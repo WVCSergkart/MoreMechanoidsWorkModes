@@ -14,7 +14,7 @@ namespace WVC_WorkModes
 	internal static class HarmonyUtility
 	{
 
-		public static bool DisabledSkills(Pawn pawn)
+		public static bool ApplyForPawn(Pawn pawn)
 		{
 			return pawn.skills == null; //  || pawn.Ideo == null
 		}
@@ -47,7 +47,7 @@ namespace WVC_WorkModes
 
 		public static bool Patch_WidgetsWork_DrawWorkBoxFor(float x, float y, Pawn p, WorkTypeDef wType, bool incapableBecauseOfCapacities)
 		{
-			if (DisabledSkills(p))
+			if (ApplyForPawn(p))
 			{
 				if (p.WorkTypeIsDisabled(wType))
 				{
@@ -137,7 +137,7 @@ namespace WVC_WorkModes
 
 		public static bool Patch_WidgetsWork_DrawWorkBoxBackground(Rect rect, Pawn p, WorkTypeDef workDef)
 		{
-			if (DisabledSkills(p))
+			if (ApplyForPawn(p))
 			{
 				float num = p.RaceProps.mechFixedSkillLevel;
 				Texture2D image;
@@ -177,7 +177,7 @@ namespace WVC_WorkModes
 
 		public static bool Patch_WidgetsWork_TipForPawnWorker(ref string __result, Pawn p, WorkTypeDef wDef, bool incapableBecauseOfCapacities)
 		{
-			if (DisabledSkills(p))
+			if (ApplyForPawn(p))
 			{
 				StringBuilder stringBuilder = new StringBuilder();
 				string text = wDef.gerundLabel.CapitalizeFirst().Colorize(ColoredText.TipSectionTitleColor);
@@ -187,16 +187,16 @@ namespace WVC_WorkModes
 				if (p.WorkTypeIsDisabled(wDef))
 				{
 					string text2 = "CannotDoThisWork".Translate(p.LabelShort, p);
-					List<string> reasonsForDisabledWorkType = p.GetReasonsForDisabledWorkType(wDef);
-					if (!reasonsForDisabledWorkType.NullOrEmpty())
-					{
-						string text3 = "\n\n" + string.Join(". ", reasonsForDisabledWorkType);
-						if (reasonsForDisabledWorkType.Count == 1)
-						{
-							text3 += ".";
-						}
-						text2 += text3.Colorize(ColorLibrary.RedReadable);
-					}
+					//List<string> reasonsForDisabledWorkType = p.GetReasonsForDisabledWorkType(wDef);
+					//if (!reasonsForDisabledWorkType.NullOrEmpty())
+					//{
+					//	string text3 = "\n\n" + string.Join(". ", reasonsForDisabledWorkType);
+					//	if (reasonsForDisabledWorkType.Count == 1)
+					//	{
+					//		text3 += ".";
+					//	}
+					//	text2 += text3.Colorize(ColorLibrary.RedReadable);
+					//}
 					stringBuilder.Append(text2);
 				}
 				else
