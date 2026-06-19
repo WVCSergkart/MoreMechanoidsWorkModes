@@ -19,7 +19,7 @@ namespace WVC_WorkModes.Odyssey
 			{
 				if (cachedHarmony == null)
 				{
-					cachedHarmony = new Harmony("wvc.sergkart.races.biotech");
+					cachedHarmony = new Harmony("wvc.sergkart.biotech.MoreMechanoidsWorkModes");
 				}
 				return cachedHarmony;
 			}
