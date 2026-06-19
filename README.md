@@ -60,3 +60,7 @@ _Note:_ The shutdown state from the mod uses the vanilla shutdown job. That is, 
 **Version 1.6:**
 
 **_Mechanoid hangar_** - any room that has a mechanoid charger will be considered a hangar. If possible and in the absence of zones, mechanoids will be sent to a random hangar for shutdown. Enabled by default.
+
+**_Opportunistic chargers_** - If enabled, mechs heading for smart charging will track other mechs whose energy is below the group threshold and, if any, will interrupt smart charging, immediately heading to the shutdown spot, yielding the charger.
+
+**_Mechs work_** - If enabled, allows to set the work priorities for mechanoids. (Odyssey DLC)
