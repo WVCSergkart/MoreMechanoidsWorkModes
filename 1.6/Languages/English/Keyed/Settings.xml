@@ -99,4 +99,10 @@ Higher values ​​improve performance, but are detrimental to mechanoid respon
 	<WVC_Label_enableOpportunisticChargers>Opportunistic chargers</WVC_Label_enableOpportunisticChargers>
 	<WVC_ToolTip_enableOpportunisticChargers>If enabled, mechs heading for smart charging will track other mechs whose energy is below the group threshold and, if any, will interrupt smart charging, immediately heading to the shutdown spot, yielding the charger.</WVC_ToolTip_enableOpportunisticChargers>
 
+	<!-- Tabs -->
+	<WVC_Label_enableMechsWorkTab>Enable mechs work tab</WVC_Label_enableMechsWorkTab>
+	<WVC_ToolTip_enableMechsWorkTab>If enabled, adds an additional tab that allows you to change the work priority of mechanoids.
+
+Restart required!</WVC_ToolTip_enableMechsWorkTab>
+
 </LanguageData>

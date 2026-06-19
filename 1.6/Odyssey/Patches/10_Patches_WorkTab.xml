@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
+		<settingName>enableMechsWorkTab</settingName>
+		<deActive Class="PatchOperationSequence">
+		  <success>Always</success>
+		  <operations>
+			<li Class="PatchOperationRemove">
+			  <xpath>/Defs/PawnTableDef[defName="WVC_WorkMechs"]</xpath>
+			  <success>Always</success>
+			</li>
+			<li Class="PatchOperationRemove">
+			  <xpath>/Defs/WVC_WorkModes.MainButtonDef[defName="WVC_WorkMechs"]</xpath>
+			  <success>Always</success>
+			</li>
+		  </operations>
+		</deActive>
+	</Operation>
+
+</Patch>

@@ -223,6 +223,10 @@ namespace WVC_WorkModes
             {
                 return;
             }
+			//if (Mech.skills == null)
+			//{
+			//	Mech.skills = new(Mech);
+			//}
             if (WVC_MMWM.settings.enableAutoRepairByDefault && parent is Pawn mech)
             {
                 CompMechRepairable compMechRepairable = mech?.TryGetComp<CompMechRepairable>();

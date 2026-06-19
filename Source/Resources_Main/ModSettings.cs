@@ -44,6 +44,7 @@ namespace WVC_WorkModes
 		public bool enableAutoRepairByDefault = true;
 		public int enemyCheckDelay = 120;
 		public bool enableOpportunisticChargers = true;
+		public bool enableMechsWorkTab = true;
 
 		public IEnumerable<string> GetEnabledSettings => from specificSetting in GetType().GetFields()
 			where specificSetting.FieldType == typeof(bool) && (bool)specificSetting.GetValue(this)
@@ -84,6 +85,7 @@ namespace WVC_WorkModes
 			Scribe_Values.Look(ref enableAutoRepairByDefault, "enableAutoRepairByDefault", defaultValue: true);
 			Scribe_Values.Look(ref enemyCheckDelay, "enemyCheckDelay", defaultValue: 120);
 			Scribe_Values.Look(ref enableOpportunisticChargers, "enableOpportunisticChargers", defaultValue: true);
+			Scribe_Values.Look(ref enableMechsWorkTab, "enableMechsWorkTab", defaultValue: true);
 		}
 	}
 
@@ -150,6 +152,8 @@ namespace WVC_WorkModes
 			listingStandard.CheckboxLabeled("WVC_WM_Label_enableAutoRepairByDefault".Translate(), ref settings.enableAutoRepairByDefault, "WVC_WM_ToolTip_enableAutoRepairByDefault".Translate());
 			listingStandard.Gap(6);
 			listingStandard.CheckboxLabeled("WVC_Label_enableOpportunisticChargers".Translate(), ref settings.enableOpportunisticChargers, "WVC_ToolTip_enableOpportunisticChargers".Translate());
+			listingStandard.Gap(6);
+			listingStandard.CheckboxLabeled("WVC_Label_enableMechsWorkTab".Translate(), ref settings.enableMechsWorkTab, "WVC_ToolTip_enableMechsWorkTab".Translate());
 			// =============== Buttons ===============
 			listingStandard.GapLine();
 			if (listingStandard.ButtonText("WVC_WorkModes_ResetButton".Translate()))

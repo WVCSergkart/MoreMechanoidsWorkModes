@@ -67,7 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Harmony\Harmony_Patch.cs" />
+    <Compile Include="HarmonyUtility.cs" />
+    <Compile Include="Harmony\WVC_WorkModesOdyssey_Main.cs" />
+    <Compile Include="Harmony\Patch_GravshipPlacementUtility_CopyZonesIntoMap.cs" />
+    <Compile Include="Harmony\Patch_Gravship_TransferZones.cs" />
+    <Compile Include="MainButtonDef.cs" />
+    <Compile Include="MainButtonWorker_ToggleMechTab.cs" />
+    <Compile Include="MainTabWindow_Work_Mechs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

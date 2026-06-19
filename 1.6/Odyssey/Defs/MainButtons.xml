@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WVC_WorkModes.MainButtonDef>
+	<defName>WVC_WorkMechs</defName>
+	<label>mechs work</label>
+	<description>Choose which mech does what kinds of work, and in what order.</description>
+	<workerClass>WVC_WorkModes.MainButtonWorker_ToggleMechTab</workerClass>
+	<tabWindowClass>WVC_WorkModes.MainTabWindow_Work_Mechs</tabWindowClass>
+	<pawnTableDef>WVC_WorkMechs</pawnTableDef>
+	<order>46</order>
+	<closesWorldView>true</closesWorldView>
+	<minimized>True</minimized>
+	<iconPath>WVC/UI/Buttons/MechsWorkIcon</iconPath>
+  </WVC_WorkModes.MainButtonDef>
+
+  <PawnTableDef>
+	<defName>WVC_WorkMechs</defName>
+	<workerClass>PawnTable_Mechs</workerClass>
+	<columns>
+	  <li>LabelWithIcon</li>
+	  <!-- <li MayRequire="Ludeon.RimWorld.Ideology">Guest</li> -->
+	  <!-- <li>Faction</li> -->
+	  <!-- <li MayRequire="Ludeon.RimWorld.Ideology">Ideo</li> -->
+	  <!-- <li MayRequire="Ludeon.RimWorld.Biotech">Xenotype</li> -->
+	  <li>CopyPasteWorkPriorities</li>
+	  <li>RemainingSpace</li>
+	</columns>
+  </PawnTableDef>
+
+</Defs>
