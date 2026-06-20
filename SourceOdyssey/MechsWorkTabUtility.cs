@@ -11,7 +11,7 @@ using WVC_WorkModes.Odyssey;
 
 namespace WVC_WorkModes
 {
-	internal static class HarmonyUtility
+	public static class MechsWorkTabUtility
 	{
 
 		public static bool ApplyForPawn(Pawn pawn)
@@ -20,11 +20,31 @@ namespace WVC_WorkModes
 		}
 
 
-		private static bool initialized = false;
+		private static bool pawnTableInitialized = false;
+		private static bool harmonyHookInitialized = false;
 
+		public static bool MechTabEnabled => pawnTableInitialized && harmonyHookInitialized;
+
+		public static bool InitPawnTable()
+		{
+			if (pawnTableInitialized)
+			{
+				return false;
+			}
+			pawnTableInitialized = true;
+			PawnTableDef workTable = WorkModesDefOf.WVC_MechsWorkTable;
+			foreach (PawnColumnDef item in DefDatabase<PawnColumnDef>.AllDefsListForReading)
+			{
+				if (item.Worker is PawnColumnWorker_WorkPriority)
+				{
+					workTable.columns.Insert(workTable.columns.FindIndex((PawnColumnDef x) => x.Worker is PawnColumnWorker_CopyPasteWorkPriorities) + 1, item);
+				}
+			}
+			return true;
+		}
 
 		private static bool nullRefFix_Patch = false;
-		public static void HarmonyPatch()
+		public static void ApplyNullRefPatch()
 		{
 			if (nullRefFix_Patch)
 			{
@@ -32,15 +52,15 @@ namespace WVC_WorkModes
 			}
 			try
 			{
-				WVC_WorkModesOdyssey_Main.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "DrawWorkBoxBackground"), prefix: new HarmonyMethod(typeof(HarmonyUtility).GetMethod(nameof(HarmonyUtility.Patch_WidgetsWork_DrawWorkBoxBackground))));
-				WVC_WorkModesOdyssey_Main.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "DrawWorkBoxFor"), prefix: new HarmonyMethod(typeof(HarmonyUtility).GetMethod(nameof(HarmonyUtility.Patch_WidgetsWork_DrawWorkBoxFor))));
-				WVC_WorkModesOdyssey_Main.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "TipForPawnWorker"), prefix: new HarmonyMethod(typeof(HarmonyUtility).GetMethod(nameof(HarmonyUtility.Patch_WidgetsWork_TipForPawnWorker))));
-				MainButtonWorker_ToggleMechTab.enabled = true;
+				WVC_WorkModesOdyssey_Main.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "DrawWorkBoxBackground"), prefix: new HarmonyMethod(typeof(MechsWorkTabUtility).GetMethod(nameof(MechsWorkTabUtility.Patch_WidgetsWork_DrawWorkBoxBackground))));
+				WVC_WorkModesOdyssey_Main.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "DrawWorkBoxFor"), prefix: new HarmonyMethod(typeof(MechsWorkTabUtility).GetMethod(nameof(MechsWorkTabUtility.Patch_WidgetsWork_DrawWorkBoxFor))));
+				WVC_WorkModesOdyssey_Main.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "TipForPawnWorker"), prefix: new HarmonyMethod(typeof(MechsWorkTabUtility).GetMethod(nameof(MechsWorkTabUtility.Patch_WidgetsWork_TipForPawnWorker))));
+				harmonyHookInitialized = true;
 			}
 			catch (Exception arg)
 			{
-				Log.Error("Failed init null ref checks. Reason: " + arg.Message);
-				MainButtonWorker_ToggleMechTab.enabled = false;
+				Log.Warning("Failed init null ref checks. Reason: " + arg.Message);
+				harmonyHookInitialized = false;
 			}
 			nullRefFix_Patch = true;
 		}
@@ -223,24 +243,6 @@ namespace WVC_WorkModes
 				}
 				__result = stringBuilder.ToString();
 				return false;
-			}
-			return true;
-		}
-
-		public static bool Init()
-		{
-			if (initialized)
-			{
-				return false;
-			}
-			initialized = true;
-			PawnTableDef workTable = WorkModesDefOf.WVC_WorkMechs;
-			foreach (PawnColumnDef item in DefDatabase<PawnColumnDef>.AllDefsListForReading)
-			{
-				if (item.Worker is PawnColumnWorker_WorkPriority)
-				{
-					workTable.columns.Insert(workTable.columns.FindIndex((PawnColumnDef x) => x.Worker is PawnColumnWorker_CopyPasteWorkPriorities) + 1, item);
-				}
 			}
 			return true;
 		}

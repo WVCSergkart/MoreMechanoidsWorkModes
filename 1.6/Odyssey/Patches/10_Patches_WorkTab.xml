@@ -18,4 +18,14 @@
 		<!-- </deActive> -->
 	<!-- </Operation> -->
 
+	<!-- <Operation Class="WVC_WorkModes.PatchOperation_Settings"> -->
+		<!-- <settingName>hideMechsWorkTab</settingName> -->
+		<!-- <active Class="PatchOperationReplace"> -->
+		  <!-- <xpath>/Defs/MainButtonDef[defName="WVC_MechsWork"]/buttonVisible</xpath> -->
+		  <!-- <value> -->
+			<!-- <buttonVisible>false</buttonVisible> -->
+		  <!-- </value> -->
+		<!-- </active> -->
+	<!-- </Operation> -->
+
 </Patch>

@@ -8,7 +8,9 @@ namespace WVC_WorkModes
 	{
 		public static TerrainAffordanceDef Diggable;
 		[MayRequireOdyssey]
-		public static PawnTableDef WVC_WorkMechs;
+		public static PawnTableDef WVC_MechsWorkTable;
+		[MayRequireOdyssey]
+		public static MainButtonDef WVC_MechsWork;
 	}
 
 }

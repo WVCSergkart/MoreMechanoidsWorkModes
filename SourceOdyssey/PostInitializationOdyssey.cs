@@ -28,7 +28,8 @@ namespace WVC_WorkModes
 		{
 			if (WVC_MMWM.settings.enableMechsWorkTab)
 			{
-				HarmonyUtility.Init();
+				MechsWorkTabUtility.InitPawnTable();
+				WVC_MMWM.SetMechsTab();
 			}
 		}
 

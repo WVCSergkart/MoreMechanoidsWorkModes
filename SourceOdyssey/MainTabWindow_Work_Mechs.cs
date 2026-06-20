@@ -24,7 +24,7 @@ namespace WVC_WorkModes
 				//	return mainButtonDef.pawnTableDef;
 				//}
 				//return  base.PawnTableDef;
-				return WorkModesDefOf.WVC_WorkMechs;
+				return WorkModesDefOf.WVC_MechsWorkTable;
 			}
 		}
 

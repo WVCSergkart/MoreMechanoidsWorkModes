@@ -79,6 +79,20 @@ namespace WVC_WorkModes
 					yield return gizmo;
 				}
 			}
+			if (ModsConfig.OdysseyActive && WVC_MMWM.settings.hideMechsWorkTab && !WorkModesDefOf.WVC_MechsWork.Worker.Disabled)
+			{
+				yield return new Command_Action
+				{
+					defaultLabel = WorkModesDefOf.WVC_MechsWork.LabelCap,
+					defaultDesc = WorkModesDefOf.WVC_MechsWork.description,
+					icon = WorkModesDefOf.WVC_MechsWork.Icon,
+					shrinkable = true,
+					action = delegate
+					{
+						WorkModesDefOf.WVC_MechsWork.Worker.InterfaceTryActivate();
+					}
+				};
+			}
 		}
 
 		private IEnumerable<Gizmo> SmartEscortSettings()

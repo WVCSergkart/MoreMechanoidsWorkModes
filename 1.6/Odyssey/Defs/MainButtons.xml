@@ -2,12 +2,12 @@
 <Defs>
 
   <MainButtonDef>
-	<defName>WVC_WorkMechs</defName>
+	<defName>WVC_MechsWork</defName>
 	<label>mechs work</label>
 	<description>Choose which mech does what kinds of work, and in what order.</description>
 	<workerClass>WVC_WorkModes.MainButtonWorker_ToggleMechTab</workerClass>
 	<tabWindowClass>WVC_WorkModes.MainTabWindow_Work_Mechs</tabWindowClass>
-	<!-- <pawnTableDef>WVC_WorkMechs</pawnTableDef> -->
+	<buttonVisible>true</buttonVisible>
 	<order>46</order>
 	<closesWorldView>true</closesWorldView>
 	<minimized>True</minimized>
@@ -15,7 +15,7 @@
   </MainButtonDef>
 
   <PawnTableDef>
-	<defName>WVC_WorkMechs</defName>
+	<defName>WVC_MechsWorkTable</defName>
 	<workerClass>PawnTable_Mechs</workerClass>
 	<columns>
 	  <li>LabelWithIcon</li>

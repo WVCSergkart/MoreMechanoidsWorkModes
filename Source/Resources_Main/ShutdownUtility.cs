@@ -18,6 +18,8 @@ namespace WVC_WorkModes
 	public static class ShutdownUtility
 	{
 
+		//public static readonly CachedTexture Icon_MechsWorkTab = new("WVC/UI/Buttons/MechsWorkIcon");
+
 		public static readonly CachedTexture Icon_CanShutdown_Yes = new("WVC/UI/WorkModes_General/CanShutdown_Yes");
 		public static readonly CachedTexture Icon_CanShutdown_No = new("WVC/UI/WorkModes_General/CanShutdown_No");
 

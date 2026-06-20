@@ -105,4 +105,7 @@ Higher values ​​improve performance, but are detrimental to mechanoid respon
 
 Restart required!</WVC_ToolTip_enableMechsWorkTab>
 
+	<WVC_Label_hideMechsWorkTab>Hide mechs work tab</WVC_Label_hideMechsWorkTab>
+	<WVC_ToolTip_hideMechsWorkTab>If enabled, the priorities tab will be moved to the mechanoid gizmos.</WVC_ToolTip_hideMechsWorkTab>
+
 </LanguageData>

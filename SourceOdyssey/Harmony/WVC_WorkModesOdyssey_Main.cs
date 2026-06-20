@@ -30,7 +30,7 @@ namespace WVC_WorkModes.Odyssey
 			Harmony.PatchAll();
 			if (WVC_MMWM.settings.enableMechsWorkTab)
 			{
-				HarmonyUtility.HarmonyPatch();
+				MechsWorkTabUtility.ApplyNullRefPatch();
 			}
 		}
 
