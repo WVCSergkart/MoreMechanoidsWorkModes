@@ -1,23 +1,37 @@
 ﻿using RimWorld;
+using Verse;
 
 namespace WVC_WorkModes
 {
-	public class MainButtonDef : RimWorld.MainButtonDef
+	//public class MainButtonDef_WithInit : RimWorld.MainButtonDef
+	//{
+
+	//	public PawnTableDef pawnTableDef;
+
+	//	public override void ResolveReferences()
+	//	{
+	//		base.ResolveReferences();
+	//		//if (WVC_MMWM.settings.enableMechsWorkTab)
+	//		//{
+	//		//}
+	//		if (pawnTableDef != null)
+	//		{
+	//			HarmonyUtility.Init(pawnTableDef);
+	//		}
+	//	}
+	//}
+
+	[StaticConstructorOnStartup]
+	public static class PostInitializationOdyssey
 	{
-
-		public PawnTableDef pawnTableDef;
-
-		public override void ResolveReferences()
+		static PostInitializationOdyssey()
 		{
-			base.ResolveReferences();
-			//if (WVC_MMWM.settings.enableMechsWorkTab)
-			//{
-			//}
-			if (pawnTableDef != null)
+			if (WVC_MMWM.settings.enableMechsWorkTab)
 			{
-				HarmonyUtility.Init(pawnTableDef);
+				HarmonyUtility.Init();
 			}
 		}
+
 	}
 
 }

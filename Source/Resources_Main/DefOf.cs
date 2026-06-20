@@ -7,6 +7,8 @@ namespace WVC_WorkModes
 	public static class WorkModesDefOf
 	{
 		public static TerrainAffordanceDef Diggable;
+		[MayRequireOdyssey]
+		public static PawnTableDef WVC_WorkMechs;
 	}
 
 }

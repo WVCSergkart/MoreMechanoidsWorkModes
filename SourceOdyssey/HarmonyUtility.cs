@@ -227,15 +227,14 @@ namespace WVC_WorkModes
 			return true;
 		}
 
-		public static bool Init(PawnTableDef pawnTableDef)
+		public static bool Init()
 		{
 			if (initialized)
 			{
 				return false;
 			}
 			initialized = true;
-			HarmonyPatch();
-			PawnTableDef workTable = pawnTableDef;
+			PawnTableDef workTable = WorkModesDefOf.WVC_WorkMechs;
 			foreach (PawnColumnDef item in DefDatabase<PawnColumnDef>.AllDefsListForReading)
 			{
 				if (item.Worker is PawnColumnWorker_WorkPriority)

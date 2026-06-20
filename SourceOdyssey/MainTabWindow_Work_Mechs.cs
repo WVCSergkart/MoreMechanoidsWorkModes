@@ -19,11 +19,12 @@ namespace WVC_WorkModes
 		{
 			get
 			{
-				if (def is MainButtonDef mainButtonDef && mainButtonDef.pawnTableDef != null)
-				{
-					return mainButtonDef.pawnTableDef;
-				}
-				return  base.PawnTableDef;
+				//if (def is MainButtonDef_WithInit mainButtonDef && mainButtonDef.pawnTableDef != null)
+				//{
+				//	return mainButtonDef.pawnTableDef;
+				//}
+				//return  base.PawnTableDef;
+				return WorkModesDefOf.WVC_WorkMechs;
 			}
 		}
 

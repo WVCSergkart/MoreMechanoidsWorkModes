@@ -28,6 +28,10 @@ namespace WVC_WorkModes.Odyssey
 		static WVC_WorkModesOdyssey_Main()
 		{
 			Harmony.PatchAll();
+			if (WVC_MMWM.settings.enableMechsWorkTab)
+			{
+				HarmonyUtility.HarmonyPatch();
+			}
 		}
 
 	}
