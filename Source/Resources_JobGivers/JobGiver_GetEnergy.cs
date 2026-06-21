@@ -1,5 +1,7 @@
 // RimWorld.JobGiver_GetEnergy_SelfShutdown
 using RimWorld;
+using System;
+using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
@@ -18,10 +20,7 @@ namespace WVC_WorkModes
 			{
 				if (ShutdownUtility.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
 				{
-					Job job = JobMaker.MakeJob(JobDefOf.SelfShutdown, result);
-					job.checkOverrideOnExpire = true;
-					job.expiryInterval = tickInterval;
-					return job;
+					return ShutdownJob(result);
 				}
 			}
 			else
@@ -29,14 +28,21 @@ namespace WVC_WorkModes
 				// Vanilla
 				if (RCellFinder.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
 				{
-					Job job = JobMaker.MakeJob(JobDefOf.SelfShutdown, result);
-					job.checkOverrideOnExpire = true;
-					job.expiryInterval = tickInterval;
-					return job;
+					return ShutdownJob(result);
 				}
 			}
 			return null;
 		}
+
+		private Job ShutdownJob(IntVec3 result)
+		{
+			Job job = JobMaker.MakeJob(JobDefOf.SelfShutdown, result);
+			job.checkOverrideOnExpire = true;
+			//job.overrideFacing = Rot4.South;
+			job.expiryInterval = tickInterval;
+			return job;
+		}
+
 	}
 
 	public class JobGiver_GetEnergy_Charger : JobGiver_GetEnergy
@@ -54,6 +60,35 @@ namespace WVC_WorkModes
 				return null;
 			}
 			return null;
+		}
+
+		public override ThinkResult TryIssueJobPackage(Pawn pawn, JobIssueParams jobParams)
+		{
+			if (!ThinkNode_CanShutdown.CanShutdown(pawn))
+			{
+				return ThinkResult.NoJob;
+			}
+			ThinkResult thinkResult = base.TryIssueJobPackage(pawn, jobParams);
+			if (thinkResult == ThinkResult.NoJob)
+			{
+				foreach (ThinkNode subNode in subNodes)
+				{
+					ThinkResult result = ThinkResult.NoJob;
+					try
+					{
+						result = subNode.TryIssueJobPackage(pawn, jobParams);
+					}
+					catch (Exception ex)
+					{
+						Log.Error("Exception in " + GetType()?.ToString() + " TryIssueJobPackage: " + ex.ToString());
+					}
+					if (result.IsValid)
+					{
+						return result;
+					}
+				}
+			}
+			return thinkResult;
 		}
 
 		private Job TryGetChargeJob(Pawn pawn, Need_MechEnergy energy)

@@ -28,10 +28,9 @@
 						  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 							<subNodes>
 							  <!-- If Danger -->
-							  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
-								<!-- <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName> -->
-								<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
-							  <!-- </li> -->
+							  <li Class="ThinkNode_SubtreesByTag">
+								<insertTag>WVC_WM_NotSafe</insertTag>
+							  </li>
 							  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 								<workModeType>Safe</workModeType>
 								<possibleRooms>

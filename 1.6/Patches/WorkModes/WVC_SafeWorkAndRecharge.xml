@@ -15,10 +15,9 @@
 				  <li Class="WVC_WorkModes.ThinkNode_ConditionalEnemyOnMap">
 					<subNodes>
 					  <!-- If Danger -->
-					  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
-						<!-- <spotDefName>WVC_IOMSS_TotallySafeSpot</spotDefName> -->
-						<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
-					  <!-- </li> -->
+					  <li Class="ThinkNode_SubtreesByTag">
+						<insertTag>WVC_WM_NotSafe</insertTag>
+					  </li>
 					  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 						<workModeType>Safe</workModeType>
 						<possibleRooms>
@@ -38,17 +37,17 @@
 					<emergency>true</emergency>
 				  </li>
 				  <li Class="JobGiver_Work" />
-				  <li Class="WVC_WorkModes.ThinkNode_CanShutdown">
+				  <li Class="ThinkNode_SubtreesByTag">
+					<insertTag>WVC_WM_PostWork</insertTag>
+				  </li>
+				  <!-- Go to smart charge -->
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+					<tickInterval>625</tickInterval>
 					<subNodes>
-					  <!-- Go to smart charge -->
-					  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
-						<tickInterval>625</tickInterval>
+					  <li Class="ThinkNode_SubtreesByTag">
+						<insertTag>WVC_WM_PostGetEnergySmart</insertTag>
 					  </li>
 					  <!-- Go to spot -->
-					  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
-						<!-- <spotDefName>WVC_IOMSS_WorkAndRecharge</spotDefName> -->
-						<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
-					  <!-- </li> -->
 					  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 						<workModeType>Work</workModeType>
 						<possibleRooms>
@@ -60,6 +59,8 @@
 					  </li>
 					</subNodes>
 				  </li>
+				  <!-- <li Class="WVC_WorkModes.ThinkNode_CanShutdown"> -->
+				  <!-- </li> -->
 				  <li Class="ThinkNode_ConditionalWorkMech">
 					<invert>true</invert>
 					<subNodes>

@@ -24,6 +24,13 @@
 	</Operation>
 
 	<!-- <Operation Class="PatchOperationReplace"> -->
+	  <!-- <xpath>/Defs/JobDef[defName="SelfShutdown"]/driverClass</xpath>  -->
+	  <!-- <value> -->
+		<!-- <driverClass>WVC_WorkModes.JobDriver_SelfShutdown</driverClass> -->
+	  <!-- </value> -->
+	<!-- </Operation> -->
+
+	<!-- <Operation Class="PatchOperationReplace"> -->
 	  <!-- <xpath>/Defs/WorkGiverDef[defName="HaulMechsToCharger" or defName="DoBillsSubcoreEncoder" or defName="DoctorTendToAnimals" or defName="DoctorFeedAnimals" or defName="RepairMech" or defName="ExtractTree" or defName="Replant" or defName="PaintBuilding" or defName="PaintFloor" or defName="RemovePaintFloor" or defName="RemovePaintBuilding" or defName="Strip" or defName="Drill"]/canBeDoneByMechs</xpath>  -->
 	  <!-- <value> -->
 		<!-- <canBeDoneByMechs>true</canBeDoneByMechs> -->

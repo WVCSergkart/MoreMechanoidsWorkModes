@@ -20,12 +20,10 @@
 					  <li Class="WVC_WorkModes.JobGiver_SmartWanderOverseer" />
 					</subNodes>
 				  </li>
-				  <li Class="WVC_WorkModes.ThinkNode_CanShutdown">
+				  <!-- Go to smart charge -->
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+					<tickInterval>625</tickInterval>
 					<subNodes>
-					  <!-- Go to smart charge -->
-					  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
-						<tickInterval>625</tickInterval>
-					  </li>
 					  <!-- Go to spot -->
 					  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
 						<!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
@@ -44,6 +42,8 @@
 					  </li>
 					</subNodes>
 				  </li>
+				  <!-- <li Class="WVC_WorkModes.ThinkNode_CanShutdown"> -->
+				  <!-- </li> -->
 				</subNodes>
 			  </li>
 			</value>

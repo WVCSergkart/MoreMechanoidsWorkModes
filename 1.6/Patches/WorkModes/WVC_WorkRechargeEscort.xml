@@ -17,6 +17,9 @@
 					<emergency>true</emergency>
 				  </li>
 				  <li Class="JobGiver_Work" />
+				  <li Class="ThinkNode_SubtreesByTag">
+					<insertTag>WVC_WM_PostWork</insertTag>
+				  </li>
 				  <!-- <li Class="JobGiver_ExitMapFollowOverseer" /> -->
 				  <li Class="WVC_WorkModes.JobGiver_SmartAIDefendOverseer" />
 				  <li Class="WVC_WorkModes.JobGiver_SmartAIFollowOverseer"/>

@@ -40,9 +40,14 @@ namespace WVC_WorkModes
 			cachedNonShutdownMechs = null;
 		}
 
+		public static bool CanShutdown(Pawn mech)
+		{
+			return !NonShutdownMechs.Contains(mech);
+		}
+
 		protected override bool Satisfied(Pawn pawn)
 		{
-			return !NonShutdownMechs.Contains(pawn);
+			return CanShutdown(pawn);
 		}
 
 	}

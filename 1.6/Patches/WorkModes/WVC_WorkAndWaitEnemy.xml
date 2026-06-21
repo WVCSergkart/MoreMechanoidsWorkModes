@@ -30,17 +30,17 @@
 					<emergency>true</emergency>
 				  </li>
 				  <li Class="JobGiver_Work" />
-				  <li Class="WVC_WorkModes.ThinkNode_CanShutdown">
+				  <li Class="ThinkNode_SubtreesByTag">
+					<insertTag>WVC_WM_PostWork</insertTag>
+				  </li>
+				  <!-- Go to smart charge -->
+				  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
+					<tickInterval>625</tickInterval>
 					<subNodes>
-					  <!-- Go to smart charge -->
-					  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
-						<tickInterval>625</tickInterval>
+					  <li Class="ThinkNode_SubtreesByTag">
+						<insertTag>WVC_WM_PostGetEnergySmart</insertTag>
 					  </li>
 					  <!-- Go to spot -->
-					  <!-- <li Class="WVC_WorkModes.JobGiver_GoToClosetShutdownSpot"> -->
-						<!-- <spotDefName>WVC_IOMSS_WaitEnemy</spotDefName> -->
-						<!-- <backupSpotDefName>WVC_IdleOptimization_MechanoidShutdownSpot</backupSpotDefName> -->
-					  <!-- </li> -->
 					  <li Class="WVC_WorkModes.JobGiver_GoToShutdownZone">
 						<workModeType>Combat</workModeType>
 						<possibleRooms>
@@ -53,6 +53,8 @@
 					  </li>
 					</subNodes>
 				  </li>
+				  <!-- <li Class="WVC_WorkModes.ThinkNode_CanShutdown"> -->
+				  <!-- </li> -->
 				</subNodes>
 			  </li>
 			</value>
