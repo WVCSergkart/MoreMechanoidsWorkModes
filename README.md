@@ -42,7 +42,7 @@ _If_ you have enabled the "Find and destroy" mode and locked the mechanoids in a
 **_Smart charge_** - In some modes, mechanoids will try to maintain close to the maximum charge. This is calculated according to the formula (Maximum charge level - 5), that is, if you set the charge to 100%, the mechanoids will be charged up to 95%, and so on. However, unlike vanilla charging, mechanoids will be interrupted if necessary.
 
 **_Shutdown mode_** - Some work modes automatically shutdown mechanoids if they have finished their work. For this purpose, special shutdown zones are used. Mechanoids can also shutdown even if these zones do not exist, but then they become an easy target for any threats.
-In work (with work) modes, the cooldown is much longer than in combat (without work). (For work 1500 ticks (1 game hour). For combat 650 ticks.)
+In work (with work) modes, the cooldown is much longer than in combat (without work). (For work 1500 ticks (~0.6 game hour). For combat 650 ticks.)
 
 _Note:_ The shutdown state from the mod uses the vanilla shutdown job. That is, all triggers and checks will count mechanoids as if they were in vanilla "Shutdown mode". 
 **For example, the game will not count shutdown paramedics as medics.** Distribute mechanoids into groups wisely!

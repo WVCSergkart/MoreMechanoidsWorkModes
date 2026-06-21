@@ -19,6 +19,29 @@ namespace WVC_WorkModes
 			return pawn.skills == null; //  || pawn.Ideo == null
 		}
 
+		//public static List<string> disabledPawnTables = new() { "bedRest" };
+
+		//private static List<WorkTypeDef> cachedWotkTypeDefs;
+		//public static List<WorkTypeDef> CanBeDoneByAnyMech
+		//{
+		//	get
+		//	{
+		//		//if (cachedWotkTypeDefs == null)
+		//		//{
+		//		//}
+		//		//return cachedWotkTypeDefs;
+		//		List<WorkTypeDef> workTypeDefs = new();
+		//		foreach (WorkGiverDef workGiverDef in DefDatabase<WorkGiverDef>.AllDefsListForReading)
+		//		{
+		//			if (workGiverDef.canBeDoneByMechs && workGiverDef.workType != null && !workTypeDefs.Contains(workGiverDef.workType))
+		//			{
+		//				Log.Error(workGiverDef.LabelCap);
+		//				workTypeDefs.Add(workGiverDef.workType);
+		//			}
+		//		}
+		//		return workTypeDefs;
+		//	}
+		//}
 
 		private static bool pawnTableInitialized = false;
 		private static bool harmonyHookInitialized = false;
@@ -33,13 +56,21 @@ namespace WVC_WorkModes
 			}
 			pawnTableInitialized = true;
 			PawnTableDef workTable = WorkModesDefOf.WVC_MechsWorkTable;
+			//List<WorkTypeDef> workTypeDefs = CanBeDoneByAnyMech;
+			//int skipped = 0;
 			foreach (PawnColumnDef item in DefDatabase<PawnColumnDef>.AllDefsListForReading)
 			{
 				if (item.Worker is PawnColumnWorker_WorkPriority)
 				{
+					//if (!workTypeDefs.Contains(item.workType))
+					//{
+					//	//skipped++;
+					//	continue;
+					//}
 					workTable.columns.Insert(workTable.columns.FindIndex((PawnColumnDef x) => x.Worker is PawnColumnWorker_CopyPasteWorkPriorities) + 1, item);
 				}
 			}
+			//Log.Error(skipped.ToString());
 			return true;
 		}
 

@@ -23,6 +23,13 @@
 	  </operations>
 	</Operation>
 
+	<!-- <Operation Class="PatchOperationReplace"> -->
+	  <!-- <xpath>/Defs/WorkGiverDef[defName="HaulMechsToCharger" or defName="DoBillsSubcoreEncoder" or defName="DoctorTendToAnimals" or defName="DoctorFeedAnimals" or defName="RepairMech" or defName="ExtractTree" or defName="Replant" or defName="PaintBuilding" or defName="PaintFloor" or defName="RemovePaintFloor" or defName="RemovePaintBuilding" or defName="Strip" or defName="Drill"]/canBeDoneByMechs</xpath>  -->
+	  <!-- <value> -->
+		<!-- <canBeDoneByMechs>true</canBeDoneByMechs> -->
+	  <!-- </value> -->
+	<!-- </Operation> -->
+
 	<!-- By choice -->
 
 	<!-- <Operation Class="WVC_WorkModes.PatchOperation_Settings"> -->
