@@ -28,7 +28,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>Assemblies\</OutputPath>
+    <OutputPath>..\1.6\Odyssey\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -67,10 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Harmony\HarmonyUtility.cs" />
     <Compile Include="MechsWorkTabUtility.cs" />
     <Compile Include="Harmony\WVC_WorkModesOdyssey_Main.cs" />
-    <Compile Include="Harmony\Patch_GravshipPlacementUtility_CopyZonesIntoMap.cs" />
-    <Compile Include="Harmony\Patch_Gravship_TransferZones.cs" />
+    <Compile Include="PawnColumnWorker\PawnColumnWorker_AllowShutdown.cs" />
+    <Compile Include="PawnColumnWorker\PawnColumnWorker_AssignEscort.cs" />
+    <Compile Include="PawnColumnWorker\PawnColumnWorker_CopyPasteAllMechsWork.cs" />
+    <Compile Include="PawnColumnWorker\PawnColumnWorker_RestrictShutdown.cs" />
     <Compile Include="PostInitializationOdyssey.cs" />
     <Compile Include="MainButtonWorker_ToggleMechTab.cs" />
     <Compile Include="MainTabWindow_Work_Mechs.cs" />

@@ -11,23 +11,12 @@ namespace WVC_WorkModes.Odyssey
 	[StaticConstructorOnStartup]
 	public static class WVC_WorkModesOdyssey_Main
 	{
-
-		private static Harmony cachedHarmony;
-		public static Harmony Harmony
-		{
-			get
-			{
-				if (cachedHarmony == null)
-				{
-					cachedHarmony = new Harmony("wvc.sergkart.biotech.MoreMechanoidsWorkModes");
-				}
-				return cachedHarmony;
-			}
-		}
-
 		static WVC_WorkModesOdyssey_Main()
 		{
-			Harmony.PatchAll();
+			if (ModsConfig.OdysseyActive)
+			{
+				HarmonyUtility.ZonesPatch();
+			}
 			if (WVC_MMWM.settings.enableMechsWorkTab)
 			{
 				MechsWorkTabUtility.ApplyNullRefPatch();

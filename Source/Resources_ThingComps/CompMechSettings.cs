@@ -1,4 +1,5 @@
 using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,11 @@ namespace WVC_WorkModes
 	public class CompProperties_MechSettings : CompProperties
 	{
 
+		[Obsolete]
 		public string uiIconZoneRestrict = "WVC/UI/WorkModes_General/Ui_RestrictZoneByGroup";
-
+		[Obsolete]
 		public string uiIconAssign = "WVC/UI/WorkModes_General/EscortTargetAssign";
-
+		[Obsolete]
 		public string uiIconReset = "WVC/UI/WorkModes_General/EscortTargetAssignReset";
 
 		public CompProperties_MechSettings()
@@ -30,9 +32,7 @@ namespace WVC_WorkModes
 	{
 
 		public bool restrictZoneByGroup = false;
-
-		// public List<MechWorkModeDef> cachedShutdownModes;
-
+		public Pawn escortTarget = null;
 		public bool allowShutdown = true;
 
 		public CompProperties_MechSettings Props => (CompProperties_MechSettings)props;
@@ -60,7 +60,7 @@ namespace WVC_WorkModes
 			}
 		}
 
-		private Texture2D AllowShutdownIcon => (allowShutdown ? ShutdownUtility.Icon_CanShutdown_Yes : ShutdownUtility.Icon_CanShutdown_No).Texture;
+		public Texture2D AllowShutdownIcon => (allowShutdown ? GraphicCache.Icon_CanShutdown_Yes : GraphicCache.Icon_CanShutdown_No).Texture;
 
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()
 		{
@@ -118,42 +118,18 @@ namespace WVC_WorkModes
 			{
 				defaultLabel = "WVC_WorkModes_AssignToPawnEscortLabel".Translate(),
 				defaultDesc = "WVC_WorkModes_AssignToPawnEscortDesc".Translate(Mech.LabelIndefinite().CapitalizeFirst(), GetEscortee(Overseer).LabelIndefinite().CapitalizeFirst()),
-				icon = ContentFinder<Texture2D>.Get(Props.uiIconAssign),
+				icon = GraphicCache.Icon_EscortTargetAssign.Texture,
 				shrinkable = true,
 				action = delegate
 				{
-					List<FloatMenuOption> list = new();
-					List<Pawn> freeColonists = parent.Map.mapPawns.FreeColonists;
-					for (int i = 0; i < freeColonists.Count; i++)
-					{
-						Pawn localPawn = freeColonists[i];
-						if (localPawn != Overseer && (localPawn != escortTarget || Find.Selector.SelectedPawns.Count > 1))
-						{
-							list.Add(new FloatMenuOption(localPawn.Name.ToStringFull, delegate
-							{
-								foreach (Pawn item2 in Find.Selector.SelectedPawns.Where((Pawn p) => p.RaceProps.IsMechanoid))
-								{
-									CompMechSettings comp = item2.GetMechSettings();
-									if (comp != null)
-									{
-										comp.escortTarget = localPawn;
-										Messages.Message("WVC_WorkModes_AssignToPawnEscortAssigned".Translate(item2.LabelIndefinite().CapitalizeFirst(), localPawn.LabelIndefinite().CapitalizeFirst()), item2, MessageTypeDefOf.NeutralEvent, historical: false);
-									}
-								}
-							}));
-						}
-					}
-					if (list.Any())
-					{
-						Find.WindowStack.Add(new FloatMenu(list));
-					}
+					DoAssign();
 				}
 			};
 			yield return new Command_Action
 			{
 				defaultLabel = "WVC_WorkModes_AssignToPawnEscortLabelReset".Translate(),
 				defaultDesc = "WVC_WorkModes_AssignToPawnEscortDesc".Translate(Mech.LabelIndefinite().CapitalizeFirst(), GetEscortee(Overseer).LabelIndefinite().CapitalizeFirst()),
-				icon = ContentFinder<Texture2D>.Get(Props.uiIconReset),
+				icon = GraphicCache.Icon_EscortTargetAssignReset.Texture,
 				shrinkable = true,
 				action = delegate
 				{
@@ -168,6 +144,47 @@ namespace WVC_WorkModes
 					}
 				}
 			};
+		}
+
+		public void DoAssign(bool single = false)
+		{
+			List<FloatMenuOption> list = new();
+			List<Pawn> freeColonists = parent.Map.mapPawns.FreeColonists;
+			for (int i = 0; i < freeColonists.Count; i++)
+			{
+				Pawn localPawn = freeColonists[i];
+				if (localPawn != Overseer && (localPawn != escortTarget || Find.Selector.SelectedPawns.Count > 1))
+				{
+					list.Add(new FloatMenuOption(localPawn.Name.ToStringFull, delegate
+					{
+						if (single)
+						{
+							AssignPawn(localPawn, Mech, this);
+						}
+						else
+						{
+							foreach (Pawn item2 in Find.Selector.SelectedPawns.Where((Pawn p) => p.RaceProps.IsMechanoid))
+							{
+								CompMechSettings comp = item2.GetMechSettings();
+								if (comp != null)
+								{
+									AssignPawn(localPawn, item2, comp);
+								}
+							}
+						}
+
+						static void AssignPawn(Pawn localPawn, Pawn item2, CompMechSettings comp)
+						{
+							comp.escortTarget = localPawn;
+							Messages.Message("WVC_WorkModes_AssignToPawnEscortAssigned".Translate(item2.LabelIndefinite().CapitalizeFirst(), localPawn.LabelIndefinite().CapitalizeFirst()), item2, MessageTypeDefOf.NeutralEvent, historical: false);
+						}
+					}));
+				}
+			}
+			if (list.Any())
+			{
+				Find.WindowStack.Add(new FloatMenu(list));
+			}
 		}
 
 		private IEnumerable<Gizmo> ShutdownSettings()
@@ -198,7 +215,7 @@ namespace WVC_WorkModes
 				{
 					defaultLabel = "WVC_WorkModes_RestrictZoneByGroupLabel".Translate().Resolve() + ": " + "\n" + Zone_MechanoidShutdown.OnOrOff(restrictZoneByGroup),
 					defaultDesc = "WVC_WorkModes_RestrictZoneByGroupDesc".Translate(),
-					icon = ContentFinder<Texture2D>.Get(Props.uiIconZoneRestrict),
+					icon = GraphicCache.Icon_RestrictShutdown.Texture,
 					shrinkable = true,
 					action = delegate
 					{
@@ -215,8 +232,6 @@ namespace WVC_WorkModes
 				};
 			}
 		}
-
-		public Pawn escortTarget = null;
 
 		private static List<MechWorkModeDef> cachedEscortModes = null;
 

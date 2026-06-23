@@ -28,7 +28,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>Assemblies\</OutputPath>
+    <OutputPath>..\1.6\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -67,6 +67,7 @@
     <Compile Include="Resources_JobGivers\JobGiver_SmartEscort.cs" />
     <Compile Include="Resources_JobGivers\JobGiver_GoToRandomScavengeZone.cs" />
     <Compile Include="Resources_Main\DefOf.cs" />
+    <Compile Include="Resources_Main\GraphicCache.cs" />
     <Compile Include="Resources_Main\MechGroupUtility.cs" />
     <Compile Include="Resources_Main\ModExtension.cs" />
     <Compile Include="Resources_Main\ModSettings.cs" />

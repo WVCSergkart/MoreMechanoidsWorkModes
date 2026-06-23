@@ -23,9 +23,37 @@
 	  <!-- <li>Faction</li> -->
 	  <!-- <li MayRequire="Ludeon.RimWorld.Ideology">Ideo</li> -->
 	  <!-- <li MayRequire="Ludeon.RimWorld.Biotech">Xenotype</li> -->
+	  <li>WVC_CopyPasteAllMechsWork</li>
+	  <li>WVC_AllowShutdown</li>
+	  <li>WVC_RestrictShutdown</li>
+	  <li>WVC_AssignEscort</li>
+	  <li>GapTiny</li>
+	  <li>GapTiny</li>
 	  <li>CopyPasteWorkPriorities</li>
 	  <li>RemainingSpace</li>
 	</columns>
   </PawnTableDef>
+
+  <PawnColumnDef>
+	<defName>WVC_CopyPasteAllMechsWork</defName>
+	<workerClass>WVC_WorkModes.PawnColumnWorker_CopyPasteAllMechsWork</workerClass>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+	<defName>WVC_AllowShutdown</defName>
+	<workerClass>WVC_WorkModes.PawnColumnWorker_AllowShutdown</workerClass>
+	<sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+	<defName>WVC_RestrictShutdown</defName>
+	<workerClass>WVC_WorkModes.PawnColumnWorker_RestrictShutdown</workerClass>
+	<sortable>true</sortable>
+  </PawnColumnDef>
+
+  <PawnColumnDef>
+	<defName>WVC_AssignEscort</defName>
+	<workerClass>WVC_WorkModes.PawnColumnWorker_AssignEscort</workerClass>
+  </PawnColumnDef>
 
 </Defs>

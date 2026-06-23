@@ -17,12 +17,6 @@ namespace WVC_WorkModes
 
 	public static class ShutdownUtility
 	{
-
-		//public static readonly CachedTexture Icon_MechsWorkTab = new("WVC/UI/Buttons/MechsWorkIcon");
-
-		public static readonly CachedTexture Icon_CanShutdown_Yes = new("WVC/UI/WorkModes_General/CanShutdown_Yes");
-		public static readonly CachedTexture Icon_CanShutdown_No = new("WVC/UI/WorkModes_General/CanShutdown_No");
-
 		public static void ResetAllStaticCache()
 		{
 			cachedMechSettings = null;
@@ -40,7 +34,7 @@ namespace WVC_WorkModes
 			return cachedMechSettings;
 		}
 
-		public static void CopyZonesIntoMap(ref List<MoveableShutdownZone> savedZones, Gravship gravship, Map map, IntVec3 root)
+		public static void PasteZonesIntoMap(ref List<MoveableShutdownZone> savedZones, Gravship gravship, Map map, IntVec3 root)
 		{
 			foreach (MoveableShutdownZone stockpile in savedZones)
 			{
@@ -49,7 +43,7 @@ namespace WVC_WorkModes
 			savedZones = new();
 		}
 
-		public static void SaveZonesFromMap(Map oldMap, IntVec3 origin, HashSet<IntVec3> engineFloors, Gravship gravship, ref List<MoveableShutdownZone> savedZones)
+		public static void CopyZonesFromMap(Map oldMap, IntVec3 origin, HashSet<IntVec3> engineFloors, Gravship gravship, ref List<MoveableShutdownZone> savedZones)
 		{
 			savedZones = new();
 			for (int num = oldMap.zoneManager.AllZones.Count - 1; num >= 0; num--)

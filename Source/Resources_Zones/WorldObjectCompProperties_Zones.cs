@@ -27,14 +27,14 @@ namespace WVC_WorkModes
 
 		public virtual void CopyZonesIntoMap(Gravship gravship, Map map, IntVec3 root)
 		{
-			ShutdownUtility.CopyZonesIntoMap(ref savedZones, gravship, map, root);
+			ShutdownUtility.PasteZonesIntoMap(ref savedZones, gravship, map, root);
 		}
 
 		public List<MoveableShutdownZone> savedZones = new();
 
 		public virtual void TransferZones(Map oldMap, IntVec3 origin, HashSet<IntVec3> engineFloors)
 		{
-			ShutdownUtility.SaveZonesFromMap(oldMap, origin, engineFloors, parent as Gravship, ref savedZones);
+			ShutdownUtility.CopyZonesFromMap(oldMap, origin, engineFloors, parent as Gravship, ref savedZones);
 		}
 
 		public void ExposeData()

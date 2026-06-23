@@ -83,9 +83,9 @@ namespace WVC_WorkModes
 			}
 			try
 			{
-				WVC_WorkModesOdyssey_Main.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "DrawWorkBoxBackground"), prefix: new HarmonyMethod(typeof(MechsWorkTabUtility).GetMethod(nameof(MechsWorkTabUtility.Patch_WidgetsWork_DrawWorkBoxBackground))));
-				WVC_WorkModesOdyssey_Main.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "DrawWorkBoxFor"), prefix: new HarmonyMethod(typeof(MechsWorkTabUtility).GetMethod(nameof(MechsWorkTabUtility.Patch_WidgetsWork_DrawWorkBoxFor))));
-				WVC_WorkModesOdyssey_Main.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "TipForPawnWorker"), prefix: new HarmonyMethod(typeof(MechsWorkTabUtility).GetMethod(nameof(MechsWorkTabUtility.Patch_WidgetsWork_TipForPawnWorker))));
+				HarmonyUtility.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "DrawWorkBoxBackground"), prefix: new HarmonyMethod(typeof(MechsWorkTabUtility).GetMethod(nameof(MechsWorkTabUtility.Patch_WidgetsWork_DrawWorkBoxBackground))));
+				HarmonyUtility.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "DrawWorkBoxFor"), prefix: new HarmonyMethod(typeof(MechsWorkTabUtility).GetMethod(nameof(MechsWorkTabUtility.Patch_WidgetsWork_DrawWorkBoxFor))));
+				HarmonyUtility.Harmony.Patch(AccessTools.Method(typeof(WidgetsWork), "TipForPawnWorker"), prefix: new HarmonyMethod(typeof(MechsWorkTabUtility).GetMethod(nameof(MechsWorkTabUtility.Patch_WidgetsWork_TipForPawnWorker))));
 				harmonyHookInitialized = true;
 			}
 			catch (Exception arg)
