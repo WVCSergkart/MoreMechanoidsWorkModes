@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
+using Verse.Noise;
 
 namespace WVC_WorkModes
 {
@@ -12,25 +13,29 @@ namespace WVC_WorkModes
 		public int tickInterval = 3000;
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			//if (!ShouldAutoRecharge(pawn))
+			if (ShutdownUtility.CanSelfShutdown(pawn.Position, pawn, pawn.Map, false))
+			{
+				return ShutdownJob(pawn.Position);
+			}
+			if (ShutdownUtility.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
+			{
+				return ShutdownJob(result);
+			}
+			//if (WVC_MMWM.settings.useCustomShutdownBehavior)
 			//{
-			//	return null;
+			//	if (ShutdownUtility.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
+			//	{
+			//		return ShutdownJob(result);
+			//	}
 			//}
-			if (WVC_MMWM.settings.useCustomShutdownBehavior)
-			{
-				if (ShutdownUtility.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
-				{
-					return ShutdownJob(result);
-				}
-			}
-			else
-			{
-				// Vanilla
-				if (RCellFinder.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
-				{
-					return ShutdownJob(result);
-				}
-			}
+			//else
+			//{
+			//	// Vanilla
+			//	if (RCellFinder.TryFindNearbyMechSelfShutdownSpot(pawn.Position, pawn, pawn.Map, out var result))
+			//	{
+			//		return ShutdownJob(result);
+			//	}
+			//}
 			return null;
 		}
 
