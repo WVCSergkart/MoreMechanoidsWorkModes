@@ -1,5 +1,6 @@
 using RimWorld;
 using RimWorld.Planet;
+using System;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
@@ -245,7 +246,10 @@ namespace WVC_WorkModes
 
 		public static bool TryFindNearbyMechSelfShutdownSpot(IntVec3 root, Pawn pawn, Map map, out IntVec3 result, bool allowForbidden = false)
 		{
-			foreach (IntVec3 item in GenRadial.RadialCellsAround(root, GenRadial.MaxRadialPatternRadius - 1f, useCenter: true))
+			// Cap search radius for mod compatibility (e.g. Combat Extended limits NumCellsInRadius to 119).
+			// MaxRadialPatternRadius is a compile-time const and cannot reflect runtime overrides.
+			float searchRadius = Math.Min(GenRadial.MaxRadialPatternRadius - 1f, 118f);
+			foreach (IntVec3 item in GenRadial.RadialCellsAround(root, searchRadius, useCenter: true))
 			{
 				if (CanSelfShutdown(item, pawn, map, allowForbidden))
 				{
