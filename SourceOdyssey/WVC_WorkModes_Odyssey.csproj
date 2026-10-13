@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WVC_WorkModes</RootNamespace>
     <AssemblyName>WVC_WorkModes_Odyssey</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -19,7 +19,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\1.6\Odyssey\Assemblies\</OutputPath>
+    <OutputPath>..\1.7\Odyssey\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,7 +28,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\1.6\Odyssey\Assemblies\</OutputPath>
+    <OutputPath>..\1.7\Odyssey\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -41,28 +41,28 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+    <Reference Include="UnityStubs">
+      <HintPath>..\..\..\UnityStubs.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    <Reference Include="Waylith">
+      <HintPath>..\..\..\Waylith.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    <Reference Include="Waylith.UnityCompat">
+      <HintPath>..\..\..\Waylith.UnityCompat.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    <Reference Include="Waylith.VideoDecode">
+      <HintPath>..\..\..\Waylith.VideoDecode.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="WVC_MoreMechanoidsWorkModes_Main">
-      <HintPath>..\1.6\Assemblies\WVC_MoreMechanoidsWorkModes_Main.dll</HintPath>
+      <HintPath>..\1.7\Assemblies\WVC_MoreMechanoidsWorkModes_Main.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

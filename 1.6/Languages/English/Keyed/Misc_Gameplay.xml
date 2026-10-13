@@ -77,8 +77,4 @@ Allows you to specify to the mechanoid what colonist it will escort.
 
 	<WVC_WM_ShutdownGroup>shutdown</WVC_WM_ShutdownGroup>
 
-	<!-- Can shutdown check -->
-	<WVC_WorkModes_AllowShutdownLabel>Allow shutdown</WVC_WorkModes_AllowShutdownLabel>
-	<WVC_WorkModes_AllowShutdownDesc>Allows you to disable or enable shutdown for a specific mech.</WVC_WorkModes_AllowShutdownDesc>
-
 </LanguageData>

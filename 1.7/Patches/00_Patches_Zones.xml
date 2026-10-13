@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- Order fix -->
+
+	<Operation Class="PatchOperationSequence">
+	  <success>Always</success>
+	  <operations>
+		<li Class="PatchOperationReplace">
+		  <xpath>/Defs/MechWorkModeDef[defName="Work"]/uiOrder</xpath>
+		  <success>Invert</success>
+		  <value>
+			<uiOrder>100</uiOrder>
+		  </value>
+		</li>
+		<li Class="PatchOperationAdd">
+		  <xpath>/Defs/MechWorkModeDef[defName="Work"]</xpath>
+		  <success>Always</success>
+		  <value>
+			<uiOrder>100</uiOrder>
+		  </value>
+		</li>
+	  </operations>
+	</Operation>
+
+	<!-- <Operation Class="PatchOperationReplace"> -->
+	  <!-- <xpath>/Defs/JobDef[defName="SelfShutdown"]/driverClass</xpath>  -->
+	  <!-- <value> -->
+		<!-- <driverClass>WVC_WorkModes.JobDriver_SelfShutdown</driverClass> -->
+	  <!-- </value> -->
+	<!-- </Operation> -->
+
+	<!-- <Operation Class="PatchOperationReplace"> -->
+	  <!-- <xpath>/Defs/WorkGiverDef[defName="HaulMechsToCharger" or defName="DoBillsSubcoreEncoder" or defName="DoctorTendToAnimals" or defName="DoctorFeedAnimals" or defName="RepairMech" or defName="ExtractTree" or defName="Replant" or defName="PaintBuilding" or defName="PaintFloor" or defName="RemovePaintFloor" or defName="RemovePaintBuilding" or defName="Strip" or defName="Drill"]/canBeDoneByMechs</xpath>  -->
+	  <!-- <value> -->
+		<!-- <canBeDoneByMechs>true</canBeDoneByMechs> -->
+	  <!-- </value> -->
+	<!-- </Operation> -->
+
+	<!-- By choice -->
+
+	<!-- <Operation Class="WVC_WorkModes.PatchOperation_Settings"> -->
+		<!-- <settingName>WVC_Scavenging</settingName> -->
+		<!-- <active Class="PatchOperationSequence"> -->
+			<!-- <operations> -->
+
+				<!-- <li Class="PatchOperationInsert"> -->
+				  <!-- <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses/li[contains(text(),'Designator_Deconstruct')]</xpath> -->
+				  <!-- <order>Append</order> -->
+				  <!-- <success>Always</success> -->
+				  <!-- <value> -->
+					<!-- <li>WVC_WorkModes.Designator_MechanoidScavengeZone</li> -->
+				  <!-- </value> -->
+				<!-- </li> -->
+
+			<!-- </operations> -->
+		<!-- </active> -->
+	<!-- </Operation> -->
+
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
+		<settingName>enable_GoToShutdownZoneJob</settingName>
+		<active Class="PatchOperationInsert">
+		  <xpath>/Defs/DesignationCategoryDef[defName="Biotech" or defName="Zone"]/specialDesignatorClasses/li[contains(text(),'Designator_Deconstruct')]</xpath>
+		  <order>Append</order>
+		  <success>Always</success>
+		  <value>
+			<li>WVC_WorkModes.Designator_MechanoidShutdownZone</li>
+		  </value>
+		</active>
+	</Operation>
+
+	<Operation Class="WVC_WorkModes.PatchOperation_Settings">
+		<settingName>enable_GoToShutdownRoomJob</settingName>
+		<deActive Class="PatchOperationRemove">
+		  <xpath>/Defs/RoomRoleDef[defName="WVC_MechHangar"]</xpath>
+		  <success>Always</success>
+		</deActive>
+	</Operation>
+
+</Patch>

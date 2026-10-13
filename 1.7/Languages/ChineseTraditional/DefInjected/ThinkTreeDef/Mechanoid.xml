@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Patrolling. -->
+  <Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.5.subNodes.4.reportStringOverride>正在巡邏。</Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.5.subNodes.4.reportStringOverride>
+  
+  <!-- EN: Protects itself. -->
+  <Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.9.subNodes.4.reportStringOverride>正在自我保護。</Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.9.subNodes.4.reportStringOverride>
+  
+  <!-- EN: Researching. -->
+  <Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.15.subNodes.6.reportStringOverride>正在研究。</Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.15.subNodes.6.reportStringOverride>
+
+  <!-- EN: Scavenging. -->
+  <Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.16.subNodes.5.subNodes.2.reportStringOverride>正在搜刮。</Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.16.subNodes.5.subNodes.2.reportStringOverride>
+  
+  <!-- EN: Scavenging. --> <!--when HiveMindResearching mode disable-->
+  <Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.15.subNodes.5.subNodes.2.reportStringOverride>正在搜刮。</Mechanoid.thinkRoot.subNodes.7.subNodes.0.subNodes.15.subNodes.5.subNodes.2.reportStringOverride>
+  
+</LanguageData>
