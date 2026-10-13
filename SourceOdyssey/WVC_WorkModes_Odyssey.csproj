@@ -1,50 +1,32 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1BEA7B21-61D5-4FE2-81A9-190C7677E526}</ProjectGuid>
+    <TargetFramework>net10.0</TargetFramework>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<GenerateDependencyFile>false</GenerateDependencyFile>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WVC_WorkModes</RootNamespace>
-    <AssemblyName>WVC_WorkModes_Odyssey</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
     <LangVersion>preview</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyTitle>WVC_WorkModes</AssemblyTitle>
+    <Product>WVC_WorkModes</Product>
+    <Copyright>Copyright © Segkart 2021</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\1.7\Odyssey\Assemblies\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
     <OutputPath>..\1.7\Odyssey\Assemblies\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Source\packages\Lib.Harmony.2.4.2\lib\net48\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="System.Xml" />
     <Reference Include="UnityStubs">
       <HintPath>..\..\..\UnityStubs.dll</HintPath>
       <Private>False</Private>
@@ -61,26 +43,14 @@
       <HintPath>..\..\..\Waylith.VideoDecode.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="WVC_MoreMechanoidsWorkModes_Main">
-      <HintPath>..\1.7\Assemblies\WVC_MoreMechanoidsWorkModes_Main.dll</HintPath>
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" />
+  </ItemGroup>
+  <ItemGroup Label="Compile items now included by globbing that were not in the original project file">
+    <Compile Remove="OdysseyDefOf.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Source\WVC_MoreMechanoidsWorkModes_JobGivers.csproj">
       <Private>False</Private>
-    </Reference>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Harmony\HarmonyUtility.cs" />
-    <Compile Include="MechsWorkTabUtility.cs" />
-    <Compile Include="Harmony\WVC_WorkModesOdyssey_Main.cs" />
-    <Compile Include="PawnColumnWorker\PawnColumnWorker_AllowShutdown.cs" />
-    <Compile Include="PawnColumnWorker\PawnColumnWorker_AssignEscort.cs" />
-    <Compile Include="PawnColumnWorker\PawnColumnWorker_CopyPasteAllMechsWork.cs" />
-    <Compile Include="PawnColumnWorker\PawnColumnWorker_RestrictShutdown.cs" />
-    <Compile Include="PostInitializationOdyssey.cs" />
-    <Compile Include="MainButtonWorker_ToggleMechTab.cs" />
-    <Compile Include="MainTabWindow_Work_Mechs.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
