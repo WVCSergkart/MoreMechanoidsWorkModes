@@ -10,9 +10,13 @@
 	<v1.6>
 		<li>/</li>
 		<li>1.6</li>
-		<!-- <li IfModActive="ludeon.rimworld.odyssey">1.6/Odyssey</li> -->
-		<li IfModActive="brrainz.harmony">1.6/Odyssey</li>
+		<li IfModActive="ludeon.rimworld.odyssey">1.6/Odyssey</li>
 	</v1.6>
+	<v1.7>
+		<li>/</li>
+		<li>1.7</li>
+		<li IfModActive="brrainz.harmony">1.7/Odyssey</li>
+	</v1.7>
 </loadFolders>
 
 

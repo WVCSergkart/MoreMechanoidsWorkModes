@@ -44,7 +44,7 @@ namespace WVC_WorkModes
 		public bool enableAutoRepairByDefault = true;
 		public int enemyCheckDelay = 120;
 		public bool enableOpportunisticChargers = true;
-		public bool enableMechsWorkTab = true;
+		public bool enableMechsWorkTab = false;
 		public bool hideMechsWorkTab = true;
 
 		public IEnumerable<string> GetEnabledSettings => from specificSetting in GetType().GetFields()
@@ -86,7 +86,7 @@ namespace WVC_WorkModes
 			Scribe_Values.Look(ref enableAutoRepairByDefault, "enableAutoRepairByDefault", defaultValue: true);
 			Scribe_Values.Look(ref enemyCheckDelay, "enemyCheckDelay", defaultValue: 120);
 			Scribe_Values.Look(ref enableOpportunisticChargers, "enableOpportunisticChargers", defaultValue: true);
-			Scribe_Values.Look(ref enableMechsWorkTab, "enableMechsWorkTab", defaultValue: true);
+			Scribe_Values.Look(ref enableMechsWorkTab, "enableMechsWorkTab", defaultValue: false);
 			Scribe_Values.Look(ref hideMechsWorkTab, "hideMechsWorkTab", defaultValue: true);
 		}
 	}
