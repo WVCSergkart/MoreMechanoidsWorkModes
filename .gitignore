@@ -368,3 +368,6 @@ MigrationBackup/
 install.sh
 *.csproj
 Source/BiomesCore/BiomesCore/BiomesCore.csproj
+Assets.zip.fingerprint
+Assets.zip.roles
+Assets.zip.stamps
