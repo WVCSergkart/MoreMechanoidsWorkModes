@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--Original=More Mechanoids Work Modes ー Behaviors-->
+  <WVC_MMWM_BehaviorsGuide.label>더 많은 메카노이드 작업 모드 - 행동</WVC_MMWM_BehaviorsGuide.label>
+  <!--Original=The mod adds some unique behaviors worth knowing about.
+
+ー
+Checking for enemies on the map ー if the enemy is reachable and is not in the zone in which the mechanoid operates, then False is returned and the mechanoid will continue to work normally.
+
+What does it mean:
+If you enable the &quot;Work if safe&quot; mode and limit the working area, the mechanoid will ignore the intrusion until the enemy is in the mechanoid&apos;s working area.
+
+If you have enabled the &quot;Find and destroy&quot; mode and locked the mechanoids in a small but open area, then the mechanoid will not pursue enemies, but will try to fight with the enemy that is in the field of view of the mechanoid. This can lead to too smart AI kiting your mechs.
+
+ー
+Smart charge ー In some modes, mechanoids will try to maintain close to the maximum charge. This is calculated according to the formula (Maximum charge level ー 5), that is, if you set the charge to 100%, the mechanoids will be charged up to 95%, and so on. However, unlike vanilla charging, mechanoids will be interrupted if necessary.
+
+ー
+Shutdown mode ー some work modes disable mechanoids for optimization when they are not doing anything. In work modes, the cooldown is much longer than in combat.
+
+ー
+Mechanoid shutdown zone ー Mechanoids that have finished all their business and are going to sleep will go to the nearest such zone, if it is in an accessible area for them.
+
+ー
+Smart escort ー Mechanoids can be assigned an escort purpose. This way the mechanoids will be able to protect and accompany different pawns. This feature only works for the home map.-->
+  <WVC_MMWM_BehaviorsGuide.description>이 모드는 알아 두면 유용한 몇 가지 고유한 행동을 추가합니다.
+
+-
+지도에서 적 확인 - 적에게 접근할 수 있지만 해당 메카노이드가 활동하는 구역에 적이 없다면 False를 반환하고 메카노이드는 평소처럼 작업을 계속합니다.
+
+무슨 뜻일까요?
+&quot;안전할 때 작업&quot; 모드를 활성화하고 작업 구역을 제한하면, 적이 메카노이드의 작업 구역에 들어올 때까지 메카노이드는 침입을 무시합니다.
+
+&quot;수색 및 섬멸&quot; 모드를 활성화하고 메카노이드를 좁지만 개방된 구역에 가두면, 메카노이드는 적을 추격하지 않고 시야에 들어온 적과 싸우려 합니다. 이로 인해 AI가 지나치게 영리하게 행동하여 메카노이드가 적을 추격하다가 계속 따돌림당할 수 있습니다.
+
+-
+스마트 충전 - 일부 모드에서 메카노이드는 충전량을 최대치에 가깝게 유지하려 합니다. 충전 목표량은 (최대 충전량 - 5)로 계산됩니다. 즉, 충전량을 100%로 설정하면 메카노이드는 95%까지 충전하는 식입니다. 단, 바닐라의 충전과 달리 필요할 경우 메카노이드의 충전이 중단될 수 있습니다.
+
+-
+전원 종료 모드 - 일부 작업 모드에서는 아무것도 하지 않을 때 최적화를 위해 메카노이드의 전원을 끕니다. 작업 모드에서는 전투 중일 때보다 전원 종료까지의 대기 시간이 훨씬 깁니다.
+
+-
+메카노이드 전원 종료 구역 - 모든 작업을 마치고 잠들려는 메카노이드는 접근할 수 있는 구역 중 가장 가까운 전원 종료 구역으로 이동합니다.
+
+-
+스마트 호위 - 메카노이드에게 호위 대상을 지정할 수 있습니다. 이를 통해 메카노이드는 서로 다른 폰을 보호하고 따라다닐 수 있습니다. 이 기능은 정착지 지도에서만 작동합니다.</WVC_MMWM_BehaviorsGuide.description>
+  <!--Original=The mod adds some unique behaviors worth knowing about.
+
+ー
+Checking for enemies on the map ー if the enemy is reachable and is not in the zone in which the mechanoid operates, then False is returned and the mechanoid will continue to work normally.
+
+What does it mean:
+If you enable the &quot;Work if safe&quot; mode and limit the working area, the mechanoid will ignore the intrusion until the enemy is in the mechanoid&apos;s working area.
+
+If you have enabled the &quot;Find and destroy&quot; mode and locked the mechanoids in a small but open area, then the mechanoid will not pursue enemies, but will try to fight with the enemy that is in the field of view of the mechanoid. This can lead to too smart AI kiting your mechs.
+
+ー
+Smart charge ー In some modes, mechanoids will try to maintain close to the maximum charge. This is calculated according to the formula (Maximum charge level ー 5), that is, if you set the charge to 100%, the mechanoids will be charged up to 95%, and so on. However, unlike vanilla charging, mechanoids will be interrupted if necessary.
+
+ー
+Shutdown mode ー some work modes disable mechanoids for optimization when they are not doing anything. In work modes, the cooldown is much longer than in combat.
+
+ー
+Mechanoid shutdown zone ー Mechanoids that have finished all their business and are going to sleep will go to a such zone, if it is in an accessible area for them.
+
+ー
+Smart escort ー Mechanoids can be assigned an escort purpose. This way the mechanoids will be able to protect and accompany different pawns. This feature only works for the home map.-->
+  <WVC_MMWM_BehaviorsGuide.helpText>이 모드는 알아 두면 유용한 몇 가지 고유한 행동을 추가합니다.
+
+-
+지도에서 적 확인 - 적에게 접근할 수 있지만 해당 메카노이드가 활동하는 구역에 적이 없다면 False를 반환하고 메카노이드는 평소처럼 작업을 계속합니다.
+
+무슨 뜻일까요?
+&quot;안전할 때 작업&quot; 모드를 활성화하고 작업 구역을 제한하면, 적이 메카노이드의 작업 구역에 들어올 때까지 메카노이드는 침입을 무시합니다.
+
+&quot;수색 및 섬멸&quot; 모드를 활성화하고 메카노이드를 좁지만 개방된 구역에 가두면, 메카노이드는 적을 추격하지 않고 시야에 들어온 적과 싸우려 합니다. 이로 인해 AI가 지나치게 영리하게 행동하여 메카노이드가 적을 추격하다가 계속 따돌림당할 수 있습니다.
+
+-
+스마트 충전 - 일부 모드에서 메카노이드는 충전량을 최대치에 가깝게 유지하려 합니다. 충전 목표량은 (최대 충전량 - 5)로 계산됩니다. 즉, 충전량을 100%로 설정하면 메카노이드는 95%까지 충전하는 식입니다. 단, 바닐라의 충전과 달리 필요할 경우 메카노이드의 충전이 중단될 수 있습니다.
+
+-
+전원 종료 모드 - 일부 작업 모드에서는 아무것도 하지 않을 때 최적화를 위해 메카노이드의 전원을 끕니다. 작업 모드에서는 전투 중일 때보다 전원 종료까지의 대기 시간이 훨씬 깁니다.
+
+-
+메카노이드 전원 종료 구역 - 모든 작업을 마치고 잠들려는 메카노이드는 접근할 수 있는 구역 중 가장 가까운 전원 종료 구역으로 이동합니다.
+
+-
+스마트 호위 - 메카노이드에게 호위 대상을 지정할 수 있습니다. 이를 통해 메카노이드는 서로 다른 폰을 보호하고 따라다닐 수 있습니다. 이 기능은 정착지 지도에서만 작동합니다.</WVC_MMWM_BehaviorsGuide.helpText>
+</LanguageData>
