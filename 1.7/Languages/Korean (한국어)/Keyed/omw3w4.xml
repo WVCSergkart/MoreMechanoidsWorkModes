@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--English=Mechanoid shutdown zone-->
+  <WVC_MechanoidShutdownZone>메카노이드 전원 종료 구역</WVC_MechanoidShutdownZone>
+  <!--English=Mechanoids will return here before shutting down.-->
+  <WVC_MechanoidShutdownZoneDesc>메카노이드는 전원을 끄기 전에 이곳으로 돌아옵니다.</WVC_MechanoidShutdownZoneDesc>
+  <!--English=Work type-->
+  <WVC_ShutdownZone_AllowWorkers>작업 유형</WVC_ShutdownZone_AllowWorkers>
+  <!--English=Safe type-->
+  <WVC_ShutdownZone_AllowSafe>안전 유형</WVC_ShutdownZone_AllowSafe>
+  <!--English=Combat type-->
+  <WVC_ShutdownZone_AllowCombatants>전투 유형</WVC_ShutdownZone_AllowCombatants>
+  <!--English=Ambush type-->
+  <WVC_ShutdownZone_AllowAmbush>매복 유형</WVC_ShutdownZone_AllowAmbush>
+  <!--English=All groups allowed-->
+  <WVC_WorkModes_allowAllGroups>모든 그룹 허용</WVC_WorkModes_allowAllGroups>
+  <!--English=Responsible for whether mechanoids with this type of work will be able to shutdown here.-->
+  <WVC_ShutdownZone_BasicDesc>이 작업 유형의 메카노이드가 이곳에서 전원을 끌 수 있도록 허용할지 설정합니다.</WVC_ShutdownZone_BasicDesc>
+  <!--English=Responsible for whether all mechanoids, regardless of the group, can use this zone.-->
+  <WVC_WorkModes_allowAllGroupsDesc>그룹에 관계없이 모든 메카노이드가 이 구역을 사용할 수 있도록 허용할지 설정합니다.</WVC_WorkModes_allowAllGroupsDesc>
+  <!--English=On-->
+  <WVC_WorkModes_On>켜기</WVC_WorkModes_On>
+  <!--English=Off-->
+  <WVC_WorkModes_Off>끄기</WVC_WorkModes_Off>
+  <!--English=Mechanoid scavenge zone-->
+  <WVC_MechanoidScavengeZone>메카노이드 자원 수색 구역</WVC_MechanoidScavengeZone>
+  <!--English=In the &quot;Scavenging&quot; work mode, mechanoids will look for useful resources in this zone.-->
+  <WVC_MechanoidScavengeZoneDesc>&quot;자원 수색&quot; 작업 모드에서 메카노이드는 이 구역에서 유용한 자원을 찾습니다.</WVC_MechanoidScavengeZoneDesc>
+  <!--English=Cells: {0} | Minimum allowed: {1}-->
+  <WVC_MechanoidScavengeZone_CellsCount>칸 수: {0} | 허용 최소 칸 수: {1}</WVC_MechanoidScavengeZone_CellsCount>
+  <!--English=Assign to escort-->
+  <WVC_WorkModes_AssignToPawnEscortLabel>호위 대상 지정</WVC_WorkModes_AssignToPawnEscortLabel>
+  <!--English=Reset escorted pawn-->
+  <WVC_WorkModes_AssignToPawnEscortLabelReset>호위 대상 초기화</WVC_WorkModes_AssignToPawnEscortLabelReset>
+  <!--English={0} assigned escort {1}
+
+Allows you to specify to the mechanoid what colonist it will escort.
+
+{0} cannot follow anyone other than an overseer in a caravan or on nonーhome maps.-->
+  <WVC_WorkModes_AssignToPawnEscortDesc>{0}의 호위 대상: {1}
+
+메카노이드가 어떤 정착민을 호위할지 지정할 수 있습니다.
+
+{0}은(는) 상단에 있거나 정착지 외부 지도에 있을 때 감독관 이외의 인물을 따라갈 수 없습니다.</WVC_WorkModes_AssignToPawnEscortDesc>
+  <!--English={0} assigned to escort {1}.-->
+  <WVC_WorkModes_AssignToPawnEscortAssigned>{0}이(가) {1}을(를) 호위하도록 지정되었습니다.</WVC_WorkModes_AssignToPawnEscortAssigned>
+  <!--English={0} no longer escort {1}.-->
+  <WVC_WorkModes_AssignToPawnEscortNoLongerEscort>{0}이(가) 더 이상 {1}을(를) 호위하지 않습니다.</WVC_WorkModes_AssignToPawnEscortNoLongerEscort>
+  <!--English=Assigned to escorts {0}-->
+  <WVC_WorkModes_EscortsAssignTargetLabel>{0}의 호위 대상으로 지정됨</WVC_WorkModes_EscortsAssignTargetLabel>
+  <!--English={0} is not researched. Mode changed to {1}.-->
+  <WVC_WorkModes_ChangeModDefaultMessage>{0} 기술을 연구하지 않았습니다. 모드가 {1}(으)로 변경되었습니다.</WVC_WorkModes_ChangeModDefaultMessage>
+  <!--English=Required technologies:-->
+  <WVC_WorkModes_ModeTechnologyRequirement>필요한 기술:</WVC_WorkModes_ModeTechnologyRequirement>
+  <!--English=Allows use new modes:-->
+  <WVC_WorkModes_TechnologyAllowsModes>사용 가능한 새 모드:</WVC_WorkModes_TechnologyAllowsModes>
+  <!--English= ー &lt;color=#00cccc&gt;{0}&lt;/color&gt;: {1}-->
+  <WVC_WorkModes_TechnologyAllowsModes_Desc> - &lt;color=#00cccc&gt;{0}&lt;/color&gt;: {1}</WVC_WorkModes_TechnologyAllowsModes_Desc>
+  <!--English=Current group-->
+  <WVC_WorkModes_CurrentZoneGroup>현재 그룹</WVC_WorkModes_CurrentZoneGroup>
+  <!--English=Current owner-->
+  <WVC_WorkModes_CurrentZoneOwner>현재 소유자</WVC_WorkModes_CurrentZoneOwner>
+  <!--English=Assign group-->
+  <WVC_WorkModes_ChosenGroupLabel>그룹 지정</WVC_WorkModes_ChosenGroupLabel>
+  <!--English=Allows you to designate a group of mechanoids that will return to this zone.-->
+  <WVC_WorkModes_ChosenGroupDesc>이 구역으로 돌아올 메카노이드 그룹을 지정할 수 있습니다.</WVC_WorkModes_ChosenGroupDesc>
+  <!--English=Group {0} assigned to {1}.-->
+  <WVC_WorkModes_GroupIsChosen>{0} 그룹이 {1}에 지정되었습니다.</WVC_WorkModes_GroupIsChosen>
+  <!--English=Assign mechanitor-->
+  <WVC_WorkModes_ChosenMechanitorLabel>메카니터 지정</WVC_WorkModes_ChosenMechanitorLabel>
+  <!--English=Allows you to assign a zone owner.-->
+  <WVC_WorkModes_ChosenMechanitorDesc>구역의 소유자를 지정할 수 있습니다.</WVC_WorkModes_ChosenMechanitorDesc>
+  <!--English={0} assigned as owner of {1}.-->
+  <WVC_WorkModes_MechanitorIsChosen>{0}이(가) {1}의 소유자로 지정되었습니다.</WVC_WorkModes_MechanitorIsChosen>
+  <!--English=Reset owner-->
+  <WVC_WorkModes_ResetOwnerLabel>소유자 초기화</WVC_WorkModes_ResetOwnerLabel>
+  <!--English=Allows you to reset a zone owner.-->
+  <WVC_WorkModes_ResetOwnerDesc>구역의 소유자를 초기화할 수 있습니다.</WVC_WorkModes_ResetOwnerDesc>
+  <!--English={0} settings are reset to default.-->
+  <WVC_WorkModes_ResetOwnerMessage>{0}의 설정이 기본값으로 초기화되었습니다.</WVC_WorkModes_ResetOwnerMessage>
+  <!--English=Use only group zones-->
+  <WVC_WorkModes_RestrictZoneByGroupLabel>그룹 구역만 사용</WVC_WorkModes_RestrictZoneByGroupLabel>
+  <!--English=Allows you to limit the mechanoid&apos;s choice of zones to those specifically assigned to its group.-->
+  <WVC_WorkModes_RestrictZoneByGroupDesc>메카노이드가 자신이 속한 그룹에 지정된 구역만 선택하도록 제한합니다.</WVC_WorkModes_RestrictZoneByGroupDesc>
+  <!--English=Uses only zones of its group-->
+  <WVC_WorkModes_RestrictZoneByGroupInspect>자신의 그룹에 속한 구역만 사용</WVC_WorkModes_RestrictZoneByGroupInspect>
+  <!--English=In shutdown mode x{0}%-->
+  <WVC_WorkModes_DormantModeStatPart>전원 종료 모드에서 x{0}%</WVC_WorkModes_DormantModeStatPart>
+  <!--English=shutdown-->
+  <WVC_WM_ShutdownGroup>전원 종료</WVC_WM_ShutdownGroup>
+  <!--English=Allow shutdown-->
+  <WVC_WorkModes_AllowShutdownLabel>전원 종료 허용</WVC_WorkModes_AllowShutdownLabel>
+  <!--English=Allows you to disable or enable shutdown for a specific mech.-->
+  <WVC_WorkModes_AllowShutdownDesc>특정 메카노이드의 전원 종료를 허용하거나 비활성화할 수 있습니다.</WVC_WorkModes_AllowShutdownDesc>
+  <!--English=Work Modes-->
+  <WVC_MMWM_Settings>작업 모드</WVC_MMWM_Settings>
+  <!--English=Main-->
+  <WVC_Label_MainModeLabelSetting>기본</WVC_Label_MainModeLabelSetting>
+  <!--English=Bonus-->
+  <WVC_Label_BonusModeLabelSetting>추가</WVC_Label_BonusModeLabelSetting>
+  <!--English=Mechanics-->
+  <WVC_Label_WorkModeMechanicsLabelSetting>작동 방식</WVC_Label_WorkModeMechanicsLabelSetting>
+  <!--English=Reset-->
+  <WVC_WorkModes_ResetButton>초기화</WVC_WorkModes_ResetButton>
+  <!--English=The settings will be changed, are you sure?-->
+  <WVC_WorkModes_ResetButtonWarning>설정이 변경됩니다. 계속하시겠습니까?</WVC_WorkModes_ResetButtonWarning>
+  <!--English=The settings have been changed.-->
+  <WVC_WorkModes_ResetButton_SettingsChanged>설정이 변경되었습니다.</WVC_WorkModes_ResetButton_SettingsChanged>
+  <!--English=Find and destroy-->
+  <WVC_Label_FindAndDestroy>수색 및 섬멸</WVC_Label_FindAndDestroy>
+  <!--English=Wait enemy-->
+  <WVC_Label_WaitEnemy>적 대기</WVC_Label_WaitEnemy>
+  <!--English=Work and wait-->
+  <WVC_Label_WorkAndWaitEnemy>작업 후 대기</WVC_Label_WorkAndWaitEnemy>
+  <!--English=Defend yourself-->
+  <WVC_Label_DefendYourself>자기 방어</WVC_Label_DefendYourself>
+  <!--English=Ambush-->
+  <WVC_Label_Ambush>매복</WVC_Label_Ambush>
+  <!--English=Work and recharge-->
+  <WVC_Label_WorkAndRecharge>작업 및 충전</WVC_Label_WorkAndRecharge>
+  <!--English=Work if safe-->
+  <WVC_Label_SafeWorkAndRecharge>안전할 때 작업</WVC_Label_SafeWorkAndRecharge>
+  <!--English=Escort and recharge-->
+  <WVC_Label_EscaortAndRecharge>호위 및 충전</WVC_Label_EscaortAndRecharge>
+  <!--English=Work, recharge and escort-->
+  <WVC_Label_WorkRechargeEscort>작업, 충전 및 호위</WVC_Label_WorkRechargeEscort>
+  <!--English=Escort if enemy-->
+  <WVC_Label_EscortIfEnemyOnMap>적이 있을 때 호위</WVC_Label_EscortIfEnemyOnMap>
+  <!--English=Recharge and shutdown-->
+  <WVC_Label_RechargeAndShutdown>충전 후 전원 종료</WVC_Label_RechargeAndShutdown>
+  <!--English=Before disabling, switch all mechanoid modes to vanilla. A restart is required to apply the settings.-->
+  <WVC_ToolTip_Setting>비활성화하기 전에 모든 메카노이드 모드를 바닐라 모드로 변경하세요. 설정을 적용하려면 게임을 다시 시작해야 합니다.</WVC_ToolTip_Setting>
+  <!--English=Escort if enemy, work and recharge-->
+  <WVC_Label_EscortIfEnemyWorkAndRecharge>적이 있으면 호위, 그 외에는 작업 및 충전</WVC_Label_EscortIfEnemyWorkAndRecharge>
+  <!--English=Escort if drafted or downed-->
+  <WVC_Label_EscortIfDraftedOrDowned>징집 또는 쓰러짐 시 호위</WVC_Label_EscortIfDraftedOrDowned>
+  <!--English=Hive mind researching-->
+  <WVC_Label_HiveMindResearching>군체 의식 연구</WVC_Label_HiveMindResearching>
+  <!--English=Scavenging-->
+  <WVC_Label_Scavenging>자원 수색</WVC_Label_Scavenging>
+  <!--English=Scavenge zone min required cells: {0}-->
+  <WVC_Label_ScavenZoneCells>자원 수색 구역의 최소 필요 칸 수: {0}</WVC_Label_ScavenZoneCells>
+  <!--English=Bonus mode. It is disabled by default. Enabling is compatible with saves.-->
+  <WVC_ToolTip_BonusSetting>추가 모드입니다. 기본적으로 비활성화되어 있습니다. 활성화해도 기존 저장 파일과 호환됩니다.</WVC_ToolTip_BonusSetting>
+  <!--English=Idle optimization for vanilla modes-->
+  <WVC_Label_enableShutdownForAllMechanoids>바닐라 모드의 유휴 상태 최적화</WVC_Label_enableShutdownForAllMechanoids>
+  <!--English=If enabled, idle optimization will also affect vanilla modes.-->
+  <WVC_ToolTip_enableShutdownForAllMechanoids>활성화하면 유휴 상태 최적화가 바닐라 모드에도 적용됩니다.</WVC_ToolTip_enableShutdownForAllMechanoids>
+  <!--English=Smart charging for vanilla modes-->
+  <WVC_Label_enableSmartChargingForAllMechanoids>바닐라 모드의 스마트 충전</WVC_Label_enableSmartChargingForAllMechanoids>
+  <!--English=If enabled, then the mechanoids will go to charge when they are not busy with anything, and not only when the charge runs out.-->
+  <WVC_ToolTip_enableSmartChargingForAllMechanoids>활성화하면 메카노이드는 배터리가 방전되었을 때뿐만 아니라 다른 작업을 하지 않을 때도 충전하러 갑니다.</WVC_ToolTip_enableSmartChargingForAllMechanoids>
+  <!--English=Does not affect combat mechanoids, as their idle has been replaced with a simulated patrol.-->
+  <WVC_ToolTip_VanillaModeOptimizationWarning>전투 메카노이드는 유휴 상태가 모의 순찰로 대체되어 있으므로 영향을 받지 않습니다.</WVC_ToolTip_VanillaModeOptimizationWarning>
+  <!--English=Enable mechanoid shutdown zones-->
+  <WVC_Label_enableShutdownSearching>메카노이드 전원 종료 구역 활성화</WVC_Label_enableShutdownSearching>
+  <!--English=If enabled, mechanoids will search for a mechanoid shutdown zone before shutdown.-->
+  <WVC_ToolTip_enableShutdownSearching>활성화하면 메카노이드는 전원을 끄기 전에 메카노이드 전원 종료 구역을 찾습니다.</WVC_ToolTip_enableShutdownSearching>
+  <!--English=Enable mechanoid hangar rooms-->
+  <WVC_Label_enable_GoToShutdownRoomJob>메카노이드 격납고 활성화</WVC_Label_enable_GoToShutdownRoomJob>
+  <!--English=If enabled, all mechanoid chargers will create a new room type &quot;Mechanoid Hangar&quot;. Mechanoids will sleep there if there are no alternatives in the form of zones.
+
+Recommended when playing through gravships (Odyssey DLC), since the zones are reset when the ship flies.
+
+(Beta) A special beacon is planned that will allow for fineーtuning similar to that with zones.
+
+Restart required!-->
+  <WVC_ToolTip_enable_GoToShutdownRoomJob>활성화하면 모든 메카노이드 충전기가 새로운 방 유형인 &quot;메카노이드 격납고&quot;를 생성합니다. 구역을 이용할 수 없으면 메카노이드는 이곳에서 잠을 잡니다.
+
+중력부양선(Odyssey DLC)으로 플레이할 때는 우주선이 비행하면 구역이 초기화되므로 이 기능을 사용하는 것이 좋습니다.
+
+(베타) 구역과 유사하게 세부 설정을 조정할 수 있는 특수 신호기가 추가될 예정입니다.
+
+게임을 다시 시작해야 합니다!</WVC_ToolTip_enable_GoToShutdownRoomJob>
+  <!--English=Enable enemy searching-->
+  <WVC_Label_enableEnemySearching>적 탐색 활성화</WVC_Label_enableEnemySearching>
+  <!--English=If enabled, in safe modes, mechanoids will check the map for enemies.-->
+  <WVC_ToolTip_enableEnemySearching>활성화하면 안전 모드에서 메카노이드가 지도에 적이 있는지 확인합니다.</WVC_ToolTip_enableEnemySearching>
+  <!--English=If you don&apos;t understand what this option does, leave it enabled.-->
+  <WVC_ToolTip_enableSearchingWarning>이 옵션의 기능을 잘 모르겠다면 활성화된 상태로 두세요.</WVC_ToolTip_enableSearchingWarning>
+  <!--English=Smart escort-->
+  <WVC_Label_enableSmartEscort>스마트 호위</WVC_Label_enableSmartEscort>
+  <!--English=If enabled, it allows you to select an escort target for mechanoids.
+
+Restart required!-->
+  <WVC_ToolTip_enableSmartEscort>활성화하면 메카노이드의 호위 대상을 선택할 수 있습니다.
+
+게임을 다시 시작해야 합니다!</WVC_ToolTip_enableSmartEscort>
+  <!--English=Shutdown mode: Zones or Spots-->
+  <WVC_Label_shutdownModeZonesOrSpots>전원 종료 방식: 구역 또는 지점</WVC_Label_shutdownModeZonesOrSpots>
+  <!--English=If enabled, zones will be used. Alternatively, spots. It is recommended to enable it.
+
+This option is for advanced users. If you don&apos;t know what spots are, then leave it enabled.
+
+Restart required!-->
+  <WVC_ToolTip_shutdownModeZonesOrSpots>활성화하면 구역을 사용합니다. 비활성화하면 지점을 사용합니다. 활성화하는 것을 권장합니다.
+
+이 옵션은 고급 사용자를 위한 것입니다. 지점이 무엇인지 모른다면 활성화된 상태로 두세요.
+
+게임을 다시 시작해야 합니다!</WVC_ToolTip_shutdownModeZonesOrSpots>
+  <!--English=Use custom shutdown behavior-->
+  <WVC_Label_useCustomShutdownBehavior>사용자 지정 전원 종료 동작 사용</WVC_Label_useCustomShutdownBehavior>
+  <!--English=Vanilla shutdown is too stupid, but reliable. If you encounter bugs related to mechanoid shutdown, disable this option.-->
+  <WVC_ToolTip_useCustomShutdownBehavior>바닐라의 전원 종료 동작은 지나치게 단순하지만 안정적입니다. 메카노이드의 전원 종료와 관련된 버그가 발생하면 이 옵션을 비활성화하세요.</WVC_ToolTip_useCustomShutdownBehavior>
+  <!--English=Dormant mode-->
+  <WVC_Label_enableDormantMode>휴면 모드</WVC_Label_enableDormantMode>
+  <!--English=If enabled, then when the mechanoid is in shutdown mode it does not consume bandwidth.
+
+In case of performance problems, it is recommended to disable it.
+
+Restart required!-->
+  <WVC_ToolTip_enableDormantMode>활성화하면 메카노이드가 전원 종료 모드일 때 대역폭을 소모하지 않습니다.
+
+성능 문제가 발생하면 비활성화하는 것이 좋습니다.
+
+게임을 다시 시작해야 합니다!</WVC_ToolTip_enableDormantMode>
+  <!--English=Dormant mode bandwidth cost factor x{0}%-->
+  <WVC_Label_mechBandwithCostInDormantMode>휴면 모드의 대역폭 소모 계수 x{0}%</WVC_Label_mechBandwithCostInDormantMode>
+  <!--English=Autoーrepair on by default-->
+  <WVC_WM_Label_enableAutoRepairByDefault>자동 수리 기본 활성화</WVC_WM_Label_enableAutoRepairByDefault>
+  <!--English=After spawning, automatically switches the mechanoid&apos;s autoーrepair to true.-->
+  <WVC_WM_ToolTip_enableAutoRepairByDefault>메카노이드가 생성된 후 자동 수리 설정을 자동으로 활성화합니다.</WVC_WM_ToolTip_enableAutoRepairByDefault>
+  <!--English=Enemy check delay {0} ticks-->
+  <WVC_WorkModes_EnemyCheckDelay>적 확인 간격: {0}틱</WVC_WorkModes_EnemyCheckDelay>
+  <!--English=Allows you to set the delay between checks for enemy presence on the map. Used in safe modes. 60 ticks = 1 second.
+
+Higher values ​​improve performance, but are detrimental to mechanoid responsiveness.-->
+  <WVC_WorkModes_EnemyCheckDelayDesc>지도에 적이 있는지 확인하는 간격을 설정합니다. 안전 모드에서 사용됩니다. 60틱은 1초입니다.
+
+값을 높이면 성능이 향상되지만 메카노이드의 반응 속도가 느려집니다.</WVC_WorkModes_EnemyCheckDelayDesc>
+  <!--English=Opportunistic chargers-->
+  <WVC_Label_enableOpportunisticChargers>유동적 충전기 사용</WVC_Label_enableOpportunisticChargers>
+  <!--English=If enabled, mechs heading for smart charging will track other mechs whose energy is below the group threshold and, if any, will interrupt smart charging, immediately heading to the shutdown spot, yielding the charger.-->
+  <WVC_ToolTip_enableOpportunisticChargers>활성화하면 스마트 충전을 하러 가는 메카노이드가 그룹 기준치보다 에너지가 낮은 다른 메카노이드를 확인합니다. 해당 메카노이드가 있으면 스마트 충전을 중단하고 즉시 전원 종료 지점으로 이동하여 충전기를 양보합니다.</WVC_ToolTip_enableOpportunisticChargers>
+  <!--English=Enable mechs work tab-->
+  <WVC_Label_enableMechsWorkTab>메카노이드 작업 탭 활성화</WVC_Label_enableMechsWorkTab>
+  <!--English=If enabled, adds an additional tab that allows you to change the work priority of mechanoids.
+
+Restart required!-->
+  <WVC_ToolTip_enableMechsWorkTab>활성화하면 메카노이드의 작업 우선순위를 변경할 수 있는 탭이 추가됩니다.
+
+게임을 다시 시작해야 합니다!</WVC_ToolTip_enableMechsWorkTab>
+  <!--English=Hide mechs work tab-->
+  <WVC_Label_hideMechsWorkTab>메카노이드 작업 탭 숨기기</WVC_Label_hideMechsWorkTab>
+  <!--English=If enabled, the priorities tab will be moved to the mechanoid gizmos.-->
+  <WVC_ToolTip_hideMechsWorkTab>활성화하면 우선순위 탭이 메카노이드 명령 버튼으로 이동합니다.</WVC_ToolTip_hideMechsWorkTab>
+</LanguageData>
