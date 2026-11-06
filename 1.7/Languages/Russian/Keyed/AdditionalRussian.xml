@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <WVC_Label_RechargeAndShutdown>Подзарядка и отключение</WVC_Label_RechargeAndShutdown>
+  <WVC_Label_enableMechsWorkTab>Включить вкладку работы механоидов</WVC_Label_enableMechsWorkTab>
+  <WVC_Label_enableOpportunisticChargers>Подзарядка при удобном случае</WVC_Label_enableOpportunisticChargers>
+  <WVC_Label_enable_GoToShutdownRoomJob>Включить ангары для механоидов</WVC_Label_enable_GoToShutdownRoomJob>
+  <WVC_Label_hideMechsWorkTab>Скрыть вкладку работы механоидов</WVC_Label_hideMechsWorkTab>
+  <WVC_ToolTip_enableMechsWorkTab>Если включено, добавляет вкладку для изменения приоритетов работы механоидов.
+
+Требуется перезапуск!</WVC_ToolTip_enableMechsWorkTab>
+  <WVC_ToolTip_enableOpportunisticChargers>Если включено, механоиды, идущие на умную зарядку, будут следить за другими механоидами, чей заряд ниже порога группы. Если такие есть, они прервут умную зарядку и сразу отправятся к точке отключения, уступив зарядную станцию.</WVC_ToolTip_enableOpportunisticChargers>
+  <WVC_ToolTip_enable_GoToShutdownRoomJob>Если включено, все зарядные станции механоидов будут создавать новый тип комнаты — «Ангар механоидов». Механоиды будут отключаться там, если нет подходящих зон.
+
+Рекомендуется при игре с гравикораблями (дополнение Odyssey), поскольку при перелёте корабля зоны сбрасываются.
+
+(Бета) Планируется специальный маяк для тонкой настройки, подобной настройке зон.
+
+Требуется перезапуск!</WVC_ToolTip_enable_GoToShutdownRoomJob>
+  <WVC_ToolTip_hideMechsWorkTab>Если включено, вкладка приоритетов будет перенесена к кнопкам команд механоида.</WVC_ToolTip_hideMechsWorkTab>
+  <WVC_WM_Label_enableAutoRepairByDefault>Авторемонт включён по умолчанию</WVC_WM_Label_enableAutoRepairByDefault>
+  <WVC_WM_ShutdownGroup>отключение</WVC_WM_ShutdownGroup>
+  <WVC_WM_ToolTip_enableAutoRepairByDefault>Автоматически включает саморемонт механоида после его появления.</WVC_WM_ToolTip_enableAutoRepairByDefault>
+  <WVC_WorkModes_AllowShutdownDesc>Позволяет разрешить или запретить отключение отдельного механоида.</WVC_WorkModes_AllowShutdownDesc>
+  <WVC_WorkModes_AllowShutdownLabel>Разрешить отключение</WVC_WorkModes_AllowShutdownLabel>
+  <WVC_WorkModes_EnemyCheckDelay>Интервал проверки врагов: {0} такт.</WVC_WorkModes_EnemyCheckDelay>
+  <WVC_WorkModes_EnemyCheckDelayDesc>Позволяет задать интервал между проверками наличия врагов на карте. Используется в безопасных режимах. 60 тактов = 1 секунда.
+
+Большие значения повышают производительность, но замедляют реакцию механоидов.</WVC_WorkModes_EnemyCheckDelayDesc>
+  <WVC_WorkModes_GroupIsChosen>Группа {0}: назначение — {1}.</WVC_WorkModes_GroupIsChosen>
+</LanguageData>
