@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <WVC_MechsWork.description>Выберите, какие работы выполняет каждый механоид и в каком порядке.</WVC_MechsWork.description>
+  <WVC_MechsWork.label>работа механоидов</WVC_MechsWork.label>
+</LanguageData>
