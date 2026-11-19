@@ -49,6 +49,7 @@
 					  </li>
 					  <!-- Shutdown long -->
 					  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+						<tickInterval>240</tickInterval>
 						<forced>true</forced>
 					  </li>
 					</subNodes>

@@ -41,7 +41,7 @@
 						  <li Class="JobGiver_GetEnergy_Charger" />
 						  <!-- Go to smart charge -->
 						  <li Class="WVC_WorkModes.JobGiver_GetEnergy_Charger">
-							<tickInterval>625</tickInterval>
+							<tickInterval>120</tickInterval>
 							<subNodes>
 							  <li Class="ThinkNode_SubtreesByTag">
 								<insertTag>WVC_WM_PostGetEnergySmart</insertTag>
@@ -53,8 +53,9 @@
 									<li>WVC_MechHangar</li>
 								</possibleRooms>
 							  </li>
-							  <!-- Shutdown long -->
+							  <!-- Shutdown Short -->
 							  <li Class="WVC_WorkModes.JobGiver_GetEnergy_SelfShutdown">
+								<tickInterval>180</tickInterval>
 								<forced>true</forced>
 							  </li>
 							</subNodes>
